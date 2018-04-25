@@ -1,0 +1,50 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.Boletos.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Boleto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Boleto.Id" />
+            <div class="form-group">
+                <label asp-for="Boleto.IdZona" class="control-label"></label>
+                <input asp-for="Boleto.IdZona" class="form-control" />
+                <span asp-validation-for="Boleto.IdZona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boleto.IdEvento" class="control-label"></label>
+                <input asp-for="Boleto.IdEvento" class="form-control" />
+                <span asp-validation-for="Boleto.IdEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boleto.Importe" class="control-label"></label>
+                <input asp-for="Boleto.Importe" class="form-control" />
+                <span asp-validation-for="Boleto.Importe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boleto.PrecioIva" class="control-label"></label>
+                <input asp-for="Boleto.PrecioIva" class="form-control" />
+                <span asp-validation-for="Boleto.PrecioIva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

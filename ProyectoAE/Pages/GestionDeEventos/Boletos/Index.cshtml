@@ -1,0 +1,54 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.Boletos.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Boleto[0].IdZona)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Boleto[0].IdEvento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Boleto[0].Importe)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Boleto[0].PrecioIva)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Boleto) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdZona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Importe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioIva)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

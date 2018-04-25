@@ -1,0 +1,54 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.Estados.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado[0].IdHorario_EventosHorario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado[0].Observaciones)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado[0].fecha)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado[0].EstadoDes)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Estado) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdHorario_EventosHorario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoDes)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

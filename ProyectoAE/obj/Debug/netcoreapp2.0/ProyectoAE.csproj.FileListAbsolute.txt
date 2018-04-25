@@ -1,0 +1,11 @@
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.deps.json
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.runtimeconfig.json
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.runtimeconfig.dev.json
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.dll
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.csprojResolveAssemblyReference.cache
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.csproj.CoreCompileInputs.cache
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.AssemblyInfoInputs.cache
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.AssemblyInfo.cs
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.pdb
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.dll
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.pdb

@@ -1,0 +1,78 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.Edificios.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edificio[0].Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edificio[0].Direccion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edificio[0].DetalleUbicacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edificio[0].Capacidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edificio[0].Disponibilidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edificio[0].Observaciones)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edificio[0].CoorX)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edificio[0].CoorY)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Edificio) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DetalleUbicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disponibilidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoorX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoorY)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

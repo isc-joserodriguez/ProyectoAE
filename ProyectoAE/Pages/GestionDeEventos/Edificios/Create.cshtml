@@ -1,0 +1,69 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.Edificios.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Edificio</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Edificio.Nombre" class="control-label"></label>
+                <input asp-for="Edificio.Nombre" class="form-control" />
+                <span asp-validation-for="Edificio.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edificio.Direccion" class="control-label"></label>
+                <input asp-for="Edificio.Direccion" class="form-control" />
+                <span asp-validation-for="Edificio.Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edificio.DetalleUbicacion" class="control-label"></label>
+                <input asp-for="Edificio.DetalleUbicacion" class="form-control" />
+                <span asp-validation-for="Edificio.DetalleUbicacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edificio.Capacidad" class="control-label"></label>
+                <input asp-for="Edificio.Capacidad" class="form-control" />
+                <span asp-validation-for="Edificio.Capacidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edificio.Disponibilidad" class="control-label"></label>
+                <input asp-for="Edificio.Disponibilidad" class="form-control" />
+                <span asp-validation-for="Edificio.Disponibilidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edificio.Observaciones" class="control-label"></label>
+                <input asp-for="Edificio.Observaciones" class="form-control" />
+                <span asp-validation-for="Edificio.Observaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edificio.CoorX" class="control-label"></label>
+                <input asp-for="Edificio.CoorX" class="form-control" />
+                <span asp-validation-for="Edificio.CoorX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edificio.CoorY" class="control-label"></label>
+                <input asp-for="Edificio.CoorY" class="form-control" />
+                <span asp-validation-for="Edificio.CoorY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>http://localhost:50188/#myCarousel
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

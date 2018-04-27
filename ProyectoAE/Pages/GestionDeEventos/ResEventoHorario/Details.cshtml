@@ -1,0 +1,43 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.ResEventoHorario.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Res_eventos_horarios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Res_eventos_horarios.IdHorario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Res_eventos_horarios.IdHorario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Res_eventos_horarios.FechaHoraInicio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Res_eventos_horarios.FechaHoraInicio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Res_eventos_horarios.FechaHoraFin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Res_eventos_horarios.FechaHoraFin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Res_eventos_horarios.FechaHoraRegistro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Res_eventos_horarios.FechaHoraRegistro)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Res_eventos_horarios.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

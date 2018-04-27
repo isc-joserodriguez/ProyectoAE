@@ -1,0 +1,70 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.ResEvento.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Res_Eventos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Res_Eventos.Id" />
+            <div class="form-group">
+                <label asp-for="Res_Eventos.IdEvento" class="control-label"></label>
+                <input asp-for="Res_Eventos.IdEvento" class="form-control" />
+                <span asp-validation-for="Res_Eventos.IdEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Res_Eventos.Orador" class="control-label"></label>
+                <input asp-for="Res_Eventos.Orador" class="form-control" />
+                <span asp-validation-for="Res_Eventos.Orador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Res_Eventos.NombreEvento" class="control-label"></label>
+                <input asp-for="Res_Eventos.NombreEvento" class="form-control" />
+                <span asp-validation-for="Res_Eventos.NombreEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Res_Eventos.Observaciones" class="control-label"></label>
+                <input asp-for="Res_Eventos.Observaciones" class="form-control" />
+                <span asp-validation-for="Res_Eventos.Observaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Res_Eventos.Explicaciones" class="control-label"></label>
+                <input asp-for="Res_Eventos.Explicaciones" class="form-control" />
+                <span asp-validation-for="Res_Eventos.Explicaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Res_Eventos.Url" class="control-label"></label>
+                <input asp-for="Res_Eventos.Url" class="form-control" />
+                <span asp-validation-for="Res_Eventos.Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Res_Eventos.FechaInicio" class="control-label"></label>
+                <input asp-for="Res_Eventos.FechaInicio" class="form-control" />
+                <span asp-validation-for="Res_Eventos.FechaInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Res_Eventos.FechaFin" class="control-label"></label>
+                <input asp-for="Res_Eventos.FechaFin" class="form-control" />
+                <span asp-validation-for="Res_Eventos.FechaFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

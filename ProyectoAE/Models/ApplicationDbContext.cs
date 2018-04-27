@@ -17,7 +17,8 @@ namespace ProyectoAE.Models
         public DbSet<Boleto> Boletos { get; set; }
         public DbSet<Estado> Estados { get; set; }
         public DbSet<ProyectoAE.Models.GestionDeEventos.Edificio> Edificio { get; set; }
-
+        public DbSet<Res_eventos_horarios> ResEventoHorario { get; set; }
+        public DbSet<Res_Eventos> ResEvento { get; set; }
 
     }
 }

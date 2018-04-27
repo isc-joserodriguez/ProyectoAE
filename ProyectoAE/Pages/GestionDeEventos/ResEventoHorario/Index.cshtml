@@ -1,0 +1,54 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.ResEventoHorario.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_eventos_horarios[0].IdHorario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_eventos_horarios[0].FechaHoraInicio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_eventos_horarios[0].FechaHoraFin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_eventos_horarios[0].FechaHoraRegistro)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Res_eventos_horarios) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdHorario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHoraInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHoraFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHoraRegistro)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

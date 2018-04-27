@@ -1,0 +1,78 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.ResEvento.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_Eventos[0].IdEvento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_Eventos[0].Orador)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_Eventos[0].NombreEvento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_Eventos[0].Observaciones)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_Eventos[0].Explicaciones)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_Eventos[0].Url)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_Eventos[0].FechaInicio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Res_Eventos[0].FechaFin)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Res_Eventos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Explicaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFin)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

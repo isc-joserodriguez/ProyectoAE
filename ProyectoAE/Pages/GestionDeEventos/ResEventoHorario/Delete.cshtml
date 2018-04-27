@@ -1,0 +1,46 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.ResEventoHorario.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Res_eventos_horarios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Res_eventos_horarios.IdHorario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Res_eventos_horarios.IdHorario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Res_eventos_horarios.FechaHoraInicio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Res_eventos_horarios.FechaHoraInicio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Res_eventos_horarios.FechaHoraFin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Res_eventos_horarios.FechaHoraFin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Res_eventos_horarios.FechaHoraRegistro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Res_eventos_horarios.FechaHoraRegistro)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Res_eventos_horarios.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

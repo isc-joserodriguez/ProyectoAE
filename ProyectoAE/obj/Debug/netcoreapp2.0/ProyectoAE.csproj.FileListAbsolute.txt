@@ -31,3 +31,14 @@ C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\ProyectoAE\Proyec
 C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.AssemblyInfo.cs
 C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.dll
 C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.pdb
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.deps.json
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.runtimeconfig.json
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.runtimeconfig.dev.json
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.dll
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.pdb
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.csprojResolveAssemblyReference.cache
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.csproj.CoreCompileInputs.cache
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.AssemblyInfoInputs.cache
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.AssemblyInfo.cs
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.dll
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.pdb

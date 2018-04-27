@@ -5,37 +5,37 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Eventos</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Crear nuevo evento</a>
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_Eventos[0].IdEvento)
+                    ID
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_Eventos[0].Orador)
+                    Nombre
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_Eventos[0].NombreEvento)
+                    Ponente
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_Eventos[0].Observaciones)
+                    Fecha de Inicio
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_Eventos[0].Explicaciones)
+                    Fecha de Finalización
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_Eventos[0].Url)
+                    Explicación
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_Eventos[0].FechaInicio)
+                    Observaciones
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_Eventos[0].FechaFin)
+                    Página Web
                 </th>
             <th></th>
         </tr>
@@ -47,19 +47,10 @@
                 @Html.DisplayFor(modelItem => item.IdEvento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Orador)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.NombreEvento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Observaciones)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Explicaciones)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Url)
+                @Html.DisplayFor(modelItem => item.Orador)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FechaInicio)
@@ -68,9 +59,18 @@
                 @Html.DisplayFor(modelItem => item.FechaFin)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                @Html.DisplayFor(modelItem => item.Explicaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Url)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Eliminar</a>
             </td>
         </tr>
 }

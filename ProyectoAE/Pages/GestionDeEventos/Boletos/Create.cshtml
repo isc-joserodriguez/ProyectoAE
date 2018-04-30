@@ -5,43 +5,43 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Agregar Boleto</h2>
 
-<h4>Boleto</h4>
+<h4>Boletos</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Boleto.IdZona" class="control-label"></label>
+                <label asp-for="Boleto.IdZona" class="control-label">Id de la Zona</label>
                 <input asp-for="Boleto.IdZona" class="form-control" />
                 <span asp-validation-for="Boleto.IdZona" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Boleto.IdEvento" class="control-label"></label>
+                <label asp-for="Boleto.IdEvento" class="control-label">Id del Evento</label>
                 <input asp-for="Boleto.IdEvento" class="form-control" />
                 <span asp-validation-for="Boleto.IdEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Boleto.Importe" class="control-label"></label>
+                <label asp-for="Boleto.Importe" class="control-label">Importe</label>
                 <input asp-for="Boleto.Importe" class="form-control" />
                 <span asp-validation-for="Boleto.Importe" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Boleto.PrecioIva" class="control-label"></label>
+                <label asp-for="Boleto.PrecioIva" class="control-label">IVA</label>
                 <input asp-for="Boleto.PrecioIva" class="form-control" />
                 <span asp-validation-for="Boleto.PrecioIva" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Crear" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Regresar</a>
 </div>
 
 @section Scripts {

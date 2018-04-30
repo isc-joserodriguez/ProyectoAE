@@ -5,25 +5,25 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Boletos</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Agregar nuevo Boleto</a>
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Boleto[0].IdZona)
+                    Id de la Zona
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Boleto[0].IdEvento)
+                    Id del Evento
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Boleto[0].Importe)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Boleto[0].PrecioIva)
+                    IVA
                 </th>
             <th></th>
         </tr>
@@ -44,9 +44,9 @@
                 @Html.DisplayFor(modelItem => item.PrecioIva)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Eliminar</a>
             </td>
         </tr>
 }

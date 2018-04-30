@@ -2,12 +2,12 @@
 @model ProyectoAE.Pages.GestionDeEventos.Edificios.EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
-<h2>Edit</h2>
+<h2>Editar  Edificio: @Html.DisplayFor(model => model.Edificio.Id) - @Html.DisplayFor(model => model.Edificio.Nombre)</h2>
 
-<h4>Edificio</h4>
+<h4>Control de Edificios</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,55 +15,54 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Edificio.Id" />
             <div class="form-group">
-                <label asp-for="Edificio.Nombre" class="control-label"></label>
+                <label asp-for="Edificio.Nombre" class="control-label">Nombre</label>
                 <input asp-for="Edificio.Nombre" class="form-control" />
                 <span asp-validation-for="Edificio.Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Edificio.Direccion" class="control-label"></label>
-                <input asp-for="Edificio.Direccion" class="form-control" />
-                <span asp-validation-for="Edificio.Direccion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Edificio.DetalleUbicacion" class="control-label"></label>
-                <input asp-for="Edificio.DetalleUbicacion" class="form-control" />
-                <span asp-validation-for="Edificio.DetalleUbicacion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Edificio.Capacidad" class="control-label"></label>
-                <input asp-for="Edificio.Capacidad" class="form-control" />
-                <span asp-validation-for="Edificio.Capacidad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Edificio.Disponibilidad" class="control-label"></label>
+                <label asp-for="Edificio.Disponibilidad" class="control-label">Disponibilidad</label>
                 <input asp-for="Edificio.Disponibilidad" class="form-control" />
                 <span asp-validation-for="Edificio.Disponibilidad" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Edificio.Observaciones" class="control-label"></label>
-                <input asp-for="Edificio.Observaciones" class="form-control" />
-                <span asp-validation-for="Edificio.Observaciones" class="text-danger"></span>
+                <label asp-for="Edificio.Capacidad" class="control-label">Capacidad</label>
+                <input asp-for="Edificio.Capacidad" class="form-control" />
+                <span asp-validation-for="Edificio.Capacidad" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Edificio.Direccion" class="control-label">Dirección</label>
+                <input asp-for="Edificio.Direccion" class="form-control" />
+                <span asp-validation-for="Edificio.Direccion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Edificio.CoorX" class="control-label"></label>
+                <label asp-for="Edificio.DetalleUbicacion" class="control-label">Detalles Ubicación</label>
+                <input asp-for="Edificio.DetalleUbicacion" class="form-control" />
+                <span asp-validation-for="Edificio.DetalleUbicacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edificio.CoorX" class="control-label">Coordenada X</label>
                 <input asp-for="Edificio.CoorX" class="form-control" />
                 <span asp-validation-for="Edificio.CoorX" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Edificio.CoorY" class="control-label"></label>
+                <label asp-for="Edificio.CoorY" class="control-label">Coordenada Y</label>
                 <input asp-for="Edificio.CoorY" class="form-control" />
                 <span asp-validation-for="Edificio.CoorY" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <label asp-for="Edificio.Observaciones" class="control-label">Observaciones</label>
+                <input asp-for="Edificio.Observaciones" class="form-control" />
+                <span asp-validation-for="Edificio.Observaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

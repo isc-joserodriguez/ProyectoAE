@@ -2,7 +2,7 @@
 @model ProyectoAE.Pages.GestionDeEventos.ResEvento.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Eventos";
 }
 
 <h2>Eventos</h2>
@@ -44,7 +44,7 @@
 @foreach (var item in Model.Res_Eventos) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEvento)
+                @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NombreEvento)

@@ -8,7 +8,7 @@ namespace ProyectoAE.Models.GestionDeEventos
     public class Res_Eventos
     {
         public int Id { get; set; }
-        public int IdEvento { get; set; }
+        //public int IdEvento { get; set; }
         public String Orador { get; set; }
         public String NombreEvento { get; set; }
         public String Observaciones { get; set; }

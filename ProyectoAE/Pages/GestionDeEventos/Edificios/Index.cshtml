@@ -2,41 +2,44 @@
 @model ProyectoAE.Pages.GestionDeEventos.Edificios.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Control Edificios";
 }
 
-<h2>Index</h2>
+<h2>Control de Edificios</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Agregar nuevo Edificio</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Edificio[0].Nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Edificio[0].Direccion)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Edificio[0].DetalleUbicacion)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Edificio[0].Capacidad)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Edificio[0].Disponibilidad)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Edificio[0].Observaciones)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Edificio[0].CoorX)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Edificio[0].CoorY)
-                </th>
+            <th>
+                ID
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Disponibilidad
+            </th>
+            <th>
+                Capacidad
+            </th>
+            <th>
+                Dirección
+            </th>
+            <th>
+                Detalle Ubicación
+            </th>
+            <th>
+                Coordenada X
+            </th>
+            <th>
+                Coordenada Y
+            </th>
+            <th>
+                Observaciones
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -44,7 +47,16 @@
 @foreach (var item in Model.Edificio) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disponibilidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacidad)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Direccion)
@@ -53,24 +65,18 @@
                 @Html.DisplayFor(modelItem => item.DetalleUbicacion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Capacidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Disponibilidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observaciones)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.CoorX)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CoorY)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Eliminar</a>
             </td>
         </tr>
 }

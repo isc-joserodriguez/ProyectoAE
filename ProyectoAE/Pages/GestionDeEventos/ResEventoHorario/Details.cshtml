@@ -2,35 +2,35 @@
 @model ProyectoAE.Pages.GestionDeEventos.ResEventoHorario.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles Horario";
 }
 
-<h2>Details</h2>
+<h2>Detalles Horario: @Html.DisplayFor(model => model.Res_eventos_horarios.Id)</h2>
 
 <div>
-    <h4>Res_eventos_horarios</h4>
+    <h4>Control de Horarios</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Res_eventos_horarios.IdHorario)
+           ID
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Res_eventos_horarios.IdHorario)
+            @Html.DisplayFor(model => model.Res_eventos_horarios.Id)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Res_eventos_horarios.FechaHoraInicio)
+            Hora Inicio
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Res_eventos_horarios.FechaHoraInicio)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Res_eventos_horarios.FechaHoraFin)
+           Hora Fin
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Res_eventos_horarios.FechaHoraFin)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Res_eventos_horarios.FechaHoraRegistro)
+          Hora de Registro
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Res_eventos_horarios.FechaHoraRegistro)
@@ -38,6 +38,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Res_eventos_horarios.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Res_eventos_horarios.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-default ">Regresar a lista</a>
 </div>

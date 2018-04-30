@@ -2,28 +2,28 @@
 @model ProyectoAE.Pages.GestionDeEventos.ResEventoHorario.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Horarios";
 }
 
-<h2>Index</h2>
+<h2>Control de Horarios</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Crear nuevo horario</a>
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_eventos_horarios[0].IdHorario)
+                   ID
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_eventos_horarios[0].FechaHoraInicio)
+                   Hora Inicio
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_eventos_horarios[0].FechaHoraFin)
+                   Hora Fin
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Res_eventos_horarios[0].FechaHoraRegistro)
+                   Hora de Registro
                 </th>
             <th></th>
         </tr>
@@ -32,7 +32,7 @@
 @foreach (var item in Model.Res_eventos_horarios) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdHorario)
+                @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FechaHoraInicio)
@@ -44,9 +44,9 @@
                 @Html.DisplayFor(modelItem => item.FechaHoraRegistro)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Eliminar</a>
             </td>
         </tr>
 }

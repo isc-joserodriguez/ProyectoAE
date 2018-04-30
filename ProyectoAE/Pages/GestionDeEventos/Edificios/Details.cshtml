@@ -2,66 +2,72 @@
 @model ProyectoAE.Pages.GestionDeEventos.Edificios.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles Edificio";
 }
 
-<h2>Details</h2>
+<h2>Detalles Edificio: @Html.DisplayFor(model => model.Edificio.Id) - @Html.DisplayFor(model => model.Edificio.Nombre) </h2>
 
 <div>
-    <h4>Edificio</h4>
+    <h4>Control de Edificios</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Edificio.Nombre)
+            ID
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Edificio.Id)
+        </dd>
+        <dt>
+            Nombre
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Edificio.Nombre)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Edificio.Direccion)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Edificio.Direccion)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Edificio.DetalleUbicacion)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Edificio.DetalleUbicacion)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Edificio.Capacidad)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Edificio.Capacidad)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Edificio.Disponibilidad)
+            Disponibilidad
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Edificio.Disponibilidad)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Edificio.Observaciones)
+            Capacidad
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Edificio.Observaciones)
+            @Html.DisplayFor(model => model.Edificio.Capacidad)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Edificio.CoorX)
+            Dirección
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Edificio.Direccion)
+        </dd>
+        <dt>
+            Detalles Ubicación
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Edificio.DetalleUbicacion)
+        </dd>
+        <dt>
+            Coordenada X
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Edificio.CoorX)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Edificio.CoorY)
+            Coordenada Y
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Edificio.CoorY)
         </dd>
+        <dt>
+            Observaciones
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Edificio.Observaciones)
+        </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Edificio.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Edificio.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
 </div>

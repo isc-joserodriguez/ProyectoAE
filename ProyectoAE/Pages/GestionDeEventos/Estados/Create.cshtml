@@ -2,47 +2,42 @@
 @model ProyectoAE.Pages.GestionDeEventos.Estados.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear Estado";
 }
 
-<h2>Create</h2>
+<h2>Crear nuevo Estado</h2>
 
-<h4>Estado</h4>
+<h4>Control de Estados</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label asp-for="Estado.IdHorario_EventosHorario" class="control-label"></label>
-                <input asp-for="Estado.IdHorario_EventosHorario" class="form-control" />
-                <span asp-validation-for="Estado.IdHorario_EventosHorario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Estado.Observaciones" class="control-label"></label>
-                <input asp-for="Estado.Observaciones" class="form-control" />
-                <span asp-validation-for="Estado.Observaciones" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Estado.fecha" class="control-label"></label>
-                <input asp-for="Estado.fecha" class="form-control" />
-                <span asp-validation-for="Estado.fecha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Estado.EstadoDes" class="control-label"></label>
+                <label asp-for="Estado.EstadoDes" class="control-label">Estado</label>
                 <input asp-for="Estado.EstadoDes" class="form-control" />
                 <span asp-validation-for="Estado.EstadoDes" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <label asp-for="Estado.fecha" class="control-label">Fecha</label>
+                <input asp-for="Estado.fecha" class="form-control" />
+                <span asp-validation-for="Estado.fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado.Observaciones" class="control-label">Observaciones</label>
+                <input asp-for="Estado.Observaciones" class="form-control" />
+                <span asp-validation-for="Estado.Observaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" /> |
+                <a asp-page="Index" class="btn btn-default">Regresar a lista</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

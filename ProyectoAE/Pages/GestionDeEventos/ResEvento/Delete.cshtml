@@ -18,17 +18,36 @@
         <dd>
             @Html.DisplayFor(model => model.Res_Eventos.Id)
         </dd>
+
         <dt>
-            @Html.DisplayNameFor(model => model.Res_Eventos.Orador)
+            Nombre del Evento
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Res_Eventos.NombreEvento)
+        </dd>
+        <dt>
+            Ponente
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Res_Eventos.Orador)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Res_Eventos.NombreEvento)
+            Fecha de Inicio
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Res_Eventos.NombreEvento)
+            @Html.DisplayFor(model => model.Res_Eventos.FechaInicio)
+        </dd>
+        <dt>
+           Fecha de Finalización
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Res_Eventos.FechaFin)
+        </dd>
+        <dt>
+            Explicación
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Res_Eventos.Explicaciones)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Res_Eventos.Observaciones)
@@ -36,30 +55,14 @@
         <dd>
             @Html.DisplayFor(model => model.Res_Eventos.Observaciones)
         </dd>
+
         <dt>
-            @Html.DisplayNameFor(model => model.Res_Eventos.Explicaciones)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Res_Eventos.Explicaciones)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Res_Eventos.Url)
+            Página Web
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Res_Eventos.Url)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Res_Eventos.FechaInicio)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Res_Eventos.FechaInicio)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Res_Eventos.FechaFin)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Res_Eventos.FechaFin)
-        </dd>
+
     </dl>
 
     <form method="post">

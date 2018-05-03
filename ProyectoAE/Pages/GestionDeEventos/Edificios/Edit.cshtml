@@ -7,7 +7,7 @@
 
 <h2>Editar  Edificio: @Html.DisplayFor(model => model.Edificio.Id) - @Html.DisplayFor(model => model.Edificio.Nombre)</h2>
 
-<h4>Control de Edificios</h4>
+<h4>Catálogo de Edificios y Espacios</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -36,7 +36,7 @@
                 <span asp-validation-for="Edificio.Direccion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Edificio.DetalleUbicacion" class="control-label">Detalles Ubicación</label>
+                <label asp-for="Edificio.DetalleUbicacion" class="control-label">Detalles de Ubicación</label>
                 <input asp-for="Edificio.DetalleUbicacion" class="form-control" />
                 <span asp-validation-for="Edificio.DetalleUbicacion" class="text-danger"></span>
             </div>
@@ -52,7 +52,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Edificio.Observaciones" class="control-label">Observaciones</label>
-                <input asp-for="Edificio.Observaciones" class="form-control" />
+                <textarea rows="10" cols="20" wrap="soft" asp-for="Edificio.Observaciones" class="form-control">Texto que aparece ya escrito de antemano</textarea>
                 <span asp-validation-for="Edificio.Observaciones" class="text-danger"></span>
             </div>
             <div class="form-group">

@@ -20,10 +20,24 @@ namespace ProyectoAE.Pages.GestionDeEventos.ResEvento
         }
 
         public IList<Res_Eventos> Res_Eventos { get;set; }
-
-        public async Task OnGetAsync()
+        
+        /*public async Task OnGetAsync()
         {
             Res_Eventos = await _context.ResEvento.ToListAsync();
+        }*/
+        public async Task OnGetAsync(string searchString)
+        {
+            var bnombre = from m in _context.ResEvento
+                         select m;
+            var queryable = from m in _context.ResEvento
+                          select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                bnombre = bnombre.Where(s => s.NombreEvento.Contains(searchString));
+            }
+
+            Res_Eventos = await bnombre.ToListAsync();
         }
     }
 }

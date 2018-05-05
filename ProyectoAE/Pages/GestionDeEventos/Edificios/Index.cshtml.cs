@@ -21,9 +21,23 @@ namespace ProyectoAE.Pages.GestionDeEventos.Edificios
 
         public IList<Edificio> Edificio { get;set; }
 
-        public async Task OnGetAsync()
+        /*public async Task OnGetAsync()
         {
             Edificio = await _context.Edificio.ToListAsync();
+        }*/
+        public async Task OnGetAsync(string searchString)
+        {
+            var bnombre = from m in _context.Edificio
+                          select m;
+            var queryable = from m in _context.Edificio
+                            select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                bnombre = bnombre.Where(s => s.Nombre.Contains(searchString));
+            }
+
+            Edificio = await bnombre.ToListAsync();
         }
     }
 }

@@ -42,3 +42,14 @@ C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\obj\Debug\ne
 C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.AssemblyInfo.cs
 C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.dll
 C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.pdb
+C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\Respaldo\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.deps.json
+C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\Respaldo\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.runtimeconfig.json
+C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\Respaldo\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.runtimeconfig.dev.json
+C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\Respaldo\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.dll
+C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\Respaldo\ProyectoAE\ProyectoAE\bin\Debug\netcoreapp2.0\ProyectoAE.pdb
+C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\Respaldo\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\Respaldo\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.csproj.CoreCompileInputs.cache
+C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\Respaldo\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.AssemblyInfoInputs.cache
+C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\Respaldo\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.AssemblyInfo.cs
+C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\Respaldo\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.dll
+C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\Nueva carpeta\Respaldo\ProyectoAE\ProyectoAE\obj\Debug\netcoreapp2.0\ProyectoAE.pdb

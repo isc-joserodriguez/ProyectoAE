@@ -1,14 +1,14 @@
 ﻿@page
-@model ProyectoAE.Pages.GestionDeEventos.ResEventoHorario.IndexModel
+@model ProyectoAE.Pages.GestionDeEventos.EvaCatEspacios.IndexModel
 
 @{
-    ViewData["Title"] = "Horarios";
+    ViewData["Title"] = "Lista Espacios";
 }
 
-<h2>Control de Horarios</h2>
+<h2>Lista de Espacios</h2>
 
 <p>
-    <a asp-page="Create">Agregar nuevo horario</a>
+    <a asp-page="Create">Crear nuevo Espacio</a>
 </p>
 <table class="table">
     <thead>
@@ -20,22 +20,13 @@
                 Edificio
             </th>
             <th>
-                Espacio
-            </th>
-            <th>
-                Hora Inicio
-            </th>
-            <th>
-                Hora Fin
-            </th>
-            <th>
-                Hora de Registro
+                Descripcion de Espacio
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Res_eventos_horarios) {
+@foreach (var item in Model.eva_cat_espacios) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
@@ -44,16 +35,7 @@
                 @Html.DisplayFor(modelItem => item.IdEdificio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEspacio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaHoraInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaHoraFin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaHoraRegistro)
+                @Html.DisplayFor(modelItem => item.DesEspacio)
             </td>
             <td>
                 <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |

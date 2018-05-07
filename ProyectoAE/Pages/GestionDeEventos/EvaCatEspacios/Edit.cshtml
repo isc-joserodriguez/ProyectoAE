@@ -1,0 +1,38 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.EvaCatEspacios.EditModel
+
+@{
+    ViewData["Title"] = "Editar Espacio";
+}
+
+<h2>Editar Espacio: @Html.DisplayFor(model => model.eva_cat_espacios.Id) - @Html.DisplayFor(model => model.eva_cat_espacios.DesEspacio) </h2>
+
+<h4>Lista de Espacios</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="eva_cat_espacios.Id" />
+            <div class="form-group">
+                <label asp-for="eva_cat_espacios.IdEdificio" class="control-label"> Edificio</label>
+                <input asp-for="eva_cat_espacios.IdEdificio" class="form-control" />
+                <span asp-validation-for="eva_cat_espacios.IdEdificio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_cat_espacios.DesEspacio" class="control-label">Descripcion Espacio</label>
+                <input asp-for="eva_cat_espacios.DesEspacio" class="form-control" />
+                <span asp-validation-for="eva_cat_espacios.DesEspacio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                <a asp-page="./Index" class="btn btn-default">Regresar a Lista</a>
+                </div>
+</form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

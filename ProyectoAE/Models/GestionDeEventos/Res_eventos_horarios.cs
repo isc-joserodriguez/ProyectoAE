@@ -9,8 +9,10 @@ namespace ProyectoAE.Models.GestionDeEventos
     {
         public int Id { get; set; }
         //public int IdHorario { get; set; }
-        public DateTime FechaHoraInicio { get; set; }
-        public DateTime FechaHoraFin { get; set; }
+        public int IdEdificio { get; set; }
+        public int IdEspacio { get; set; }
+        public TimeSpan FechaHoraInicio { get; set; }
+        public TimeSpan FechaHoraFin { get; set; }
         public DateTime FechaHoraRegistro { get; set; }
 
     }

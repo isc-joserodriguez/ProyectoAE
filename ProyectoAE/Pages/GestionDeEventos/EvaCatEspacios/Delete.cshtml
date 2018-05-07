@@ -1,0 +1,40 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.EvaCatEspacios.DeleteModel
+
+@{
+    ViewData["Title"] = "Eliminar Espacio";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro que desea eliminar el Espacio?</h3>
+<div>
+    <h4>Lista de Espacios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.Id)
+        </dd>
+        <dt>
+            Edificio
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.IdEdificio)
+        </dd>
+        <dt>
+           Descripcion Espacio
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.DesEspacio)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="eva_cat_espacios.Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index" class="btn btn-default">Regresar a Lista</a>
+    </form>
+</div>

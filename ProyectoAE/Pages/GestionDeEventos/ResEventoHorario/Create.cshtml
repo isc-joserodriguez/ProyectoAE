@@ -13,20 +13,30 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-       
+
+            <div class="form-group">
+                <label asp-for="Res_eventos_horarios.IdEdificio" class="control-label">Edificio</label>
+                <input asp-for="Res_eventos_horarios.IdEdificio" class="form-control" />
+                <span asp-validation-for="Res_eventos_horarios.IdEdificio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Res_eventos_horarios.IdEspacio" class="control-label">Espacio</label>
+                <input asp-for="Res_eventos_horarios.IdEspacio" class="form-control" />
+                <span asp-validation-for="Res_eventos_horarios.IdEspacio" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Res_eventos_horarios.FechaHoraInicio" class="control-label">Hora Inicio</label>
-                <input asp-for="Res_eventos_horarios.FechaHoraInicio" class="form-control" />
+                <input type="time" required asp-for="Res_eventos_horarios.FechaHoraInicio" class="form-control" />
                 <span asp-validation-for="Res_eventos_horarios.FechaHoraInicio" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Res_eventos_horarios.FechaHoraFin" class="control-label">Hora Fin</label>
-                <input asp-for="Res_eventos_horarios.FechaHoraFin" class="form-control" />
+                <input type="time" required asp-for="Res_eventos_horarios.FechaHoraFin" class="form-control" />
                 <span asp-validation-for="Res_eventos_horarios.FechaHoraFin" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Res_eventos_horarios.FechaHoraRegistro" class="control-label">Hora de Registro</label>
-                <input asp-for="Res_eventos_horarios.FechaHoraRegistro" class="form-control" />
+                <input type="datetime-local" disabled asp-for="Res_eventos_horarios.FechaHoraRegistro" class="form-control" />
                 <span asp-validation-for="Res_eventos_horarios.FechaHoraRegistro" class="text-danger"></span>
             </div>
             <div class="form-group">

@@ -68,9 +68,10 @@
                 @Html.DisplayFor(modelItem => item.Url)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Detalles</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Eliminar</a>
+                <a asp-page="/GestionDeEventos/ResEventoHorario/Index" class="glyphicon glyphicon-calendar" asp-route-id="@item.Id"></a> |
+                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
+                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
+                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
             </td>
         </tr>
 }

@@ -7,7 +7,7 @@
 
 <h2>Editar  Edificio: @Html.DisplayFor(model => model.Edificio.Id) - @Html.DisplayFor(model => model.Edificio.Nombre)</h2>
 
-<h4>Control de Edificios</h4>
+<h4>Catálogo de Edificios y Espacios</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -36,23 +36,99 @@
                 <span asp-validation-for="Edificio.Direccion" class="text-danger"></span>
             </div>
             <div class="form-group">
+<<<<<<< HEAD
                 <label asp-for="Edificio.DetalleUbicacion" class="control-label">Detalle Ubicación</label>
+=======
+                <label asp-for="Edificio.DetalleUbicacion" class="control-label">Detalles de Ubicación</label>
+>>>>>>> a2a99a1eb99e6e15c704761b7f3e9bc3eba71d3a
                 <input asp-for="Edificio.DetalleUbicacion" class="form-control" />
                 <span asp-validation-for="Edificio.DetalleUbicacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Edificio.CoorX" class="control-label">Coordenada X</label>
-                <input asp-for="Edificio.CoorX" class="form-control" />
-                <span asp-validation-for="Edificio.CoorX" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Edificio.CoorY" class="control-label">Coordenada Y</label>
-                <input asp-for="Edificio.CoorY" class="form-control" />
-                <span asp-validation-for="Edificio.CoorY" class="text-danger"></span>
+                <label class="control-label">Coordenadas </label>
+                <br />
+                <!-- JQuery -->
+                <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+                <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css" />
+                <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+                <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+                <!-- Fin -->
+                <!-- Complemento -->
+                <script type="text/javascript" src='https://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyDSRUVQUvwfNJXrwlUpgXiSlqMRj6psYhQ'></script>
+                <script src="~/js/locationpicker.jquery.js"></script>
+                <button type="button" data-toggle="modal" data-target="#ModalMap" class="btn btn-default">
+                    <span class="glyphicon glyphicon-map-marker"></span> <span id="ubicacion">Seleccionar Ubicación</span>
+                </button>
+                <!-- Fin -->
+
+                <div class="modal fade" id="ModalMap" tabindex="-1" role="dialog">
+                    <style>
+                        .pac-container {
+                            z-index: 99999;
+                        }
+                    </style>
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Ubicación:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="ModalMap-address" />
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                    </div>
+                                    <div id="ModalMapPreview" style="width: 100%; height: 400px;"></div>
+                                    <div class="clearfix">&nbsp;</div>
+                                    <div class="m-t-small">
+                                        <label class="p-r-small col-sm-1 control-label">Lat.:</label>
+                                        <div class="col-sm-3">
+                                            <input asp-for="Edificio.CoorX" class="form-control" id="ModalMap-lat" />
+                                        </div>
+                                        <label class="p-r-small col-sm-2 control-label">Long.:</label>
+
+                                        <div class="col-sm-3">
+                                            <input asp-for="Edificio.CoorY" class="form-control" id="ModalMap-lon" />
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Aceptar</button>
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <script>
+                                        $('#ModalMapPreview').locationpicker({
+                                            radius: 0,
+                                            location: {
+                                                latitude: 21.47880729356702,
+                                                longitude: -104.86632251429444
+                                            },
+                                            inputBinding: {
+                                                latitudeInput: $('#ModalMap-lat'),
+                                                longitudeInput: $('#ModalMap-lon'),
+                                                locationNameInput: $('#ModalMap-address')
+                                            },
+                                            enableAutocomplete: true,
+                                            onchanged: function (currentLocation, radius, isMarkerDropped) {
+                                                $('#ubicacion').html($('#ModalMap-address').val());
+                                            }
+                                        });
+                                        $('#ModalMap').on('shown.bs.modal', function () {
+                                            $('#ModalMapPreview').locationpicker('autosize');
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="Edificio.Observaciones" class="control-label">Observaciones</label>
-                <input asp-for="Edificio.Observaciones" class="form-control" />
+                <textarea rows="10" cols="20" wrap="soft" asp-for="Edificio.Observaciones" class="form-control">Texto que aparece ya escrito de antemano</textarea>
                 <span asp-validation-for="Edificio.Observaciones" class="text-danger"></span>
             </div>
             <div class="form-group">

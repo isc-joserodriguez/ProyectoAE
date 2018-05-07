@@ -10,6 +10,12 @@
 <p>
     <a asp-page="Create">Agregar nuevo evento</a>
 </p>
+<form>
+    <p>
+        Buscar por Nombre: <input type="text"  name="SearchString" >
+        <input type="submit" value="Buscar" class="btn btn-primary"/> <a asp-page="./Index" class="btn btn-danger">Limpiar</a>
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>

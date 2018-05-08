@@ -13,7 +13,9 @@ namespace ProyectoAE.Models.GestionDeEventos
         public int IdEspacio { get; set; }
         public TimeSpan FechaHoraInicio { get; set; }
         public TimeSpan FechaHoraFin { get; set; }
+        public string Fecha  { get; set; }
         public DateTime FechaHoraRegistro { get; set; }
+        
 
     }
 }

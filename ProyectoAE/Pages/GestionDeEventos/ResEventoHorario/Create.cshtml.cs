@@ -25,7 +25,10 @@ namespace ProyectoAE.Pages.GestionDeEventos.ResEventoHorario
         }
 
         [BindProperty]
-        public Res_eventos_horarios Res_eventos_horarios { get; set; }
+        public Res_eventos_horarios Res_eventos_horarios           
+        { get; set; }
+
+        
 
         public async Task<IActionResult> OnPostAsync()
         {

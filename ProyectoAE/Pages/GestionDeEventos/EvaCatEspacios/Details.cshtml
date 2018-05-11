@@ -1,0 +1,37 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.EvaCatEspacios.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles Espacio";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Lista de Espacios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           ID
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.Id)
+        </dd>
+        <dt>
+          Edificio
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.IdEdificio)
+        </dd>
+        <dt>
+            Descripcion  Espacio
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.DesEspacio)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.eva_cat_espacios.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-default">Regresar a Lista</a>
+</div>

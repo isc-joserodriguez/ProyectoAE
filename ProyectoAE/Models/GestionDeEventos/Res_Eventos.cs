@@ -14,7 +14,7 @@ namespace ProyectoAE.Models.GestionDeEventos
         public String Observaciones { get; set; }
         public String Explicaciones { get; set; }
         public String Url { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaFin { get; set; }
+        public String FechaInicio { get; set; }
+        public String FechaFin { get; set; }
     }
 }

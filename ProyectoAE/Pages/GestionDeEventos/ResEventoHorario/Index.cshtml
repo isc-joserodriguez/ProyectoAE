@@ -13,18 +13,27 @@
 <table class="table">
     <thead>
         <tr>
-                <th>
-                   ID
-                </th>
-                <th>
-                   Hora Inicio
-                </th>
-                <th>
-                   Hora Fin
-                </th>
-                <th>
-                   Hora de Registro
-                </th>
+            <th>
+                ID
+            </th>
+            <th>
+                Edificio
+            </th>
+            <th>
+                Espacio
+            </th>
+            <th>
+                Hora Inicio
+            </th>
+            <th>
+                Hora Fin
+            </th>
+            <th>
+                Fecha
+            </th>
+            <th>
+                Hora de Registro
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -35,18 +44,27 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.IdEdificio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEspacio)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.FechaHoraInicio)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FechaHoraFin)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.FechaHoraRegistro)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Detalles</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Eliminar</a>
+                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
+                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
+                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
             </td>
         </tr>
 }

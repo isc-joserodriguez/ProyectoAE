@@ -10,7 +10,7 @@ namespace ProyectoAE.Models.GestionDeEventos
         public int Id { get; set; } //Agregado
         //public int IdHorario_EventosHorario { get; set; }
         public string Observaciones { get; set; }
-        public DateTime fecha { get; set; }
+        public string fecha { get; set; }
         public string EstadoDes { get; set; }
 
     }

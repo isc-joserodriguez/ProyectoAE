@@ -14,7 +14,7 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Edificio.Nombre" class="control-label"></label>
+                <label asp-for="Edificio.Nombre" class="control-label">Nombre</label>
                 <input asp-for="Edificio.Nombre" class="form-control" />
                 <span asp-validation-for="Edificio.Nombre" class="text-danger"></span>
             </div>
@@ -82,6 +82,7 @@
                                             <input asp-for="Edificio.CoorX" class="form-control" id="ModalMap-lat" />
                                         </div>
                                         <label class="p-r-small col-sm-2 control-label">Long.:</label>
+
 
                                         <div class="col-sm-3">
                                             <input asp-for="Edificio.CoorY" class="form-control" id="ModalMap-lon" />

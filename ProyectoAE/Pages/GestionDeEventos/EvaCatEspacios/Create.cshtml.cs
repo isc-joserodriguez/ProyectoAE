@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using ProyectoAE.Models;
 using ProyectoAE.Models.GestionDeEventos;
 
-namespace ProyectoAE.Pages.GestionDeEventos.ResEventoHorario
+namespace ProyectoAE.Pages.GestionDeEventos.EvaCatEspacios
 {
     public class CreateModel : PageModel
     {
@@ -25,10 +25,7 @@ namespace ProyectoAE.Pages.GestionDeEventos.ResEventoHorario
         }
 
         [BindProperty]
-        public Res_eventos_horarios Res_eventos_horarios           
-        { get; set; }
-
-        
+        public eva_cat_espacios eva_cat_espacios { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -37,7 +34,7 @@ namespace ProyectoAE.Pages.GestionDeEventos.ResEventoHorario
                 return Page();
             }
 
-            _context.ResEventoHorario.Add(Res_eventos_horarios);
+            _context.EvaCatEspacios.Add(eva_cat_espacios);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

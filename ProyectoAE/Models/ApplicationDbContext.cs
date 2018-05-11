@@ -19,6 +19,7 @@ namespace ProyectoAE.Models
         public DbSet<Edificio> Edificio { get; set; }
         public DbSet<Res_eventos_horarios> ResEventoHorario { get; set; }
         public DbSet<Res_Eventos> ResEvento { get; set; }
+        public DbSet<eva_cat_espacios> EvaCatEspacios { get; set; }
 
     }
 }

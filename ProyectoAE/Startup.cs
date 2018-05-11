@@ -13,9 +13,11 @@ namespace ProyectoAE
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public IConfiguration aeConfiguration { get; }
+
+        public Startup(IConfiguration aePaConfiguration)
         {
-            Configuration = configuration;
+            aeConfiguration = aePaConfiguration;
         }
 
         public IConfiguration Configuration { get; }
@@ -24,7 +26,7 @@ namespace ProyectoAE
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseInMemoryDatabase("DbApp"));
+            options.UseSqlServer(aeConfiguration.GetConnectionString("AEBase")));
 
 
             services.AddMvc();

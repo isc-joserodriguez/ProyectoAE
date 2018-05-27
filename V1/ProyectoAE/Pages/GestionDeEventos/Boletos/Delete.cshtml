@@ -1,0 +1,46 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.Boletos.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Esta seguro que desea eliminar el boleto</h3>
+<div>
+    <h4>Boleto @Html.DisplayFor(model => model.Boleto.IdZona)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Id de la Zona
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boleto.IdZona)
+        </dd>
+        <dt>
+            Id del Evento
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boleto.IdEvento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boleto.Importe)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boleto.Importe)
+        </dd>
+        <dt>
+            IVA
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boleto.PrecioIva)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Boleto.Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index" class="btn btn-default">Regresar a Boletos</a>
+    </form>
+</div>

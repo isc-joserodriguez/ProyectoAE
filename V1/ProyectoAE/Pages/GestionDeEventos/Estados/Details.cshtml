@@ -1,0 +1,43 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.Estados.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h2>Detalles: @Html.DisplayFor(model => model.Estado.Id) - @Html.DisplayFor(model => model.Estado.EstadoDes)</h2>
+
+<div>
+    <h4>Control Estados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado.Id)
+        </dd>
+        <dt>
+            Estado
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado.EstadoDes)
+        </dd>
+        <dt>
+            Fecha
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado.fecha)
+        </dd>
+        <dt>
+            Observaciones
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado.Observaciones)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Estado.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
+</div>

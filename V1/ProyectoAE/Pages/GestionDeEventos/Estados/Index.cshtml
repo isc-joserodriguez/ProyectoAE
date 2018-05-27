@@ -1,0 +1,55 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.Estados.IndexModel
+
+@{
+    ViewData["Title"] = "Control Estados";
+}
+
+<h2>Control Estados</h2>
+
+<p>
+    <a asp-page="Create">Agregar nuevo Estado</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Estado
+                </th>
+                <th>
+                   Fecha
+                </th>
+                <th>
+                    Observaciones
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Estado) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoDes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
+            <td>
+                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
+                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
+                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

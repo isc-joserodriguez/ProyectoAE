@@ -1,0 +1,43 @@
+﻿@page
+@model ProyectoAE.Pages.GestionDeEventos.Boletos.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Boleto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Boleto.IdZona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boleto.IdZona)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boleto.IdEvento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boleto.IdEvento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boleto.Importe)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boleto.Importe)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Boleto.PrecioIva)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Boleto.PrecioIva)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Boleto.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-default">Regresar a Boletos</a>
+</div>

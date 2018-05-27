@@ -1,0 +1,44 @@
+C:\Users\Jesús Villegas\Documents\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.deps.json
+C:\Users\Jesús Villegas\Documents\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.json
+C:\Users\Jesús Villegas\Documents\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.dev.json
+C:\Users\Jesús Villegas\Documents\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\Users\Jesús Villegas\Documents\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\Users\Jesús Villegas\Documents\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csprojResolveAssemblyReference.cache
+C:\Users\Jesús Villegas\Documents\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csproj.CoreCompileInputs.cache
+C:\Users\Jesús Villegas\Documents\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfoInputs.cache
+C:\Users\Jesús Villegas\Documents\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfo.cs
+C:\Users\Jesús Villegas\Documents\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\Users\Jesús Villegas\Documents\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\OjOsDragon\PROYECTOS\NETCORE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.deps.json
+C:\OjOsDragon\PROYECTOS\NETCORE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.json
+C:\OjOsDragon\PROYECTOS\NETCORE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.dev.json
+C:\OjOsDragon\PROYECTOS\NETCORE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\OjOsDragon\PROYECTOS\NETCORE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\OjOsDragon\PROYECTOS\NETCORE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csproj.CoreCompileInputs.cache
+C:\OjOsDragon\PROYECTOS\NETCORE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfoInputs.cache
+C:\OjOsDragon\PROYECTOS\NETCORE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfo.cs
+C:\OjOsDragon\PROYECTOS\NETCORE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\OjOsDragon\PROYECTOS\NETCORE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\OjOsDragon\PROYECTOS\NETCORE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csprojResolveAssemblyReference.cache
+C:\Users\Jesús Villegas\Desktop\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.deps.json
+C:\Users\Jesús Villegas\Desktop\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.json
+C:\Users\Jesús Villegas\Desktop\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.dev.json
+C:\Users\Jesús Villegas\Desktop\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\Users\Jesús Villegas\Desktop\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\Users\Jesús Villegas\Desktop\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csprojResolveAssemblyReference.cache
+C:\Users\Jesús Villegas\Desktop\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csproj.CoreCompileInputs.cache
+C:\Users\Jesús Villegas\Desktop\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfoInputs.cache
+C:\Users\Jesús Villegas\Desktop\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfo.cs
+C:\Users\Jesús Villegas\Desktop\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\Users\Jesús Villegas\Desktop\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.deps.json
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.json
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.dev.json
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csprojResolveAssemblyReference.cache
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csproj.CoreCompileInputs.cache
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfoInputs.cache
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfo.cs
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.pdb

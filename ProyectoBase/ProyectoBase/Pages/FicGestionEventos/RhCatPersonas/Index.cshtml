@@ -1,0 +1,102 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.RhCatPersonas.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].IdInstituto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].NumControl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].ApPaterno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].ApMaterno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].RFC)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].CURP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].TipoPersona)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].Sexo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].RutaFoto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].Alias)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].FechaNac)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.rh_cat_personas) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdInstituto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumControl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApPaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApMaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RFC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CURP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoPersona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RutaFoto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNac)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

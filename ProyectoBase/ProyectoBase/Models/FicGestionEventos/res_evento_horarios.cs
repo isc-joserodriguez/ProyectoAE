@@ -15,7 +15,7 @@ namespace ProyectoBase.Models.FicGestionEventos
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdHorarioDet { get; set; }
+        public int Id { get; set; }
 
         [ForeignKey("IdEdificio")]
         public int IdEdificio { get; set; }
@@ -28,9 +28,9 @@ namespace ProyectoBase.Models.FicGestionEventos
         public string Dia { get; set; }
         public DateTime FechaHoraIni { get; set; }
         public DateTime FechaHoraFin { get; set; }
-        public Char Disponible { get; set; }
+        public string Disponible { get; set; }
         public DateTime FechaReg { get; set; }
-        public Char UsuarioReg { get; set; }
+        public string UsuarioReg { get; set; }
 
     }
 }

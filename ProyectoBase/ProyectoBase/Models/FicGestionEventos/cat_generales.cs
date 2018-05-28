@@ -15,10 +15,10 @@ namespace ProyectoBase.Models.FicGestionEventos
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdGeneral { get; set; }
+        public int Id { get; set; }
 
         public string Clave { get; set; }
         public string DesGeneral { get; set; }
-        public Char Activo { get; set; }
+        public string Activo { get; set; }
     }
 }

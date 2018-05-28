@@ -1,0 +1,102 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.Eventos.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].IdTipoGenEvento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].IdGenEvento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].IdPersonaReg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].NombreEvento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].Observacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].Explicacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].URL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].FechaIn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].FechaFin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].IdEdificio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].FechaReg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_eventos[0].UsuarioReg)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.res_eventos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoGenEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdGenEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPersonaReg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Explicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.URL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEdificio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaReg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioReg)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

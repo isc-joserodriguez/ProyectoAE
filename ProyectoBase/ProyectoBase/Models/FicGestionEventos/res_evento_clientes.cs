@@ -15,7 +15,7 @@ namespace ProyectoBase.Models.FicGestionEventos
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdReservaCliente { get; set; }
+        public int Id { get; set; }
 
         public int IdClienteReserva { get; set; }
         public DateTime FechaRegistro { get; set; }

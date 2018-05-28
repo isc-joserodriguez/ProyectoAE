@@ -11,7 +11,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\FicGestionEventos\NombrePagina3\" />
-    <Folder Include="Pages\FicGestionEventos\NombrePagina2\" />
-    <Folder Include="Pages\FicGestionEventos\Edificios\" />
   </ItemGroup>
 </Project>

@@ -11,7 +11,7 @@ namespace ProyectoBase.Models.FicGestionEventos
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdEvento { get; set; }
+        public int Id { get; set; }
 
         [ForeignKey("IdTipoGenEvento")]
         public int IdTipoGenEvento { get; set; }

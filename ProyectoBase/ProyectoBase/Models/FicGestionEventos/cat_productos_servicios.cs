@@ -11,11 +11,11 @@ namespace ProyectoBase.Models.FicGestionEventos
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdProdServ { get; set; }
+        public int Id { get; set; }
         public string ClaveProdServ { get; set; }
         public string CodigoBarras { get; set; }
         public string DesProdServ { get; set; }
-        public Char ProductoServicio { get; set; }
+        public string ProductoServicio { get; set; }
 
         [ForeignKey("IdTipoGenProdServ")]
         public int IdTipoGenProdServ { get; set; }

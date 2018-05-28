@@ -8,6 +8,8 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class res_evento_zonas
     {
+        public int Id { get; set; }
+
         [ForeignKey("IdEdificio")]
         public int IdEdificio { get; set; }
         public virtual eva_cat_edificios eva_cat_edificios { get; set; }

@@ -19,7 +19,7 @@ namespace ProyectoBase.Models.FicGestionEventos
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdReservaServDet { get; set; }
+        public int Id { get; set; }
 
         [ForeignKey("IdProdServ")]
         public int IdProdServ { get; set; }

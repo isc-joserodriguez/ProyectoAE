@@ -1,0 +1,89 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.Eventos.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>res_eventos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="res_eventos.IdTipoGenEvento" class="control-label"></label>
+                <input asp-for="res_eventos.IdTipoGenEvento" class="form-control" />
+                <span asp-validation-for="res_eventos.IdTipoGenEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_eventos.IdGenEvento" class="control-label"></label>
+                <input asp-for="res_eventos.IdGenEvento" class="form-control" />
+                <span asp-validation-for="res_eventos.IdGenEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_eventos.IdPersonaReg" class="control-label"></label>
+                <input asp-for="res_eventos.IdPersonaReg" class="form-control" />
+                <span asp-validation-for="res_eventos.IdPersonaReg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_eventos.NombreEvento" class="control-label"></label>
+                <input asp-for="res_eventos.NombreEvento" class="form-control" />
+                <span asp-validation-for="res_eventos.NombreEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_eventos.Observacion" class="control-label"></label>
+                <input asp-for="res_eventos.Observacion" class="form-control" />
+                <span asp-validation-for="res_eventos.Observacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_eventos.Explicacion" class="control-label"></label>
+                <input asp-for="res_eventos.Explicacion" class="form-control" />
+                <span asp-validation-for="res_eventos.Explicacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_eventos.URL" class="control-label"></label>
+                <input asp-for="res_eventos.URL" class="form-control" />
+                <span asp-validation-for="res_eventos.URL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_eventos.FechaIn" class="control-label"></label>
+                <input asp-for="res_eventos.FechaIn" class="form-control" />
+                <span asp-validation-for="res_eventos.FechaIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_eventos.FechaFin" class="control-label"></label>
+                <input asp-for="res_eventos.FechaFin" class="form-control" />
+                <span asp-validation-for="res_eventos.FechaFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_eventos.IdEdificio" class="control-label"></label>
+                <input asp-for="res_eventos.IdEdificio" class="form-control" />
+                <span asp-validation-for="res_eventos.IdEdificio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_eventos.FechaReg" class="control-label"></label>
+                <input asp-for="res_eventos.FechaReg" class="form-control" />
+                <span asp-validation-for="res_eventos.FechaReg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_eventos.UsuarioReg" class="control-label"></label>
+                <input asp-for="res_eventos.UsuarioReg" class="form-control" />
+                <span asp-validation-for="res_eventos.UsuarioReg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

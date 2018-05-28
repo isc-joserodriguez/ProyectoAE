@@ -8,11 +8,13 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class res_evento_servicios
     {
+        public int Id { get; set; }
+
         [ForeignKey("IdEvento")]
         public int IdEvento { get; set; }
         public virtual res_eventos res_eventos { get; set; }
 
-        public Char Requerido { get; set; }
+        public string Requerido { get; set; }
 
         [ForeignKey("IdProdServ")]
         public int IdProdServ { get; set; }

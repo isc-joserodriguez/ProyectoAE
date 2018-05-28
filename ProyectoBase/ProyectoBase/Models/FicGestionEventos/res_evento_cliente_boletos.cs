@@ -8,6 +8,8 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class res_evento_cliente_boletos
     {
+        public int Id { get; set; }
+
         [ForeignKey("IdReservaCliente")]
         public int IdReservaCliente { get; set; }
         public virtual res_evento_clientes res_evento_clientes { get; set; }

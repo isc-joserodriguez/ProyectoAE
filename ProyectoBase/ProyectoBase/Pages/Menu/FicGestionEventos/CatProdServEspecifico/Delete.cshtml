@@ -1,0 +1,40 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.CatProdServEspecifico.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>cat_prod_serv_especifico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_prod_serv_especifico.IdProdServ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_prod_serv_especifico.IdProdServ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_prod_serv_especifico.ClaveProdServEsp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_prod_serv_especifico.ClaveProdServEsp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_prod_serv_especifico.DesProdServEsp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_prod_serv_especifico.DesProdServEsp)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="cat_prod_serv_especifico.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

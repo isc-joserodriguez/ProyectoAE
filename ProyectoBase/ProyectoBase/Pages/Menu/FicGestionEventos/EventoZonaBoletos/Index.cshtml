@@ -1,0 +1,78 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletos.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].IdEvento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].IdEdificio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].IdEspacio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].IdZona)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].NumBoleto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].DesBoleto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].IVA)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.res_evento_zona_boletos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEdificio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEspacio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdZona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumBoleto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesBoleto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IVA)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

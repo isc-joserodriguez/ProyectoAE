@@ -1,0 +1,69 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletos.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>res_evento_zona_boletos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="res_evento_zona_boletos.IdEvento" class="control-label"></label>
+                <input asp-for="res_evento_zona_boletos.IdEvento" class="form-control" />
+                <span asp-validation-for="res_evento_zona_boletos.IdEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_zona_boletos.IdEdificio" class="control-label"></label>
+                <input asp-for="res_evento_zona_boletos.IdEdificio" class="form-control" />
+                <span asp-validation-for="res_evento_zona_boletos.IdEdificio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_zona_boletos.IdEspacio" class="control-label"></label>
+                <input asp-for="res_evento_zona_boletos.IdEspacio" class="form-control" />
+                <span asp-validation-for="res_evento_zona_boletos.IdEspacio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_zona_boletos.IdZona" class="control-label"></label>
+                <input asp-for="res_evento_zona_boletos.IdZona" class="form-control" />
+                <span asp-validation-for="res_evento_zona_boletos.IdZona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_zona_boletos.NumBoleto" class="control-label"></label>
+                <input asp-for="res_evento_zona_boletos.NumBoleto" class="form-control" />
+                <span asp-validation-for="res_evento_zona_boletos.NumBoleto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_zona_boletos.DesBoleto" class="control-label"></label>
+                <input asp-for="res_evento_zona_boletos.DesBoleto" class="form-control" />
+                <span asp-validation-for="res_evento_zona_boletos.DesBoleto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_zona_boletos.Precio" class="control-label"></label>
+                <input asp-for="res_evento_zona_boletos.Precio" class="form-control" />
+                <span asp-validation-for="res_evento_zona_boletos.Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_zona_boletos.IVA" class="control-label"></label>
+                <input asp-for="res_evento_zona_boletos.IVA" class="form-control" />
+                <span asp-validation-for="res_evento_zona_boletos.IVA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

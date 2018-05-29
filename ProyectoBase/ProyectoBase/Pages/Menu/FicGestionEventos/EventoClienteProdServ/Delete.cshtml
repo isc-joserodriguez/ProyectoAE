@@ -1,0 +1,76 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.EventoClienteProdServ.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>res_evento_cliente_prod_serv</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdEvento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdEvento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdReservaCliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdReservaCliente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdProdServ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdProdServ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdProdServEsp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdProdServEsp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.Cantidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.Cantidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.Precio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.Precio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IVA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IVA)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdUnidadMedida)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdUnidadMedida)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.Importe)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.Importe)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="res_evento_cliente_prod_serv.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

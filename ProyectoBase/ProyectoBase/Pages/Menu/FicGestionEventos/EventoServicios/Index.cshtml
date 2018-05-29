@@ -1,0 +1,54 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.EventoServicios.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_servicios[0].IdEvento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_servicios[0].Requerido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_servicios[0].IdProdServ)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_servicios[0].IdProdServEsp)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.res_evento_servicios) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Requerido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProdServ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProdServEsp)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,46 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.CatalogoEstatus.DeleteModel
+
+@{
+    ViewData["Title"] = "Eliminar Estatus";
+}
+
+<h2>Eliminar Estatus</h2>
+
+<h3>¿Estas seguro de que deseas eliminar este estatus?</h3>
+<div>
+    <h4>Catalago Estatus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Id Tipo Estatus
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_estatus.IdTipoEstatus)
+        </dd>
+        <dt>
+           Clave
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_estatus.Clave)
+        </dd>
+        <dt>
+          Descripcion
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_estatus.DesEstatus)
+        </dd>
+        <dt>
+          Activo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_estatus.Activo)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="cat_estatus.Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
+    </form>
+</div>

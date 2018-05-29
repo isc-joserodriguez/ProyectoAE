@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.FicGestionEventos.Eventos
                 return NotFound();
             }
 
-            res_eventos = await _context.res_eventos.SingleOrDefaultAsync(m => m.Id == id);
+            res_eventos = await _context.res_eventos.SingleOrDefaultAsync(m => m.IdEvento == id);
 
             if (res_eventos == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.FicGestionEventos.Eventos
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!res_eventosExists(res_eventos.Id))
+                if (!res_eventosExists(res_eventos.IdEvento))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.FicGestionEventos.Eventos
 
         private bool res_eventosExists(int id)
         {
-            return _context.res_eventos.Any(e => e.Id == id);
+            return _context.res_eventos.Any(e => e.IdEvento == id);
         }
     }
 }

@@ -5,7 +5,7 @@
     ViewData["Title"] = "Agregar Nuevo";
 }
 
-<h2>Agregar</h2>
+<h2>Agregar Estatus</h2>
 
 <h4>Catalogo de Estatus</h4>
 <hr />
@@ -14,35 +14,34 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="cat_estatus.IdTipoEstatus" class="control-label"></label>
+                <label asp-for="cat_estatus.IdTipoEstatus" class="control-label">Id Tipo Estatus </label>
                 <input asp-for="cat_estatus.IdTipoEstatus" class="form-control" />
                 <span asp-validation-for="cat_estatus.IdTipoEstatus" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="cat_estatus.Clave" class="control-label"></label>
+                <label asp-for="cat_estatus.Clave" class="control-label">Clave</label>
                 <input asp-for="cat_estatus.Clave" class="form-control" />
                 <span asp-validation-for="cat_estatus.Clave" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="cat_estatus.DesEstatus" class="control-label"></label>
+                <label asp-for="cat_estatus.DesEstatus" class="control-label">Descripcion</label>
                 <input asp-for="cat_estatus.DesEstatus" class="form-control" />
                 <span asp-validation-for="cat_estatus.DesEstatus" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="cat_estatus.Activo" class="control-label"></label>
+                <label asp-for="cat_estatus.Activo" class="control-label">Activo</label>
                 <input asp-for="cat_estatus.Activo" class="form-control" />
                 <span asp-validation-for="cat_estatus.Activo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Crear" class="btn btn-primary" /> |
+                <a asp-page="Index" class="btn btn-default">Regresar a lista</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Regresar</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

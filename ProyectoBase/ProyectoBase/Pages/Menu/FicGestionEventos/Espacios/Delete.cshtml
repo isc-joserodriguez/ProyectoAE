@@ -5,15 +5,15 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar Espacio</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Estas seguro de que deseas eliminar este espacio?</h3>
 <div>
-    <h4>eva_cat_espacios</h4>
+    <h4>Catálogo Espacios</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.eva_cat_espacios.IdEdificio)
+            Id
         </dt>
         <dd>
             @Html.DisplayFor(model => model.eva_cat_espacios.IdEdificio)
@@ -31,7 +31,7 @@
             @Html.DisplayFor(model => model.eva_cat_espacios.Alias)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.eva_cat_espacios.DesEspacio)
+            Descripción
         </dt>
         <dd>
             @Html.DisplayFor(model => model.eva_cat_espacios.DesEspacio)
@@ -49,10 +49,10 @@
             @Html.DisplayFor(model => model.eva_cat_espacios.Prioridad)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="eva_cat_espacios.Id" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
     </form>
 </div>

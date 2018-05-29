@@ -5,62 +5,63 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Catálago Espacios</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Agregar nuevo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.eva_cat_espacios[0].IdEdificio)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Clave)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Alias)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eva_cat_espacios[0].DesEspacio)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Capacidad)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Prioridad)
-                </th>
+            <th>
+                Id
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Clave)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Alias)
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Capacidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Prioridad)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.eva_cat_espacios) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEdificio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clave)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Alias)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DesEspacio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Capacidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prioridad)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.eva_cat_espacios)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEdificio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Clave)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Alias)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DesEspacio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prioridad)
+                </td>
+                <td>
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

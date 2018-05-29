@@ -5,32 +5,32 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles Edificio</h2>
 
 <div>
-    <h4>res_evento_cliente_prod_serv</h4>
+    <h4>Catálogo Edificios, Clientes, Productos y Servicios</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdEvento)
+            Id Evento
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdEvento)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdReservaCliente)
+            Id Reservación Cliente
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdReservaCliente)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdProdServ)
+            Id Producto y Servicio
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdProdServ)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdProdServEsp)
+            Id Prod. y Serv. Esp.
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdProdServEsp)
@@ -54,7 +54,7 @@
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IVA)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdUnidadMedida)
+            Id Unidad Medida
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdUnidadMedida)
@@ -68,6 +68,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.res_evento_cliente_prod_serv.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.res_evento_cliente_prod_serv.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
 </div>

@@ -5,32 +5,32 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Editar Evento [@Html.DisplayFor(model => model.res_evento_estatus.Id)]</h2>
 
-<h4>res_evento_estatus</h4>
+<h4>Catálogo Evento Estatus</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="res_evento_estatus.IdEvento" class="control-label"></label>
+                <label asp-for="res_evento_estatus.IdEvento" class="control-label">Id Evento</label>
                 <input asp-for="res_evento_estatus.IdEvento" class="form-control" />
                 <span asp-validation-for="res_evento_estatus.IdEvento" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="res_evento_estatus.Id" />
             <div class="form-group">
-                <label asp-for="res_evento_estatus.FechaEstatus" class="control-label"></label>
+                <label asp-for="res_evento_estatus.FechaEstatus" class="control-label">Fecha Estatus</label>
                 <input asp-for="res_evento_estatus.FechaEstatus" class="form-control" />
                 <span asp-validation-for="res_evento_estatus.FechaEstatus" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_estatus.IdTipoEstatus" class="control-label"></label>
+                <label asp-for="res_evento_estatus.IdTipoEstatus" class="control-label">Id Tipo Estatus</label>
                 <input asp-for="res_evento_estatus.IdTipoEstatus" class="form-control" />
                 <span asp-validation-for="res_evento_estatus.IdTipoEstatus" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_estatus.IdEstatus" class="control-label"></label>
+                <label asp-for="res_evento_estatus.IdEstatus" class="control-label">Id Estatus</label>
                 <input asp-for="res_evento_estatus.IdEstatus" class="form-control" />
                 <span asp-validation-for="res_evento_estatus.IdEstatus" class="text-danger"></span>
             </div>
@@ -40,24 +40,21 @@
                 <span asp-validation-for="res_evento_estatus.Actual" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_estatus.Observacion" class="control-label"></label>
+                <label asp-for="res_evento_estatus.Observacion" class="control-label">Observaciones</label>
                 <input asp-for="res_evento_estatus.Observacion" class="form-control" />
                 <span asp-validation-for="res_evento_estatus.Observacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_estatus.UsuarioReg" class="control-label"></label>
+                <label asp-for="res_evento_estatus.UsuarioReg" class="control-label">Usuario que registra</label>
                 <input asp-for="res_evento_estatus.UsuarioReg" class="form-control" />
                 <span asp-validation-for="res_evento_estatus.UsuarioReg" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

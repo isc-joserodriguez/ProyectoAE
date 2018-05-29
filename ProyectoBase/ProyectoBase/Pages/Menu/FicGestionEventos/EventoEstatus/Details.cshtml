@@ -5,32 +5,32 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles Evento</h2>
 
 <div>
-    <h4>res_evento_estatus</h4>
+    <h4>Catálogo Evento Estatus</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_estatus.IdEvento)
+            Id Evento
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_estatus.IdEvento)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_estatus.FechaEstatus)
+            Fecha Estatus
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_estatus.FechaEstatus)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_estatus.IdTipoEstatus)
+            Id Tipo Estatus
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_estatus.IdTipoEstatus)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_estatus.IdEstatus)
+            Id Estatus
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_estatus.IdEstatus)
@@ -42,13 +42,13 @@
             @Html.DisplayFor(model => model.res_evento_estatus.Actual)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_estatus.Observacion)
+            Observaciones
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_estatus.Observacion)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_estatus.UsuarioReg)
+            Usuario que registra
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_estatus.UsuarioReg)
@@ -56,6 +56,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.res_evento_estatus.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.res_evento_estatus.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
 </div>

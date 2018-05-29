@@ -5,38 +5,39 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Catálago Tipos Generales</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Agregar nuevo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.cat_tipos_generales[0].DesTipo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.cat_tipos_generales[0].Activo)
-                </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cat_tipos_generales[0].Activo)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.cat_tipos_generales) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DesTipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Activo)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.cat_tipos_generales)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DesTipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activo)
+                </td>
+                <td>
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

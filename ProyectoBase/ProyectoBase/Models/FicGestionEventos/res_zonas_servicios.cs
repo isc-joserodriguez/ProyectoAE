@@ -30,4 +30,5 @@ namespace ProyectoBase.Models.FicGestionEventos
         public int IdProdServEsp { get; set; }
         public virtual cat_prod_serv_especifico cat_prod_serv_especifico { get; set; }
     }
+
 }

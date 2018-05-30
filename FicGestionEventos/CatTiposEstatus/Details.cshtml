@@ -1,0 +1,31 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.CatTiposEstatus.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>cat_tipos_estatus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_tipos_estatus.DesTipoEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_tipos_estatus.DesTipoEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_tipos_estatus.Activo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_tipos_estatus.Activo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.cat_tipos_estatus.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,55 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.CatProductoServicios.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>cat_productos_servicios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_productos_servicios.ClaveProdServ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_productos_servicios.ClaveProdServ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_productos_servicios.CodigoBarras)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_productos_servicios.CodigoBarras)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_productos_servicios.DesProdServ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_productos_servicios.DesProdServ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_productos_servicios.ProductoServicio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_productos_servicios.ProductoServicio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_productos_servicios.IdTipoGenProdServ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_productos_servicios.IdTipoGenProdServ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_productos_servicios.IdGenProdServ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_productos_servicios.IdGenProdServ)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.cat_productos_servicios.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

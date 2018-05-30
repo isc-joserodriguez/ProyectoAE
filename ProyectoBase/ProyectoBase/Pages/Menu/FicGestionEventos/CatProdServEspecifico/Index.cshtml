@@ -5,44 +5,45 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Catálogo de Productos y Servicios Especificos</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Agregar nuevo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.cat_prod_serv_especifico[0].IdProdServ)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.cat_prod_serv_especifico[0].ClaveProdServEsp)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.cat_prod_serv_especifico[0].DesProdServEsp)
-                </th>
+            <th>
+                Id
+            </th>
+            <th>
+                Clave
+            </th>
+            <th>
+                Descripción
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.cat_prod_serv_especifico) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdProdServ)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClaveProdServEsp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DesProdServEsp)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.cat_prod_serv_especifico)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdProdServ)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClaveProdServEsp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DesProdServEsp)
+                </td>
+                <td>
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -5,33 +5,33 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar Evento</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Estas seguro de que deseas eliminar este evento?</h3>
 <div>
-    <h4>res_evento_cliente_prod_serv</h4>
+    <h4>Catálogo Edificios, Clientes, Productos y Servicios</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdEvento)
+            Id Evento
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdEvento)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdReservaCliente)
+            Id Reservación Cliente
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdReservaCliente)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdProdServ)
+            Id Productos y Servicios
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdProdServ)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdProdServEsp)
+            Id Prod. y Ser. Esp.
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdProdServEsp)
@@ -55,7 +55,7 @@
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IVA)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv.IdUnidadMedida)
+            Id Unidad Medida
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdUnidadMedida)
@@ -67,10 +67,10 @@
             @Html.DisplayFor(model => model.res_evento_cliente_prod_serv.Importe)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="res_evento_cliente_prod_serv.Id" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
     </form>
 </div>

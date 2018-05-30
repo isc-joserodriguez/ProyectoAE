@@ -5,39 +5,36 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Editar Catálogo [@Html.DisplayFor(model => model.cat_prod_serv_especifico.Id)]</h2>
 
-<h4>cat_prod_serv_especifico</h4>
+<h4>Catálogo de Productos y Servicios Especificos</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="cat_prod_serv_especifico.IdProdServ" class="control-label"></label>
+                <label asp-for="cat_prod_serv_especifico.IdProdServ" class="control-label">Id</label>
                 <input asp-for="cat_prod_serv_especifico.IdProdServ" class="form-control" />
                 <span asp-validation-for="cat_prod_serv_especifico.IdProdServ" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="cat_prod_serv_especifico.Id" />
             <div class="form-group">
-                <label asp-for="cat_prod_serv_especifico.ClaveProdServEsp" class="control-label"></label>
+                <label asp-for="cat_prod_serv_especifico.ClaveProdServEsp" class="control-label">Clave</label>
                 <input asp-for="cat_prod_serv_especifico.ClaveProdServEsp" class="form-control" />
                 <span asp-validation-for="cat_prod_serv_especifico.ClaveProdServEsp" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="cat_prod_serv_especifico.DesProdServEsp" class="control-label"></label>
+                <label asp-for="cat_prod_serv_especifico.DesProdServEsp" class="control-label">Descripción</label>
                 <input asp-for="cat_prod_serv_especifico.DesProdServEsp" class="form-control" />
                 <span asp-validation-for="cat_prod_serv_especifico.DesProdServEsp" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

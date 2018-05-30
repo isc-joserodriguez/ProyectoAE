@@ -13,6 +13,7 @@ namespace ProyectoBase.Models.FicGestionEventos
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdEvento { get; set; }
 
+
         [ForeignKey("IdTipoGenEvento")]
         public int IdTipoGenEvento { get; set; }
         public virtual cat_tipos_generales cat_tipos_generales { get; set; }

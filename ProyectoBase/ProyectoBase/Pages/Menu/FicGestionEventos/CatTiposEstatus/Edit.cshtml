@@ -5,9 +5,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Editar Tipo Estatus [@Html.DisplayFor(model => model.cat_tipos_estatus.Id)]</h2>
 
-<h4>cat_tipos_estatus</h4>
+<h4>Catálogo Tipo Estatus</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -25,14 +25,11 @@
                 <span asp-validation-for="cat_tipos_estatus.Activo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

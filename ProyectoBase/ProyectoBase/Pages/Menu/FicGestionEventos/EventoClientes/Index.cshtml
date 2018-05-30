@@ -5,44 +5,45 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Catálago Evento Clientes</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Agregar nuevo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_clientes[0].IdEvento)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_clientes[0].IdClienteReserva)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_clientes[0].FechaRegistro)
-                </th>
+            <th>
+                Id Cliente
+            </th>
+            <th>
+                Id Cliente Reservación
+            </th>
+            <th>
+                Fecha de Registro
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.res_evento_clientes) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEvento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdClienteReserva)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaRegistro)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.res_evento_clientes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEvento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdClienteReserva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaRegistro)
+                </td>
+                <td>
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

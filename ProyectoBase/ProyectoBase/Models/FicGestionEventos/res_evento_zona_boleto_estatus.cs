@@ -15,7 +15,7 @@ namespace ProyectoBase.Models.FicGestionEventos
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int IdEstatusDet { get; set; }
 
         public DateTime FechaEstatus { get; set; }
 

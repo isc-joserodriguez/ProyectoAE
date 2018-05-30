@@ -5,26 +5,26 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles Evento</h2>
 
 <div>
-    <h4>res_evento_clientes</h4>
+    <h4>Catálogo Evento Clientes</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_clientes.IdEvento)
+            Id Evento
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_clientes.IdEvento)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_clientes.IdClienteReserva)
+            Id Cliente Reservación
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_clientes.IdClienteReserva)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_clientes.FechaRegistro)
+            Fecha de Registro
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_clientes.FechaRegistro)
@@ -32,6 +32,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.res_evento_clientes.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.res_evento_clientes.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
 </div>

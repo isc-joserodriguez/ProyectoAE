@@ -5,68 +5,69 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Catálago Evento Estatus</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Agregar nuevo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_estatus[0].IdEvento)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_estatus[0].FechaEstatus)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_estatus[0].IdTipoEstatus)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_estatus[0].IdEstatus)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_estatus[0].Actual)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_estatus[0].Observacion)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_estatus[0].UsuarioReg)
-                </th>
+            <th>
+                Id Evento
+            </th>
+            <th>
+                Fecha Estatus
+            </th>
+            <th>
+                Id Tipo Estatus
+            </th>
+            <th>
+                Id Estatus
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.res_evento_estatus[0].Actual)
+            </th>
+            <th>
+                Observaciones
+            </th>
+            <th>
+                Usuario que registra
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.res_evento_estatus) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEvento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaEstatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdTipoEstatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEstatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Actual)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioReg)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.res_evento_estatus)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEvento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaEstatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdTipoEstatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEstatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Actual)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuarioReg)
+                </td>
+                <td>
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

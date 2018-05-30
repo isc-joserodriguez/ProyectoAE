@@ -5,80 +5,81 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Catálago Edificios, Clientes, Productos y Servicios</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Agregar nuevo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].IdEvento)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].IdReservaCliente)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].IdProdServ)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].IdProdServEsp)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].Cantidad)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].Precio)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].IVA)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].IdUnidadMedida)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].Importe)
-                </th>
+            <th>
+                Id Evento
+            </th>
+            <th>
+                Id Reservación Cliente
+            </th>
+            <th>
+               Id Prod. y Serv.
+            </th>
+            <th>
+                Id Prod. y Serv. Esp.
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].IVA)
+            </th>
+            <th>
+                Id Unidad Medida
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].Importe)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.res_evento_cliente_prod_serv) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEvento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdReservaCliente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdProdServ)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdProdServEsp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cantidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IVA)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdUnidadMedida)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Importe)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.res_evento_cliente_prod_serv)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEvento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdReservaCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdProdServ)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdProdServEsp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IVA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdUnidadMedida)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Importe)
+                </td>
+                <td>
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

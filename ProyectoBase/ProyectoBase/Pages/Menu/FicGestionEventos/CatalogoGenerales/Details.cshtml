@@ -5,32 +5,32 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles Catálogo</h2>
 
 <div>
-    <h4>cat_generales</h4>
+    <h4>Catálago Generales</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.cat_generales.IdTipoGeneral)
+            Id Tipo General
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_generales.IdTipoGeneral)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_generales.Clave)
+            Clave
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_generales.Clave)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_generales.DesGeneral)
+            Descripción
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_generales.DesGeneral)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_generales.Activo)
+            Activo
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_generales.Activo)
@@ -38,6 +38,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.cat_generales.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.cat_generales.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
 </div>

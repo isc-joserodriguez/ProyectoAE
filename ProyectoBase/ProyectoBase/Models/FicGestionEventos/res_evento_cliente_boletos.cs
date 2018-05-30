@@ -8,7 +8,7 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class res_evento_cliente_boletos
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
         [ForeignKey("IdReservaCliente")]
         public int IdReservaCliente { get; set; }
@@ -25,5 +25,7 @@ namespace ProyectoBase.Models.FicGestionEventos
         [ForeignKey("IdPersona")]
         public int IdPersona { get; set; }
         public virtual rh_cat_personas rh_cat_personas { get; set; }
+    
+        public string ConfirmaAsistencia { get; set; }
     }
 }

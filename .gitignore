@@ -9,3 +9,13 @@ ProyectoBase/ProyectoBase/bin/Debug/netcoreapp2.0/ProyectoBase.dll
 ProyectoBase/ProyectoBase/bin/Debug/netcoreapp2.0/ProyectoBase.pdb
 ProyectoBase/ProyectoBase/bin/Debug/netcoreapp2.0/ProyectoBase.runtimeconfig.dev.json
 ProyectoBase/ProyectoBase/obj/Debug/netcoreapp2.0/ProyectoBase.csproj.CoreCompileInputs.cache
+ProyectoBase/.vs/config/applicationhost.config
+ProyectoBase/ProyectoBase/bin/Debug/netcoreapp2.0/ProyectoBase.runtimeconfig.dev.json
+ProyectoBase/ProyectoBase/obj/Debug/netcoreapp2.0/ProyectoBase.csproj.CoreCompileInputs.cache
+*.cache
+ProyectoBase/.vs/config/applicationhost.config
+ProyectoBase/.vs/ProyectoBase/v15/.suo
+ProyectoBase/.vs/ProyectoBase/v15/Server/sqlite3/storage.ide
+ProyectoBase/ProyectoBase/bin/Debug/netcoreapp2.0/ProyectoBase.dll
+*.dll
+ProyectoBase/ProyectoBase/bin/Debug/netcoreapp2.0/ProyectoBase.pdb

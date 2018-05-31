@@ -29,7 +29,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
                 return NotFound();
             }
 
-            eva_cat_espacios = await _context.eva_cat_espacios.SingleOrDefaultAsync(m => m.Id == id);
+            eva_cat_espacios = await _context.eva_cat_espacios.SingleOrDefaultAsync(m => m.IdEspacio == id);
 
             if (eva_cat_espacios == null)
             {
@@ -54,6 +54,19 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
             }
 
             return RedirectToPage("./Index");
+        }
+
+        public String Edificio(string ID)
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                if (ID == d.IdEdificio.ToString())
+                {
+                    return d.Clave;
+                }
+            }
+            return "Desconocido";
         }
     }
 }

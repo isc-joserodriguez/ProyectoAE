@@ -18,6 +18,10 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
         public EditModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
+            getTiposGenerales();
+            getGenerales();
+            getPersonas();
+            getEdificios();
         }
 
         [BindProperty]
@@ -35,11 +39,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
                 return NotFound();
             }
 
-            getTiposGenerales();
-            getGenerales();
-            getPersonas();
-            getEdificios();
-
             res_eventos = await _context.res_eventos.SingleOrDefaultAsync(m => m.IdEvento == id);
 
             if (res_eventos == null)
@@ -51,6 +50,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
 
         public async Task<IActionResult> OnPostAsync()
         {
+            if (SeleccionoGenerales()) getGenerales();
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -102,7 +102,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
                 //if(d.Activo.Equals("A"))
                 Generales.Add(new SelectListItem
                 {
-                    Text = d.DesGeneral,
+                    Text = d.Clave,
                     Value = d.IdGeneral.ToString()
                 });
             }
@@ -126,44 +126,38 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             {
                 Edificios.Add(new SelectListItem
                 {
-                    Text = d.DesEdificio,
+                    Text = d.Clave,
                     Value = d.IdEdificio.ToString()
                 });
             }
         }
+
+        public Boolean SeleccionoGenerales()
+        {
+            var Tipos = _context.cat_generales;
+            int select = res_eventos.IdTipoGenEvento;
+            foreach (cat_generales d in Tipos)
+            {
+                if (select == d.IdGeneral)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public Boolean SeleccionoTiposGenerales()
+        {
+            var Tipos = _context.cat_tipos_generales;
+            int select = res_eventos.IdTipoGenEvento;
+            foreach (cat_tipos_generales d in Tipos)
+            {
+                if (select == d.IdTipoGeneral)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
-/*
- 
-    [Key]
-        
-        public int IdEvento { get; set; }
-
-
-        [ForeignKey("IdTipoGenEvento")]
-        public int IdTipoGenEvento { get; set; }
-        public virtual cat_tipos_generales cat_tipos_generales { get; set; }
-
-        [ForeignKey("IdGenEvento")]
-        public int IdGenEvento { get; set; }
-        public virtual cat_generales cat_generales { get; set; }
-
-        [ForeignKey("IdPersonaReg")]
-        public int IdPersonaReg { get; set; }
-        public virtual rh_cat_personas rh_cat_personas { get; set; }
-
-        public string NombreEvento { get; set; }
-        public string Observacion { get; set; }
-        public string Explicacion { get; set; }
-        public string URL { get; set; }
-        public DateTime FechaIn { get; set; }
-        public DateTime FechaFin { get; set; }
-
-        [ForeignKey("IdEdificio")]
-        public int IdEdificio { get; set; }
-        public virtual eva_cat_edificios eva_cat_edificios { get; set; }
-
-        public DateTime FechaReg { get; set; }
-        public int UsuarioReg { get; set; }
-
-     */

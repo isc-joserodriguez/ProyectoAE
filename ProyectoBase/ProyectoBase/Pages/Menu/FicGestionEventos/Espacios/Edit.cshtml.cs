@@ -18,10 +18,13 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
         public EditModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
+            getEdificios();
         }
 
         [BindProperty]
         public eva_cat_espacios eva_cat_espacios { get; set; }
+
+        public List<SelectListItem> Edificios = new List<SelectListItem>();
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,7 +33,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
                 return NotFound();
             }
 
-            eva_cat_espacios = await _context.eva_cat_espacios.SingleOrDefaultAsync(m => m.Id == id);
+            eva_cat_espacios = await _context.eva_cat_espacios.SingleOrDefaultAsync(m => m.IdEspacio == id);
 
             if (eva_cat_espacios == null)
             {
@@ -54,7 +57,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!eva_cat_espaciosExists(eva_cat_espacios.Id))
+                if (!eva_cat_espaciosExists(eva_cat_espacios.IdEspacio))
                 {
                     return NotFound();
                 }
@@ -69,7 +72,20 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
 
         private bool eva_cat_espaciosExists(int id)
         {
-            return _context.eva_cat_espacios.Any(e => e.Id == id);
+            return _context.eva_cat_espacios.Any(e => e.IdEspacio == id);
+        }
+
+        public void getEdificios()
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                Edificios.Add(new SelectListItem
+                {
+                    Text = d.Clave,
+                    Value = d.IdEdificio.ToString()
+                });
+            }
         }
     }
 }

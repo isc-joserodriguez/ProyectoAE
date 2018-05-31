@@ -11,12 +11,12 @@
     <a asp-page="Create">Crear Nuevo Evento</a>
 </p>
 <form asp-page="./Index" method="get">
-        <p>
-            Busqueda: 
-            <input type="text" name="busqueda" value="@Model.CurrentFilter" placeholder="Buscar por ID, Nombre o Fecha"/>
-            <input type="submit" value="Search" class="btn btn-default" /> |
-            <a asp-page="./Index">Back to full List</a>
-        </p>
+    <input type="search" name="busqueda" value="@Model.CurrentFilter" placeholder="Buscar por ID, Nombre o Fecha" class="form-control" />
+    <br />
+    <p>
+        <input type="submit" value="Buscar" class="btn btn-default" /> |
+        <a asp-page="./Index">Limpiar</a>
+    </p>
 </form>
 <table class="table">
     <thead>
@@ -27,26 +27,19 @@
                 </a>
             </th>
             <th>
-                Tipo Evento
+                <label class="control-label">Tipo Evento</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.res_eventos[0].IdGenEvento)
-                
+                <label class="control-label">Tipo General Evento</label>
             </th>
             <th>
-                Ponente
+                <label class="control-label">Ponente</label>
             </th>
             <th>
                 <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort" asp-route-orden="@Model.ASC">
                     Nombre Evento
                 </a>
             </th>
-            <!--th>
-                @Html.DisplayNameFor(model => model.res_eventos[0].Observacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.res_eventos[0].Explicacion)
-            </th-->
             <th>
                 <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort" asp-route-orden="@Model.ASC">
                     Fecha de Inicio
@@ -58,17 +51,8 @@
                 </a>
             </th>
             <th>
-                Página
+                <label class="control-label">Página</label>
             </th>
-            <!--th>
-                Edificio
-            </th-->
-                    <!--th>
-                @Html.DisplayNameFor(model => model.res_eventos[0].FechaReg)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.res_eventos[0].UsuarioReg)
-            </th-->
         </tr>
     </thead>
     <tbody>
@@ -89,12 +73,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.NombreEvento)
             </td>
-            <!--td>
-        @Html.DisplayFor(modelItem => item.Observacion)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Explicacion)
-    </td-->
             <td>
                 @Html.DisplayFor(modelItem => item.FechaIn)
             </td>
@@ -104,19 +82,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.URL)
             </td>
-            <!--td>
-        @Html.DisplayFor(modelItem => item.IdEdificio)
-    </td-->
-            <!--td>
-        @Html.DisplayFor(modelItem => item.FechaReg)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.UsuarioReg)
-    </td-->
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.IdEvento">Editar</a> |
-                <a asp-page="./Details" asp-route-id="@item.IdEvento">Ver</a> |
-                <a asp-page="./Delete" asp-route-id="@item.IdEvento">Eliminar</a>
+                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEvento"></a> |
+                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdEvento"></a> |
+                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEvento"></a>
             </td>
         </tr>
 }

@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.Espacios.IndexModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.Espacios.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,22 +14,22 @@
     <thead>
         <tr>
             <th>
-                Id
+                <label class="control-label">Edificio</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Clave)
+                <label class="control-label">Clave</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Alias)
+                <label class="control-label">Alias</label>
             </th>
             <th>
-                Descripción
+                <label class="control-label">Descripción</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Capacidad)
+                <label class="control-label">Capacidad</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.eva_cat_espacios[0].Prioridad)
+                <label class="control-label">Prioridad</label>
             </th>
             <th></th>
         </tr>
@@ -39,7 +39,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IdEdificio)
+                    @Model.Edificio(item.IdEdificio.ToString())
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Clave)
@@ -57,9 +57,9 @@
                     @Html.DisplayFor(modelItem => item.Prioridad)
                 </td>
                 <td>
-                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
-                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
-                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEspacio"></a> |
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdEspacio"></a> |
+                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEspacio"></a>
                 </td>
             </tr>
         }

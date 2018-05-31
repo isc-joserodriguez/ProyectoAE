@@ -15,62 +15,62 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="res_eventos.IdEvento" />
             <div class="form-group">
-                Tipo de Evento:
-                @Html.DropDownListFor(model => model.res_eventos.IdTipoGenEvento, Model.TiposGenerales, "Selecciona")
-                <span asp-validation-for="res_eventos.IdTipoGenEvento" class="text-danger"></span>
+                <label class="control-label">Tipo de Evento:</label>
+                @Html.DropDownListFor(model => model.res_eventos.IdTipoGenEvento, Model.TiposGenerales, "Selecciona", new { @class = "form-control", @onchange = @"form.submit();" })
+            <span asp-validation-for="res_eventos.IdTipoGenEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                General Evento:
-                @Html.DropDownListFor(model => model.res_eventos.IdGenEvento, Model.Generales, "Selecciona")
+                <label class="control-label">General Evento:</label>
+                @Html.DropDownListFor(model => model.res_eventos.IdGenEvento, Model.Generales, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="res_eventos.IdGenEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Persona que Registro:
-                @Html.DropDownListFor(model => model.res_eventos.IdPersonaReg, Model.Personas, "Selecciona")
+                <label class="control-label">Persona que Registro:</label>
+                @Html.DropDownListFor(model => model.res_eventos.IdPersonaReg, Model.Personas, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="res_eventos.IdPersonaReg" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Nombre del Evento:
+                <label class="control-label">Nombre del Evento:</label>
                 <input asp-for="res_eventos.NombreEvento" class="form-control" />
                 <span asp-validation-for="res_eventos.NombreEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Observaciones:
-                <input asp-for="res_eventos.Observacion" class="form-control" />
+                <label class="control-label">Observaciones:</label>
+                <textarea asp-for="res_eventos.Observacion" class="form-control" ></textarea>
                 <span asp-validation-for="res_eventos.Observacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Explicación:
-                <input asp-for="res_eventos.Explicacion" class="form-control" />
+                <label class="control-label">Explicación:</label>
+                <textarea asp-for="res_eventos.Explicacion" class="form-control" ></textarea>
                 <span asp-validation-for="res_eventos.Explicacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                URL de Página WEB:
-                <input asp-for="res_eventos.URL" class="form-control" />
+                <label class="control-label">URL de Página WEB:</label>
+                <input asp-for="res_eventos.URL" type="url" class="form-control" />
                 <span asp-validation-for="res_eventos.URL" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Fecha de Inicio:
-                <input asp-for="res_eventos.FechaIn" class="form-control" />
+                <label class="control-label">Fecha de Inicio:</label>
+                <input asp-for="res_eventos.FechaIn" class="form-control" type="date"/>
                 <span asp-validation-for="res_eventos.FechaIn" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Fecha de Culminación:
-                <input asp-for="res_eventos.FechaFin" class="form-control" />
+                <label class="control-label">Fecha de Culminación:</label>
+                <input asp-for="res_eventos.FechaFin" class="form-control" type="date"/>
                 <span asp-validation-for="res_eventos.FechaFin" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Edificio:
-                @Html.DropDownListFor(model => model.res_eventos.IdEdificio, Model.Edificios, "Selecciona")
+                <label class="control-label">Edificio:</label>
+                @Html.DropDownListFor(model => model.res_eventos.IdEdificio, Model.Edificios, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="res_eventos.IdEdificio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Fecha de Registro:
-                <input asp-for="res_eventos.FechaReg" class="form-control" />
+                <label class="control-label">Fecha de Registro:</label>
+                <input asp-for="res_eventos.FechaReg" class="form-control" type="date"/>
                 <span asp-validation-for="res_eventos.FechaReg" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Usuario que Registra:
+                <label class="control-label">Usuario que Registra:</label>
                 <input asp-for="res_eventos.UsuarioReg" class="form-control" />
                 <span asp-validation-for="res_eventos.UsuarioReg" class="text-danger"></span>
             </div>

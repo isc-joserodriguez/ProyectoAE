@@ -15,13 +15,14 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="cat_tipos_generales.IdTipoGeneral" />
             <div class="form-group">
-                Descripción:<br />
-                <input asp-for="cat_tipos_generales.DesTipo" class="form-control" />
+                <label class="control-label">Descripción:</label>
+                <textarea asp-for="cat_tipos_generales.DesTipo" class="form-control" ></textarea>
                 <span asp-validation-for="cat_tipos_generales.DesTipo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Activo:<br />
-                @Html.DropDownListFor(model => model.cat_tipos_generales.Activo, Model.Activo, "Selecciona")<br />
+                <label class="control-label">Activo:</label>
+                @Html.DropDownListFor(model => model.cat_tipos_generales.Activo, Model.Activo, "Selecciona", new { @class = "form-control" })
+                <br />
                 <span asp-validation-for="cat_tipos_generales.Activo" class="text-danger"></span>
             </div>
             <div class="form-group">

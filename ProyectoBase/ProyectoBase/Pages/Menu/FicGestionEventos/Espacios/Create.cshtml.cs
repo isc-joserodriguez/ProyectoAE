@@ -17,6 +17,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
         public CreateModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
+            getEdificios();
         }
 
         public IActionResult OnGet()
@@ -26,6 +27,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
 
         [BindProperty]
         public eva_cat_espacios eva_cat_espacios { get; set; }
+
+        public List<SelectListItem> Edificios = new List<SelectListItem>();
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -38,6 +41,19 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+
+        public void getEdificios()
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                Edificios.Add(new SelectListItem
+                {
+                    Text = d.Clave,
+                    Value = d.IdEdificio.ToString()
+                });
+            }
         }
     }
 }

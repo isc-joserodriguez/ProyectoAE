@@ -13,28 +13,28 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Id Tipo General
+            Id Tipo General:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_generales.IdTipoGeneral)
         </dd>
         <dt>
-            Clave
+            Clave:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_generales.Clave)
         </dd>
         <dt>
-           Descripción
+           Descripción:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_generales.DesGeneral)
         </dd>
         <dt>
-            Activo
+            Activo:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.cat_generales.Activo)
+            @Model.Activo(Model.cat_generales.Activo)
         </dd>
     </dl>
 

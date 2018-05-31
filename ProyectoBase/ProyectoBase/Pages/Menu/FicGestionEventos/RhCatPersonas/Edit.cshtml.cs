@@ -30,6 +30,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
                 return NotFound();
             }
 
+            getSexo();
+
             rh_cat_personas = await _context.rh_cat_personas.SingleOrDefaultAsync(m => m.IdPersona == id);
 
             if (rh_cat_personas == null)
@@ -70,6 +72,22 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
         private bool rh_cat_personasExists(int id)
         {
             return _context.rh_cat_personas.Any(e => e.IdPersona == id);
+        }
+
+        public List<SelectListItem> Sexo = new List<SelectListItem>();
+        public void getSexo()
+        {
+            //if(d.Activo.Equals("A"))
+            Sexo.Add(new SelectListItem
+            {
+                Text = "Masculino",
+                Value = "M"
+            });
+            Sexo.Add(new SelectListItem
+            {
+                Text = "Femenino",
+                Value = "F"
+            });
         }
     }
 }

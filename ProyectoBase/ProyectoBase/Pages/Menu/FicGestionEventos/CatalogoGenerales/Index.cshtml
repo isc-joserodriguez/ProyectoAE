@@ -33,7 +33,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IdTipoGeneral)
+                    @Model.TipoGenEvento(item.IdTipoGeneral.ToString())
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Clave)
@@ -42,7 +42,7 @@
                     @Html.DisplayFor(modelItem => item.DesGeneral)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Activo)
+                    @Model.Activo(item.Activo)
                 </td>
                 <td>
                     <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdGeneral"></a> |

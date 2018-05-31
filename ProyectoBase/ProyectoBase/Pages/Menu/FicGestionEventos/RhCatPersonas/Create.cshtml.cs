@@ -21,11 +21,14 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
 
         public IActionResult OnGet()
         {
+            getSexo();
             return Page();
         }
 
         [BindProperty]
         public rh_cat_personas rh_cat_personas { get; set; }
+
+        
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -38,6 +41,22 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+
+        public List<SelectListItem> Sexo = new List<SelectListItem>();
+        public void getSexo()
+        {
+            //if(d.Activo.Equals("A"))
+            Sexo.Add(new SelectListItem
+            {
+                Text = "Masculino",
+                Value = "M"
+            });
+            Sexo.Add(new SelectListItem
+            {
+                Text = "Femenino",
+                Value = "F"
+            });
         }
     }
 }

@@ -25,5 +25,31 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
         {
             cat_generales = await _context.cat_generales.ToListAsync();
         }
+
+        public String TipoGenEvento(string ID)
+        {
+            var Tipos = _context.cat_tipos_generales;
+            foreach (cat_tipos_generales d in Tipos)
+            {
+                if (ID == d.IdTipoGeneral.ToString())
+                {
+                    return d.DesTipo;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String Activo(string letra)
+        {
+            if (letra == "A")
+            {
+                return "Activo";
+            }
+            if (letra == "I")
+            {
+                return "Inactivo";
+            }
+            return "Desconocido";
+        }
     }
 }

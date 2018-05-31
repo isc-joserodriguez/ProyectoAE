@@ -21,6 +21,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
 
         public IActionResult OnGet()
         {
+            getTiposGenerales();
+            getActivo();
             return Page();
         }
 
@@ -38,6 +40,37 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+
+        public List<SelectListItem> TiposGenerales = new List<SelectListItem>();
+        public void getTiposGenerales()
+        {
+            var Tipos = _context.cat_tipos_generales;
+            foreach (cat_tipos_generales d in Tipos)
+            {
+                //if(d.Activo.Equals("A"))
+                TiposGenerales.Add(new SelectListItem
+                {
+                    Text = d.DesTipo,
+                    Value = d.IdTipoGeneral.ToString()
+                });
+            }
+        }
+
+        public List<SelectListItem> Activo = new List<SelectListItem>();
+        public void getActivo()
+        {
+            //if(d.Activo.Equals("A"))
+            Activo.Add(new SelectListItem
+            {
+                Text = "Activo",
+                Value = "A"
+            });
+            Activo.Add(new SelectListItem
+            {
+                Text = "Inactivo",
+                Value = "I"
+            });
         }
     }
 }

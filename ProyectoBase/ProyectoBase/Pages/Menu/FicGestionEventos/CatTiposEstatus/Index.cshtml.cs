@@ -25,5 +25,18 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus
         {
             cat_tipos_estatus = await _context.cat_tipos_estatus.ToListAsync();
         }
+
+        public String Activo(string letra)
+        {
+            if (letra == "A")
+            {
+                return "Activo";
+            }
+            if (letra == "I")
+            {
+                return "Inactivo";
+            }
+            return "Desconocido";
+        }
     }
 }

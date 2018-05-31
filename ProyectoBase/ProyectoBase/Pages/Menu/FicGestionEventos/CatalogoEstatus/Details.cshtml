@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatalogoEstatus.DetailsModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus.DetailsModel
 
 @{
     ViewData["Title"] = "Detalles Estatus";
@@ -12,32 +12,32 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-           Id Tipo Estatus
+            <label class="control-label">Tipo Estatus:</label>
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.cat_estatus.IdTipoEstatus)
+            @Model.TipoEstatus(Model.cat_estatus.IdTipoEstatus.ToString())
         </dd>
         <dt>
-           Clave
+            <label class="control-label">Clave:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_estatus.Clave)
         </dd>
         <dt>
-          Descripcion
+            <label class="control-label">Descripción:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_estatus.DesEstatus)
         </dd>
         <dt>
-           Activo 
+            <label class="control-label">Activo :</label>
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.cat_estatus.Activo)
+            @Model.Activo(Model.cat_estatus.Activo)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.cat_estatus.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.cat_estatus.IdEstatus" class="btn btn-primary">Editar</a> |
     <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
 </div>

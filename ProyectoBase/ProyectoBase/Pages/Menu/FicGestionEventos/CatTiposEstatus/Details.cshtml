@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatTiposEstatus.DetailsModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -12,20 +12,20 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Descripción
+            <label class="control-label">Descripción:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_tipos_estatus.DesTipoEstatus)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_tipos_estatus.Activo)
+            <label class="control-label">Activo:</label>
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.cat_tipos_estatus.Activo)
+            @Model.Activo(Model.cat_tipos_estatus.Activo)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.cat_tipos_estatus.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.cat_tipos_estatus.IdTipoEstatus" class="btn btn-primary">Editar</a> |
     <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
 </div>

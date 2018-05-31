@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatTiposEstatus.DeleteModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -13,21 +13,21 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Descripción
+            <label class="control-label">Descripción:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_tipos_estatus.DesTipoEstatus)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_tipos_estatus.Activo)
+            <label class="control-label">Activo:</label>
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.cat_tipos_estatus.Activo)
+            @Model.Activo(Model.cat_tipos_estatus.Activo)
         </dd>
     </dl>
 
     <form method="post">
-        <input type="hidden" asp-for="cat_tipos_estatus.Id" />
+        <input type="hidden" asp-for="cat_tipos_estatus.IdTipoEstatus" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
         <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
     </form>

@@ -17,6 +17,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus
         public CreateModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
+            getTipoEstatus();
+            getActivo();
         }
 
         public IActionResult OnGet()
@@ -38,6 +40,36 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+
+        public List<SelectListItem> Activo = new List<SelectListItem>();
+        public void getActivo()
+        {
+            //if(d.Activo.Equals("A"))
+            Activo.Add(new SelectListItem
+            {
+                Text = "Activo",
+                Value = "A"
+            });
+            Activo.Add(new SelectListItem
+            {
+                Text = "Inactivo",
+                Value = "I"
+            });
+        }
+
+        public List<SelectListItem> TipoEstatus = new List<SelectListItem>();
+        public void getTipoEstatus()
+        {
+            var Tipos = _context.cat_tipos_estatus;
+            foreach (cat_tipos_estatus d in Tipos)
+            {
+                TipoEstatus.Add(new SelectListItem
+                {
+                    Text = d.DesTipoEstatus,
+                    Value = d.IdTipoEstatus.ToString()
+                });
+            }
         }
     }
 }

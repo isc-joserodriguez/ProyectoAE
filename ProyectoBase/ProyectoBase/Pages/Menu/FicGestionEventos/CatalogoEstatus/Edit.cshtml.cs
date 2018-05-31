@@ -18,6 +18,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus
         public EditModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
+            getTipoEstatus();
+            getActivo();
         }
 
         [BindProperty]
@@ -30,7 +32,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus
                 return NotFound();
             }
 
-            cat_estatus = await _context.cat_estatus.SingleOrDefaultAsync(m => m.Id == id);
+            cat_estatus = await _context.cat_estatus.SingleOrDefaultAsync(m => m.IdEstatus == id);
 
             if (cat_estatus == null)
             {
@@ -54,7 +56,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!cat_estatusExists(cat_estatus.Id))
+                if (!cat_estatusExists(cat_estatus.IdEstatus))
                 {
                     return NotFound();
                 }
@@ -69,7 +71,37 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus
 
         private bool cat_estatusExists(int id)
         {
-            return _context.cat_estatus.Any(e => e.Id == id);
+            return _context.cat_estatus.Any(e => e.IdEstatus == id);
+        }
+
+        public List<SelectListItem> Activo = new List<SelectListItem>();
+        public void getActivo()
+        {
+            //if(d.Activo.Equals("A"))
+            Activo.Add(new SelectListItem
+            {
+                Text = "Activo",
+                Value = "A"
+            });
+            Activo.Add(new SelectListItem
+            {
+                Text = "Inactivo",
+                Value = "I"
+            });
+        }
+
+        public List<SelectListItem> TipoEstatus = new List<SelectListItem>();
+        public void getTipoEstatus()
+        {
+            var Tipos = _context.cat_tipos_estatus;
+            foreach (cat_tipos_estatus d in Tipos)
+            {
+                TipoEstatus.Add(new SelectListItem
+                {
+                    Text = d.DesTipoEstatus,
+                    Value = d.IdTipoEstatus.ToString()
+                });
+            }
         }
     }
 }

@@ -97,7 +97,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
         {
             var Tipos = _context.cat_tipos_generales;
             foreach (cat_tipos_generales d in Tipos) {
-                if (ID == d.Id.ToString()) {
+                if (ID == d.IdTipoGeneral.ToString()) {
                     return d.DesTipo;
                 }
             }
@@ -109,7 +109,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             var Tipos = _context.rh_cat_personas;
             foreach (rh_cat_personas d in Tipos)
             {
-                if (ID == d.Id.ToString())
+                if (ID == d.IdPersona.ToString())
                 {
                     return d.Nombre;
                 }
@@ -122,7 +122,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             var Tipos = _context.cat_generales;
             foreach (cat_generales d in Tipos)
             {
-                if (ID == d.Id.ToString())
+                if (ID == d.IdGeneral.ToString())
                 {
                     return d.DesGeneral;
                 }

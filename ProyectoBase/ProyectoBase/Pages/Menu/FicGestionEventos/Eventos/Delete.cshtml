@@ -1,85 +1,85 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.Eventos.DeleteModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.Eventos.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar - @Model.res_eventos.NombreEvento</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Quires Eliminar este Elemento?</h3>
 <div>
-    <h4>res_eventos</h4>
+    <h4>Eventos</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.IdTipoGenEvento)
+            Tipo de Evento:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_eventos.IdTipoGenEvento)
+            @Model.GenEvento(Model.res_eventos.IdGenEvento.ToString())
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.IdGenEvento)
+            TIpo General de Evento:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_eventos.IdGenEvento)
+            @Model.TipoGenEvento(Model.res_eventos.IdTipoGenEvento.ToString())
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.IdPersonaReg)
+            Orador:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_eventos.IdPersonaReg)
+            @Model.PersonaReg(Model.res_eventos.IdPersonaReg.ToString())
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.NombreEvento)
+            Nombre del Evento
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_eventos.NombreEvento)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.Observacion)
+            Observaciones:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_eventos.Observacion)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.Explicacion)
+            Explicación:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_eventos.Explicacion)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.URL)
+            URL de Página Web:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_eventos.URL)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.FechaIn)
+            Fecha de Inicio:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_eventos.FechaIn)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.FechaFin)
+            Fecha de Culminación:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_eventos.FechaFin)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.IdEdificio)
+            Edificio:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_eventos.IdEdificio)
+            @Model.Edificio(Model.res_eventos.IdEdificio.ToString())
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.FechaReg)
+            Fecha de Registro:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_eventos.FechaReg)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_eventos.UsuarioReg)
+            Usuario que Registro:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_eventos.UsuarioReg)
@@ -87,8 +87,8 @@
     </dl>
     
     <form method="post">
-        <input type="hidden" asp-for="res_eventos.Id" />
+        <input type="hidden" asp-for="res_eventos.IdEvento" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-page="./Index">Back to List</a>
+        <a asp-page="./Index">Regresar a la Lista</a>
     </form>
 </div>

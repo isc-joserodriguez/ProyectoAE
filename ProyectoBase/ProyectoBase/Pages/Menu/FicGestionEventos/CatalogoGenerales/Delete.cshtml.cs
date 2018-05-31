@@ -29,7 +29,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
                 return NotFound();
             }
 
-            cat_generales = await _context.cat_generales.SingleOrDefaultAsync(m => m.Id == id);
+            cat_generales = await _context.cat_generales.SingleOrDefaultAsync(m => m.IdGeneral == id);
 
             if (cat_generales == null)
             {

@@ -28,7 +28,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
                 return NotFound();
             }
 
-            rh_cat_personas = await _context.rh_cat_personas.SingleOrDefaultAsync(m => m.Id == id);
+            rh_cat_personas = await _context.rh_cat_personas.SingleOrDefaultAsync(m => m.IdPersona == id);
 
             if (rh_cat_personas == null)
             {

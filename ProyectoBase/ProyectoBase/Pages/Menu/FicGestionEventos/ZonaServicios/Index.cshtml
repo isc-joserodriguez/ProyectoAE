@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.ZonaServicios.IndexModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -8,25 +8,25 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Crear nuevo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdEdificio)
+                    Edificio
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdEspacio)
+                    Espacio
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdZona)
+                    Zona
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdProdServ)
+                    Producto/Servicio
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdProdServEsp)
+                    Producto/Servicio Especifico
                 </th>
             <th></th>
         </tr>
@@ -35,24 +35,39 @@
 @foreach (var item in Model.res_zonas_servicios) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEdificio)
+                @Model.getEdificio(@item.IdEdificio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEspacio)
+                @Model.getEdificio(@item.IdEspacio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdZona)
+                @Model.getEdificio(@item.IdZona)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdProdServ)
+                @Model.getEdificio(@item.IdProdServ)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdProdServEsp)
+                @Model.getEdificio(@item.IdProdServEsp)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit"
+                   asp-route-IdEdificio="@item.IdEdificio"
+                   asp-route-IdEspacio="@item.IdEspacio"
+                   asp-route-IdZona="@item.IdZona"
+                   asp-route-IdProdServ="@item.IdProdServ"
+                   asp-route-IdProdServEsp="@item.IdProdServEsp" >Edit</a> |
+                <a asp-page="./Details"
+                   asp-route-IdEdificio="@item.IdEdificio"
+                   asp-route-IdEspacio="@item.IdEspacio"
+                   asp-route-IdZona="@item.IdZona"
+                   asp-route-IdProdServ="@item.IdProdServ"
+                   asp-route-IdProdServEsp="@item.IdProdServEsp" >Details</a> |
+                <a asp-page="./Delete"
+                   asp-route-IdEdificio="@item.IdEdificio"
+                   asp-route-IdEspacio="@item.IdEspacio"
+                   asp-route-IdZona="@item.IdZona"
+                   asp-route-IdProdServ="@item.IdProdServ"
+                   asp-route-IdProdServEsp="@item.IdProdServEsp" >Delete</a>
             </td>
         </tr>
 }

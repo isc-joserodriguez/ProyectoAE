@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
                 return NotFound();
             }
 
-            cat_generales = await _context.cat_generales.SingleOrDefaultAsync(m => m.Id == id);
+            cat_generales = await _context.cat_generales.SingleOrDefaultAsync(m => m.IdGeneral == id);
 
             if (cat_generales == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!cat_generalesExists(cat_generales.Id))
+                if (!cat_generalesExists(cat_generales.IdGeneral))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
 
         private bool cat_generalesExists(int id)
         {
-            return _context.cat_generales.Any(e => e.Id == id);
+            return _context.cat_generales.Any(e => e.IdGeneral == id);
         }
     }
 }

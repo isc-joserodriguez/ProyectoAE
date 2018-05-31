@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.ZonaServicios.DetailsModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -12,38 +12,53 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.res_zonas_servicios.IdEdificio)
+            <!--@Html.DisplayNameFor(model => model.res_zonas_servicios.IdEdificio)-->
+            Edificio
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_zonas_servicios.IdEdificio)
+            <!--@Html.DisplayFor(model => model.res_zonas_servicios.IdEdificio)-->
+            @Model.getEdificio(@Model.res_zonas_servicios.IdEdificio)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_zonas_servicios.IdEspacio)
+            Espacio
+            <!--@Html.DisplayNameFor(model => model.res_zonas_servicios.IdEspacio)-->
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_zonas_servicios.IdEspacio)
+            @Model.getEspacio(Model.res_zonas_servicios.IdEspacio)
+            <!--@Html.DisplayFor(model => model.res_zonas_servicios.IdEspacio)-->
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_zonas_servicios.IdZona)
+            Zona
+            <!--@Html.DisplayNameFor(model => model.res_zonas_servicios.IdZona)-->
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_zonas_servicios.IdZona)
+            @Model.getZona(Model.res_zonas_servicios.IdZona)
+            <!--@Html.DisplayFor(model => model.res_zonas_servicios.IdZona)-->
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_zonas_servicios.IdProdServ)
+            Producto/Servicio
+            <!--@Html.DisplayNameFor(model => model.res_zonas_servicios.IdProdServ)-->
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_zonas_servicios.IdProdServ)
+            @Model.getProdServ(Model.res_zonas_servicios.IdProdServ)
+            <!--@Html.DisplayFor(model => model.res_zonas_servicios.IdProdServ)-->
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_zonas_servicios.IdProdServEsp)
+            Producto/Servicio Especifico
+            <!--@Html.DisplayNameFor(model => model.res_zonas_servicios.IdProdServEsp)-->
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_zonas_servicios.IdProdServEsp)
+            @Model.getProdServEsp(Model.res_zonas_servicios.IdProdServEsp)
+            <!--@Html.DisplayFor(model => model.res_zonas_servicios.IdProdServEsp)-->
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.res_zonas_servicios.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit"
+       asp-route-IdEdificio="@Model.res_zonas_servicios.IdEdificio"
+       asp-route-IdEspacio="@Model.res_zonas_servicios.IdEspacio"
+       asp-route-IdZona="@Model.res_zonas_servicios.IdZona"
+       asp-route-IdProdServ="@Model.res_zonas_servicios.IdProdServ"
+       asp-route-IdProdServEsp="@Model.res_zonas_servicios.IdProdServEsp">Editar</a> |
+    <a asp-page="./Index">Volver a la Lista</a>
 </div>

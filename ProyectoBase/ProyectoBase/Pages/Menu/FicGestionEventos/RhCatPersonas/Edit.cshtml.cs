@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
                 return NotFound();
             }
 
-            rh_cat_personas = await _context.rh_cat_personas.SingleOrDefaultAsync(m => m.Id == id);
+            rh_cat_personas = await _context.rh_cat_personas.SingleOrDefaultAsync(m => m.IdPersona == id);
 
             if (rh_cat_personas == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!rh_cat_personasExists(rh_cat_personas.Id))
+                if (!rh_cat_personasExists(rh_cat_personas.IdPersona))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
 
         private bool rh_cat_personasExists(int id)
         {
-            return _context.rh_cat_personas.Any(e => e.Id == id);
+            return _context.rh_cat_personas.Any(e => e.IdPersona == id);
         }
     }
 }

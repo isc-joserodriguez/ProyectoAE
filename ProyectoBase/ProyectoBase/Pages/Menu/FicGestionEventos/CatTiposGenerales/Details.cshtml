@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatTiposGenerales.DetailsModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposGenerales.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -26,6 +26,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.cat_tipos_generales.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.cat_tipos_generales.IdTipoGeneral" class="btn btn-primary">Editar</a> |
     <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
 </div>

@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Edificios
                 return NotFound();
             }
 
-            eva_cat_edificios = await _context.eva_cat_edificios.SingleOrDefaultAsync(m => m.Id == id);
+            eva_cat_edificios = await _context.eva_cat_edificios.SingleOrDefaultAsync(m => m.IdEdificio == id);
 
             if (eva_cat_edificios == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Edificios
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!eva_cat_edificiosExists(eva_cat_edificios.Id))
+                if (!eva_cat_edificiosExists(eva_cat_edificios.IdEdificio))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Edificios
 
         private bool eva_cat_edificiosExists(int id)
         {
-            return _context.eva_cat_edificios.Any(e => e.Id == id);
+            return _context.eva_cat_edificios.Any(e => e.IdEdificio == id);
         }
     }
 }

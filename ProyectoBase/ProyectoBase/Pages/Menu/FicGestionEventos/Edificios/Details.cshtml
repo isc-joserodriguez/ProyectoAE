@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.Edificios.DetailsModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.Edificios.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -38,6 +38,6 @@
         </dl>
     </div>
     <div>
-        <a asp-page="./Edit" asp-route-id="@Model.eva_cat_edificios.Id" class="btn btn-primary">Editar</a> |
+        <a asp-page="./Edit" asp-route-id="@Model.eva_cat_edificios.IdEdificio" class="btn btn-primary">Editar</a> |
         <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
     </div>

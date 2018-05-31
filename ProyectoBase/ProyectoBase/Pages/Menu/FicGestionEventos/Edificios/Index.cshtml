@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.Edificios.IndexModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.Edificios.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -45,9 +45,9 @@
                     @Html.DisplayFor(modelItem => item.Prioridad)
                 </td>
                 <td>
-                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
-                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
-                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEdificio"></a> |
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdEdificio"></a> |
+                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEdificio"></a>
                 </td>
             </tr>
         }

@@ -28,7 +28,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Edificios
                 return NotFound();
             }
 
-            eva_cat_edificios = await _context.eva_cat_edificios.SingleOrDefaultAsync(m => m.Id == id);
+            eva_cat_edificios = await _context.eva_cat_edificios.SingleOrDefaultAsync(m => m.IdEdificio == id);
 
             if (eva_cat_edificios == null)
             {

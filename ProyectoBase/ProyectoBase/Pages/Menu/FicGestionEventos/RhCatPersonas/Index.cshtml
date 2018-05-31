@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.RhCatPersonas.IndexModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -92,9 +92,9 @@
                 @Html.DisplayFor(modelItem => item.FechaNac)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.IdPersona">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdPersona">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdPersona">Delete</a>
             </td>
         </tr>
 }

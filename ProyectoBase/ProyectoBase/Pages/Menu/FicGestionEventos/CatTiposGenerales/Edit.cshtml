@@ -1,19 +1,19 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatTiposGenerales.EditModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposGenerales.EditModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h2>Editar Tipo Estatus [@Html.DisplayFor(model => model.cat_tipos_generales.Id)]</h2>
+<h2>Editar Tipo Estatus [@Html.DisplayFor(model => model.cat_tipos_generales.IdTipoGeneral)]</h2>
 
-<h4>Catálogo Tipo Estatus</h4>
+<h4>Catálogo Tipo Generales</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="cat_tipos_generales.Id" />
+            <input type="hidden" asp-for="cat_tipos_generales.IdTipoGeneral" />
             <div class="form-group">
                 <label asp-for="cat_tipos_generales.DesTipo" class="control-label">Descripción</label>
                 <input asp-for="cat_tipos_generales.DesTipo" class="form-control" />

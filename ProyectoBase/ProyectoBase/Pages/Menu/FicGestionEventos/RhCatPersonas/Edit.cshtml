@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.RhCatPersonas.EditModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas.EditModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -13,7 +13,7 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="rh_cat_personas.Id" />
+            <input type="hidden" asp-for="rh_cat_personas.IdPersona" />
             <div class="form-group">
                 <label asp-for="rh_cat_personas.IdInstituto" class="control-label"></label>
                 <input asp-for="rh_cat_personas.IdInstituto" class="form-control" />

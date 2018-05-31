@@ -1,11 +1,11 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatalogoGenerales.EditModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales.EditModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h2>Editar Catálogo [@Html.DisplayFor(model => model.cat_generales.Id)]</h2>
+<h2>Editar Catálogo [@Html.DisplayFor(model => model.cat_generales.IdGeneral)]</h2>
 
 <h4>Catálogo Generales</h4>
 <hr />
@@ -18,7 +18,7 @@
                 <input asp-for="cat_generales.IdTipoGeneral" class="form-control" />
                 <span asp-validation-for="cat_generales.IdTipoGeneral" class="text-danger"></span>
             </div>
-            <input type="hidden" asp-for="cat_generales.Id" />
+            <input type="hidden" asp-for="cat_generales.IdGeneral" />
             <div class="form-group">
                 <label asp-for="cat_generales.Clave" class="control-label"></label>
                 <input asp-for="cat_generales.Clave" class="form-control" />

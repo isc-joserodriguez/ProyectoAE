@@ -78,7 +78,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             {
 
                 if(res_eventos != null)
-                    if(d.IdTipoGeneral != res_eventos.IdTipoGenEvento)
+                    if(d.IdTipoGeneral == res_eventos.IdTipoGenEvento)
                         Generales.Add(new SelectListItem
                         {
                             Text = d.Clave,

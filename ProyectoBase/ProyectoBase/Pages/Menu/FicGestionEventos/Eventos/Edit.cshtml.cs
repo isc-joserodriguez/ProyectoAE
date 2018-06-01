@@ -95,16 +95,20 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             }
         }
 
-        public void getGenerales() {
+        public void getGenerales()
+        {
             var Tipos = _context.cat_generales;
+
             foreach (cat_generales d in Tipos)
             {
-                //if(d.Activo.Equals("A"))
-                Generales.Add(new SelectListItem
-                {
-                    Text = d.Clave,
-                    Value = d.IdGeneral.ToString()
-                });
+
+                if (res_eventos != null)
+                    if (d.IdTipoGeneral == res_eventos.IdTipoGenEvento)
+                        Generales.Add(new SelectListItem
+                        {
+                            Text = d.Clave,
+                            Value = d.IdGeneral.ToString()
+                        });
             }
         }
 

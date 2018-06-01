@@ -1,59 +1,58 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.EventoHorarios.IndexModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios.IndexModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Horarios de Eventos</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Nuevo Horario</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_horarios[0].IdEvento)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_horarios[0].IdEdificio)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_horarios[0].IdEspacio)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_horarios[0].Dia)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_horarios[0].FechaHoraIni)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_horarios[0].FechaHoraFin)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_horarios[0].Disponible)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_horarios[0].FechaReg)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_horarios[0].UsuarioReg)
-                </th>
-            <th></th>
+            <th>
+                <label class="control-label">Evento</label>
+            </th>
+            <th>
+                <label class="control-label">Edificio</label>
+            </th>
+            <th>
+                <label class="control-label">Espacio</label>
+            </th>
+            <th>
+                <label class="control-label">Dia</label>
+            </th>
+            <th>
+                <label class="control-label">Inicio</label>
+            </th>
+            <th>
+                <label class="control-label">Culminación</label>
+            </th>
+            <th>
+                <label class="control-label">Disponible</label>
+            </th>
+            <th>
+                <label class="control-label">Fecha Registro</label>
+            </th>
+            <th>
+                <label class="control-label">Usuario que Registró</label>
+            </th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.res_evento_horarios) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEvento)
+                @Model.Evento(item.IdEvento.ToString())
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEdificio)
+                @Model.Edificio(item.IdEdificio.ToString())
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEspacio)
+                @Model.Espacio(item.IdEspacio.ToString())
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Dia)
@@ -74,9 +73,9 @@
                 @Html.DisplayFor(modelItem => item.UsuarioReg)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.IdHorarioDes">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdHorarioDes">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdHorarioDes">Eliminar</a>
             </td>
         </tr>
 }

@@ -1,55 +1,43 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatProductoServicios.DetailsModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h2>Detalles Catálogo</h2>
+<h2>Detalles</h2>
 
 <div>
-    <h4>Catálago de Productos y Servicios</h4>
+    <h4>Catálago de Productos/Servicios</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.ClaveProdServ)
+            Clave:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_productos_servicios.ClaveProdServ)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.CodigoBarras)
+            Código de Barras:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_productos_servicios.CodigoBarras)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.DesProdServ)
+            Descripción:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_productos_servicios.DesProdServ)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.ProductoServicio)
+            Producto o Servicio:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.cat_productos_servicios.ProductoServicio)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.IdTipoGenProdServ)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.cat_productos_servicios.IdTipoGenProdServ)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.IdGenProdServ)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.cat_productos_servicios.IdGenProdServ)
+            @Model.getProductoServicio(Model.cat_productos_servicios.ProductoServicio)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.cat_productos_servicios.Id" class="btn btn-primary">Editar</a> |
-    <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
+    <a asp-page="./Edit" asp-route-id="@Model.cat_productos_servicios.IdProdServ " class="btn btn-info">Editar</a> |
+    <a asp-page="./Index" class="btn btn-warning">Regresar a lista</a>
 </div>

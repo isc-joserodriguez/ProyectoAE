@@ -1,22 +1,22 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatProdServEspecifico.DeleteModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
 }
 
-<h2>Eliminar Catálogo</h2>
+<h2>Eliminar</h2>
 
-<h3>¿Estas seguro de que deseas eliminar este catálogo?</h3>
+<h3>¿Estas seguro de que deseas eliminar?</h3>
 <div>
-    <h4>Catálogo de Productos y Servicios Especificos</h4>
+    <h4>Catálogo de Productos/Servicios Especificos</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Id
+            Producto o Servicio:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.cat_prod_serv_especifico.IdProdServ)
+            @Model.getProdServ(Model.cat_prod_serv_especifico.IdProdServ.ToString())
         </dd>
         <dt>
             Clave
@@ -33,8 +33,8 @@
     </dl>
 
     <form method="post">
-        <input type="hidden" asp-for="cat_prod_serv_especifico.Id" />
+        <input type="hidden" asp-for="cat_prod_serv_especifico.IdProdServEsp" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
+        <a asp-page="./Index" asp-route-id="@Model.cat_prod_serv_especifico.IdProdServ" class="btn btn-warning">Regresar a lista</a>
     </form>
 </div>

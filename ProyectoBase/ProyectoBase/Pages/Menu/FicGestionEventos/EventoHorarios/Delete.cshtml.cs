@@ -21,14 +21,15 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
 
         [BindProperty]
         public res_evento_horarios res_evento_horarios { get; set; }
+        public int IdEvento { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id, int evento)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
+            IdEvento = evento;
             res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDes == id);
 
             if (res_evento_horarios == null)
@@ -53,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { id= res_evento_horarios.IdEvento});
         }
 
         public String Edificio(string ID)

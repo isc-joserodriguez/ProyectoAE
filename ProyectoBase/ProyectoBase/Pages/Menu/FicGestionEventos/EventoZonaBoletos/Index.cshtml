@@ -1,41 +1,69 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletos.IndexModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletos.IndexModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Boletos</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="../Zonas/Index" asp-route-espacio="@Model.IdEspacio" asp-route-edificio="@Model.IdEdificio" class="btn btn-warning">Regresar a lista de Zonas</a>
 </p>
+
+<dl class="dl-horizontal">
+    <dt>
+        Edificio:
+    </dt>
+    <dd>
+        @Model.getEdificio(Model.IdEdificio.ToString())
+    </dd>
+    <dt>
+        Espacio:
+    </dt>
+    <dd>
+        @Model.getEspacio(Model.IdEspacio.ToString())
+    </dd>
+    <dt>
+        Descripción:
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_cat_zonas.DesZona)
+    </dd>
+    <dt>
+        Capacidad:
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_cat_zonas.CapacidadPer)
+    </dd>
+    <dt>
+        Filas de Asientos:
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_cat_zonas.Filas)
+    </dd>
+    <dt>
+        Asientos por Fila:
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_cat_zonas.AsientosPorFila)
+    </dd>
+</dl>
+
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].IdEvento)
+                    # de Boleto
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].IdEdificio)
+                    Descripción
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].IdEspacio)
+                    Precio
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].IdZona)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].NumBoleto)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].DesBoleto)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].Precio)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boletos[0].IVA)
+                    IVa
                 </th>
             <th></th>
         </tr>
@@ -44,33 +72,21 @@
 @foreach (var item in Model.res_evento_zona_boletos) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEvento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEdificio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEspacio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdZona)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.NumBoleto)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DesBoleto)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Precio)
+                $ @Html.DisplayFor(modelItem => item.Precio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IVA)
+                % @Html.DisplayFor(modelItem => item.IVA)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdBoleto"></a> |
+                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdBoleto"></a> |
+                <a asp-page="./Delete" class="glyphicon glyphicon-trash"  asp-route-id="@item.IdBoleto"></a>
             </td>
         </tr>
 }

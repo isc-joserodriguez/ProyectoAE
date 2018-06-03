@@ -5,18 +5,17 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Agregar Espacio</h2>
+<h2>Agregar</h2>
 
-<h4>Catálogo Espacios</h4>
+<h4>Catálogo de Espacios</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label class="control-label">Edificio:</label>
-                @Html.DropDownListFor(model => model.eva_cat_espacios.IdEdificio, Model.Edificios, "Selecciona", new { @class = "form-control" })
-                <span asp-validation-for="eva_cat_espacios.IdEdificio" class="text-danger"></span>
+                <label class="control-label">Edificio: @Model.Edificio(Model.IdEdificio.ToString())</label>
+                <input asp-for="eva_cat_espacios.IdEdificio" type="hidden" value="@Model.IdEdificio" class="form-control" />
             </div>
             <div class="form-group">
                 <label class="control-label">Clave:</label>
@@ -44,8 +43,8 @@
                 <span asp-validation-for="eva_cat_espacios.Prioridad" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-primary" /> |
-                <a asp-page="Index" class="btn btn-default">Regresar a lista</a>
+                <input type="submit" value="Guardar" class="btn btn-info" /> |
+                <a asp-page="Index" asp-route-id="@Model.IdEdificio" class="btn btn-warning">Regresar a lista</a>
             </div>
         </form>
     </div>

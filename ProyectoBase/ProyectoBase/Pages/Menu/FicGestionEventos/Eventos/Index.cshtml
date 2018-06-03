@@ -7,15 +7,13 @@
 
 <h2>Gestión de Eventos</h2>
 
-<p>
-    <a asp-page="Create">Crear Nuevo Evento</a>
-</p>
 <form asp-page="./Index" method="get">
-    <input type="search" name="busqueda" value="@Model.CurrentFilter" placeholder="Buscar por ID, Nombre o Fecha" class="form-control" />
+    <input type="search" name="busqueda" value="@Model.CurrentFilter" placeholder="Buscar por ID, Nombre o Fecha" class="form-control alert-info" />
     <br />
     <p>
-        <input type="submit" value="Buscar" class="btn btn-default" /> |
-        <a asp-page="./Index">Limpiar</a>
+        <a asp-page="Create" class="btn btn-danger">Crear Evento</a> | 
+        <input type="submit" value="Buscar" class="btn btn-info" /> |
+        <a asp-page="./Index" class="btn btn-warning">Limpiar</a>
     </p>
 </form>
 <table class="table">
@@ -27,10 +25,7 @@
                 </a>
             </th>
             <th>
-                <label class="control-label">Tipo Evento</label>
-            </th>
-            <th>
-                <label class="control-label">Tipo General Evento</label>
+                <label class="control-label">Evento</label>
             </th>
             <th>
                 <label class="control-label">Ponente</label>
@@ -62,9 +57,6 @@
                 @Html.DisplayFor(modelItem => item.IdEvento)
             </td>
             <td>
-                @Model.TipoGenEvento(item.IdTipoGenEvento.ToString())
-            </td>
-            <td>
                 @Model.GenEvento(item.IdGenEvento.ToString())
             </td>
             <td>
@@ -83,9 +75,11 @@
                 @Html.DisplayFor(modelItem => item.URL)
             </td>
             <td>
+                <a asp-page="../EventoHorarios/Index" class="glyphicon glyphicon-time" asp-route-id="@item.IdEvento"></a> |
                 <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEvento"></a> |
                 <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdEvento"></a> |
-                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEvento"></a>
+                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEvento"></a> |
+                <a asp-page="../EventoEstatus/Index" class="glyphicon glyphicon-alert" asp-route-id="@item.IdEvento"></a>
             </td>
         </tr>
 }

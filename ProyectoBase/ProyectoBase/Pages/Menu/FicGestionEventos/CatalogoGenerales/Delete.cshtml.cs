@@ -58,11 +58,11 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
 
         public String Activo(string letra)
         {
-            if (letra == "A")
+            if (letra == "S")
             {
                 return "Activo";
             }
-            if (letra == "I")
+            if (letra == "N")
             {
                 return "Inactivo";
             }

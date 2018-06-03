@@ -22,6 +22,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
         public IActionResult OnGet()
         {
             getSexo();
+            getTipoPersona();
             return Page();
         }
 
@@ -56,6 +57,22 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
             {
                 Text = "Femenino",
                 Value = "F"
+            });
+        }
+
+        public List<SelectListItem> TipoPersona = new List<SelectListItem>();
+        public void getTipoPersona()
+        {
+            //if(d.Activo.Equals("A"))
+            TipoPersona.Add(new SelectListItem
+            {
+                Text = "Fisica",
+                Value = "F"
+            });
+            TipoPersona.Add(new SelectListItem
+            {
+                Text = "Moral",
+                Value = "M"
             });
         }
     }

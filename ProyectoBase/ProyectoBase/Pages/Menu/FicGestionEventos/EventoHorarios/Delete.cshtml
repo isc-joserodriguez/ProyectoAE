@@ -70,7 +70,7 @@
     
     <form method="post">
         <input type="hidden" asp-for="res_evento_horarios.IdHorarioDes" />
-        <input type="submit" value="Eliminar" class="btn btn-default" /> |
-        <a asp-page="./Index">Regresar a la Lista</a>
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="../EventoHorarios/Index" asp-route-id="@Model.IdEvento" class="btn btn-warning">Regresar a la Lista</a>
     </form>
 </div>

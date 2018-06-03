@@ -31,6 +31,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
             }
 
             getSexo();
+            getTipoPersona();
 
             rh_cat_personas = await _context.rh_cat_personas.SingleOrDefaultAsync(m => m.IdPersona == id);
 
@@ -87,6 +88,24 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
             {
                 Text = "Femenino",
                 Value = "F"
+            });
+        }
+
+        public List<SelectListItem>
+                    TipoPersona = new List<SelectListItem>
+                        ();
+        public void getTipoPersona()
+        {
+            //if(d.Activo.Equals("A"))
+            TipoPersona.Add(new SelectListItem
+            {
+                Text = "Fisica",
+                Value = "F"
+            });
+            TipoPersona.Add(new SelectListItem
+            {
+                Text = "Moral",
+                Value = "M"
             });
         }
     }

@@ -49,12 +49,12 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposGenerales
             Activo.Add(new SelectListItem
             {
                 Text = "Activo",
-                Value = "A"
+                Value = "S"
             });
             Activo.Add(new SelectListItem
             {
                 Text = "Inactivo",
-                Value = "I"
+                Value = "N"
             });
         }
     }

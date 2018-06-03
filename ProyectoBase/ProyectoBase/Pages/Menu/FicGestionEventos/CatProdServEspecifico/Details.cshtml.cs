@@ -28,13 +28,26 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico
                 return NotFound();
             }
 
-            cat_prod_serv_especifico = await _context.cat_prod_serv_especifico.SingleOrDefaultAsync(m => m.Id == id);
+            cat_prod_serv_especifico = await _context.cat_prod_serv_especifico.SingleOrDefaultAsync(m => m.IdProdServEsp == id);
 
             if (cat_prod_serv_especifico == null)
             {
                 return NotFound();
             }
             return Page();
+        }
+
+        public String getProdServ(string ID)
+        {
+            var Tipos = _context.cat_productos_servicios;
+            foreach (cat_productos_servicios d in Tipos)
+            {
+                if (ID == d.IdProdServ.ToString())
+                {
+                    return d.ClaveProdServ;
+                }
+            }
+            return "Desconocido";
         }
     }
 }

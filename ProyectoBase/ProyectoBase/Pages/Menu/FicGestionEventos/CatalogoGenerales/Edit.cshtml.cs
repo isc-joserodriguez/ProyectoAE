@@ -98,12 +98,12 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
             Activo.Add(new SelectListItem
             {
                 Text = "Activo",
-                Value = "A"
+                Value = "S"
             });
             Activo.Add(new SelectListItem
             {
                 Text = "Inactivo",
-                Value = "I"
+                Value = "N"
             });
         }
     }

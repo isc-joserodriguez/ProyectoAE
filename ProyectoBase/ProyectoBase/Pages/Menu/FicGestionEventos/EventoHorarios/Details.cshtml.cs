@@ -20,14 +20,15 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
         }
 
         public res_evento_horarios res_evento_horarios { get; set; }
+        public int IdEvento { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id, int evento)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
+            IdEvento = evento;
             res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDes == id);
 
             if (res_evento_horarios == null)

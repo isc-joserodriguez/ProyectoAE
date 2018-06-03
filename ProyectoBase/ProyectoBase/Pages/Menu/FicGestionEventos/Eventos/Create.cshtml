@@ -5,33 +5,23 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Crear</h2>
-
-<h4>Evento</h4>
+<h2>Crear Evento</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                Tipo de Evento:
-                <br />
-                @Html.DropDownListFor(model => model.res_eventos.IdTipoGenEvento, Model.TiposGenerales, "Selecciona", new { @class = "form-control", @onchange = @"form.submit();" })
-                <br />
-                <span asp-validation-for="res_eventos.IdTipoGenEvento" class="text-danger"></span>
+                <input asp-for="res_eventos.IdTipoGenEvento" value="18" type="hidden" class="form-control" />
             </div>
             <div class="form-group">
-                General Evento:
-                <br />
+                Evento:
                 @Html.DropDownListFor(model => model.res_eventos.IdGenEvento, Model.Generales, "Selecciona", new { @class = "form-control" })
-                <br />
                 <span asp-validation-for="res_eventos.IdGenEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
                 Ponente:
-                <br />
-                @Html.DropDownListFor(model => model.res_eventos.IdPersonaReg, Model.Personas, "Selecciona", new { @class = "form-control"})
-                <br />
+                @Html.DropDownListFor(model => model.res_eventos.IdPersonaReg, Model.Personas, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="res_eventos.IdPersonaReg" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -41,12 +31,12 @@
             </div>
             <div class="form-group">
                 Observaciones:
-                <textarea asp-for="res_eventos.Observacion" type="text" class="form-control" ></textarea>
+                <textarea asp-for="res_eventos.Observacion" type="text" class="form-control"></textarea>
                 <span asp-validation-for="res_eventos.Observacion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 Explicación:
-                <textarea asp-for="res_eventos.Explicacion" type="text" class="form-control" ></textarea>
+                <textarea asp-for="res_eventos.Explicacion" type="text" class="form-control"></textarea>
                 <span asp-validation-for="res_eventos.Explicacion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -66,15 +56,8 @@
             </div>
             <div class="form-group">
                 Edificio:
-                <br />
                 @Html.DropDownListFor(model => model.res_eventos.IdEdificio, Model.Edificios, "Selecciona", new { @class = "form-control" })
-                <br />
                 <span asp-validation-for="res_eventos.IdEdificio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                Fecha de Registro:
-                <input asp-for="res_eventos.FechaReg" type="date" class="form-control" />
-                <span asp-validation-for="res_eventos.FechaReg" class="text-danger"></span>
             </div>
             <div class="form-group">
                 Usuario que Registra:
@@ -82,14 +65,11 @@
                 <span asp-validation-for="res_eventos.UsuarioReg" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-info" /> |
+                <a asp-page="Index" class="btn btn-warning">Regresar a la Lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Regresar a la Lista</a>
 </div>
 
 @section Scripts {

@@ -13,29 +13,32 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
     public class CreateModel : PageModel
     {
         private readonly ProyectoBase.Models.ApplicationDbContext _context;
-
-        public CreateModel(ProyectoBase.Models.ApplicationDbContext context)
-        {
-            _context = context;
-            getDisponibilidad();
-            getDias();
-            getEventos();
-            getEdificios();
-            getEspacios();
-        }
-
-        public IActionResult OnGet()
-        {
-            
-            return Page();
-        }
+        public int IdEvento = 0;
+        public int IdEdificio = 0;
 
         [BindProperty]
         public res_evento_horarios res_evento_horarios { get; set; }
 
+        public CreateModel(ProyectoBase.Models.ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public IActionResult OnGetAsync(int id, int edificio)
+        {
+            IdEvento = id;
+            IdEdificio = edificio;
+            getDisponibilidad();
+            getDias();
+            getEspacios();
+            return Page();
+        }
+
+        
+
         public async Task<IActionResult> OnPostAsync()
         {
-            if (SeleccionoEspacio()) getEspacios();
+            res_evento_horarios.FechaReg = DateTime.Now;
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -43,22 +46,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
 
             _context.res_evento_horarios.Add(res_evento_horarios);
             await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
-        }
-
-        public Boolean SeleccionoEspacio()
-        {
-            var Tipos = _context.eva_cat_espacios;
-            int select = res_evento_horarios.IdEdificio;
-            foreach (eva_cat_espacios d in Tipos)
-            {
-                if (select == d.IdEdificio)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return RedirectToPage("./index", new { id = res_evento_horarios.IdEvento});
         }
 
         public List<SelectListItem> Espacio = new List<SelectListItem>();
@@ -67,41 +55,12 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             var Tipos = _context.eva_cat_espacios;
             foreach (eva_cat_espacios d in Tipos)
             {
-                if (res_evento_horarios != null)
-                    if (d.IdEdificio == res_evento_horarios.IdEdificio)
+                    if (d.IdEdificio == IdEdificio)
                         Espacio.Add(new SelectListItem
                         {
                             Text = d.Clave,
                             Value = d.IdEspacio.ToString()
                         });
-            }
-        }
-
-        public List<SelectListItem> Edificios = new List<SelectListItem>();
-        public void getEdificios()
-        {
-            var Tipos = _context.eva_cat_edificios;
-            foreach (eva_cat_edificios d in Tipos)
-            {
-                Edificios.Add(new SelectListItem
-                {
-                    Text = d.Clave,
-                    Value = d.IdEdificio.ToString()
-                });
-            }
-        }
-
-        public List<SelectListItem> Eventos = new List<SelectListItem>();
-        public void getEventos()
-        {
-            var Tipos = _context.res_eventos;
-            foreach (res_eventos d in Tipos)
-            {
-                Eventos.Add(new SelectListItem
-                {
-                    Text = d.NombreEvento,
-                    Value = d.IdEvento.ToString()
-                });
             }
         }
 
@@ -123,6 +82,32 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
         {
             Disponibilidad.Add(new SelectListItem { Text = "Disponible", Value = "S" });
             Disponibilidad.Add(new SelectListItem { Text = "No Disponible", Value = "N" });
+        }
+
+        public String Evento(string ID)
+        {
+            var Tipos = _context.res_eventos;
+            foreach (res_eventos d in Tipos)
+            {
+                if (ID == d.IdEvento.ToString())
+                {
+                    return d.NombreEvento;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String Edificio(string ID)
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                if (ID == d.IdEdificio.ToString())
+                {
+                    return d.DesEdificio;
+                }
+            }
+            return "Desconocido";
         }
     }
 }

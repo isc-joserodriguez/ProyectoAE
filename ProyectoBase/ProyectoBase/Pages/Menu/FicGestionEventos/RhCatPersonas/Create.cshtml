@@ -5,9 +5,8 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Crear</h2>
-
-<h4>Personas</h4>
+<h2>Dar de Alta</h2>
+<h4>Catálago de Personas</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -50,17 +49,17 @@
             </div>
             <div class="form-group">
                 Tipo Persona: <br />
-                <input asp-for="rh_cat_personas.TipoPersona" class="form-control" />
+                @Html.DropDownListFor(model => model.rh_cat_personas.TipoPersona, Model.TipoPersona, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="rh_cat_personas.TipoPersona" class="text-danger"></span>
             </div>
             <div class="form-group">
                 Sexo:<br />
-                @Html.DropDownListFor(model => model.rh_cat_personas.Sexo, Model.Sexo, "Selecciona")
+                @Html.DropDownListFor(model => model.rh_cat_personas.Sexo, Model.Sexo, "Selecciona", new { @class="form-control" })
                 <span asp-validation-for="rh_cat_personas.Sexo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 Foto:<br />
-                <input asp-for="rh_cat_personas.RutaFoto" class="form-control" />
+                <input type="file" asp-for="rh_cat_personas.RutaFoto" class="form-control" />
                 <span asp-validation-for="rh_cat_personas.RutaFoto" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -74,14 +73,11 @@
                 <span asp-validation-for="rh_cat_personas.FechaNac" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-info" /> |
+                <a asp-page="Index" class="btn btn-warning">Regresar a la Lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Regresar a la Lista</a>
 </div>
 
 @section Scripts {

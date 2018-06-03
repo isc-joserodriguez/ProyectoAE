@@ -80,12 +80,12 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus
             Activo.Add(new SelectListItem
             {
                 Text = "Activo",
-                Value = "A"
+                Value = "S"
             });
             Activo.Add(new SelectListItem
             {
                 Text = "Inactivo",
-                Value = "I"
+                Value = "N"
             });
         }
     }

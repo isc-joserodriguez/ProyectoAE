@@ -29,7 +29,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios
                 return NotFound();
             }
 
-            cat_productos_servicios = await _context.cat_productos_servicios.SingleOrDefaultAsync(m => m.Id == id);
+            cat_productos_servicios = await _context.cat_productos_servicios.SingleOrDefaultAsync(m => m.IdProdServ == id);
 
             if (cat_productos_servicios == null)
             {
@@ -54,6 +54,12 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios
             }
 
             return RedirectToPage("./Index");
+        }
+
+        public String getProductoServicio(String valor) {
+            if (valor.Equals("P")) return "Producto";
+            if (valor.Equals("S")) return "Servicio";
+            return "Descnocido";
         }
     }
 }

@@ -53,7 +53,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { id = eva_cat_espacios.IdEdificio});
         }
 
         public String Edificio(string ID)

@@ -28,11 +28,11 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus
 
         public String Activo(string letra)
         {
-            if (letra == "A")
+            if (letra == "N")
             {
                 return "Activo";
             }
-            if (letra == "I")
+            if (letra == "N")
             {
                 return "Inactivo";
             }

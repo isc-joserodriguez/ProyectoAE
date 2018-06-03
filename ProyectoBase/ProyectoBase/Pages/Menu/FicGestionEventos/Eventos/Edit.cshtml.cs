@@ -45,12 +45,13 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             {
                 return NotFound();
             }
+            getGenerales();
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (SeleccionoGenerales()) getGenerales();
+            res_eventos.FechaReg = DateTime.Now;
             if (!ModelState.IsValid)
             {
                 return Page();

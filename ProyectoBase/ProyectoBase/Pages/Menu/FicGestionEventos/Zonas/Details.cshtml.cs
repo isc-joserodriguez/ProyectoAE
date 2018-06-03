@@ -20,21 +20,46 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
         }
 
         public res_cat_zonas res_cat_zonas { get; set; }
+        public int IdEdificio { get; set; }
+        public int IdEspacio { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int id, int espacio, int edificio)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            res_cat_zonas = await _context.res_cat_zonas.SingleOrDefaultAsync(m => m.Id == id);
+            IdEdificio = edificio;
+            IdEspacio = espacio;
+            res_cat_zonas = await _context.res_cat_zonas.SingleOrDefaultAsync(m => m.IdZona == id);
 
             if (res_cat_zonas == null)
             {
                 return NotFound();
             }
             return Page();
+        }
+
+        public String getEdificio(string ID)
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                if (ID == d.IdEdificio.ToString())
+                {
+                    return d.Clave;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String getEspacio(string ID)
+        {
+            var Tipos = _context.eva_cat_espacios;
+            foreach (eva_cat_espacios d in Tipos)
+            {
+                if (ID == d.IdEspacio.ToString())
+                {
+                    return d.Alias;
+                }
+            }
+            return "Desconocido";
         }
     }
 }

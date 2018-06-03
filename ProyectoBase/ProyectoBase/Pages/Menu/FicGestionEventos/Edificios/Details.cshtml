@@ -6,13 +6,13 @@
 }
 
 <h2>Detalles Edificio</h2>
+<h4>Catálago de Edificios</h4>
 
     <div>
-        <h4>Catálogo Edificios</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                <label class="control-label">Clabe:</label>
+                <label class="control-label">Clave:</label>
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.eva_cat_edificios.Clave)
@@ -38,6 +38,6 @@
         </dl>
     </div>
     <div>
-        <a asp-page="./Edit" asp-route-id="@Model.eva_cat_edificios.IdEdificio" class="btn btn-primary">Editar</a> |
-        <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
+        <a asp-page="./Edit" asp-route-id="@Model.eva_cat_edificios.IdEdificio" class="btn btn-info">Editar</a> |
+        <a asp-page="./Index" class="btn btn-warning">Regresar a lista</a>
     </div>

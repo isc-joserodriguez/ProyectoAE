@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.EventoEstatus.IndexModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoEstatus.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -8,22 +8,87 @@
 <h2>Catálago Evento Estatus</h2>
 
 <p>
-    <a asp-page="Create">Agregar nuevo</a>
+    <a asp-page="Create" asp-route-evento="@Model.IdEvento" class="btn btn-info">Agregar nuevo</a>
+    <a asp-page="../Eventos/index" class="btn btn-warning">Regresar a la Lista</a>
 </p>
+
+<dl class="dl-horizontal">
+    <dt>
+        <label class="control-label">Evento:</label>
+    </dt>
+    <dd>
+        @Model.TipoGenEvento(Model.res_eventos.IdTipoGenEvento.ToString())
+    </dd>
+    <dt>
+        <label class="control-label">Orador:</label>
+    </dt>
+    <dd>
+        @Model.PersonaReg(Model.res_eventos.IdPersonaReg.ToString())
+    </dd>
+    <dt>
+        <label class="control-label">Nombre del Evento:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.NombreEvento)
+    </dd>
+    <dt>
+        <label class="control-label">Observaciones:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.Observacion)
+    </dd>
+    <dt>
+        <label class="control-label">Explicación:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.Explicacion)
+    </dd>
+    <dt>
+        <label class="control-label">URL de Página Web:</label>
+    </dt>
+    <dd>
+        <a href=@Html.DisplayFor(model => model.res_eventos.URL)>@Html.DisplayFor(model => model.res_eventos.URL)</a>
+    </dd>
+    <dt>
+        <label class="control-label">Fecha de Inicio:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.FechaIn)
+    </dd>
+    <dt>
+        <label class="control-label">Fecha de Culminación:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.FechaFin)
+    </dd>
+    <dt>
+        <label class="control-label">Edificio:</label>
+    </dt>
+    <dd>
+        @Model.Edificio(Model.res_eventos.IdEdificio.ToString())
+    </dd>
+    <dt>
+        <label class="control-label">Fecha de Registro:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.FechaReg)
+    </dd>
+    <dt>
+        <label class="control-label">Usuario que Registro:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.UsuarioReg)
+    </dd>
+</dl>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                Id Evento
-            </th>
-            <th>
                 Fecha Estatus
             </th>
             <th>
-                Id Tipo Estatus
-            </th>
-            <th>
-                Id Estatus
+                Estatus
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.res_evento_estatus[0].Actual)
@@ -42,30 +107,19 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IdEvento)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.FechaEstatus)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IdTipoEstatus)
+                    @Model.getEstatus(item.IdEstatus.ToString())
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IdEstatus)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Actual)
+                    @Model.getActual(item.Actual)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Observacion)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.UsuarioReg)
-                </td>
-                <td>
-                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
-                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
-                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
                 </td>
             </tr>
         }

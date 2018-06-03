@@ -21,7 +21,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
 
         public IList<cat_generales> cat_generales { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int id)
         {
             cat_generales = await _context.cat_generales.ToListAsync();
         }
@@ -41,11 +41,11 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
 
         public String Activo(string letra)
         {
-            if (letra == "A")
+            if (letra == "S")
             {
                 return "Activo";
             }
-            if (letra == "I")
+            if (letra == "N")
             {
                 return "Inactivo";
             }

@@ -1,11 +1,11 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.Espacios.EditModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.Espacios.EditModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h2>Editar Espacio [@Html.DisplayFor(model => model.eva_cat_espacios.Id)]</h2>
+<h2>Editar Espacio [@Html.DisplayFor(model => model.eva_cat_espacios.IdEspacio)]</h2>
 
 <h4>Catálogo Espacios</h4>
 <hr />
@@ -18,7 +18,7 @@
                 <input asp-for="eva_cat_espacios.IdEdificio" class="form-control" />
                 <span asp-validation-for="eva_cat_espacios.IdEdificio" class="text-danger"></span>
             </div>
-            <input type="hidden" asp-for="eva_cat_espacios.Id" />
+            <input type="hidden" asp-for="eva_cat_espacios.IdEspacio" />
             <div class="form-group">
                 <label asp-for="eva_cat_espacios.Clave" class="control-label"></label>
                 <input asp-for="eva_cat_espacios.Clave" class="form-control" />

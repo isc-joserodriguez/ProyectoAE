@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoEstatus
                 return NotFound();
             }
 
-            res_evento_estatus = await _context.res_evento_estatus.SingleOrDefaultAsync(m => m.Id == id);
+            res_evento_estatus = await _context.res_evento_estatus.SingleOrDefaultAsync(m => m.IdEstatusDet == id);
 
             if (res_evento_estatus == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoEstatus
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!res_evento_estatusExists(res_evento_estatus.Id))
+                if (!res_evento_estatusExists(res_evento_estatus.IdEstatusDet))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoEstatus
 
         private bool res_evento_estatusExists(int id)
         {
-            return _context.res_evento_estatus.Any(e => e.Id == id);
+            return _context.res_evento_estatus.Any(e => e.IdEstatusDet == id);
         }
     }
 }

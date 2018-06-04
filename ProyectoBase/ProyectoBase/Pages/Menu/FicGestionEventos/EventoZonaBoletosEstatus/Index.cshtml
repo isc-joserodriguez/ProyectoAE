@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletosEstatus.IndexModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletosEstatus.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -62,9 +62,9 @@
                 @Html.DisplayFor(modelItem => item.UsuarioReg)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.IdEstatusDet">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdEstatusDet">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdEstatusDet">Delete</a>
             </td>
         </tr>
 }

@@ -29,7 +29,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus
                 return NotFound();
             }
 
-            cat_tipos_estatus = await _context.cat_tipos_estatus.SingleOrDefaultAsync(m => m.Id == id);
+            cat_tipos_estatus = await _context.cat_tipos_estatus.SingleOrDefaultAsync(m => m.IdTipoEstatus == id);
 
             if (cat_tipos_estatus == null)
             {

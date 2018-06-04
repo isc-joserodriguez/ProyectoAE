@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatalogoEstatus.DeleteModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus.DeleteModel
 
 @{
     ViewData["Title"] = "Eliminar Estatus";
@@ -39,7 +39,7 @@
     </dl>
     
     <form method="post">
-        <input type="hidden" asp-for="cat_estatus.Id" />
+        <input type="hidden" asp-for="cat_estatus.IdEstatus" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
         <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
     </form>

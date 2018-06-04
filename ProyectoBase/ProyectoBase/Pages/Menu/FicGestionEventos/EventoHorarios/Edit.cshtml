@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.EventoHorarios.EditModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios.EditModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -18,7 +18,7 @@
                 <input asp-for="res_evento_horarios.IdEvento" class="form-control" />
                 <span asp-validation-for="res_evento_horarios.IdEvento" class="text-danger"></span>
             </div>
-            <input type="hidden" asp-for="res_evento_horarios.Id" />
+            <input type="hidden" asp-for="res_evento_horarios.IdHorarioDet" />
             <div class="form-group">
                 <label asp-for="res_evento_horarios.IdEdificio" class="control-label"></label>
                 <input asp-for="res_evento_horarios.IdEdificio" class="form-control" />

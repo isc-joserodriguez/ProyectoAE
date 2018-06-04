@@ -29,7 +29,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoClientes
                 return NotFound();
             }
 
-            res_evento_clientes = await _context.res_evento_clientes.SingleOrDefaultAsync(m => m.Id == id);
+            res_evento_clientes = await _context.res_evento_clientes.SingleOrDefaultAsync(m => m.IdReservaCliente == id);
 
             if (res_evento_clientes == null)
             {

@@ -1,11 +1,11 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatalogoEstatus.EditModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus.EditModel
 
 @{
     ViewData["Title"] = "Editar Estatus";
 }
 
-<h2>Editar Estatus [@Html.DisplayFor(model => model.cat_estatus.Id)]</h2>
+<h2>Editar Estatus [@Html.DisplayFor(model => model.cat_estatus.IdEstatus)]</h2>
 
 <h4>Catálogo Estatus</h4>
 <hr />
@@ -18,7 +18,7 @@
                 <input asp-for="cat_estatus.IdTipoEstatus" class="form-control" />
                 <span asp-validation-for="cat_estatus.IdTipoEstatus" class="text-danger"></span>
             </div>
-            <input type="hidden" asp-for="cat_estatus.Id" />
+            <input type="hidden" asp-for="cat_estatus.IdEstatus" />
             <div class="form-group">
                 <label asp-for="cat_estatus.Clave" class="control-label">Clave</label>
                 <input asp-for="cat_estatus.Clave" class="form-control" />

@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.Espacios.DeleteModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.Espacios.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -51,7 +51,7 @@
     </dl>
 
     <form method="post">
-        <input type="hidden" asp-for="eva_cat_espacios.Id" />
+        <input type="hidden" asp-for="eva_cat_espacios.IdEspacio" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
         <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
     </form>

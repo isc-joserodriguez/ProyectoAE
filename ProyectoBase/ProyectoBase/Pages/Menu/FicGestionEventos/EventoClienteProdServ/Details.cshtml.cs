@@ -28,7 +28,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoClienteProdServ
                 return NotFound();
             }
 
-            res_evento_cliente_prod_serv = await _context.res_evento_cliente_prod_serv.SingleOrDefaultAsync(m => m.Id == id);
+            res_evento_cliente_prod_serv = await _context.res_evento_cliente_prod_serv.SingleOrDefaultAsync(m => m.IdReservaServDet == id);
 
             if (res_evento_cliente_prod_serv == null)
             {

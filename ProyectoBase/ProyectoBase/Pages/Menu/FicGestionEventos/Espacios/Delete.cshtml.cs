@@ -29,7 +29,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
                 return NotFound();
             }
 
-            eva_cat_espacios = await _context.eva_cat_espacios.SingleOrDefaultAsync(m => m.Id == id);
+            eva_cat_espacios = await _context.eva_cat_espacios.SingleOrDefaultAsync(m => m.IdEspacio == id);
 
             if (eva_cat_espacios == null)
             {

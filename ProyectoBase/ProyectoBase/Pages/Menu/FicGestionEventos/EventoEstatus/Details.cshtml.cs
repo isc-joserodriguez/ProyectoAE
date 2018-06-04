@@ -28,7 +28,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoEstatus
                 return NotFound();
             }
 
-            res_evento_estatus = await _context.res_evento_estatus.SingleOrDefaultAsync(m => m.Id == id);
+            res_evento_estatus = await _context.res_evento_estatus.SingleOrDefaultAsync(m => m.IdEstatusDet == id);
 
             if (res_evento_estatus == null)
             {

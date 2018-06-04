@@ -28,7 +28,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletos
                 return NotFound();
             }
 
-            res_evento_zona_boletos = await _context.res_evento_zona_boletos.SingleOrDefaultAsync(m => m.Id == id);
+            res_evento_zona_boletos = await _context.res_evento_zona_boletos.SingleOrDefaultAsync(m => m.IdBoleto == id);
 
             if (res_evento_zona_boletos == null)
             {

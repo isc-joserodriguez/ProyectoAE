@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus
                 return NotFound();
             }
 
-            cat_tipos_estatus = await _context.cat_tipos_estatus.SingleOrDefaultAsync(m => m.Id == id);
+            cat_tipos_estatus = await _context.cat_tipos_estatus.SingleOrDefaultAsync(m => m.IdTipoEstatus == id);
 
             if (cat_tipos_estatus == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!cat_tipos_estatusExists(cat_tipos_estatus.Id))
+                if (!cat_tipos_estatusExists(cat_tipos_estatus.IdTipoEstatus))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus
 
         private bool cat_tipos_estatusExists(int id)
         {
-            return _context.cat_tipos_estatus.Any(e => e.Id == id);
+            return _context.cat_tipos_estatus.Any(e => e.IdTipoEstatus == id);
         }
     }
 }

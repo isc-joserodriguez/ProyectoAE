@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
                 return NotFound();
             }
 
-            res_cat_zonas = await _context.res_cat_zonas.SingleOrDefaultAsync(m => m.Id == id);
+            res_cat_zonas = await _context.res_cat_zonas.SingleOrDefaultAsync(m => m.IdZona == id);
 
             if (res_cat_zonas == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!res_cat_zonasExists(res_cat_zonas.Id))
+                if (!res_cat_zonasExists(res_cat_zonas.IdZona))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
 
         private bool res_cat_zonasExists(int id)
         {
-            return _context.res_cat_zonas.Any(e => e.Id == id);
+            return _context.res_cat_zonas.Any(e => e.IdZona == id);
         }
     }
 }

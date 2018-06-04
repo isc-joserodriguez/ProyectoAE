@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
                 return NotFound();
             }
 
-            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.Id == id);
+            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDet == id);
 
             if (res_evento_horarios == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!res_evento_horariosExists(res_evento_horarios.Id))
+                if (!res_evento_horariosExists(res_evento_horarios.IdHorarioDet))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
 
         private bool res_evento_horariosExists(int id)
         {
-            return _context.res_evento_horarios.Any(e => e.Id == id);
+            return _context.res_evento_horarios.Any(e => e.IdHorarioDet == id);
         }
     }
 }

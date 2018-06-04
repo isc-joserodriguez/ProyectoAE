@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatProductoServicios.DeleteModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -51,7 +51,7 @@
     </dl>
 
     <form method="post">
-        <input type="hidden" asp-for="cat_productos_servicios.Id" />
+        <input type="hidden" asp-for="cat_productos_servicios.IdProdServ" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
         <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
     </form>

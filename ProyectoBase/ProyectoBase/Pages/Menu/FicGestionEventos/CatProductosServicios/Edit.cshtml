@@ -1,11 +1,11 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatProductoServicios.EditModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios.EditModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h2>Editar Catálogo [@Html.DisplayFor(model => model.cat_productos_servicios.Id)]</h2>
+<h2>Editar Catálogo [@Html.DisplayFor(model => model.cat_productos_servicios.IdProdServ)]</h2>
 
 <h4>Catálogo de Productos y Servicios</h4>
 <hr />
@@ -13,7 +13,7 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="cat_productos_servicios.Id" />
+            <input type="hidden" asp-for="cat_productos_servicios.IdProdServ" />
             <div class="form-group">
                 <label asp-for="cat_productos_servicios.ClaveProdServ" class="control-label"></label>
                 <input asp-for="cat_productos_servicios.ClaveProdServ" class="form-control" />

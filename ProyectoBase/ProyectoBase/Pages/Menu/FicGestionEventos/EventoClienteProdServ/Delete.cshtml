@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.EventoClienteProdServ.DeleteModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoClienteProdServ.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -69,7 +69,7 @@
     </dl>
 
     <form method="post">
-        <input type="hidden" asp-for="res_evento_cliente_prod_serv.Id" />
+        <input type="hidden" asp-for="res_evento_cliente_prod_serv.IdReservaServDet" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
         <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
     </form>

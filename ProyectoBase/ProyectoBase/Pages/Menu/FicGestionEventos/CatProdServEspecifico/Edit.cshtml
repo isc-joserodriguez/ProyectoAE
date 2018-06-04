@@ -1,11 +1,11 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatProdServEspecifico.EditModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico.EditModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h2>Editar Catálogo [@Html.DisplayFor(model => model.cat_prod_serv_especifico.Id)]</h2>
+<h2>Editar Catálogo [@Html.DisplayFor(model => model.cat_prod_serv_especifico.IdProdServEsp)]</h2>
 
 <h4>Catálogo de Productos y Servicios Especificos</h4>
 <hr />
@@ -18,7 +18,7 @@
                 <input asp-for="cat_prod_serv_especifico.IdProdServ" class="form-control" />
                 <span asp-validation-for="cat_prod_serv_especifico.IdProdServ" class="text-danger"></span>
             </div>
-            <input type="hidden" asp-for="cat_prod_serv_especifico.Id" />
+            <input type="hidden" asp-for="cat_prod_serv_especifico.IdProdServEsp" />
             <div class="form-group">
                 <label asp-for="cat_prod_serv_especifico.ClaveProdServEsp" class="control-label">Clave</label>
                 <input asp-for="cat_prod_serv_especifico.ClaveProdServEsp" class="form-control" />

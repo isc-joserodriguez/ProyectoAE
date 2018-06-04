@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios
                 return NotFound();
             }
 
-            cat_productos_servicios = await _context.cat_productos_servicios.SingleOrDefaultAsync(m => m.Id == id);
+            cat_productos_servicios = await _context.cat_productos_servicios.SingleOrDefaultAsync(m => m.IdProdServ == id);
 
             if (cat_productos_servicios == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!cat_productos_serviciosExists(cat_productos_servicios.Id))
+                if (!cat_productos_serviciosExists(cat_productos_servicios.IdProdServ))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios
 
         private bool cat_productos_serviciosExists(int id)
         {
-            return _context.cat_productos_servicios.Any(e => e.Id == id);
+            return _context.cat_productos_servicios.Any(e => e.IdProdServ == id);
         }
     }
 }

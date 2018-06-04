@@ -1,4 +1,5 @@
 
+ProyectoBase/.vs
 *.config
 *.config
 ProyectoBase/.vs/ProyectoBase/v15/.suo
@@ -25,3 +26,7 @@ ProyectoBase/.vs/ProyectoBase/v15/Server/sqlite3/storage.ide
 ProyectoBase/ProyectoBase/bin/Debug/netcoreapp2.0/ProyectoBase.dll
 ProyectoBase/ProyectoBase/bin/Debug/netcoreapp2.0/ProyectoBase.pdb
 ProyectoBase/ProyectoBase/bin/Debug/netcoreapp2.0/ProyectoBase.runtimeconfig.dev.json
+ProyectoBase/.vs/ProyectoBase/v15/Server/sqlite3/storage.ide-shm
+ProyectoBase/.vs/ProyectoBase/v15/Server/sqlite3/storage.ide-shm
+ProyectoBase/.vs/ProyectoBase/v15/Server/sqlite3/storage.ide-wal
+ProyectoBase/ProyectoBase/obj/Debug/netcoreapp2.0/ProyectoBase.csproj.CoreCompileInputs.cache

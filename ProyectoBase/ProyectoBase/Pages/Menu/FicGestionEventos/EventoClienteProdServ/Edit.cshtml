@@ -1,11 +1,11 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.EventoClienteProdServ.EditModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoClienteProdServ.EditModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h2>Editar Edificio [@Html.DisplayFor(model => model.res_evento_cliente_prod_serv.Id)]</h2>
+<h2>Editar Edificio [@Html.DisplayFor(model => model.res_evento_cliente_prod_serv.IdReservaServDet)]</h2>
 
 <h4>Catálogo Edificios, Clientes, Productos y Servicios</h4>
 <hr />
@@ -23,7 +23,7 @@
                 <input asp-for="res_evento_cliente_prod_serv.IdReservaCliente" class="form-control" />
                 <span asp-validation-for="res_evento_cliente_prod_serv.IdReservaCliente" class="text-danger"></span>
             </div>
-            <input type="hidden" asp-for="res_evento_cliente_prod_serv.Id" />
+            <input type="hidden" asp-for="res_evento_cliente_prod_serv.IdReservaServDet" />
             <div class="form-group">
                 <label asp-for="res_evento_cliente_prod_serv.IdProdServ" class="control-label">Id Producto y Servicio</label>
                 <input asp-for="res_evento_cliente_prod_serv.IdProdServ" class="form-control" />

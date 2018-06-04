@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoClientes
                 return NotFound();
             }
 
-            res_evento_clientes = await _context.res_evento_clientes.SingleOrDefaultAsync(m => m.Id == id);
+            res_evento_clientes = await _context.res_evento_clientes.SingleOrDefaultAsync(m => m.IdReservaCliente == id);
 
             if (res_evento_clientes == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoClientes
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!res_evento_clientesExists(res_evento_clientes.Id))
+                if (!res_evento_clientesExists(res_evento_clientes.IdReservaCliente))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoClientes
 
         private bool res_evento_clientesExists(int id)
         {
-            return _context.res_evento_clientes.Any(e => e.Id == id);
+            return _context.res_evento_clientes.Any(e => e.IdReservaCliente == id);
         }
     }
 }

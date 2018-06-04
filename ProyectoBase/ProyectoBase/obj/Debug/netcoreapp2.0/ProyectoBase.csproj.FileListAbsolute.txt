@@ -36,7 +36,6 @@ C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netco
 C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.dev.json
 C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.dll
 C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.pdb
-C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csprojResolveAssemblyReference.cache
 C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csproj.CoreCompileInputs.cache
 C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfoInputs.cache
 C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfo.cs
@@ -64,3 +63,4 @@ C:\Users\LAPTOP\Desktop\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreap
 C:\Users\LAPTOP\Desktop\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.pdb
 C:\Users\LAPTOP\Desktop\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.dll
 C:\Users\LAPTOP\Desktop\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\Users\shepe\Documents\AE\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csprojResolveAssemblyReference.cache

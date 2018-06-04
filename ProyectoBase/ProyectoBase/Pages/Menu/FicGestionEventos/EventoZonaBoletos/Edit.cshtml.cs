@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletos
                 return NotFound();
             }
 
-            res_evento_zona_boletos = await _context.res_evento_zona_boletos.SingleOrDefaultAsync(m => m.Id == id);
+            res_evento_zona_boletos = await _context.res_evento_zona_boletos.SingleOrDefaultAsync(m => m.IdBoleto == id);
 
             if (res_evento_zona_boletos == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletos
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!res_evento_zona_boletosExists(res_evento_zona_boletos.Id))
+                if (!res_evento_zona_boletosExists(res_evento_zona_boletos.IdBoleto))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletos
 
         private bool res_evento_zona_boletosExists(int id)
         {
-            return _context.res_evento_zona_boletos.Any(e => e.Id == id);
+            return _context.res_evento_zona_boletos.Any(e => e.IdBoleto == id);
         }
     }
 }

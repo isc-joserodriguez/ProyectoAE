@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletosEstatus.EditModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletosEstatus.EditModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -18,7 +18,7 @@
                 <input asp-for="res_evento_zona_boleto_estatus.IdBoleto" class="form-control" />
                 <span asp-validation-for="res_evento_zona_boleto_estatus.IdBoleto" class="text-danger"></span>
             </div>
-            <input type="hidden" asp-for="res_evento_zona_boleto_estatus.Id" />
+            <input type="hidden" asp-for="res_evento_zona_boleto_estatus.IdEstatusDet" />
             <div class="form-group">
                 <label asp-for="res_evento_zona_boleto_estatus.FechaEstatus" class="control-label"></label>
                 <input asp-for="res_evento_zona_boleto_estatus.FechaEstatus" class="form-control" />

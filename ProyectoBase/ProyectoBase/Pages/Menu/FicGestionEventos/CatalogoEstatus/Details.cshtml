@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatalogoEstatus.DetailsModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus.DetailsModel
 
 @{
     ViewData["Title"] = "Detalles Estatus";
@@ -38,6 +38,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.cat_estatus.Id" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.cat_estatus.IdEstatus" class="btn btn-primary">Editar</a> |
     <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
 </div>

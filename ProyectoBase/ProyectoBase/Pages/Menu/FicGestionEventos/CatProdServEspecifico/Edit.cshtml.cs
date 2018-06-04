@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico
                 return NotFound();
             }
 
-            cat_prod_serv_especifico = await _context.cat_prod_serv_especifico.SingleOrDefaultAsync(m => m.Id == id);
+            cat_prod_serv_especifico = await _context.cat_prod_serv_especifico.SingleOrDefaultAsync(m => m.IdProdServEsp == id);
 
             if (cat_prod_serv_especifico == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!cat_prod_serv_especificoExists(cat_prod_serv_especifico.Id))
+                if (!cat_prod_serv_especificoExists(cat_prod_serv_especifico.IdProdServEsp))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico
 
         private bool cat_prod_serv_especificoExists(int id)
         {
-            return _context.cat_prod_serv_especifico.Any(e => e.Id == id);
+            return _context.cat_prod_serv_especifico.Any(e => e.IdProdServEsp == id);
         }
     }
 }

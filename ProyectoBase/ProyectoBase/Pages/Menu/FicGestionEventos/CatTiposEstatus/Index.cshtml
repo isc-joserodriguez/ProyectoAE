@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.FicGestionEventos.CatTiposEstatus.IndexModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -33,9 +33,9 @@
                     @Html.DisplayFor(modelItem => item.Activo)
                 </td>
                 <td>
-                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
-                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
-                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdTipoEstatus"></a> |
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdTipoEstatus"></a> |
+                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdTipoEstatus"></a>
                 </td>
             </tr>
         }

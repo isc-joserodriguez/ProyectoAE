@@ -25,5 +25,18 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposGenerales
         {
             cat_tipos_generales = await _context.cat_tipos_generales.ToListAsync();
         }
+
+        public String Activo(string letra)
+        {
+            if (letra == "S")
+            {
+                return "Activo";
+            }
+            if (letra == "N")
+            {
+                return "Inactivo";
+            }
+            return "Desconocido";
+        }
     }
 }

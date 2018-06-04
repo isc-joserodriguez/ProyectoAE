@@ -22,14 +22,21 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
 
         [BindProperty]
         public res_cat_zonas res_cat_zonas { get; set; }
+        public int IdEdificio { get; set; }
+        public int IdEspacio { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int id, int espacio, int edificio)
         {
+<<<<<<< HEAD
             if (id == null)
             {
                 return NotFound();
             }
 
+=======
+            IdEdificio = edificio;
+            IdEspacio = espacio;
+>>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
             res_cat_zonas = await _context.res_cat_zonas.SingleOrDefaultAsync(m => m.IdZona == id);
 
             if (res_cat_zonas == null)
@@ -45,7 +52,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
             {
                 return Page();
             }
-
+            res_cat_zonas.CapacidadPer = res_cat_zonas.Filas * res_cat_zonas.AsientosPorFila;
             _context.Attach(res_cat_zonas).State = EntityState.Modified;
 
             try
@@ -64,12 +71,41 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { espacio = res_cat_zonas.IdEspacio, edificio = res_cat_zonas.IdEdificio });
         }
 
         private bool res_cat_zonasExists(int id)
         {
             return _context.res_cat_zonas.Any(e => e.IdZona == id);
+<<<<<<< HEAD
+=======
+        }
+
+        public String getEdificio(string ID)
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                if (ID == d.IdEdificio.ToString())
+                {
+                    return d.Clave;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String getEspacio(string ID)
+        {
+            var Tipos = _context.eva_cat_espacios;
+            foreach (eva_cat_espacios d in Tipos)
+            {
+                if (ID == d.IdEspacio.ToString())
+                {
+                    return d.Alias;
+                }
+            }
+            return "Desconocido";
+>>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
         }
     }
 }

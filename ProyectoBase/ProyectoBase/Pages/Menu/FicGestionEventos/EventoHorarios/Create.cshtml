@@ -5,68 +5,58 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Crear</h2>
 
-<h4>res_evento_horarios</h4>
+<h4>Eventos por Horario</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="res_evento_horarios.IdEvento" class="control-label"></label>
-                <input asp-for="res_evento_horarios.IdEvento" class="form-control" />
-                <span asp-validation-for="res_evento_horarios.IdEvento" class="text-danger"></span>
+                <label class="control-label">Evento: @Model.Evento(Model.IdEvento.ToString())</label>
+                <input asp-for="res_evento_horarios.IdEvento" value="@Model.IdEvento" type="hidden" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_horarios.IdEdificio" class="control-label"></label>
-                <input asp-for="res_evento_horarios.IdEdificio" class="form-control" />
-                <span asp-validation-for="res_evento_horarios.IdEdificio" class="text-danger"></span>
+                <label class="control-label">Edificio: @Model.Edificio(Model.IdEdificio.ToString())</label>
+                <input asp-for="res_evento_horarios.IdEdificio" value="@Model.IdEdificio" type="hidden" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_horarios.IdEspacio" class="control-label"></label>
-                <input asp-for="res_evento_horarios.IdEspacio" class="form-control" />
+                <label class="control-label">Espacio:</label>
+                @Html.DropDownListFor(model => model.res_evento_horarios.IdEspacio, Model.Espacio, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="res_evento_horarios.IdEspacio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_horarios.Dia" class="control-label"></label>
-                <input asp-for="res_evento_horarios.Dia" class="form-control" />
+                <label class="control-label">Dia:</label>
+                @Html.DropDownListFor(model => model.res_evento_horarios.Dia, Model.Dias, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="res_evento_horarios.Dia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_horarios.FechaHoraIni" class="control-label"></label>
+                <label class="control-label">Fecha y Hora de Inicio:</label>
                 <input asp-for="res_evento_horarios.FechaHoraIni" class="form-control" />
                 <span asp-validation-for="res_evento_horarios.FechaHoraIni" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_horarios.FechaHoraFin" class="control-label"></label>
+                <label class="control-label">Fecha y Hora de Culminación:</label>
                 <input asp-for="res_evento_horarios.FechaHoraFin" class="form-control" />
                 <span asp-validation-for="res_evento_horarios.FechaHoraFin" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_horarios.Disponible" class="control-label"></label>
-                <input asp-for="res_evento_horarios.Disponible" class="form-control" />
+                <label class="control-label">Disponibilidad:</label>
+                @Html.DropDownListFor(model => model.res_evento_horarios.Disponible, Model.Disponibilidad, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="res_evento_horarios.Disponible" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_horarios.FechaReg" class="control-label"></label>
-                <input asp-for="res_evento_horarios.FechaReg" class="form-control" />
-                <span asp-validation-for="res_evento_horarios.FechaReg" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="res_evento_horarios.UsuarioReg" class="control-label"></label>
+                <label class="control-label">Usuario que Registro:</label>
                 <input asp-for="res_evento_horarios.UsuarioReg" class="form-control" />
                 <span asp-validation-for="res_evento_horarios.UsuarioReg" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-info" /> |
+                <a asp-page="../EventoHorarios/Index" asp-route-id="@Model.IdEvento" class="btn btn-warning">Regresar a la Lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

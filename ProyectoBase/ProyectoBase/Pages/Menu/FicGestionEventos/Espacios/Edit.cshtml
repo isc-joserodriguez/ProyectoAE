@@ -5,48 +5,51 @@
     ViewData["Title"] = "Edit";
 }
 
+<<<<<<< HEAD
 <h2>Editar Espacio [@Html.DisplayFor(model => model.eva_cat_espacios.IdEspacio)]</h2>
+=======
+<h2>Editar</h2>
+>>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
 
-<h4>Catálogo Espacios</h4>
-<hr />
+<h4>Catálogo de Espacios</h4>
+<br />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="eva_cat_espacios.IdEdificio" class="control-label">Id</label>
-                <input asp-for="eva_cat_espacios.IdEdificio" class="form-control" />
-                <span asp-validation-for="eva_cat_espacios.IdEdificio" class="text-danger"></span>
+                <label class="control-label">Edificio: @Model.Edificio(Model.IdEdificio.ToString())</label>
+                <input asp-for="eva_cat_espacios.IdEdificio" value="@Model.IdEdificio" type="hidden" class="form-control" />
             </div>
             <input type="hidden" asp-for="eva_cat_espacios.IdEspacio" />
             <div class="form-group">
-                <label asp-for="eva_cat_espacios.Clave" class="control-label"></label>
+                <label class="control-label">Clave:</label>
                 <input asp-for="eva_cat_espacios.Clave" class="form-control" />
                 <span asp-validation-for="eva_cat_espacios.Clave" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="eva_cat_espacios.Alias" class="control-label"></label>
+                <label class="control-label">Alias:</label>
                 <input asp-for="eva_cat_espacios.Alias" class="form-control" />
                 <span asp-validation-for="eva_cat_espacios.Alias" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="eva_cat_espacios.DesEspacio" class="control-label">Descripción</label>
-                <input asp-for="eva_cat_espacios.DesEspacio" class="form-control" />
+                <label class="control-label">Descripción:</label>
+                <textarea asp-for="eva_cat_espacios.DesEspacio" class="form-control" ></textarea>
                 <span asp-validation-for="eva_cat_espacios.DesEspacio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="eva_cat_espacios.Capacidad" class="control-label"></label>
-                <input asp-for="eva_cat_espacios.Capacidad" class="form-control" />
+                <label class="control-label">Capacidad</label>
+                <input asp-for="eva_cat_espacios.Capacidad" type="number" class="form-control" />
                 <span asp-validation-for="eva_cat_espacios.Capacidad" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="eva_cat_espacios.Prioridad" class="control-label"></label>
-                <input asp-for="eva_cat_espacios.Prioridad" class="form-control" />
+                <label class="control-label">Prioridad</label>
+                <input asp-for="eva_cat_espacios.Prioridad" type="number" class="form-control" />
                 <span asp-validation-for="eva_cat_espacios.Prioridad" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" /> |
-                <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
+                <input type="submit" value="Guardar" class="btn btn-info" /> |
+                <a asp-page="./Index" asp-route-id="@Model.IdEdificio" class="btn btn-warning">Regresar a lista</a>
             </div>
         </form>
     </div>

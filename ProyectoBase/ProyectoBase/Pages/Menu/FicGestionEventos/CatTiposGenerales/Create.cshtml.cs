@@ -21,6 +21,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposGenerales
 
         public IActionResult OnGet()
         {
+            getActivo();
             return Page();
         }
 
@@ -38,6 +39,23 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposGenerales
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+
+        
+        public List<SelectListItem> Activo = new List<SelectListItem>();
+        public void getActivo()
+        {
+            //if(d.Activo.Equals("A"))
+            Activo.Add(new SelectListItem
+            {
+                Text = "Activo",
+                Value = "S"
+            });
+            Activo.Add(new SelectListItem
+            {
+                Text = "Inactivo",
+                Value = "N"
+            });
         }
     }
 }

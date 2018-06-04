@@ -36,5 +36,12 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios
             }
             return Page();
         }
+
+        public String getProductoServicio(String valor)
+        {
+            if (valor.Equals("P")) return "Producto";
+            if (valor.Equals("S")) return "Servicio";
+            return "Descnocido";
+        }
     }
 }

@@ -5,23 +5,23 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Detalles Catálogo</h2>
+<h2>Detalles</h2>
 
 <div>
-    <h4>Catálago Tipo Generales</h4>
+    <h4>Catálago Tipos de Evento</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Descripción
+            <label class="control-label">Descripción:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_tipos_generales.DesTipo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_tipos_generales.Activo)
+            <label class="control-label">Activo:</label>
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.cat_tipos_generales.Activo)
+            @Model.Activo(Model.cat_tipos_generales.Activo)
         </dd>
     </dl>
 </div>

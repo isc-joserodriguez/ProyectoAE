@@ -5,32 +5,32 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Agregar Catálogo</h2>
+<h2>Agregar</h2>
 
-<h4>Catálogo Generales</h4>
+<h4>Catálago de Tipos</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="cat_generales.IdTipoGeneral" class="control-label">Id Tipo General</label>
-                <input asp-for="cat_generales.IdTipoGeneral" class="form-control" />
+                <label class="control-label">Tipo de Evento:</label>
+                @Html.DropDownListFor(model => model.cat_generales.IdTipoGeneral, Model.TiposGenerales, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="cat_generales.IdTipoGeneral" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="cat_generales.Clave" class="control-label">Clave</label>
+                <label class="control-label">Clave:</label>
                 <input asp-for="cat_generales.Clave" class="form-control" />
                 <span asp-validation-for="cat_generales.Clave" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="cat_generales.DesGeneral" class="control-label">Descripción</label>
-                <input asp-for="cat_generales.DesGeneral" class="form-control" />
+                <label class="control-label">Descrición del General:</label>
+                <textarea asp-for="cat_generales.DesGeneral" class="form-control" ></textarea>
                 <span asp-validation-for="cat_generales.DesGeneral" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="cat_generales.Activo" class="control-label">Activo</label>
-                <input asp-for="cat_generales.Activo" class="form-control" />
+                <label class="control-label">Activo:</label>
+                @Html.DropDownListFor(model => model.cat_generales.Activo, Model.Activo, "Selecciona", new { @class = "form-control" })<br />
                 <span asp-validation-for="cat_generales.Activo" class="text-danger"></span>
             </div>
             <div class="form-group">

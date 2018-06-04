@@ -5,81 +5,82 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Quieres Eliminar esta Persona?</h3>
+<h4>Catálago de Personas</h4>
 <div>
-    <h4>rh_cat_personas</h4>
+    <h4>Persona</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.IdInstituto)
+            ID de Institución:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.IdInstituto)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.NumControl)
+            Número de Control:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.NumControl)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.Nombre)
+            Nombre:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.Nombre)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.ApPaterno)
+            Apellido Paterno:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.ApPaterno)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.ApMaterno)
+            Apellido Materno:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.ApMaterno)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.RFC)
+            RFC:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.RFC)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.CURP)
+            CURP:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.CURP)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.TipoPersona)
+            Tipo de Persona:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.TipoPersona)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.Sexo)
+            Sexo:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.Sexo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.RutaFoto)
+            Ruta de Fotografia:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.RutaFoto)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.Alias)
+            Alias:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.Alias)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rh_cat_personas.FechaNac)
+            Fecha de Nacimiento
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rh_cat_personas.FechaNac)
@@ -88,7 +89,7 @@
     
     <form method="post">
         <input type="hidden" asp-for="rh_cat_personas.IdPersona" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="Index" class="btn btn-warning">Regresar a la Lista</a>
     </form>
 </div>

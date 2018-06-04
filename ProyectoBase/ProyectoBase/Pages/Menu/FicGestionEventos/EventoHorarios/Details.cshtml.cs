@@ -20,21 +20,66 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
         }
 
         public res_evento_horarios res_evento_horarios { get; set; }
+        public int IdEvento { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id, int evento)
         {
             if (id == null)
             {
                 return NotFound();
             }
+<<<<<<< HEAD
 
             res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDet == id);
+=======
+            IdEvento = evento;
+            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDes == id);
+>>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
 
             if (res_evento_horarios == null)
             {
                 return NotFound();
             }
             return Page();
+        }
+
+        public String Edificio(string ID)
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                if (ID == d.IdEdificio.ToString())
+                {
+                    return d.Clave;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String Espacio(string ID)
+        {
+            var Tipos = _context.eva_cat_espacios;
+            foreach (eva_cat_espacios d in Tipos)
+            {
+                if (ID == d.IdEspacio.ToString())
+                {
+                    return d.Clave;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String Evento(string ID)
+        {
+            var Tipos = _context.res_eventos;
+            foreach (res_eventos d in Tipos)
+            {
+                if (ID == d.IdEvento.ToString())
+                {
+                    return d.NombreEvento;
+                }
+            }
+            return "Desconocido";
         }
     }
 }

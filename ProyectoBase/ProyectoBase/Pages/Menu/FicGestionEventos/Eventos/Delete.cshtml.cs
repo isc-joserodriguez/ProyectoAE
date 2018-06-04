@@ -89,7 +89,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             {
                 if (ID == d.IdGeneral.ToString())
                 {
-                    return d.DesGeneral;
+                    return d.Clave;
                 }
             }
             return "Desconocido";
@@ -102,7 +102,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             {
                 if (ID == d.IdEdificio.ToString())
                 {
-                    return d.DesEdificio;
+                    return d.Clave;
                 }
             }
             return "Desconocido";

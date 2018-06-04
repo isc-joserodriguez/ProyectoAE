@@ -5,62 +5,62 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <div>
-    <h4>res_evento_horarios</h4>
+    <h4>Horarios de Eventos</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_horarios.IdEvento)
+            <label class="control-label">Evento:</label>
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_evento_horarios.IdEvento)
+            @Model.Evento(Model.res_evento_horarios.IdEdificio.ToString())
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_horarios.IdEdificio)
+            <label class="control-label">Edificio:</label>
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_evento_horarios.IdEdificio)
+            @Model.Edificio(Model.res_evento_horarios.IdEdificio.ToString())
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_horarios.IdEspacio)
+            <label class="control-label">Espacio:</label>
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_evento_horarios.IdEspacio)
+            @Model.Espacio(Model.res_evento_horarios.IdEspacio.ToString())
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_horarios.Dia)
+            <label class="control-label">Día:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_horarios.Dia)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_horarios.FechaHoraIni)
+            <label class="control-label">Fecha de Inicio</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_horarios.FechaHoraIni)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_horarios.FechaHoraFin)
+            <label class="control-label">FEcha de Culminación:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_horarios.FechaHoraFin)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_horarios.Disponible)
+            <label class="control-label">Disponible:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_horarios.Disponible)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_horarios.FechaReg)
+            <label class="control-label">Fecha de Registro:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_horarios.FechaReg)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_evento_horarios.UsuarioReg)
+            <label class="control-label">Usuario que Registro</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_evento_horarios.UsuarioReg)
@@ -68,6 +68,11 @@
     </dl>
 </div>
 <div>
+<<<<<<< HEAD
     <a asp-page="./Edit" asp-route-id="@Model.res_evento_horarios.IdHorarioDet">Edit</a> |
     <a asp-page="./Index">Back to List</a>
+=======
+    <a asp-page="./Edit" asp-route-id="@Model.res_evento_horarios.IdHorarioDes" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_evento_horarios.IdEdificio" class="btn btn-info">Editar</a> |
+    <a asp-page="../EventoHorarios/Index" asp-route-id="@Model.IdEvento" class="btn btn-warning">Regresar a la Lista</a>
+>>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
 </div>

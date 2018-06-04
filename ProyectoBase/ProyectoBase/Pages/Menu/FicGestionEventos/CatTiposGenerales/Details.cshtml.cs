@@ -36,5 +36,18 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposGenerales
             }
             return Page();
         }
+
+        public String Activo(string letra)
+        {
+            if (letra == "S")
+            {
+                return "Activo";
+            }
+            if (letra == "N")
+            {
+                return "Inactivo";
+            }
+            return "Desconocido";
+        }
     }
 }

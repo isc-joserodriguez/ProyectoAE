@@ -18,12 +18,17 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
         public EditModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
+            getEdificios();
         }
 
         [BindProperty]
         public eva_cat_espacios eva_cat_espacios { get; set; }
+        public int IdEdificio { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+
+        public List<SelectListItem> Edificios = new List<SelectListItem>();
+
+        public async Task<IActionResult> OnGetAsync(int? id, int edificio)
         {
             if (id == null)
             {
@@ -36,6 +41,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
             {
                 return NotFound();
             }
+            IdEdificio = edificio;
             return Page();
         }
 
@@ -64,12 +70,41 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { id= eva_cat_espacios.IdEdificio });
         }
 
         private bool eva_cat_espaciosExists(int id)
         {
             return _context.eva_cat_espacios.Any(e => e.IdEspacio == id);
+<<<<<<< HEAD
+=======
+        }
+
+        public void getEdificios()
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                Edificios.Add(new SelectListItem
+                {
+                    Text = d.Clave,
+                    Value = d.IdEdificio.ToString()
+                });
+            }
+        }
+
+        public String Edificio(string ID)
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                if (ID == d.IdEdificio.ToString())
+                {
+                    return d.Clave;
+                }
+            }
+            return "Desconocido";
+>>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
         }
     }
 }

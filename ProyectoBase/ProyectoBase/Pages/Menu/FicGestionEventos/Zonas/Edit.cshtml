@@ -5,54 +5,44 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Editar</h2>
 
-<h4>res_cat_zonas</h4>
+<h4>Catálago de Zonas</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="res_cat_zonas.IdZona" />
             <div class="form-group">
-                <label asp-for="res_cat_zonas.IdEdificio" class="control-label"></label>
-                <input asp-for="res_cat_zonas.IdEdificio" class="form-control" />
-                <span asp-validation-for="res_cat_zonas.IdEdificio" class="text-danger"></span>
+                <label asp-for="res_cat_zonas.IdEdificio" class="control-label">Edificio: @Model.getEdificio(Model.IdEdificio.ToString())</label>
+                <input asp-for="res_cat_zonas.IdEdificio" type="hidden" value="@Model.IdEdificio" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="res_cat_zonas.IdEspacio" class="control-label"></label>
-                <input asp-for="res_cat_zonas.IdEspacio" class="form-control" />
-                <span asp-validation-for="res_cat_zonas.IdEspacio" class="text-danger"></span>
+                <label asp-for="res_cat_zonas.IdEspacio" class="control-label">Espacio: @Model.getEspacio(Model.IdEspacio.ToString())</label>
+                <input asp-for="res_cat_zonas.IdEspacio" type="hidden" class="form-control" value="@Model.IdEspacio" />
             </div>
-            <input type="hidden" asp-for="res_cat_zonas.Id" />
             <div class="form-group">
-                <label asp-for="res_cat_zonas.DesZona" class="control-label"></label>
-                <input asp-for="res_cat_zonas.DesZona" class="form-control" />
+                <label asp-for="res_cat_zonas.DesZona" class="control-label">Descripción</label>
+                <textarea asp-for="res_cat_zonas.DesZona" class="form-control"></textarea>
                 <span asp-validation-for="res_cat_zonas.DesZona" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_cat_zonas.CapacidadPer" class="control-label"></label>
-                <input asp-for="res_cat_zonas.CapacidadPer" class="form-control" />
-                <span asp-validation-for="res_cat_zonas.CapacidadPer" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="res_cat_zonas.Filas" class="control-label"></label>
-                <input asp-for="res_cat_zonas.Filas" class="form-control" />
+                <label asp-for="res_cat_zonas.Filas" class="control-label">Filas de Asientos:</label>
+                <input asp-for="res_cat_zonas.Filas" type="number" class="form-control" />
                 <span asp-validation-for="res_cat_zonas.Filas" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_cat_zonas.AsientosPorFila" class="control-label"></label>
-                <input asp-for="res_cat_zonas.AsientosPorFila" class="form-control" />
+                <label asp-for="res_cat_zonas.AsientosPorFila" class="control-label">Asientos por Fila:</label>
+                <input asp-for="res_cat_zonas.AsientosPorFila" type="number" class="form-control" />
                 <span asp-validation-for="res_cat_zonas.AsientosPorFila" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-info" /> |
+                <a asp-page="Index" asp-route-espacio="@Model.IdEspacio" asp-route-edificio="@Model.IdEdificio" class="btn btn-warning">Regresar a la Lista de Zonas</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

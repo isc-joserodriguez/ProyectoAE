@@ -36,5 +36,18 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
             }
             return Page();
         }
+
+        public String Edificio(string ID)
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                if (ID == d.IdEdificio.ToString())
+                {
+                    return d.Clave;
+                }
+            }
+            return "Desconocido";
+        }
     }
 }

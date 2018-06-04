@@ -5,9 +5,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Editar Tipo Estatus [@Html.DisplayFor(model => model.cat_tipos_generales.IdTipoGeneral)]</h2>
+<h2>Editar Tipo Evento @Html.DisplayFor(model => model.cat_tipos_generales.DesTipo)</h2>
 
-<h4>Catálogo Tipo Generales</h4>
+<h4>Catálago Tipos de Evento</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,13 +15,14 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="cat_tipos_generales.IdTipoGeneral" />
             <div class="form-group">
-                <label asp-for="cat_tipos_generales.DesTipo" class="control-label">Descripción</label>
-                <input asp-for="cat_tipos_generales.DesTipo" class="form-control" />
+                <label class="control-label">Descripción:</label>
+                <textarea asp-for="cat_tipos_generales.DesTipo" class="form-control" ></textarea>
                 <span asp-validation-for="cat_tipos_generales.DesTipo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="cat_tipos_generales.Activo" class="control-label"></label>
-                <input asp-for="cat_tipos_generales.Activo" class="form-control" />
+                <label class="control-label">Activo:</label>
+                @Html.DropDownListFor(model => model.cat_tipos_generales.Activo, Model.Activo, "Selecciona", new { @class = "form-control" })
+                <br />
                 <span asp-validation-for="cat_tipos_generales.Activo" class="text-danger"></span>
             </div>
             <div class="form-group">

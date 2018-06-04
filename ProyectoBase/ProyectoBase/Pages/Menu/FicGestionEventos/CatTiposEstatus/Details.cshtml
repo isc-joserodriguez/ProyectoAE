@@ -12,16 +12,16 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Descripción
+            <label class="control-label">Descripción:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_tipos_estatus.DesTipoEstatus)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_tipos_estatus.Activo)
+            <label class="control-label">Activo:</label>
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.cat_tipos_estatus.Activo)
+            @Model.Activo(Model.cat_tipos_estatus.Activo)
         </dd>
     </dl>
 </div>

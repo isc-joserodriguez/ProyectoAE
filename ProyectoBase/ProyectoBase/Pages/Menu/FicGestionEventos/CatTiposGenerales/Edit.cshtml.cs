@@ -29,6 +29,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposGenerales
             {
                 return NotFound();
             }
+            getActivo();
 
             cat_tipos_generales = await _context.cat_tipos_generales.SingleOrDefaultAsync(m => m.IdTipoGeneral == id);
 
@@ -70,6 +71,22 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposGenerales
         private bool cat_tipos_generalesExists(int id)
         {
             return _context.cat_tipos_generales.Any(e => e.IdTipoGeneral == id);
+        }
+
+        public List<SelectListItem> Activo = new List<SelectListItem>();
+        public void getActivo()
+        {
+            //if(d.Activo.Equals("A"))
+            Activo.Add(new SelectListItem
+            {
+                Text = "Activo",
+                Value = "S"
+            });
+            Activo.Add(new SelectListItem
+            {
+                Text = "Inactivo",
+                Value = "N"
+            });
         }
     }
 }

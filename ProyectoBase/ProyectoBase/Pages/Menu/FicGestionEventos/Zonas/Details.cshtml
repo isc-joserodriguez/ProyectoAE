@@ -5,44 +5,43 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
-
+<h2>Detalles de la Zona</h2>
+<h4>Catálago de Zonas</h4>
 <div>
-    <h4>res_cat_zonas</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.res_cat_zonas.IdEdificio)
+            Edificio:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_cat_zonas.IdEdificio)
+            @Model.getEdificio(Model.IdEdificio.ToString())
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_cat_zonas.IdEspacio)
+            Espacio:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_cat_zonas.IdEspacio)
+            @Model.getEspacio(Model.IdEspacio.ToString())
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_cat_zonas.DesZona)
+            Descripción:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_cat_zonas.DesZona)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_cat_zonas.CapacidadPer)
+            Capacidad:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_cat_zonas.CapacidadPer)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_cat_zonas.Filas)
+            Filas de Asientos:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_cat_zonas.Filas)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.res_cat_zonas.AsientosPorFila)
+            Asientos por Fila:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.res_cat_zonas.AsientosPorFila)
@@ -50,6 +49,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.res_cat_zonas.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.res_cat_zonas.IdZona" asp-route-espacio="@Model.res_cat_zonas.IdEspacio" asp-route-edificio="@Model.res_cat_zonas.IdEdificio" class="btn btn-info">Editar</a> |
+    <a asp-page="./Index" asp-route-espacio="@Model.res_cat_zonas.IdEspacio" asp-route-edificio="@Model.res_cat_zonas.IdEdificio" class="btn btn-warning">Regresar a la Lista de Zonas</a>
 </div>

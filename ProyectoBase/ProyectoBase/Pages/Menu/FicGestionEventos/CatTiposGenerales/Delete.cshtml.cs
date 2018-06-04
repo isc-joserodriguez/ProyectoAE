@@ -55,5 +55,18 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposGenerales
 
             return RedirectToPage("./Index");
         }
+
+        public String Activo(string letra)
+        {
+            if (letra == "S")
+            {
+                return "Activo";
+            }
+            if (letra == "N")
+            {
+                return "Inactivo";
+            }
+            return "Desconocido";
+        }
     }
 }

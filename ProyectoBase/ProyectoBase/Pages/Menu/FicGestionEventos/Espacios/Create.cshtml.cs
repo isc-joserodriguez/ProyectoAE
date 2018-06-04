@@ -19,13 +19,17 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int id)
         {
+            IdEdificio = id;
             return Page();
         }
 
         [BindProperty]
         public eva_cat_espacios eva_cat_espacios { get; set; }
+        public int IdEdificio { get; set; }
+
+        public List<SelectListItem> Edificios = new List<SelectListItem>();
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -37,7 +41,20 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
             _context.eva_cat_espacios.Add(eva_cat_espacios);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { id = eva_cat_espacios.IdEdificio });
+        }
+
+        public String Edificio(string ID)
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                if (ID == d.IdEdificio.ToString())
+                {
+                    return d.DesEdificio;
+                }
+            }
+            return "Desconocido";
         }
     }
 }

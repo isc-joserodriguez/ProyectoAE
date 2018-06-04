@@ -5,9 +5,8 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
-
-<h4>rh_cat_personas</h4>
+<h2>Editar - @Model.rh_cat_personas.Nombre @Model.rh_cat_personas.ApPaterno @Model.rh_cat_personas.ApMaterno</h2>
+<h4>Catálago de Personas</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,74 +14,71 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="rh_cat_personas.IdPersona" />
             <div class="form-group">
-                <label asp-for="rh_cat_personas.IdInstituto" class="control-label"></label>
+                Id de Institución:
                 <input asp-for="rh_cat_personas.IdInstituto" class="form-control" />
                 <span asp-validation-for="rh_cat_personas.IdInstituto" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="rh_cat_personas.NumControl" class="control-label"></label>
+                Número de Contro:
                 <input asp-for="rh_cat_personas.NumControl" class="form-control" />
                 <span asp-validation-for="rh_cat_personas.NumControl" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="rh_cat_personas.Nombre" class="control-label"></label>
+                Nombre:
                 <input asp-for="rh_cat_personas.Nombre" class="form-control" />
                 <span asp-validation-for="rh_cat_personas.Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="rh_cat_personas.ApPaterno" class="control-label"></label>
+                Apellido Paterno:
                 <input asp-for="rh_cat_personas.ApPaterno" class="form-control" />
                 <span asp-validation-for="rh_cat_personas.ApPaterno" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="rh_cat_personas.ApMaterno" class="control-label"></label>
+                Apellido Materno:
                 <input asp-for="rh_cat_personas.ApMaterno" class="form-control" />
                 <span asp-validation-for="rh_cat_personas.ApMaterno" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="rh_cat_personas.RFC" class="control-label"></label>
+                RFC:
                 <input asp-for="rh_cat_personas.RFC" class="form-control" />
                 <span asp-validation-for="rh_cat_personas.RFC" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="rh_cat_personas.CURP" class="control-label"></label>
+                CURP:
                 <input asp-for="rh_cat_personas.CURP" class="form-control" />
                 <span asp-validation-for="rh_cat_personas.CURP" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="rh_cat_personas.TipoPersona" class="control-label"></label>
-                <input asp-for="rh_cat_personas.TipoPersona" class="form-control" />
+                Tipo Persona: 
+                @Html.DropDownListFor(model => model.rh_cat_personas.TipoPersona, Model.TipoPersona, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="rh_cat_personas.TipoPersona" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="rh_cat_personas.Sexo" class="control-label"></label>
-                <input asp-for="rh_cat_personas.Sexo" class="form-control" />
+                Sexo:<br />
+                @Html.DropDownListFor(model => model.rh_cat_personas.Sexo, Model.Sexo, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="rh_cat_personas.Sexo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="rh_cat_personas.RutaFoto" class="control-label"></label>
-                <input asp-for="rh_cat_personas.RutaFoto" class="form-control" />
+                Foto:
+                <input type="file" asp-for="rh_cat_personas.RutaFoto" class="form-control" />
                 <span asp-validation-for="rh_cat_personas.RutaFoto" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="rh_cat_personas.Alias" class="control-label"></label>
+                Alias:
                 <input asp-for="rh_cat_personas.Alias" class="form-control" />
                 <span asp-validation-for="rh_cat_personas.Alias" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="rh_cat_personas.FechaNac" class="control-label"></label>
-                <input asp-for="rh_cat_personas.FechaNac" class="form-control" />
+                Fecha de Nacimiento:
+                <input asp-for="rh_cat_personas.FechaNac" class="form-control" type="date" />
                 <span asp-validation-for="rh_cat_personas.FechaNac" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-info" /> |
+                <a asp-page="Index" class="btn btn-warning">Regresar a la Lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

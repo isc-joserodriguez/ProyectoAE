@@ -55,5 +55,11 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios
 
             return RedirectToPage("./Index");
         }
+
+        public String getProductoServicio(String valor) {
+            if (valor.Equals("P")) return "Producto";
+            if (valor.Equals("S")) return "Servicio";
+            return "Descnocido";
+        }
     }
 }

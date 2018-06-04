@@ -124,7 +124,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             {
                 if (ID == d.IdGeneral.ToString())
                 {
-                    return d.DesGeneral;
+                    return d.Clave;
                 }
             }
             return "Desconocido";

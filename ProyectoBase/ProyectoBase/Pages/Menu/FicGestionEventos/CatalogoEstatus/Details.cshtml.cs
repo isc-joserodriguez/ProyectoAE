@@ -36,5 +36,31 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus
             }
             return Page();
         }
+
+        public String Activo(string letra)
+        {
+            if (letra == "S")
+            {
+                return "Activo";
+            }
+            if (letra == "N")
+            {
+                return "Inactivo";
+            }
+            return "Desconocido";
+        }
+
+        public String TipoEstatus(string ID)
+        {
+            var Tipos = _context.cat_tipos_estatus;
+            foreach (cat_tipos_estatus d in Tipos)
+            {
+                if (ID == d.IdTipoEstatus.ToString())
+                {
+                    return d.DesTipoEstatus;
+                }
+            }
+            return "Desconocido";
+        }
     }
 }

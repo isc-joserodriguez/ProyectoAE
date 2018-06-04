@@ -12,37 +12,37 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Id
+            <label class="control-label">Edificio:</label>
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.eva_cat_espacios.IdEdificio)
+            @Model.Edificio(Model.eva_cat_espacios.IdEdificio.ToString())
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.eva_cat_espacios.Clave)
+            <label class="control-label">Clave:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.eva_cat_espacios.Clave)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.eva_cat_espacios.Alias)
+            <label class="control-label">Alias:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.eva_cat_espacios.Alias)
         </dd>
         <dt>
-            Descripción
+            <label class="control-label">Descripción:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.eva_cat_espacios.DesEspacio)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.eva_cat_espacios.Capacidad)
+            <label class="control-label">Capacidad:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.eva_cat_espacios.Capacidad)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.eva_cat_espacios.Prioridad)
+            <label class="control-label">Prioridad:</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.eva_cat_espacios.Prioridad)
@@ -50,6 +50,11 @@
     </dl>
 </div>
 <div>
+<<<<<<< HEAD
     <a asp-page="./Edit" asp-route-id="@Model.eva_cat_espacios.IdEspacio" class="btn btn-primary">Editar</a> |
     <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
+=======
+    <a asp-page="./Edit" asp-route-id="@Model.eva_cat_espacios.IdEspacio" asp-route-edificio="@Model.eva_cat_espacios.IdEspacio" class="btn btn-info">Editar</a> |
+    <a asp-page="./Index" asp-route-id="@Model.eva_cat_espacios.IdEdificio" class="btn btn-warning">Regresar a lista</a>
+>>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
 </div>

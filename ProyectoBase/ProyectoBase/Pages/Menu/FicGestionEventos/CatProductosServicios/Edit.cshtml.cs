@@ -18,6 +18,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios
         public EditModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
+            getProductosServicios();
         }
 
         [BindProperty]
@@ -70,6 +71,25 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios
         private bool cat_productos_serviciosExists(int id)
         {
             return _context.cat_productos_servicios.Any(e => e.IdProdServ == id);
+<<<<<<< HEAD
+=======
+        }
+
+        public List<SelectListItem> ProductoServicio = new List<SelectListItem>();
+        public void getProductosServicios()
+        {
+            var Tipos = _context.cat_generales;
+            ProductoServicio.Add(new SelectListItem
+            {
+                Text = "Producto",
+                Value = "P"
+            });
+            ProductoServicio.Add(new SelectListItem
+            {
+                Text = "Servicio",
+                Value = "S"
+            });
+>>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
         }
     }
 }

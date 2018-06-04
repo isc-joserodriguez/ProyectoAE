@@ -5,54 +5,42 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Eliminar Catálogo</h2>
+<h2>Eliminar</h2>
 
 <h3>¿Estas seguro de que deseas eliminar este catálogo?</h3>
 <div>
-    <h4>Catálago de Productos y Servicios</h4>
+    <h4>Catálago de Productos/Servicios</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.ClaveProdServ)
+            Clave:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_productos_servicios.ClaveProdServ)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.CodigoBarras)
+            Código de Barras:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_productos_servicios.CodigoBarras)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.DesProdServ)
+            Descripción:
         </dt>
         <dd>
             @Html.DisplayFor(model => model.cat_productos_servicios.DesProdServ)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.ProductoServicio)
+            Producto o Servicio:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.cat_productos_servicios.ProductoServicio)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.IdTipoGenProdServ)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.cat_productos_servicios.IdTipoGenProdServ)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.cat_productos_servicios.IdGenProdServ)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.cat_productos_servicios.IdGenProdServ)
+            @Model.getProductoServicio(Model.cat_productos_servicios.ProductoServicio)
         </dd>
     </dl>
 
     <form method="post">
         <input type="hidden" asp-for="cat_productos_servicios.IdProdServ" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
+        <a asp-page="./Index" class="btn btn-warning">Regresar a lista</a>
     </form>
 </div>

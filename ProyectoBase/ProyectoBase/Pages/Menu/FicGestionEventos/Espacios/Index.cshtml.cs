@@ -20,10 +20,49 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
         }
 
         public IList<eva_cat_espacios> eva_cat_espacios { get;set; }
+        public eva_cat_edificios eva_cat_edificios { get; set; }
+        public int IdEdificio { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
-            eva_cat_espacios = await _context.eva_cat_espacios.ToListAsync();
+
+            IQueryable<eva_cat_espacios> edificios = from s in _context.eva_cat_espacios
+                                                      select s;
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            eva_cat_espacios = await _context
+                .eva_cat_espacios
+                .ToListAsync();
+            eva_cat_edificios = await _context
+                .eva_cat_edificios
+                .SingleOrDefaultAsync(m => m.IdEdificio == id);
+            
+
+            if (eva_cat_edificios == null)
+            {
+                return NotFound();
+            }
+            IdEdificio = eva_cat_edificios.IdEdificio;
+            eva_cat_espacios = await edificios.Where(m => m.IdEdificio == id).AsNoTracking().ToListAsync();
+
+            return Page();
+        }
+
+        public String Edificio(string ID)
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                if (ID == d.IdEdificio.ToString())
+                {
+                    return d.Clave;
+                }
+            }
+            return "Desconocido";
         }
     }
 }

@@ -18,6 +18,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus
         public EditModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
+            getActivo();
         }
 
         [BindProperty]
@@ -70,6 +71,25 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus
         private bool cat_tipos_estatusExists(int id)
         {
             return _context.cat_tipos_estatus.Any(e => e.IdTipoEstatus == id);
+<<<<<<< HEAD
+=======
+        }
+
+        public List<SelectListItem> Activo = new List<SelectListItem>();
+        public void getActivo()
+        {
+            //if(d.Activo.Equals("A"))
+            Activo.Add(new SelectListItem
+            {
+                Text = "Activo",
+                Value = "S"
+            });
+            Activo.Add(new SelectListItem
+            {
+                Text = "Inactivo",
+                Value = "N"
+            });
+>>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
         }
     }
 }

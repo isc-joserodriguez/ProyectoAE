@@ -53,7 +53,20 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { id = cat_prod_serv_especifico.IdProdServ });
+        }
+
+        public String getProdServ(string ID)
+        {
+            var Tipos = _context.cat_productos_servicios;
+            foreach (cat_productos_servicios d in Tipos)
+            {
+                if (ID == d.IdProdServ.ToString())
+                {
+                    return d.ClaveProdServ;
+                }
+            }
+            return "Desconocido";
         }
     }
 }

@@ -14,16 +14,16 @@
     <thead>
         <tr>
             <th>
-                Tipo Estatus
+                <label class="control-label">Tipo Estatus</label>
             </th>
             <th>
-                Clave
+                <label class="control-label">Clave</label>
             </th>
             <th>
-                Descripción
+                <label class="control-label">Descripción</label>
             </th>
             <th>
-                Activo
+                <label class="control-label">Activo</label>
             </th>
             <th></th>
         </tr>
@@ -33,7 +33,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IdTipoEstatus)
+                    @Model.TipoEstatus(item.IdTipoEstatus.ToString())
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Clave)
@@ -42,7 +42,7 @@
                     @Html.DisplayFor(modelItem => item.DesEstatus)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Activo)
+                    @Model.Activo(item.Activo)
                 </td>
                 <td>
                     <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEstatus"></a> |

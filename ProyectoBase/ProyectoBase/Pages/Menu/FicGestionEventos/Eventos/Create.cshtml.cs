@@ -17,37 +17,33 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
         public CreateModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
+            getGenerales();
+            getPersonas();
+            getEdificios();
         }
 
         public IActionResult OnGet()
         {
-            getTiposGenerales();
-            getGenerales();
-            getPersonas();
-            getEdificios();
+            
 
             return Page();
         }
 
         [BindProperty]
         public res_eventos res_eventos { get; set; }
-
-        public List<SelectListItem> TiposGenerales = new List<SelectListItem>();
         public List<SelectListItem> Generales = new List<SelectListItem>();
         public List<SelectListItem> Personas = new List<SelectListItem>();
         public List<SelectListItem> Edificios = new List<SelectListItem>();
 
         public async Task<IActionResult> OnPostAsync()
         {
+
+            res_eventos.FechaReg = DateTime.Now;
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            getTiposGenerales();
-            getGenerales();
-            getPersonas();
-            getEdificios();
 
             _context.res_eventos.Add(res_eventos);
             await _context.SaveChangesAsync();
@@ -55,32 +51,24 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             return RedirectToPage("./Index");
         }
 
-        public void getTiposGenerales()
-        {
-            var Tipos = _context.cat_tipos_generales;
-            foreach (cat_tipos_generales d in Tipos)
-            {
-                //if(d.Activo.Equals("A"))
-                TiposGenerales.Add(new SelectListItem
-                {
-                    Text = d.DesTipo,
-                    Value = d.IdTipoGeneral.ToString()
-                });
-            }
-        }
-
         public void getGenerales()
         {
             var Tipos = _context.cat_generales;
-            foreach (cat_generales d in Tipos)
+            Generales.Add(new SelectListItem
             {
-                //if(d.Activo.Equals("A"))
-                Generales.Add(new SelectListItem
-                {
-                    Text = d.DesGeneral,
-                    Value = d.IdGeneral.ToString()
-                });
-            }
+                Text = "Conferencia",
+                Value = "1"
+            });
+            Generales.Add(new SelectListItem
+            {
+                Text = "Seminario",
+                Value = "2"
+            });
+            Generales.Add(new SelectListItem
+            {
+                Text = "Curso",
+                Value = "3"
+            });
         }
 
         public void getPersonas()
@@ -103,10 +91,15 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             {
                 Edificios.Add(new SelectListItem
                 {
-                    Text = d.DesEdificio,
+                    Text = d.Clave,
                     Value = d.IdEdificio.ToString()
                 });
             }
         }
+
+        public DateTime getFecha() {
+            return DateTime.Today;
+        }
+
     }
 }

@@ -8,25 +8,25 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-page="Create">Crear nuevo</a>
+    <a asp-page="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    Edificio
+                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdEdificio)
                 </th>
                 <th>
-                    Espacio
+                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdEspacio)
                 </th>
                 <th>
-                    Zona
+                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdZona)
                 </th>
                 <th>
-                    Producto/Servicio
+                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdProdServ)
                 </th>
                 <th>
-                    Producto/Servicio Especifico
+                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdProdServEsp)
                 </th>
             <th></th>
         </tr>
@@ -35,39 +35,24 @@
 @foreach (var item in Model.res_zonas_servicios) {
         <tr>
             <td>
-                @Model.getEdificio(@item.IdEdificio)
+                @Html.DisplayFor(modelItem => item.IdEdificio)
             </td>
             <td>
-                @Model.getEdificio(@item.IdEspacio)
+                @Html.DisplayFor(modelItem => item.IdEspacio)
             </td>
             <td>
-                @Model.getEdificio(@item.IdZona)
+                @Html.DisplayFor(modelItem => item.IdZona)
             </td>
             <td>
-                @Model.getEdificio(@item.IdProdServ)
+                @Html.DisplayFor(modelItem => item.IdProdServ)
             </td>
             <td>
-                @Model.getEdificio(@item.IdProdServEsp)
+                @Html.DisplayFor(modelItem => item.IdProdServEsp)
             </td>
             <td>
-                <a asp-page="./Edit"
-                   asp-route-IdEdificio="@item.IdEdificio"
-                   asp-route-IdEspacio="@item.IdEspacio"
-                   asp-route-IdZona="@item.IdZona"
-                   asp-route-IdProdServ="@item.IdProdServ"
-                   asp-route-IdProdServEsp="@item.IdProdServEsp" >Edit</a> |
-                <a asp-page="./Details"
-                   asp-route-IdEdificio="@item.IdEdificio"
-                   asp-route-IdEspacio="@item.IdEspacio"
-                   asp-route-IdZona="@item.IdZona"
-                   asp-route-IdProdServ="@item.IdProdServ"
-                   asp-route-IdProdServEsp="@item.IdProdServEsp" >Details</a> |
-                <a asp-page="./Delete"
-                   asp-route-IdEdificio="@item.IdEdificio"
-                   asp-route-IdEspacio="@item.IdEspacio"
-                   asp-route-IdZona="@item.IdZona"
-                   asp-route-IdProdServ="@item.IdProdServ"
-                   asp-route-IdProdServEsp="@item.IdProdServEsp" >Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.IdZonaServicio">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdZonaServicio">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdZonaServicio">Delete</a>
             </td>
         </tr>
 }

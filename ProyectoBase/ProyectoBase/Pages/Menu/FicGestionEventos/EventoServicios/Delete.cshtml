@@ -1,0 +1,40 @@
+﻿@page
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Seguro quieres Eliminar Esto?</h3>
+<div>
+    <h4>Servicios de Eventos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Evento:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_servicios.IdEvento)
+        </dd>
+        <dt>
+            Requerido:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_servicios.Requerido)
+        </dd>
+        <dt>
+            Producto/Servicio:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_servicios.IdProdServEsp)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="res_evento_servicios.IdEventoServ" />
+        <input type="submit" value="Eiminar" class="btn btn-danger" /> |
+        <a asp-page="./Index" asp-route-id="@Model.IdEvento" class="btn btn-warning">Regresar a la Lista</a>
+    </form>
+</div>

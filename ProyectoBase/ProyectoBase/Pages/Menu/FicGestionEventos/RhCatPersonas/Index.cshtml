@@ -67,7 +67,7 @@
                 @Html.DisplayFor(modelItem => item.Alias)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaNac)
+                @item.FechaNac.ToShortDateString()
             </td>
             <td>
                 <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdPersona"></a> |

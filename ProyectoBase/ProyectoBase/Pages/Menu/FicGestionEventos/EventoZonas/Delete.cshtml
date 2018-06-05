@@ -1,0 +1,58 @@
+﻿@page
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonas.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>res_evento_zonas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zonas.IdEdificio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zonas.IdEdificio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zonas.IdEspacio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zonas.IdEspacio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zonas.IdEvento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zonas.IdEvento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zonas.IdZona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zonas.IdZona)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zonas.FechaReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zonas.FechaReg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zonas.UsuarioReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zonas.UsuarioReg)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="res_evento_zonas.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

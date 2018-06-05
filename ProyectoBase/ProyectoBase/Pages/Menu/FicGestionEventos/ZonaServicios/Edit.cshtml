@@ -5,62 +5,51 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Editar</h2>
+<h2>Edit</h2>
 
-<h4>Servicios Por Zonas</h4>
+<h4>res_zonas_servicios</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="res_zonas_servicios.Id" />
+            <input type="hidden" asp-for="res_zonas_servicios.IdZonaServicio" />
             <div class="form-group">
-                Edificio:
-                <!--label asp-for="res_zonas_servicios.IdEdificio" class="control-label"></label-->
-                <!--input asp-for="res_zonas_servicios.IdEdificio" class="form-control" /-->
-                @Html.DropDownListFor(model => model.res_zonas_servicios.IdEdificio, Model.Edificios, "Selecciona")
-                <br />
+                <label asp-for="res_zonas_servicios.IdEdificio" class="control-label"></label>
+                <input asp-for="res_zonas_servicios.IdEdificio" class="form-control" />
                 <span asp-validation-for="res_zonas_servicios.IdEdificio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Espacio:
-                <!--label asp-for="res_zonas_servicios.IdEspacio" class="control-label"></label-->
-                <!--input asp-for="res_zonas_servicios.IdEspacio" class="form-control" /-->
-                @Html.DropDownListFor(model => model.res_zonas_servicios.IdEspacio, Model.Espacios, "Selecciona")
+                <label asp-for="res_zonas_servicios.IdEspacio" class="control-label"></label>
+                <input asp-for="res_zonas_servicios.IdEspacio" class="form-control" />
                 <span asp-validation-for="res_zonas_servicios.IdEspacio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Zona:
-                <!--label asp-for="res_zonas_servicios.IdZona" class="control-label"></label-->
-                <!--input asp-for="res_zonas_servicios.IdZona" class="form-control" /-->
-                @Html.DropDownListFor(model => model.res_zonas_servicios.IdZona, Model.Zonas, "Selecciona")
+                <label asp-for="res_zonas_servicios.IdZona" class="control-label"></label>
+                <input asp-for="res_zonas_servicios.IdZona" class="form-control" />
                 <span asp-validation-for="res_zonas_servicios.IdZona" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Producto/Servicio:
-                <!--label asp-for="res_zonas_servicios.IdProdServ" class="control-label"></label-->
-                <!--input asp-for="res_zonas_servicios.IdProdServ" class="form-control" /-->
-                @Html.DropDownListFor(model => model.res_zonas_servicios.IdProdServ, Model.ProdServ, "Selecciona")
+                <label asp-for="res_zonas_servicios.IdProdServ" class="control-label"></label>
+                <input asp-for="res_zonas_servicios.IdProdServ" class="form-control" />
                 <span asp-validation-for="res_zonas_servicios.IdProdServ" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Producto/Servicio Especifico:
-                <!--label asp-for="res_zonas_servicios.IdProdServEsp" class="control-label"></label-->
-                <!--input asp-for="res_zonas_servicios.IdProdServEsp" class="form-control" /-->
-                @Html.DropDownListFor(model => model.res_zonas_servicios.IdProdServEsp, Model.ProdServEsp, "Selecciona")
+                <label asp-for="res_zonas_servicios.IdProdServEsp" class="control-label"></label>
+                <input asp-for="res_zonas_servicios.IdProdServEsp" class="form-control" />
                 <span asp-validation-for="res_zonas_servicios.IdProdServEsp" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
-            </form>
-        </div>
+        </form>
     </div>
+</div>
 
-    <div>
-        <a asp-page="./Index">Regresar a la Lista</a>
-    </div>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
 
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

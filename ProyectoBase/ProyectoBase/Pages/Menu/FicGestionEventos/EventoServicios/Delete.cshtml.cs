@@ -22,16 +22,22 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
         [BindProperty]
         public res_evento_servicios res_evento_servicios { get; set; }
         public int IdEvento { get; set; }
+        public String Requerido { get; set; }
+        public int IdProdServ { get; set; }
+        public int IdProdServEsp { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id, int evento)
+        public async Task<IActionResult> OnGetAsync(int evento, string requerido, int prodserv, int prodservesp)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
             IdEvento = evento;
+            Requerido = requerido;
+            IdProdServ = prodserv;
+            IdProdServEsp = prodservesp;
 
-            res_evento_servicios = await _context.res_evento_servicios.SingleOrDefaultAsync(m => m.IdEventoServ == id);
+            res_evento_servicios = await _context.res_evento_servicios.SingleOrDefaultAsync(m =>
+            m.IdEvento == evento &&
+            m.Requerido.Contains(requerido) &&
+            m.IdProdServ == prodserv &&
+            m.IdProdServEsp == prodservesp);
 
             if (res_evento_servicios == null)
             {
@@ -40,14 +46,13 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(int evento, string requerido, int prodserv, int prodservesp)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            res_evento_servicios = await _context.res_evento_servicios.FindAsync(id);
+            res_evento_servicios = await _context.res_evento_servicios.SingleOrDefaultAsync(m =>
+            m.IdEvento == evento &&
+            m.Requerido.Contains(requerido) &&
+            m.IdProdServ == prodserv &&
+            m.IdProdServEsp == prodservesp);
 
             if (res_evento_servicios != null)
             {
@@ -55,7 +60,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index", new { id= res_evento_servicios.IdEvento});
+            return RedirectToPage("./Index", new { id = res_evento_servicios.IdEvento});
         }
     }
 }

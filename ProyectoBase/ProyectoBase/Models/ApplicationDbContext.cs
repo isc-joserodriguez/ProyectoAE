@@ -39,5 +39,10 @@ namespace ProyectoBase.Models
         public DbSet<res_evento_zona_boleto_estatus> res_evento_zona_boleto_estatus { get; set; }
         public DbSet<res_evento_zona_boletos> res_evento_zona_boletos { get; set; }
         public DbSet<res_evento_zonas> res_evento_zonas { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<res_evento_servicios>().HasKey(c => new { c.IdEvento, c.IdProdServ, c.IdProdServEsp });
+        }
     }
 }

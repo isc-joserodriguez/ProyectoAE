@@ -33,7 +33,10 @@
     </dl>
     
     <form method="post">
-        <input type="hidden" asp-for="res_evento_servicios.IdEventoServ" />
+        <input type="hidden" asp-for="res_evento_servicios.IdEvento" />
+        <input type="hidden" asp-for="res_evento_servicios.Requerido" />
+        <input type="hidden" asp-for="res_evento_servicios.IdProdServ" />
+        <input type="hidden" asp-for="res_evento_servicios.IdProdServEsp" />
         <input type="submit" value="Eiminar" class="btn btn-danger" /> |
         <a asp-page="./Index" asp-route-id="@Model.IdEvento" class="btn btn-warning">Regresar a la Lista</a>
     </form>

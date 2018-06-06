@@ -35,6 +35,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
         [BindProperty]
         public res_evento_servicios res_evento_servicios { get; set; }
         public int IdEvento { get; set; }
+        public Boolean seRepiteRegistro { get; set; } = false ;
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -45,6 +46,15 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
             if (!ModelState.IsValid || res_evento_servicios.IdEvento==0)
             {
                 return Page();
+            }
+
+            if (seRepite(
+                res_evento_servicios.IdEvento,
+                res_evento_servicios.Requerido,
+                res_evento_servicios.IdProdServ,
+                res_evento_servicios.IdProdServEsp)) {
+                seRepiteRegistro = true;
+                    return Page();
             }
 
             if (res_evento_servicios.Requerido != "S" && res_evento_servicios.Requerido != "N") res_evento_servicios.Requerido = "S";
@@ -113,6 +123,18 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
                     {
                         return true;
                     }
+                }
+            }
+            return false;
+        }
+
+        public Boolean seRepite(int evento, string requerido, int prodserv, int prodservesp)
+        {
+            var Tipos = _context.res_evento_servicios;
+            foreach (res_evento_servicios d in Tipos)
+            {
+                if (d.IdEvento == evento && d.Requerido.Equals(requerido) && d.IdProdServ == prodserv && d.IdProdServEsp == prodservesp) {
+                    return true;
                 }
             }
             return false;

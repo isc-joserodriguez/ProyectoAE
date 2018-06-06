@@ -62,5 +62,38 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
 
             return RedirectToPage("./Index", new { id = res_evento_servicios.IdEvento});
         }
+
+        public String getProductoServicoEsp(string ID, string PS)
+        {
+            var Tipos = _context.cat_prod_serv_especifico;
+            foreach (cat_prod_serv_especifico d in Tipos)
+            {
+                if (ID == d.IdProdServEsp.ToString() && PS == d.IdProdServ.ToString())
+                {
+                    return d.ClaveProdServEsp;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String getRequerido(string ID)
+        {
+            if (ID.Equals("S")) return "SI";
+            if (ID.Equals("N")) return "NO";
+            return "Desconocido";
+        }
+
+        public String Evento(string ID)
+        {
+            var Tipos = _context.res_eventos;
+            foreach (res_eventos d in Tipos)
+            {
+                if (ID == d.IdEvento.ToString())
+                {
+                    return d.NombreEvento;
+                }
+            }
+            return "Desconocido";
+        }
     }
 }

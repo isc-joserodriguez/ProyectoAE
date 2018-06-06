@@ -53,7 +53,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             {
                 return Page();
             }
-
+            res_evento_horarios.Dia = getDia(res_evento_horarios.FechaHoraIni.DayOfWeek);
             _context.Attach(res_evento_horarios).State = EntityState.Modified;
 
             try
@@ -93,6 +93,35 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
                         Value = d.IdEspacio.ToString()
                     });
             }
+        }
+
+        public String getDia(DayOfWeek i)
+        {
+            if (i == DayOfWeek.Sunday)
+            {
+                return "Domingo";
+            }
+            else if (i == DayOfWeek.Monday)
+            {
+                return "Lunes";
+            }
+            else if (i == DayOfWeek.Thursday)
+            {
+                return "Jueves";
+            }
+            else if (i == DayOfWeek.Wednesday)
+            {
+                return "Miercoles";
+            }
+            else if (i == DayOfWeek.Tuesday)
+            {
+                return "Martes";
+            }
+            else if (i == DayOfWeek.Friday)
+            {
+                return "Viernes";
+            }
+            else return "Sábado";
         }
 
         public List<SelectListItem> Dias = new List<SelectListItem>();

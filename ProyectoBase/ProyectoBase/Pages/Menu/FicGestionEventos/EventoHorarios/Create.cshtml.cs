@@ -39,6 +39,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
         public async Task<IActionResult> OnPostAsync()
         {
             res_evento_horarios.FechaReg = DateTime.Now;
+            res_evento_horarios.Dia = getDia(res_evento_horarios.FechaHoraIni.DayOfWeek);
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -74,7 +75,33 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             Dias.Add(new SelectListItem { Text = "Jueves", Value = "Jueves" });
             Dias.Add(new SelectListItem { Text = "Viernes", Value = "Viernes" });
             Dias.Add(new SelectListItem { Text = "Sabado", Value = "Sabado" });
+        }
 
+        public String getDia(DayOfWeek i) {
+            if (i == DayOfWeek.Sunday) {
+                return "Domingo";
+            }
+            else if (i == DayOfWeek.Monday)
+            {
+                return "Lunes";
+            }
+            else if (i == DayOfWeek.Thursday)
+            {
+                return "Jueves";
+            }
+            else if (i == DayOfWeek.Wednesday)
+            {
+                return "Miercoles";
+            }
+            else if (i == DayOfWeek.Tuesday)
+            {
+                return "Martes";
+            }
+            else if (i == DayOfWeek.Friday)
+            {
+                return "Viernes";
+            }
+            else return "Sábado";
         }
 
         public List<SelectListItem> Disponibilidad = new List<SelectListItem>();

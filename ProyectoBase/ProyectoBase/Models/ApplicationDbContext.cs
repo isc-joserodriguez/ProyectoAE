@@ -43,6 +43,8 @@ namespace ProyectoBase.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<res_evento_servicios>().HasKey(c => new { c.IdEvento, c.IdProdServ, c.IdProdServEsp });
+            modelBuilder.Entity<res_zonas_servicios>().HasKey( c => new { c.IdEdificio, c.IdEspacio, c.IdZona, c.IdProdServ, c.IdProdServEsp });
+            modelBuilder.Entity<res_evento_zonas>().HasKey(c => new { c.IdEdificio, c.IdEspacio, c.IdEvento, c.IdZona });
         }
     }
 }

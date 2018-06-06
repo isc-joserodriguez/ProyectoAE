@@ -17,7 +17,6 @@ namespace ProyectoBase.Models.FicGestionEventos
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdEspacio { get; set; }
-
         public string Clave { get; set; }
         public string Alias { get; set; }
         public string DesEspacio { get; set; }

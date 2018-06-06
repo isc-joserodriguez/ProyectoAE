@@ -16,19 +16,19 @@
             Evento:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_evento_servicios.IdEvento)
+            @Model.Evento(Model.res_evento_servicios.IdEvento.ToString())
         </dd>
         <dt>
             Requerido:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_evento_servicios.Requerido)
+            @Model.getRequerido(Model.res_evento_servicios.Requerido)
         </dd>
         <dt>
             Producto/Servicio:
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.res_evento_servicios.IdProdServEsp)
+            @Model.getProductoServicoEsp(Model.res_evento_servicios.IdProdServEsp.ToString(),Model.res_evento_servicios.IdProdServ.ToString())
         </dd>
     </dl>
     
@@ -37,7 +37,7 @@
         <input type="hidden" asp-for="res_evento_servicios.Requerido" />
         <input type="hidden" asp-for="res_evento_servicios.IdProdServ" />
         <input type="hidden" asp-for="res_evento_servicios.IdProdServEsp" />
-        <input type="submit" value="Eiminar" class="btn btn-danger" /> |
+        <input type="submit" value="Eiminar" class="btn btn-danger" />
         <a asp-page="./Index" asp-route-id="@Model.IdEvento" class="btn btn-warning">Regresar a la Lista</a>
     </form>
 </div>

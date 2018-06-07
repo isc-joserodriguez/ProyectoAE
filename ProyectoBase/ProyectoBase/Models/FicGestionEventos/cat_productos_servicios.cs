@@ -12,8 +12,11 @@ namespace ProyectoBase.Models.FicGestionEventos
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdProdServ { get; set; }
+        [MaxLength(20)]
         public string ClaveProdServ { get; set; }
+        [MaxLength(50)]
         public string CodigoBarras { get; set; }
+        [MaxLength(200)]
         public string DesProdServ { get; set; }
         public string ProductoServicio { get; set; }
 

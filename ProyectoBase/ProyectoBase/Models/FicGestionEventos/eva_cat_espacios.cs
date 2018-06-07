@@ -18,8 +18,11 @@ namespace ProyectoBase.Models.FicGestionEventos
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdEspacio { get; set; }
 
+        [MaxLength(20)]
         public string Clave { get; set; }
+        [MaxLength(10)]
         public string Alias { get; set; }
+        [MaxLength(50)]
         public string DesEspacio { get; set; }
         public int Capacidad { get; set; }
         public int Prioridad { get; set; }

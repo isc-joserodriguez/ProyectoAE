@@ -21,6 +21,7 @@ namespace ProyectoBase.Models.FicGestionEventos
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdZona { get; set; }
 
+        [MaxLength(225)]
         public string DesZona { get; set; }
         public int CapacidadPer { get; set; }
         public int Filas { get; set; }

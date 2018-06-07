@@ -28,8 +28,9 @@ namespace ProyectoBase.Models.FicGestionEventos
         [ForeignKey("IdZona")]
         public int IdZona { get; set; }
         public virtual res_cat_zonas res_cat_zonas { get; set; }
-
+        [MaxLength(20)]
         public string NumBoleto { get; set; }
+        [MaxLength(20)]
         public string DesBoleto { get; set; }
         public float Precio { get; set; }
         public float IVA { get; set; }

@@ -13,6 +13,7 @@ namespace ProyectoBase.Models.FicGestionEventos
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdTipoGeneral { get; set; }
 
+        [MaxLength(100)]
         public string DesTipo { get; set; }
         public string Activo { get; set; }
 

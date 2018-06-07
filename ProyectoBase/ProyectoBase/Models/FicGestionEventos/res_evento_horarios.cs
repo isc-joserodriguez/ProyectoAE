@@ -25,11 +25,13 @@ namespace ProyectoBase.Models.FicGestionEventos
         public int IdEspacio { get; set; }
         public virtual eva_cat_espacios eva_cat_espacios { get; set; }
 
+        [MaxLength(10)]
         public string Dia { get; set; }
         public DateTime FechaHoraIni { get; set; }
         public DateTime FechaHoraFin { get; set; }
         public string Disponible { get; set; }
         public DateTime FechaReg { get; set; }
+        [MaxLength(18)]
         public string UsuarioReg { get; set; }
 
     }

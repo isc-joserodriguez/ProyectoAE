@@ -30,6 +30,8 @@ namespace ProyectoBase.Models.FicGestionEventos
         public virtual res_cat_zonas res_cat_zonas { get; set; }
 
         public DateTime FechaReg { get; set; }
+        [MaxLength(20)]
         public string UsuarioReg { get; set; }
+        
     }
 }

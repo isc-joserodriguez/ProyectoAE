@@ -26,9 +26,13 @@ namespace ProyectoBase.Models.FicGestionEventos
         public int IdPersonaReg { get; set; }
         public virtual rh_cat_personas rh_cat_personas { get; set; }
 
+        [MaxLength(1000)]
         public string NombreEvento { get; set; }
+        [MaxLength(1000)]
         public string Observacion { get; set; }
+        [MaxLength(3000)]
         public string Explicacion { get; set; }
+        [MaxLength(1000)]
         public string URL { get; set; }
         public DateTime FechaIn { get; set; }
         public DateTime FechaFin { get; set; }

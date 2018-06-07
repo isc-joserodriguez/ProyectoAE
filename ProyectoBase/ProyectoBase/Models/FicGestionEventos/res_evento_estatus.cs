@@ -28,7 +28,9 @@ namespace ProyectoBase.Models.FicGestionEventos
         public virtual cat_estatus cat_estatus { get; set; }
 
         public string Actual { get; set; }
+        [MaxLength(500)]
         public string Observacion { get; set; }
+        [MaxLength(50)]
         public string UsuarioReg { get; set; }
 
 

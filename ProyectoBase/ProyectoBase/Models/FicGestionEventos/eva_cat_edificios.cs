@@ -12,9 +12,12 @@ namespace ProyectoBase.Models.FicGestionEventos
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdEdificio { get; set; }
-        
+
+        [MaxLength(20)]
         public string Clave { get; set; }
+        [MaxLength(10)]
         public string Alias { get; set; }
+        [MaxLength(50)]
         public string DesEdificio { get; set; }
         public int Prioridad { get; set; }
     }

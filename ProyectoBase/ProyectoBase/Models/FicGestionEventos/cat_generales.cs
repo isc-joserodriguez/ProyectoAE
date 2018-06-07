@@ -17,7 +17,9 @@ namespace ProyectoBase.Models.FicGestionEventos
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdGeneral { get; set; }
 
+        [MaxLength(20)]
         public string Clave { get; set; }
+        [MaxLength(100)]
         public string DesGeneral { get; set; }
         public string Activo { get; set; }
     }

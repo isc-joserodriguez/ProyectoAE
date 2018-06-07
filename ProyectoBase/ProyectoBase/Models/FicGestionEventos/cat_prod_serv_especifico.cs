@@ -9,17 +9,16 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class cat_prod_serv_especifico
     {
-        [ForeignKey("IdProdServ")]
+        [ForeignKey("IdProdServ"), Required]
         public int IdProdServ { get; set; }
         public virtual cat_productos_servicios cat_productos_servicios { get; set; }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
         public int IdProdServEsp { get; set; }
 
-        [MaxLength(20)]
+        [MaxLength(20), Required]
         public string ClaveProdServEsp { get; set; }
-        [MaxLength(200)]
+        [MaxLength(200), Required]
         public string DesProdServEsp { get; set; }
 
     }

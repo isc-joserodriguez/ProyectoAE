@@ -42,9 +42,20 @@ namespace ProyectoBase.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<res_evento_horarios>().HasKey(c => new { c.IdEvento, c.IdHorarioDes });
             modelBuilder.Entity<res_evento_servicios>().HasKey(c => new { c.IdEvento, c.IdProdServ, c.IdProdServEsp });
-            modelBuilder.Entity<res_zonas_servicios>().HasKey( c => new { c.IdEdificio, c.IdEspacio, c.IdZona, c.IdProdServ, c.IdProdServEsp });
-            modelBuilder.Entity<res_evento_zonas>().HasKey(c => new { c.IdEdificio, c.IdEspacio, c.IdEvento, c.IdZona });
+            modelBuilder.Entity<res_evento_estatus>().HasKey(c => new { c.IdEvento, c.IdEstatusDet });
+            modelBuilder.Entity<res_evento_clientes>().HasKey( c => new { c.IdEvento, c.IdReservaCliente});
+            modelBuilder.Entity<res_evento_cliente_prod_serv>().HasKey( c => new { c.IdEvento, c.IdReservaCliente, c.IdReservaServDet});
+            modelBuilder.Entity<res_evento_cliente_boletos>().HasKey(c => new { c.IdReservaCliente, c.IdEvento, c.IdBoleto });
+            modelBuilder.Entity<eva_cat_espacios>().HasKey( c => new { c.IdEdificio, c.IdEspacio});
+            modelBuilder.Entity<cat_estatus>().HasKey(c => new { c.IdTipoEstatus, c.IdEstatus});
+            modelBuilder.Entity<cat_generales>().HasKey( c => new { c.IdTipoGeneral, c.IdGeneral});
+            modelBuilder.Entity<res_cat_zonas>().HasKey( c => new { c.IdEdificio, c.IdEspacio, c.IdZona });
+            modelBuilder.Entity<res_zonas_servicios>().HasKey(c => new { c.IdEdificio, c.IdEspacio, c.IdZona, c.IdProdServ, c.IdProdServEsp });
+            modelBuilder.Entity<cat_prod_serv_especifico>().HasKey( c => new { c.IdProdServ, c.IdProdServEsp});
+            modelBuilder.Entity<res_evento_zonas>().HasKey( c => new { c.IdEdificio, c.IdEspacio, c.IdEvento, c.IdZona});
+            modelBuilder.Entity<res_evento_zona_boleto_estatus>().HasKey( c => new { c.IdBoleto, c.IdEstatusDet});
         }
     }
 }

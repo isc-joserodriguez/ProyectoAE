@@ -9,19 +9,18 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class res_cat_zonas
     {
-        [ForeignKey("IdEdificio")]
+        [ForeignKey("IdEdificio"), Required]
         public int IdEdificio { get; set; }
         public virtual eva_cat_edificios eva_cat_edificios { get; set; }
 
-        [ForeignKey("IdEspacio")]
+        [ForeignKey("IdEspacio"), Required]
         public int IdEspacio { get; set; }
         public virtual eva_cat_espacios eva_cat_espacios { get; set; }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
         public int IdZona { get; set; }
 
-        [MaxLength(225)]
+        [MaxLength(225), Required]
         public string DesZona { get; set; }
         public int CapacidadPer { get; set; }
         public int Filas { get; set; }

@@ -9,16 +9,16 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class eva_cat_edificios
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
         public int IdEdificio { get; set; }
 
-        [MaxLength(20)]
+        [MaxLength(20), Required]
         public string Clave { get; set; }
-        [MaxLength(10)]
+        [MaxLength(10), Required]
         public string Alias { get; set; }
-        [MaxLength(50)]
+        [MaxLength(50), Required]
         public string DesEdificio { get; set; }
+        
         public int Prioridad { get; set; }
     }
 }

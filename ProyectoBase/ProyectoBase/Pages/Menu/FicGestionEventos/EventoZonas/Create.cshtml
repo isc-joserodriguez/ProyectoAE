@@ -32,6 +32,11 @@
                 <span asp-validation-for="res_evento_zonas.IdZona" class="text-danger"></span>
             </div>
             <div class="form-group">
+                Foto:<br />
+                <input type="file" asp-for="res_evento_zonas.RutaImagen" class="form-control" />
+                <span asp-validation-for="res_evento_zonas.RutaImagen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="res_evento_zonas.UsuarioReg" class="control-label"></label>
                 <input asp-for="res_evento_zonas.UsuarioReg" class="form-control" />
                 <span asp-validation-for="res_evento_zonas.UsuarioReg" class="text-danger"></span>

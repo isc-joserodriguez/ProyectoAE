@@ -14,7 +14,7 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input asp-for="res_zonas_servicios.IdEdificio" value="@Model.IdEdificio" type="hidden" class="form-control" />
-            <input asp-for="res_zonas_servicios.IdEspacio" value="@Model.IdEdificio" type="hidden" class="form-control" />
+            <input asp-for="res_zonas_servicios.IdEspacio" value="@Model.IdEspacio" type="hidden" class="form-control" />
             <input asp-for="res_zonas_servicios.IdZona" value="@Model.IdZona" type="hidden" class="form-control" />
             <div class="form-group">
                 <label class="control-label">Edificio: @Model.getEdificio(Model.IdEdificio.ToString())</label>

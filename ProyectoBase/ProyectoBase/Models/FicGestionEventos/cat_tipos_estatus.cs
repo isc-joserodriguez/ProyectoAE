@@ -9,12 +9,12 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class cat_tipos_estatus
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required(ErrorMessage = "Este campo es requerido")]
         public int IdTipoEstatus { get; set; }
 
-        [MaxLength(30), Required]
+        [MaxLength(30), Required(ErrorMessage = "Este campo es requerido")]
         public string DesTipoEstatus { get; set; }
-        [MaxLength(1), Required]
+        [MaxLength(1), Required(ErrorMessage = "Este campo es requerido")]
         public string Activo { get; set; }
     }
 }

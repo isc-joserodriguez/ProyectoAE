@@ -9,26 +9,26 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class res_evento_zonas
     {
-        [ForeignKey("IdEdificio"), Key, Required]
+        [ForeignKey("IdEdificio"), Key, Required(ErrorMessage = "Este campo es requerido")]
         public int IdEdificio { get; set; }
         public virtual eva_cat_edificios eva_cat_edificios { get; set; }
 
-        [ForeignKey("IdEspacio"), Key, Required]
+        [ForeignKey("IdEspacio"), Key, Required(ErrorMessage = "Este campo es requerido")]
         public int IdEspacio { get; set; }
         public virtual eva_cat_espacios eva_cat_espacios { get; set; }
 
-        [ForeignKey("IdEvento"), Key, Required]
+        [ForeignKey("IdEvento"), Key, Required(ErrorMessage = "Este campo es requerido")]
         public int IdEvento { get; set; }
         public virtual res_eventos res_eventos { get; set; }
 
-        [ForeignKey("IdZona"), Key, Required]
+        [ForeignKey("IdZona"), Key, Required(ErrorMessage = "Este campo es requerido")]
         public int IdZona { get; set; }
         public virtual res_cat_zonas res_cat_zonas { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public DateTime FechaReg { get; set; }
-        [MaxLength(20), Required]
+        [MaxLength(20), Required(ErrorMessage = "Este campo es requerido")]
         public string UsuarioReg { get; set; }
-        [MaxLength(255), Required]
+        [MaxLength(255), Required(ErrorMessage = "Este campo es requerido")]
         public string RutaImagen { get; set; }
         
     }

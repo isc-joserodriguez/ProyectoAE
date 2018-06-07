@@ -9,18 +9,18 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class cat_generales
     {
-        [ForeignKey("IdTipoGeneral"), Required]
+        [ForeignKey("IdTipoGeneral"), Required(ErrorMessage = "Este campo es requerido")]
         public int IdTipoGeneral { get; set; }
         public virtual cat_tipos_generales cat_tipos_generales { get; set; }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required(ErrorMessage = "Este campo es requerido")]
         public int IdGeneral { get; set; }
 
-        [MaxLength(20), Required]
+        [MaxLength(20), Required(ErrorMessage = "Este campo es requerido")]
         public string Clave { get; set; }
-        [MaxLength(100), Required]
+        [MaxLength(100), Required(ErrorMessage = "Este campo es requerido")]
         public string DesGeneral { get; set; }
-        [Required, MaxLength(1)]
+        [Required(ErrorMessage = "Este campo es requerido"), MaxLength(1)]
         public string Activo { get; set; }
     }
 }

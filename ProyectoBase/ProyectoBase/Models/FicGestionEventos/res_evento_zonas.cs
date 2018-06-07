@@ -26,9 +26,9 @@ namespace ProyectoBase.Models.FicGestionEventos
         public virtual res_cat_zonas res_cat_zonas { get; set; }
         [Required(ErrorMessage = "Este campo es requerido")]
         public DateTime FechaReg { get; set; }
-        [MaxLength(20), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(20, ErrorMessage = "Este campo no puede contener más de 20 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string UsuarioReg { get; set; }
-        [MaxLength(255), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(255, ErrorMessage = "Este campo no puede contener más de 255 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string RutaImagen { get; set; }
         
     }

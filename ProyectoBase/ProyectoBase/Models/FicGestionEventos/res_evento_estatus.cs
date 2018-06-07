@@ -26,11 +26,11 @@ namespace ProyectoBase.Models.FicGestionEventos
         public int IdEstatus { get; set; }
         public virtual cat_estatus cat_estatus { get; set; }
 
-        [MaxLength(1), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(1, ErrorMessage = "Este campo no puede contener más de 1 caracter"), Required(ErrorMessage = "Este campo es requerido")]
         public string Actual { get; set; }
-        [MaxLength(500)]
+        [MaxLength(500, ErrorMessage = "Este campo no puede contener más de 500 caracteres")]
         public string Observacion { get; set; }
-        [MaxLength(50), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(50, ErrorMessage = "Este campo no puede contener más de 50 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string UsuarioReg { get; set; }
 
 

@@ -14,7 +14,7 @@ namespace ProyectoBase.Models.FicGestionEventos
         public int IdEvento { get; set; }
         public virtual res_eventos res_eventos { get; set; }
 
-        [MaxLength(1), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(1, ErrorMessage = "Este campo no puede contener más de 1 caracter"), Required(ErrorMessage = "Este campo es requerido")]
         public string Requerido { get; set; }
 
         [ForeignKey("IdProdServ"), Key, Required(ErrorMessage = "Este campo es requerido")]

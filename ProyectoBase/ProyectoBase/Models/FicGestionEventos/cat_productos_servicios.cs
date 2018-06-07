@@ -11,13 +11,13 @@ namespace ProyectoBase.Models.FicGestionEventos
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required(ErrorMessage = "Este campo es requerido")]
         public int IdProdServ { get; set; }
-        [MaxLength(20), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(20, ErrorMessage = "Este campo no puede contener más de 20 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string ClaveProdServ { get; set; }
-        [MaxLength(50), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(50, ErrorMessage = "Este campo no puede contener más de 50 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string CodigoBarras { get; set; }
-        [MaxLength(200), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(200, ErrorMessage = "Este campo no puede contener más de 200 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string DesProdServ { get; set; }
-        [MaxLength(1), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(1, ErrorMessage = "Este campo no puede contener más de 1 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string ProductoServicio { get; set; }
 
         [ForeignKey("IdTipoGenProdServ"), Required(ErrorMessage = "Este campo es requerido")]

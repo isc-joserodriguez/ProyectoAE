@@ -109,8 +109,11 @@
                 @Model.getProductoServicoEsp(item.IdProdServEsp.ToString(), item.IdProdServ.ToString())
             </td>
             <td>
-                <a asp-page="./Edit"  class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEventoServ" asp-route-evento="@Model.IdEvento"></a> 
-                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEventoServ" asp-route-evento="@Model.IdEvento"></a>
+                <a asp-page="./Delete" class="glyphicon glyphicon-trash"
+                   asp-route-evento="@Model.IdEvento"
+                   asp-route-requerido="@item.Requerido"
+                   asp-route-prodserv="@item.IdProdServ"
+                   asp-route-prodservesp="@item.IdProdServEsp"></a>
             </td>
         </tr>
 }

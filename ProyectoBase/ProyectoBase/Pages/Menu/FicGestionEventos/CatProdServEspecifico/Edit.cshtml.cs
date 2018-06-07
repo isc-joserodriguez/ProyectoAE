@@ -26,10 +26,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
             IdProdServ = id;
 

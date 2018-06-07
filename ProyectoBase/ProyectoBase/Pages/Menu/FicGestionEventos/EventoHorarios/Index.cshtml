@@ -102,13 +102,12 @@
                 <label class="control-label">Culminación</label>
             </th>
             <th>
-                <label class="control-label">Disponible</label>
-            </th>
-            <th>
                 <label class="control-label">Fecha Registro</label>
             </th>
             <th>
                 <label class="control-label">Usuario que Registró</label>
+            </th>
+            <th>
             </th>
         </tr>
     </thead>
@@ -131,18 +130,16 @@
                 @Html.DisplayFor(modelItem => item.FechaHoraFin)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Disponible)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.FechaReg)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UsuarioReg)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.IdHorarioDes" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="glyphicon glyphicon-pencil"></a> |
-                <a asp-page="./Details" asp-route-id="@item.IdHorarioDes" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="glyphicon glyphicon-list-alt"></a> |
+                <a asp-page="./Edit" asp-route-id="@item.IdHorarioDes" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="glyphicon glyphicon-pencil"></a>
+                <a asp-page="./Details" asp-route-id="@item.IdHorarioDes" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="glyphicon glyphicon-list-alt"></a>
                 <a asp-page="./Delete" asp-route-id="@item.IdHorarioDes" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="glyphicon glyphicon-trash"></a>
+                <a asp-page="../EventoZonas/Index" asp-route-edificio="@item.IdEdificio" asp-route-espacio="@item.IdEspacio" asp-route-evento="@item.IdEvento" asp-route-horario="@item.IdHorarioDes" class="glyphicon glyphicon-bookmark"></a>
             </td>
         </tr>
 }

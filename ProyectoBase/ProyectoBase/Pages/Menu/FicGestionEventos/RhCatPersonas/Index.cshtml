@@ -26,7 +26,7 @@
                     @Html.DisplayNameFor(model => model.rh_cat_personas[0].CURP)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].TipoPersona)
+                    Tipo de Persona
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.rh_cat_personas[0].Sexo)
@@ -35,7 +35,7 @@
                     @Html.DisplayNameFor(model => model.rh_cat_personas[0].Alias)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].FechaNac)
+                    Fecha de Nacimiento
                 </th>
             <th></th>
         </tr>
@@ -58,10 +58,10 @@
                 @Html.DisplayFor(modelItem => item.CURP)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoPersona)
+                @Model.getTipoPersona(item.TipoPersona)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Sexo)
+                @Model.getSexo(item.Sexo)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Alias)

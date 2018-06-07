@@ -5,38 +5,31 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Añadir</h2>
 
-<h4>res_evento_zonas</h4>
+<h4>Zona de Evento</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input asp-for="res_evento_zonas.IdEdificio" value="@Model.IdEdificio" type="hidden" class="form-control" />
+            <input asp-for="res_evento_zonas.IdEspacio" value="@Model.IdEspacio" type="hidden" class="form-control" />
+            <input asp-for="res_evento_zonas.IdEvento" value="@Model.IdEvento" type="hidden" class="form-control" />
             <div class="form-group">
-                <label asp-for="res_evento_zonas.IdEdificio" class="control-label"></label>
-                <input asp-for="res_evento_zonas.IdEdificio" class="form-control" />
-                <span asp-validation-for="res_evento_zonas.IdEdificio" class="text-danger"></span>
+                <label class="control-label">Edificio: @Model.Edificio(Model.IdEdificio.ToString())</label>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zonas.IdEspacio" class="control-label"></label>
-                <input asp-for="res_evento_zonas.IdEspacio" class="form-control" />
-                <span asp-validation-for="res_evento_zonas.IdEspacio" class="text-danger"></span>
+                <label class="control-label">Espacio: @Model.Espacio(Model.IdEspacio.ToString())</label>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zonas.IdEvento" class="control-label"></label>
-                <input asp-for="res_evento_zonas.IdEvento" class="form-control" />
-                <span asp-validation-for="res_evento_zonas.IdEvento" class="text-danger"></span>
+                <label class="control-label">Evento: @Model.Evento(Model.IdEvento.ToString())</label>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zonas.IdZona" class="control-label"></label>
-                <input asp-for="res_evento_zonas.IdZona" class="form-control" />
+                <label class="control-label">Zona:</label>
+                @Html.DropDownListFor(model => model.res_evento_zonas.IdZona, Model.Zonas, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="res_evento_zonas.IdZona" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="res_evento_zonas.FechaReg" class="control-label"></label>
-                <input asp-for="res_evento_zonas.FechaReg" class="form-control" />
-                <span asp-validation-for="res_evento_zonas.FechaReg" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="res_evento_zonas.UsuarioReg" class="control-label"></label>
@@ -44,14 +37,17 @@
                 <span asp-validation-for="res_evento_zonas.UsuarioReg" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input asp-for="IdHorario" value="@Model.IdHorario" type="hidden" />
+                <input type="submit" value="Añadir" class="btn btn-info" />
+                <a asp-page="Index"
+                   asp-route-edificio="@Model.IdEdificio"
+                   asp-route-espacio="@Model.IdEspacio"
+                   asp-route-evento="@Model.IdEvento"
+                   asp-route-horario="@Model.IdHorario"
+                   class="btn btn-warning">Regresar a la Lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

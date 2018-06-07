@@ -27,11 +27,6 @@
                 <span asp-validation-for="res_evento_horarios.IdEspacio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Dia:</label>
-                @Html.DropDownListFor(model => model.res_evento_horarios.Dia, Model.Dias, "Selecciona", new { @class = "form-control" })
-                <span asp-validation-for="res_evento_horarios.Dia" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label class="control-label">Fecha y Hora de Inicio:</label>
                 <input asp-for="res_evento_horarios.FechaHoraIni" class="form-control" />
                 <span asp-validation-for="res_evento_horarios.FechaHoraIni" class="text-danger"></span>

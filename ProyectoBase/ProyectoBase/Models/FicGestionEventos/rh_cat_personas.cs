@@ -9,13 +9,13 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class rh_cat_personas
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required(ErrorMessage = "Este campo es requerido")]
         public int IdPersona { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int IdInstituto { get; set; }
-        [MaxLength(20), Required]
+        [MaxLength(20), Required(ErrorMessage = "Este campo es requerido")]
         public string NumControl { get; set; }
-        [MaxLength(100), Required]
+        [MaxLength(100), Required(ErrorMessage = "Este campo es requerido")]
         public string Nombre { get; set; }
         [MaxLength(60)]
         public string ApPaterno { get; set; }
@@ -23,17 +23,17 @@ namespace ProyectoBase.Models.FicGestionEventos
         public string ApMaterno { get; set; }
         [MaxLength(10)]
         public string RFC { get; set; }
-        [MaxLength(25), Required]
+        [MaxLength(25), Required(ErrorMessage = "Este campo es requerido")]
         public string CURP { get; set; }
-        [MaxLength(1), Required]
+        [MaxLength(1), Required(ErrorMessage = "Este campo es requerido")]
         public string TipoPersona { get; set; }
-        [MaxLength(1), Required]
+        [MaxLength(1), Required(ErrorMessage = "Este campo es requerido")]
         public string Sexo { get; set; }
         [MaxLength(255)]
         public string RutaFoto { get; set; }
         [MaxLength(20)]
         public string Alias { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public DateTime FechaNac { get; set; }
     }
 }

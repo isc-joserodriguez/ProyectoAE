@@ -9,12 +9,12 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class cat_tipos_generales
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required(ErrorMessage = "Este campo es requerido")]
         public int IdTipoGeneral { get; set; }
 
-        [MaxLength(100), Required]
+        [MaxLength(100), Required(ErrorMessage = "Este campo es requerido")]
         public string DesTipo { get; set; }
-        [MaxLength(1), Required]
+        [MaxLength(1), Required(ErrorMessage = "Este campo es requerido")]
         public string Activo { get; set; }
 
     }

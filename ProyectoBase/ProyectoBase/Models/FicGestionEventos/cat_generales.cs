@@ -9,18 +9,18 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class cat_generales
     {
-        [ForeignKey("IdTipoGeneral")]
+        [ForeignKey("IdTipoGeneral"), Required]
         public int IdTipoGeneral { get; set; }
         public virtual cat_tipos_generales cat_tipos_generales { get; set; }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
         public int IdGeneral { get; set; }
 
-        [MaxLength(20)]
+        [MaxLength(20), Required]
         public string Clave { get; set; }
-        [MaxLength(100)]
+        [MaxLength(100), Required]
         public string DesGeneral { get; set; }
+        [Required, MaxLength(1)]
         public string Activo { get; set; }
     }
 }

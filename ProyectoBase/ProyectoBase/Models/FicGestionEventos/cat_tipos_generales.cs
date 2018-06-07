@@ -9,12 +9,12 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class cat_tipos_generales
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required]
         public int IdTipoGeneral { get; set; }
 
-        [MaxLength(100)]
+        [MaxLength(100), Required]
         public string DesTipo { get; set; }
+        [MaxLength(1), Required]
         public string Activo { get; set; }
 
     }

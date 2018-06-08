@@ -35,6 +35,10 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
         [BindProperty]
         public res_evento_servicios res_evento_servicios { get; set; }
         public int IdEvento { get; set; }
+<<<<<<< HEAD
+=======
+        public Boolean seRepiteRegistro { get; set; } = false ;
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -47,6 +51,18 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
                 return Page();
             }
 
+<<<<<<< HEAD
+=======
+            if (seRepite(
+                res_evento_servicios.IdEvento,
+                res_evento_servicios.Requerido,
+                res_evento_servicios.IdProdServ,
+                res_evento_servicios.IdProdServEsp)) {
+                seRepiteRegistro = true;
+                    return Page();
+            }
+
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
             if (res_evento_servicios.Requerido != "S" && res_evento_servicios.Requerido != "N") res_evento_servicios.Requerido = "S";
 
             _context.res_evento_servicios.Add(res_evento_servicios);
@@ -117,5 +133,20 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
             }
             return false;
         }
+<<<<<<< HEAD
+=======
+
+        public Boolean seRepite(int evento, string requerido, int prodserv, int prodservesp)
+        {
+            var Tipos = _context.res_evento_servicios;
+            foreach (res_evento_servicios d in Tipos)
+            {
+                if (d.IdEvento == evento && d.Requerido.Equals(requerido) && d.IdProdServ == prodserv && d.IdProdServEsp == prodservesp) {
+                    return true;
+                }
+            }
+            return false;
+        }
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
     }
 }

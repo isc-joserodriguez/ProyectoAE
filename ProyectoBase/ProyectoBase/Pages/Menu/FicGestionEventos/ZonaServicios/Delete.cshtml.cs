@@ -22,6 +22,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
         [BindProperty]
         public res_zonas_servicios res_zonas_servicios { get; set; }
 
+<<<<<<< HEAD
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -30,6 +31,23 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
             }
 
             res_zonas_servicios = await _context.res_zonas_servicios.SingleOrDefaultAsync(m => m.IdZonaServicio == id);
+=======
+        public async Task<IActionResult> OnGetAsync(
+            int edificio,
+            int espacio,
+            int zona,
+            int prodserv,
+            int prodservesp)
+        {
+            
+
+            res_zonas_servicios = await _context.res_zonas_servicios.SingleOrDefaultAsync(m =>
+                m.IdEdificio == edificio &&
+                m.IdEspacio == espacio &&
+                m.IdZona == zona &&
+                m.IdProdServ == prodserv &&
+                m.IdProdServEsp == prodservesp);
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
 
             if (res_zonas_servicios == null)
             {
@@ -38,6 +56,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
             return Page();
         }
 
+<<<<<<< HEAD
         public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (id == null)
@@ -46,6 +65,22 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
             }
 
             res_zonas_servicios = await _context.res_zonas_servicios.FindAsync(id);
+=======
+        public async Task<IActionResult> OnPostAsync(
+            int edificio,
+            int espacio,
+            int zona,
+            int prodserv,
+            int prodservesp)
+        {
+
+            res_zonas_servicios = await _context.res_zonas_servicios.SingleOrDefaultAsync(m =>
+                m.IdEdificio == edificio &&
+                m.IdEspacio == espacio &&
+                m.IdZona == zona &&
+                m.IdProdServ == prodserv &&
+                m.IdProdServEsp == prodservesp);
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
 
             if (res_zonas_servicios != null)
             {
@@ -53,7 +88,75 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { edificio = res_zonas_servicios.IdEdificio, espacio = res_zonas_servicios.IdEspacio, zona = res_zonas_servicios.IdZona });
         }
+<<<<<<< HEAD
+=======
+
+        public String getEdificio(string ID)
+        {
+            var Tipos = _context.eva_cat_edificios;
+            foreach (eva_cat_edificios d in Tipos)
+            {
+                if (ID == d.IdEdificio.ToString())
+                {
+                    return d.Clave;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String getEspacio(string ID)
+        {
+            var Tipos = _context.eva_cat_espacios;
+            foreach (eva_cat_espacios d in Tipos)
+            {
+                if (ID == d.IdEspacio.ToString())
+                {
+                    return d.Alias;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String getProductoServicio(string ID)
+        {
+            var Tipos = _context.cat_productos_servicios;
+            foreach (cat_productos_servicios d in Tipos)
+            {
+                if (ID == d.IdProdServ.ToString())
+                {
+                    return d.ClaveProdServ;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String getProductoServicioEsp(string ID)
+        {
+            var Tipos = _context.cat_prod_serv_especifico;
+            foreach (cat_prod_serv_especifico d in Tipos)
+            {
+                if (ID == d.IdProdServEsp.ToString())
+                {
+                    return d.ClaveProdServEsp;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String getZona(string ID)
+        {
+            var Tipos = _context.res_cat_zonas;
+            foreach (res_cat_zonas d in Tipos)
+            {
+                if (ID == d.IdZona.ToString())
+                {
+                    return d.DesZona;
+                }
+            }
+            return "Desconocido";
+        }
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
     }
 }

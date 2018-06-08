@@ -96,22 +96,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             }
         }
 
-        public void getGenerales()
-        {
-            var Tipos = _context.cat_generales;
-
-            foreach (cat_generales d in Tipos)
-            {
-
-                if (res_eventos != null)
-                    if (d.IdTipoGeneral == res_eventos.IdTipoGenEvento)
-                        Generales.Add(new SelectListItem
-                        {
-                            Text = d.Clave,
-                            Value = d.IdGeneral.ToString()
-                        });
-            }
-        }
+        
 
         public void getPersonas() {
             var Tipos = _context.rh_cat_personas;
@@ -164,5 +149,42 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             }
             return false;
         }
+
+        public void getGenerales()
+        {
+            var Tipos = _context.cat_generales;
+            Generales.Add(new SelectListItem
+            {
+                Text = "Conferencia",
+                Value = "1"
+            });
+            Generales.Add(new SelectListItem
+            {
+                Text = "Seminario",
+                Value = "2"
+            });
+            Generales.Add(new SelectListItem
+            {
+                Text = "Curso",
+                Value = "3"
+            });
+        }
+
+//        public void getGenerales()
+//        {
+//            var Tipos = _context.cat_generales;
+//          
+//            foreach (cat_generales d in Tipos)
+//            {
+//
+//                if (res_eventos != null)
+//                    if (d.IdTipoGeneral == res_eventos.IdTipoGenEvento)
+//                        Generales.Add(new SelectListItem
+//                        {
+//                            Text = d.Clave,
+//                            Value = d.IdGeneral.ToString()
+//                        });
+//            }
+//        }
     }
 }

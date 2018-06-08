@@ -14,11 +14,7 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="res_eventos.IdEvento" />
-            <div class="form-group">
-                <label class="control-label">Tipo de Evento:</label>
-                @Html.DropDownListFor(model => model.res_eventos.IdTipoGenEvento, Model.TiposGenerales, "Selecciona", new { @class = "form-control", @onchange = @"form.submit();" })
-            <span asp-validation-for="res_eventos.IdTipoGenEvento" class="text-danger"></span>
-            </div>
+            <input asp-for="res_eventos.IdTipoGenEvento" value="18" type="hidden" class="form-control" />
             <div class="form-group">
                 <label class="control-label">Evento:</label>
                 @Html.DropDownListFor(model => model.res_eventos.IdGenEvento, Model.Generales, "Selecciona", new { @class = "form-control" })

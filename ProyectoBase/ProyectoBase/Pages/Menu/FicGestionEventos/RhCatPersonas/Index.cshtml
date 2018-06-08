@@ -26,7 +26,7 @@
                     @Html.DisplayNameFor(model => model.rh_cat_personas[0].CURP)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].TipoPersona)
+                    Tipo de Persona
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.rh_cat_personas[0].Sexo)
@@ -35,7 +35,7 @@
                     @Html.DisplayNameFor(model => model.rh_cat_personas[0].Alias)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.rh_cat_personas[0].FechaNac)
+                    Fecha de Nacimiento
                 </th>
             <th></th>
         </tr>
@@ -58,10 +58,10 @@
                 @Html.DisplayFor(modelItem => item.CURP)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoPersona)
+                @Model.getTipoPersona(item.TipoPersona)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Sexo)
+                @Model.getSexo(item.Sexo)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Alias)
@@ -70,8 +70,8 @@
                 @item.FechaNac.ToShortDateString()
             </td>
             <td>
-                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdPersona"></a> |
-                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdPersona"></a> |
+                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdPersona"></a>
+                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdPersona"></a>
                 <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdPersona"></a>
             </td>
         </tr>

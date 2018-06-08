@@ -37,7 +37,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             {
                 return NotFound();
             }
-            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDes == id);
+            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDet == id);
 
             if (res_evento_horarios == null)
             {
@@ -53,7 +53,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             {
                 return Page();
             }
-
+            res_evento_horarios.Dia = getDia(res_evento_horarios.FechaHoraIni.DayOfWeek);
             _context.Attach(res_evento_horarios).State = EntityState.Modified;
 
             try
@@ -62,7 +62,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!res_evento_horariosExists(res_evento_horarios.IdHorarioDes))
+                if (!res_evento_horariosExists(res_evento_horarios.IdHorarioDet))
                 {
                     return NotFound();
                 }
@@ -77,7 +77,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
 
         private bool res_evento_horariosExists(int id)
         {
-            return _context.res_evento_horarios.Any(e => e.IdHorarioDes == id);
+            return _context.res_evento_horarios.Any(e => e.IdHorarioDet == id);
         }
 
         public List<SelectListItem> Espacio = new List<SelectListItem>();
@@ -93,6 +93,35 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
                         Value = d.IdEspacio.ToString()
                     });
             }
+        }
+
+        public String getDia(DayOfWeek i)
+        {
+            if (i == DayOfWeek.Sunday)
+            {
+                return "Domingo";
+            }
+            else if (i == DayOfWeek.Monday)
+            {
+                return "Lunes";
+            }
+            else if (i == DayOfWeek.Thursday)
+            {
+                return "Jueves";
+            }
+            else if (i == DayOfWeek.Wednesday)
+            {
+                return "Miercoles";
+            }
+            else if (i == DayOfWeek.Tuesday)
+            {
+                return "Martes";
+            }
+            else if (i == DayOfWeek.Friday)
+            {
+                return "Viernes";
+            }
+            else return "Sábado";
         }
 
         public List<SelectListItem> Dias = new List<SelectListItem>();

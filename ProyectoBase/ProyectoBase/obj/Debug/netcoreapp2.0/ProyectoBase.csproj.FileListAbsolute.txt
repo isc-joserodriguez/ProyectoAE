@@ -64,3 +64,14 @@ C:\Users\LAPTOP\Desktop\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreap
 C:\Users\LAPTOP\Desktop\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfo.cs
 C:\Users\LAPTOP\Desktop\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.dll
 C:\Users\LAPTOP\Desktop\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.deps.json
+C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.json
+C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.dev.json
+C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csproj.CoreCompileInputs.cache
+C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfoInputs.cache
+C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfo.cs
+C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csprojResolveAssemblyReference.cache

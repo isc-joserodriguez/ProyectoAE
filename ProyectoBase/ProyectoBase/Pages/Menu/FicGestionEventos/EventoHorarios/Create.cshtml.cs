@@ -13,8 +13,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
     public class CreateModel : PageModel
     {
         private readonly ProyectoBase.Models.ApplicationDbContext _context;
-        public int IdEvento = 0;
-        public int IdEdificio = 0;
+        public int IdEvento { get; set; }
+        public int IdEdificio { get; set; }
 
         [BindProperty]
         public res_evento_horarios res_evento_horarios { get; set; }
@@ -29,7 +29,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             IdEvento = id;
             IdEdificio = edificio;
             getDisponibilidad();
-            getDias();
             getEspacios();
             return Page();
         }
@@ -39,6 +38,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
         public async Task<IActionResult> OnPostAsync()
         {
             res_evento_horarios.FechaReg = DateTime.Now;
+            res_evento_horarios.Dia = getDia(res_evento_horarios.FechaHoraIni.DayOfWeek);
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -64,17 +64,31 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             }
         }
 
-        public List<SelectListItem> Dias = new List<SelectListItem>();
-        public void getDias()
-        {
-            Dias.Add(new SelectListItem { Text = "Domingo", Value = "Domingo" });
-            Dias.Add(new SelectListItem { Text = "Lunes", Value = "Lunes" });
-            Dias.Add(new SelectListItem { Text = "Martes", Value = "Martes" });
-            Dias.Add(new SelectListItem { Text = "Miercoles", Value = "Miercoles" });
-            Dias.Add(new SelectListItem { Text = "Jueves", Value = "Jueves" });
-            Dias.Add(new SelectListItem { Text = "Viernes", Value = "Viernes" });
-            Dias.Add(new SelectListItem { Text = "Sabado", Value = "Sabado" });
-
+        public string getDia(DayOfWeek i) {
+            if (i.Equals(DayOfWeek.Sunday)) {
+                return "Domingo";
+            }
+            else if (i.Equals(DayOfWeek.Monday))
+            {
+                return "Lunes";
+            }
+            else if (i.Equals(DayOfWeek.Thursday))
+            {
+                return "Jueves";
+            }
+            else if (i.Equals(DayOfWeek.Wednesday))
+            {
+                return "Miercoles";
+            }
+            else if (i.Equals(DayOfWeek.Tuesday))
+            {
+                return "Martes";
+            }
+            else if (i.Equals(DayOfWeek.Friday))
+            {
+                return "Viernes";
+            }
+            else return "Sábado";
         }
 
         public List<SelectListItem> Disponibilidad = new List<SelectListItem>();

@@ -8,7 +8,7 @@
 <h2>Catálago de Espacios</h2>
 
 <p>
-    <a asp-page="Create" asp-route-id="@Model.IdEdificio" class="btn btn-info">Agregar nuevo</a> | 
+    <a asp-page="Create" asp-route-id="@Model.IdEdificio" class="btn btn-info">Agregar nuevo</a>
     <a asp-page="../Edificios/Index" asp-route-id="@Model.IdEdificio" class="btn btn-warning">Regresar a lista de Edificios</a>
 </p>
 <br />
@@ -80,9 +80,9 @@
                     @Html.DisplayFor(modelItem => item.Prioridad)
                 </td>
                 <td>
-                    <a asp-page="../Zonas/Index" class="glyphicon glyphicon-adjust" asp-route-espacio="@item.IdEspacio" asp-route-edificio="@item.IdEdificio" ></a> |
-                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEspacio" asp-route-edificio="@Model.eva_cat_edificios.IdEdificio"></a> |
-                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdEspacio" asp-route-edificio="@Model.eva_cat_edificios.IdEdificio"></a> |
+                    <a asp-page="../Zonas/Index" class="glyphicon glyphicon-adjust" asp-route-espacio="@item.IdEspacio" asp-route-edificio="@item.IdEdificio" ></a>
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEspacio" asp-route-edificio="@Model.eva_cat_edificios.IdEdificio"></a>
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdEspacio" asp-route-edificio="@Model.eva_cat_edificios.IdEdificio"></a>
                     <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEspacio" asp-route-edificio="@Model.eva_cat_edificios.IdEdificio"></a>
                 </td>
             </tr>

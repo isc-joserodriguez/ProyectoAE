@@ -24,17 +24,17 @@ namespace ProyectoBase.Models.FicGestionEventos
         public int IdEspacio { get; set; }
         public virtual eva_cat_espacios eva_cat_espacios { get; set; }
 
-        [MaxLength(10), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(10, ErrorMessage = "Este campo no puede contener más de 10 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string Dia { get; set; }
         [Required(ErrorMessage = "Este campo es requerido")]
         public DateTime FechaHoraIni { get; set; }
         [Required(ErrorMessage = "Este campo es requerido")]
         public DateTime FechaHoraFin { get; set; }
-        [MaxLength(1), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(1, ErrorMessage = "Este campo no puede contener más de 1 caracter"), Required(ErrorMessage = "Este campo es requerido")]
         public string Disponible { get; set; }
         [Required(ErrorMessage = "Este campo es requerido")]
         public DateTime FechaReg { get; set; }
-        [MaxLength(18), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(18, ErrorMessage = "Este campo no puede contener más de 18 caracter"), Required(ErrorMessage = "Este campo es requerido")]
         public string UsuarioReg { get; set; }
 
     }

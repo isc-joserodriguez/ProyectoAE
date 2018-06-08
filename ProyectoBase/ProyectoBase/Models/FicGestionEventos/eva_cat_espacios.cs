@@ -18,11 +18,11 @@ namespace ProyectoBase.Models.FicGestionEventos
         public int IdEspacio { get; set; }
 
 
-        [MaxLength(20), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(20, ErrorMessage = "Este campo no puede contener más de 20 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string Clave { get; set; }
-        [MaxLength(10), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(10, ErrorMessage = "Este campo no puede contener más de 10 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string Alias { get; set; }
-        [MaxLength(50), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(50, ErrorMessage = "Este campo no puede contener más de 50 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string DesEspacio { get; set; }
         public int Capacidad { get; set; }
         public int Prioridad { get; set; }

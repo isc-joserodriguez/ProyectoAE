@@ -97,6 +97,13 @@
                    asp-route-zona="@item.IdZona"
                    asp-route-horario="@Model.IdHorario"
                    class="glyphicon glyphicon-trash"></a>
+                <a asp-page="../EventoZonaBoletos/Index"
+                   asp-route-edificio="@item.IdEdificio"
+                   asp-route-espacio="@item.IdEspacio"
+                   asp-route-evento="@item.IdEvento"
+                   asp-route-zona="@item.IdZona"
+                   asp-route-horario="@Model.IdHorario"
+                   class="glyphicon glyphicon-book"></a>
             </td>
         </tr>
 }

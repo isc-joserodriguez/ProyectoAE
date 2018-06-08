@@ -25,13 +25,13 @@ namespace ProyectoBase.Models.FicGestionEventos
         public int IdPersonaReg { get; set; }
         public virtual rh_cat_personas rh_cat_personas { get; set; }
 
-        [MaxLength(1000), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(1000, ErrorMessage = "Este campo no puede contener más de 1000 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string NombreEvento { get; set; }
-        [MaxLength(1000)]
+        [MaxLength(1000, ErrorMessage = "Este campo no puede contener más de 1000 caracteres")]
         public string Observacion { get; set; }
-        [MaxLength(3000)]
+        [MaxLength(3000, ErrorMessage = "Este campo no puede contener más de 3000 caracteres")]
         public string Explicacion { get; set; }
-        [MaxLength(1000), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(1000, ErrorMessage = "Este campo no puede contener más de 1000 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string URL { get; set; }
         [Required(ErrorMessage = "Este campo es requerido")]
         public DateTime FechaIn { get; set; }

@@ -20,7 +20,7 @@ namespace ProyectoBase.Models.FicGestionEventos
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required(ErrorMessage = "Este campo es requerido")]
         public int IdZona { get; set; }
 
-        [MaxLength(225), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(225, ErrorMessage = "Este campo no puede contener más de 225 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string DesZona { get; set; }
         public int CapacidadPer { get; set; }
         public int Filas { get; set; }

@@ -13,6 +13,7 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="res_evento_horarios.Dia" value="Lunes" type="hidden" class="form-control" />
             <div class="form-group">
                 <label class="control-label">Evento: @Model.Evento(Model.IdEvento.ToString())</label>
                 <input asp-for="res_evento_horarios.IdEvento" value="@Model.IdEvento" type="hidden" class="form-control" />

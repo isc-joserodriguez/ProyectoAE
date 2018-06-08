@@ -26,7 +26,7 @@ namespace ProyectoBase.Models.FicGestionEventos
         public virtual rh_cat_personas rh_cat_personas { get; set; }
 
         public string ConfirmaAsistencia { get; set; }
-        [MaxLength(60), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(60, ErrorMessage = "Este campo no puede contener más de 60 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string Nombre { get; set; }
     }
 }

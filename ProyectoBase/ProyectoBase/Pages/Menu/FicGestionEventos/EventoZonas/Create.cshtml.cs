@@ -44,7 +44,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonas
             }
 
             res_evento_zonas.FechaReg = DateTime.Now;
-            var x = IdHorario;
             _context.res_evento_zonas.Add(res_evento_zonas);
             await _context.SaveChangesAsync();
 
@@ -53,7 +52,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonas
                 edificio = res_evento_zonas.IdEdificio,
                 espacio = res_evento_zonas.IdEspacio,
                 evento = res_evento_zonas.IdEvento,
-                horario = x
+                horario = IdHorario
             });
         }
 

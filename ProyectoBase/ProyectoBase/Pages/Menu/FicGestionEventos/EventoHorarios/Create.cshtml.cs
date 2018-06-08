@@ -13,8 +13,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
     public class CreateModel : PageModel
     {
         private readonly ProyectoBase.Models.ApplicationDbContext _context;
-        public int IdEvento = 0;
-        public int IdEdificio = 0;
+        public int IdEvento { get; set; }
+        public int IdEdificio { get; set; }
 
         [BindProperty]
         public res_evento_horarios res_evento_horarios { get; set; }
@@ -29,7 +29,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             IdEvento = id;
             IdEdificio = edificio;
             getDisponibilidad();
-            getDias();
             getEspacios();
             return Page();
         }
@@ -65,39 +64,27 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             }
         }
 
-        public List<SelectListItem> Dias = new List<SelectListItem>();
-        public void getDias()
-        {
-            Dias.Add(new SelectListItem { Text = "Domingo", Value = "Domingo" });
-            Dias.Add(new SelectListItem { Text = "Lunes", Value = "Lunes" });
-            Dias.Add(new SelectListItem { Text = "Martes", Value = "Martes" });
-            Dias.Add(new SelectListItem { Text = "Miercoles", Value = "Miercoles" });
-            Dias.Add(new SelectListItem { Text = "Jueves", Value = "Jueves" });
-            Dias.Add(new SelectListItem { Text = "Viernes", Value = "Viernes" });
-            Dias.Add(new SelectListItem { Text = "Sabado", Value = "Sabado" });
-        }
-
-        public String getDia(DayOfWeek i) {
-            if (i == DayOfWeek.Sunday) {
+        public string getDia(DayOfWeek i) {
+            if (i.Equals(DayOfWeek.Sunday)) {
                 return "Domingo";
             }
-            else if (i == DayOfWeek.Monday)
+            else if (i.Equals(DayOfWeek.Monday))
             {
                 return "Lunes";
             }
-            else if (i == DayOfWeek.Thursday)
+            else if (i.Equals(DayOfWeek.Thursday))
             {
                 return "Jueves";
             }
-            else if (i == DayOfWeek.Wednesday)
+            else if (i.Equals(DayOfWeek.Wednesday))
             {
                 return "Miercoles";
             }
-            else if (i == DayOfWeek.Tuesday)
+            else if (i.Equals(DayOfWeek.Tuesday))
             {
                 return "Martes";
             }
-            else if (i == DayOfWeek.Friday)
+            else if (i.Equals(DayOfWeek.Friday))
             {
                 return "Viernes";
             }

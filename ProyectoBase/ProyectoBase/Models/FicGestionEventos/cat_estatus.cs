@@ -16,11 +16,11 @@ namespace ProyectoBase.Models.FicGestionEventos
         [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity), Required(ErrorMessage = "Este campo es requerido")]
         public int IdEstatus { get; set; }
 
-        [MaxLength(50), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(50, ErrorMessage = "Este campo no puede contener más de 50 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string Clave { get; set; }
-        [MaxLength(30), Required(ErrorMessage = "Este campo es requerido")]
+        [MaxLength(30, ErrorMessage = "Este campo no puede contener más de 30 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string DesEstatus { get; set; }
-        [Required(ErrorMessage = "Este campo es requerido"), MaxLength(1)]
+        [Required(ErrorMessage = "Este campo es requerido"), MaxLength(1, ErrorMessage = "Este campo no puede contener más de 1 caracteres")]
         public string Activo { get; set; }
     }
 }

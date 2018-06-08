@@ -23,24 +23,20 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
         public res_zonas_servicios res_zonas_servicios { get; set; }
 
         public async Task<IActionResult> OnGetAsync(
-            int? IdEdificio,
-            int? IdEspacio,
-            int? IdZona,
-            int? IdProdServ,
-            int? IdProdServEsp)
+            int edificio,
+            int espacio,
+            int zona,
+            int prodserv,
+            int prodservesp)
         {
-            if (IdEdificio == null || IdEspacio == null || IdZona == null || IdProdServ == null || IdProdServEsp == null)
-            {
-                return NotFound();
-            }
+            
 
-            res_zonas_servicios = await _context
-                .res_zonas_servicios
-                .SingleOrDefaultAsync(m => m.IdEdificio == IdEdificio &&
-                                           m.IdEspacio == IdEspacio &&
-                                           m.IdZona == IdZona &&
-                                           m.IdProdServ == IdProdServ &&
-                                           m.IdProdServEsp == IdProdServEsp);
+            res_zonas_servicios = await _context.res_zonas_servicios.SingleOrDefaultAsync(m =>
+                m.IdEdificio == edificio &&
+                m.IdEspacio == espacio &&
+                m.IdZona == zona &&
+                m.IdProdServ == prodserv &&
+                m.IdProdServEsp == prodservesp);
 
             if (res_zonas_servicios == null)
             {
@@ -49,22 +45,20 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(
+            int edificio,
+            int espacio,
+            int zona,
+            int prodserv,
+            int prodservesp)
         {
-            int IdEdificio = res_zonas_servicios.IdEdificio;
-            int IdEspacio = res_zonas_servicios.IdEspacio;
-            int IdZona = res_zonas_servicios.IdZona;
-            int IdProdServ = res_zonas_servicios.IdProdServ;
-            int IdProdServEsp = res_zonas_servicios.IdProdServEsp;
 
-            //res_zonas_servicios = await _context.res_zonas_servicios.FindAsync(id);
-            res_zonas_servicios = await _context
-                .res_zonas_servicios
-                .SingleOrDefaultAsync(m => m.IdEdificio == IdEdificio &&
-                                           m.IdEspacio == IdEspacio &&
-                                           m.IdZona == IdZona &&
-                                           m.IdProdServ == IdProdServ &&
-                                           m.IdProdServEsp == IdProdServEsp);
+            res_zonas_servicios = await _context.res_zonas_servicios.SingleOrDefaultAsync(m =>
+                m.IdEdificio == edificio &&
+                m.IdEspacio == espacio &&
+                m.IdZona == zona &&
+                m.IdProdServ == prodserv &&
+                m.IdProdServEsp == prodservesp);
 
             if (res_zonas_servicios != null)
             {
@@ -72,28 +66,28 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { edificio = res_zonas_servicios.IdEdificio, espacio = res_zonas_servicios.IdEspacio, zona = res_zonas_servicios.IdZona });
         }
 
-        public string getEdificio(int IdEdificio)
+        public String getEdificio(string ID)
         {
             var Tipos = _context.eva_cat_edificios;
             foreach (eva_cat_edificios d in Tipos)
             {
-                if (IdEdificio == d.IdEdificio)
+                if (ID == d.IdEdificio.ToString())
                 {
-                    return d.Alias;
+                    return d.Clave;
                 }
             }
             return "Desconocido";
         }
 
-        public string getEspacio(int IdEspacio)
+        public String getEspacio(string ID)
         {
             var Tipos = _context.eva_cat_espacios;
             foreach (eva_cat_espacios d in Tipos)
             {
-                if (IdEspacio == d.IdEspacio)
+                if (ID == d.IdEspacio.ToString())
                 {
                     return d.Alias;
                 }
@@ -101,43 +95,43 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
             return "Desconocido";
         }
 
-        public string getZona(int IdZona)
-        {
-            var Tipos = _context.res_cat_zonas;
-            foreach (res_cat_zonas d in Tipos)
-            {
-                if (IdZona == d.IdZona)
-                {
-                    return d.DesZona;
-                }
-            }
-            return "Desconocida";
-        }
-
-        public string getProdServ(int IdProdServ)
+        public String getProductoServicio(string ID)
         {
             var Tipos = _context.cat_productos_servicios;
             foreach (cat_productos_servicios d in Tipos)
             {
-                if (IdProdServ == d.IdProdServ)
+                if (ID == d.IdProdServ.ToString())
                 {
-                    return d.DesProdServ;
+                    return d.ClaveProdServ;
                 }
             }
-            return "Desconocida";
+            return "Desconocido";
         }
 
-        public string getProdServEsp(int IdProdServEsp)
+        public String getProductoServicioEsp(string ID)
         {
             var Tipos = _context.cat_prod_serv_especifico;
             foreach (cat_prod_serv_especifico d in Tipos)
             {
-                if (IdProdServEsp == d.IdProdServEsp)
+                if (ID == d.IdProdServEsp.ToString())
                 {
-                    return d.DesProdServEsp;
+                    return d.ClaveProdServEsp;
                 }
             }
-            return "Desconocida";
+            return "Desconocido";
+        }
+
+        public String getZona(string ID)
+        {
+            var Tipos = _context.res_cat_zonas;
+            foreach (res_cat_zonas d in Tipos)
+            {
+                if (ID == d.IdZona.ToString())
+                {
+                    return d.DesZona;
+                }
+            }
+            return "Desconocido";
         }
     }
 }

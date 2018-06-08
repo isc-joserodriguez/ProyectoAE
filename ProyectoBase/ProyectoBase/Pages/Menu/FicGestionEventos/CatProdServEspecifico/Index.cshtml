@@ -8,7 +8,7 @@
 <h2>Catálogo de Productos/Servicios Especificos</h2>
 
 <p>
-    <a asp-page="Create" asp-route-id="@Model.IdProdServ" class="btn btn-info">Agregar nuevo</a> |
+    <a asp-page="Create" asp-route-id="@Model.IdProdServ" class="btn btn-info">Agregar nuevo</a>
     <a asp-page="../CatProductosServicios/Index" asp-route-id="@Model.IdProdServ" class="btn btn-warning">Regresar a la Lista de Productos y Servicios</a>
 </p>
 
@@ -62,15 +62,9 @@
                     @Html.DisplayFor(modelItem => item.DesProdServEsp)
                 </td>
                 <td>
-<<<<<<< HEAD
-                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdProdServEsp"></a> |
-                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdProdServEsp"></a> |
-                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdProdServEsp"></a>
-=======
-                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdProdServEsp" asp-route-idprodserv="@Model.cat_productos_servicios.IdProdServ"></a> |
-                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdProdServEsp" asp-route-idprodserv="@Model.cat_productos_servicios.IdProdServ"></a> |
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdProdServEsp" asp-route-idprodserv="@Model.cat_productos_servicios.IdProdServ"></a>
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdProdServEsp" asp-route-idprodserv="@Model.cat_productos_servicios.IdProdServ"></a>
                     <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdProdServEsp" asp-route-idprodserv="@Model.cat_productos_servicios.IdProdServ"></a>
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
                 </td>
             </tr>
         }

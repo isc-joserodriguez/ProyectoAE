@@ -29,7 +29,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletosEstatus
                 return NotFound();
             }
 
-            res_evento_zona_boleto_estatus = await _context.res_evento_zona_boleto_estatus.SingleOrDefaultAsync(m => m.IdEstatusDet == id);
+            res_evento_zona_boleto_estatus = await _context.res_evento_zona_boleto_estatus.SingleOrDefaultAsync(m => m.Id == id);
 
             if (res_evento_zona_boleto_estatus == null)
             {

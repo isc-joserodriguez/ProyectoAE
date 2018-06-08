@@ -28,10 +28,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
         {
             IQueryable<res_cat_zonas> edificios = from s in _context.res_cat_zonas
                                                      select s;
-            if (espacio == null)
-            {
-                return NotFound();
-            }
 
              res_cat_zonas = await _context
                 .res_cat_zonas

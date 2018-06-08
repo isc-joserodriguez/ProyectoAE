@@ -8,45 +8,35 @@
 <h2>Boletos</h2>
 
 <p>
-    <a asp-page="../Zonas/Index" asp-route-espacio="@Model.IdEspacio" asp-route-edificio="@Model.IdEdificio" class="btn btn-warning">Regresar a lista de Zonas</a>
+    <a asp-page="Create" class="btn btn-info">Añadir</a>
+    <a asp-page="../EventoZonas/Index" asp-route-edificio="@Model.IdEdificio" asp-route-espacio="@Model.IdEspacio" asp-route-evento="@Model.IdEvento" asp-route-horario="@Model.IdHorario"
+       class="btn btn-warning">Regresar a lista de Zonas</a>
 </p>
 
 <dl class="dl-horizontal">
     <dt>
-        Edificio:
+        <label class="control-label">Evento:</label>
+    </dt>
+    <dd>
+        @Model.getEvento(Model.IdEvento.ToString());
+    </dd>
+    <dt>
+        <label class="control-label">Edificio:</label>
     </dt>
     <dd>
         @Model.getEdificio(Model.IdEdificio.ToString())
     </dd>
     <dt>
-        Espacio:
+        <label class="control-label">Espacio:</label>
     </dt>
     <dd>
         @Model.getEspacio(Model.IdEspacio.ToString())
     </dd>
     <dt>
-        Descripción:
+        <label class="control-label">Zona:</label>
     </dt>
     <dd>
-        @Html.DisplayFor(model => model.res_cat_zonas.DesZona)
-    </dd>
-    <dt>
-        Capacidad:
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.res_cat_zonas.CapacidadPer)
-    </dd>
-    <dt>
-        Filas de Asientos:
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.res_cat_zonas.Filas)
-    </dd>
-    <dt>
-        Asientos por Fila:
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.res_cat_zonas.AsientosPorFila)
+        @Model.getZona(Model.IdZona.ToString())
     </dd>
 </dl>
 
@@ -63,7 +53,7 @@
                     Precio
                 </th>
                 <th>
-                    IVa
+                    IVA
                 </th>
             <th></th>
         </tr>
@@ -84,15 +74,12 @@
                 % @Html.DisplayFor(modelItem => item.IVA)
             </td>
             <td>
-<<<<<<< HEAD
-                <a asp-page="./Edit" asp-route-id="@item.IdBoleto">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.IdBoleto">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.IdBoleto">Delete</a>
-=======
-                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdBoleto"></a> |
-                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdBoleto"></a> |
-                <a asp-page="./Delete" class="glyphicon glyphicon-trash"  asp-route-id="@item.IdBoleto"></a>
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
+                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdBoleto"
+                   asp-route-edificio="@Model.IdEdificio" asp-route-espacio="@Model.IdEspacio" asp-route-evento="@Model.IdEvento" asp-route-zona="@Model.IdZona" asp-route-horario="@Model.IdHorario"></a>
+                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdBoleto"
+                   asp-route-edificio="@Model.IdEdificio" asp-route-espacio="@Model.IdEspacio" asp-route-evento="@Model.IdEvento" asp-route-zona="@Model.IdZona" asp-route-horario="@Model.IdHorario"></a>
+                <a asp-page="./Delete" class="glyphicon glyphicon-trash"  asp-route-id="@item.IdBoleto"
+                   asp-route-edificio="@Model.IdEdificio" asp-route-espacio="@Model.IdEspacio" asp-route-evento="@Model.IdEvento" asp-route-zona="@Model.IdZona" asp-route-horario="@Model.IdHorario"></a>
             </td>
         </tr>
 }

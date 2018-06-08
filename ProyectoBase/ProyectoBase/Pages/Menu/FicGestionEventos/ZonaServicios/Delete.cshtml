@@ -7,55 +7,54 @@
 
 <h2>Eliminar</h2>
 
-<h3>¿Seguro que quieres eliminar?</h3>
+<h3>¿Quiere Eliminar?</h3>
 <div>
-    <h4>Servicios Por Zona</h4>
+    <h4>Servicios por Zonas</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            <!--@Html.DisplayNameFor(model => model.res_zonas_servicios.IdEdificio)-->
-            Edificio
+            Edificio:
         </dt>
         <dd>
-            <!--@Html.DisplayFor(model => model.res_zonas_servicios.IdEdificio)-->
-            @Model.getEdificio(@Model.res_zonas_servicios.IdEdificio)
+            @Model.getEdificio(Model.res_zonas_servicios.IdEdificio.ToString())
         </dd>
         <dt>
-            Espacio
-            <!--@Html.DisplayNameFor(model => model.res_zonas_servicios.IdEspacio)-->
+            Espacio:
         </dt>
         <dd>
-            @Model.getEspacio(Model.res_zonas_servicios.IdEspacio)
-            <!--@Html.DisplayFor(model => model.res_zonas_servicios.IdEspacio)-->
+            @Model.getEspacio(Model.res_zonas_servicios.IdEspacio.ToString())
         </dd>
         <dt>
-            Zona
-            <!--@Html.DisplayNameFor(model => model.res_zonas_servicios.IdZona)-->
+            Zona:
         </dt>
         <dd>
-            @Model.getZona(Model.res_zonas_servicios.IdZona)
-            <!--@Html.DisplayFor(model => model.res_zonas_servicios.IdZona)-->
+            @Model.getZona(Model.res_zonas_servicios.IdZona.ToString())
         </dd>
         <dt>
-            Producto/Servicio
-            <!--@Html.DisplayNameFor(model => model.res_zonas_servicios.IdProdServ)-->
+            Producto/Servicio:
         </dt>
         <dd>
-            @Model.getProdServ(Model.res_zonas_servicios.IdProdServ)
-            <!--@Html.DisplayFor(model => model.res_zonas_servicios.IdProdServ)-->
+            @Model.getProductoServicio(Model.res_zonas_servicios.IdProdServ.ToString())
         </dd>
         <dt>
-            Producto/Servicio Especifico
-            <!--@Html.DisplayNameFor(model => model.res_zonas_servicios.IdProdServEsp)-->
+            Especifico:
         </dt>
         <dd>
-            @Model.getProdServEsp(Model.res_zonas_servicios.IdProdServEsp)
-            <!--@Html.DisplayFor(model => model.res_zonas_servicios.IdProdServEsp)-->
+            @Model.getProductoServicioEsp(Model.res_zonas_servicios.IdProdServEsp.ToString())
         </dd>
     </dl>
-
+    
     <form method="post">
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-page="./Index">Regresar a la Lista</a>
+        <input type="hidden" asp-for="res_zonas_servicios.IdEdificio" />
+        <input type="hidden" asp-for="res_zonas_servicios.IdEspacio" />
+        <input type="hidden" asp-for="res_zonas_servicios.IdZona" />
+        <input type="hidden" asp-for="res_zonas_servicios.IdProdServ" />
+        <input type="hidden" asp-for="res_zonas_servicios.IdProdServEsp" />
+        <input type="submit" value="Eliminar" class="btn btn-info" />
+        <a asp-page="./Index"
+           asp-route-edificio="@Model.res_zonas_servicios.IdEdificio"
+           asp-route-espacio="@Model.res_zonas_servicios.IdEspacio"
+           asp-route-zona="@Model.res_zonas_servicios.IdZona"
+           class="btn btn-warning">Regresar a la Lista</a>
     </form>
 </div>

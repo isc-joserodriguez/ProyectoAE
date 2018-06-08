@@ -26,16 +26,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
 
         public async Task<IActionResult> OnGetAsync(int id, int espacio, int edificio)
         {
-<<<<<<< HEAD
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-=======
             IdEdificio = edificio;
             IdEspacio = espacio;
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
             res_cat_zonas = await _context.res_cat_zonas.SingleOrDefaultAsync(m => m.IdZona == id);
 
             if (res_cat_zonas == null)

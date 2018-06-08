@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoClienteProdServ.DetailsModel
+@model ProyectoBase.Pages.FicGestionEventos.EventoClienteProdServ.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -68,6 +68,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.res_evento_cliente_prod_serv.IdReservaServDet" class="btn btn-primary">Editar</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.res_evento_cliente_prod_serv.Id" class="btn btn-primary">Editar</a> |
     <a asp-page="./Index" class="btn btn-default">Regresar a lista</a>
 </div>

@@ -71,8 +71,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios
         private bool cat_productos_serviciosExists(int id)
         {
             return _context.cat_productos_servicios.Any(e => e.IdProdServ == id);
-<<<<<<< HEAD
-=======
         }
 
         public List<SelectListItem> ProductoServicio = new List<SelectListItem>();
@@ -89,7 +87,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProductoServicios
                 Text = "Servicio",
                 Value = "S"
             });
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
         }
     }
 }

@@ -28,13 +28,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             {
                 return NotFound();
             }
-<<<<<<< HEAD
-
-            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDet == id);
-=======
             IdEvento = evento;
             res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDes == id);
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
 
             if (res_evento_horarios == null)
             {

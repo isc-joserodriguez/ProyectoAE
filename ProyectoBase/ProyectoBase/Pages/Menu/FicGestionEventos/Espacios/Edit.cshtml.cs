@@ -76,8 +76,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
         private bool eva_cat_espaciosExists(int id)
         {
             return _context.eva_cat_espacios.Any(e => e.IdEspacio == id);
-<<<<<<< HEAD
-=======
         }
 
         public void getEdificios()
@@ -104,7 +102,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
                 }
             }
             return "Desconocido";
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
         }
     }
 }

@@ -26,16 +26,9 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-<<<<<<< HEAD
-=======
             IdProdServ = id;
 
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
             cat_prod_serv_especifico = await _context.cat_prod_serv_especifico.SingleOrDefaultAsync(m => m.IdProdServEsp == id);
 
             if (cat_prod_serv_especifico == null)
@@ -76,8 +69,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico
         private bool cat_prod_serv_especificoExists(int id)
         {
             return _context.cat_prod_serv_especifico.Any(e => e.IdProdServEsp == id);
-<<<<<<< HEAD
-=======
         }
 
         public String getProdServ(string ID)
@@ -91,7 +82,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico
                 }
             }
             return "Desconocido";
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
         }
     }
 }

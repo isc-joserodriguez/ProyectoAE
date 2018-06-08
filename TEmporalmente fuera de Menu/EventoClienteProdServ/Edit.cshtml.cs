@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoClienteProdServ
                 return NotFound();
             }
 
-            res_evento_cliente_prod_serv = await _context.res_evento_cliente_prod_serv.SingleOrDefaultAsync(m => m.IdReservaServDet == id);
+            res_evento_cliente_prod_serv = await _context.res_evento_cliente_prod_serv.SingleOrDefaultAsync(m => m.Id == id);
 
             if (res_evento_cliente_prod_serv == null)
             {
@@ -54,7 +54,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoClienteProdServ
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!res_evento_cliente_prod_servExists(res_evento_cliente_prod_serv.IdReservaServDet))
+                if (!res_evento_cliente_prod_servExists(res_evento_cliente_prod_serv.Id))
                 {
                     return NotFound();
                 }
@@ -69,7 +69,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoClienteProdServ
 
         private bool res_evento_cliente_prod_servExists(int id)
         {
-            return _context.res_evento_cliente_prod_serv.Any(e => e.IdReservaServDet == id);
+            return _context.res_evento_cliente_prod_serv.Any(e => e.Id == id);
         }
     }
 }

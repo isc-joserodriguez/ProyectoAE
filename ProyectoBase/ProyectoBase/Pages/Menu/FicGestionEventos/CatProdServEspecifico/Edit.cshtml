@@ -5,11 +5,7 @@
     ViewData["Title"] = "Edit";
 }
 
-<<<<<<< HEAD
-<h2>Editar Catálogo [@Html.DisplayFor(model => model.cat_prod_serv_especifico.IdProdServEsp)]</h2>
-=======
 <h2>Editar</h2>
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
 
 <h4>Catálogo de Productos/Servicios Especificos</h4>
 <hr />
@@ -21,10 +17,7 @@
                 <label class="control-label">Producto o Servicio: @Model.getProdServ(Model.IdProdServ.ToString())</label>
             </div>
             <input type="hidden" asp-for="cat_prod_serv_especifico.IdProdServEsp" />
-<<<<<<< HEAD
-=======
             <input type="hidden" asp-for="cat_prod_serv_especifico.IdProdServ" value="@Model.IdProdServ" />
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
             <div class="form-group">
                 <label asp-for="cat_prod_serv_especifico.ClaveProdServEsp" class="control-label">Clave</label>
                 <input asp-for="cat_prod_serv_especifico.ClaveProdServEsp" class="form-control" />

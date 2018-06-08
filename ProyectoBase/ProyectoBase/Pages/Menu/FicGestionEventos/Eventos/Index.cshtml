@@ -8,11 +8,12 @@
 <h2>Gestión de Eventos</h2>
 
 <form asp-page="./Index" method="get">
-    <input type="search" name="busqueda" value="@Model.CurrentFilter" placeholder="Buscar por ID, Nombre o Fecha" class="form-control alert-info" />
-    <br />
     <p>
-        <a asp-page="Create" class="btn btn-danger">Crear Evento</a> | 
-        <input type="submit" value="Buscar" class="btn btn-info" /> |
+        <input name="busqueda" value="@Model.CurrentFilter" placeholder="Buscar por ID, Nombre o Fecha" class="form-control" />
+        <input type="submit" value="Buscar" class="btn btn-info btn-block" />
+    </p>
+    <p>
+        <a asp-page="Create" class="btn btn-info">Crear Evento</a>
         <a asp-page="./Index" class="btn btn-warning">Limpiar</a>
     </p>
 </form>
@@ -66,20 +67,22 @@
                 @Html.DisplayFor(modelItem => item.NombreEvento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaIn)
+                @item.FechaIn.ToShortDateString()
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaFin)
+                @item.FechaFin.ToShortDateString()
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.URL)
             </td>
             <td>
-                <a asp-page="../EventoHorarios/Index" class="glyphicon glyphicon-time" asp-route-id="@item.IdEvento"></a> |
-                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEvento"></a> |
-                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdEvento"></a> |
-                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEvento"></a> |
+                <a asp-page="../EventoHorarios/Index" class="glyphicon glyphicon-time" asp-route-id="@item.IdEvento"></a>
+                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEvento"></a>
+                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdEvento"></a>
+                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEvento"></a>
                 <a asp-page="../EventoEstatus/Index" class="glyphicon glyphicon-alert" asp-route-id="@item.IdEvento"></a>
+                <a asp-page="../EventoServicios/Index" class="glyphicon glyphicon-king" asp-route-id="@item.IdEvento"></a>
+
             </td>
         </tr>
 }

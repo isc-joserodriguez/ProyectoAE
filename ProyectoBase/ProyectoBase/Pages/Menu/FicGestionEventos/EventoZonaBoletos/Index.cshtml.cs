@@ -23,18 +23,34 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletos
         public int IdEdificio { get; set; }
         public int IdEspacio { get; set; }
         public int IdZona { get; set; }
+        public int IdEvento { get; set; }
+        public int IdHorario { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int id, int espacio, int edificio, int zona)
+        public async Task<IActionResult> OnGetAsync(int edificio, int espacio, int evento, int zona, int horario)
         {
             IdEdificio = edificio;
             IdEspacio = espacio;
             IdZona = zona;
+            IdEvento = evento;
+            IdHorario = horario;
+
+            IQueryable<res_evento_zona_boletos> _res_evento_zona_boletos = from s in _context.res_evento_zona_boletos
+                                                                           select s;
+
             res_evento_zona_boletos = await _context.res_evento_zona_boletos.ToListAsync();
 
             if (res_evento_zona_boletos == null)
             {
                 return NotFound();
             }
+
+            res_evento_zona_boletos = await _res_evento_zona_boletos.Where(m =>
+            m.IdEvento == IdEvento &&
+            m.IdEdificio == IdEdificio &&
+            m.IdEspacio == IdEspacio && 
+            m.IdZona == IdZona)
+                .AsNoTracking()
+                .ToListAsync();
             return Page();
         }
 
@@ -76,5 +92,19 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletos
             }
             return "Desconocido";
         }
+
+        public String getEvento(string ID)
+        {
+            var Tipos = _context.res_eventos;
+            foreach (res_eventos d in Tipos)
+            {
+                if (ID == d.IdEvento.ToString())
+                {
+                    return d.NombreEvento;
+                }
+            }
+            return "Desconocido";
+        }
+
     }
 }

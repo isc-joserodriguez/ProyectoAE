@@ -36,9 +36,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
             return Page();
         }
 
-<<<<<<< HEAD
-            res_cat_zonas = await _context.res_cat_zonas.SingleOrDefaultAsync(m => m.IdZona == id);
-=======
         public String getEdificio(string ID)
         {
             var Tipos = _context.eva_cat_edificios;
@@ -51,7 +48,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
             }
             return "Desconocido";
         }
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
 
         public String getEspacio(string ID)
         {

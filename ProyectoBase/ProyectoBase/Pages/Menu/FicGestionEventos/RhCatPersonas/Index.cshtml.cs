@@ -25,5 +25,18 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.RhCatPersonas
         {
             rh_cat_personas = await _context.rh_cat_personas.ToListAsync();
         }
+
+        public String getSexo(String sexo) {
+            if (sexo.Equals("M")) return "Masculino";
+            if (sexo.Equals("F")) return "Femenino";
+            return "Desconocido";
+        }
+
+        public String getTipoPersona(String tipo)
+        {
+            if (tipo.Equals("M")) return "Moral";
+            if (tipo.Equals("F")) return "Fisica";
+            return "Desconocido";
+        }
     }
 }

@@ -5,34 +5,33 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
-
-<h4>res_evento_zona_boletos</h4>
+<h2>Generar Boletos</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="res_evento_zona_boletos.IdEvento" class="control-label"></label>
-                <input asp-for="res_evento_zona_boletos.IdEvento" class="form-control" />
+                <label class="control-label">Evento: @Model.getEvento(Model.IdEvento.ToString())</label>
+                <input asp-for="res_evento_zona_boletos.IdEvento" value="@Model.IdEvento" type="hidden" class="form-control" />
                 <span asp-validation-for="res_evento_zona_boletos.IdEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zona_boletos.IdEdificio" class="control-label"></label>
-                <input asp-for="res_evento_zona_boletos.IdEdificio" class="form-control" />
+                <label class="control-label">Edificio: @Model.getEdificio(Model.IdEdificio.ToString())</label>
+                <input asp-for="res_evento_zona_boletos.IdEdificio" value="@Model.IdEdificio" type="hidden" class="form-control" />
                 <span asp-validation-for="res_evento_zona_boletos.IdEdificio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zona_boletos.IdEspacio" class="control-label"></label>
-                <input asp-for="res_evento_zona_boletos.IdEspacio" class="form-control" />
+                <label class="control-label">Espacio: @Model.getEspacio(Model.IdEspacio.ToString())</label>
+                <input asp-for="res_evento_zona_boletos.IdEspacio" value="@Model.IdEspacio" type="hidden" class="form-control" />
                 <span asp-validation-for="res_evento_zona_boletos.IdEspacio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zona_boletos.IdZona" class="control-label"></label>
-                <input asp-for="res_evento_zona_boletos.IdZona" class="form-control" />
+                <label class="control-label">Zona: @Model.getZona(Model.IdZona.ToString())</label>
+                <input asp-for="res_evento_zona_boletos.IdZona" value="@Model.IdZona" type="hidden" class="form-control" />
                 <span asp-validation-for="res_evento_zona_boletos.IdZona" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="res_evento_zona_boletos.NumBoleto" class="control-label"></label>
                 <input asp-for="res_evento_zona_boletos.NumBoleto" class="form-control" />
@@ -40,7 +39,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="res_evento_zona_boletos.DesBoleto" class="control-label"></label>
-                <input asp-for="res_evento_zona_boletos.DesBoleto" class="form-control" />
+                <textarea asp-for="res_evento_zona_boletos.DesBoleto" class="form-control" ></textarea>
                 <span asp-validation-for="res_evento_zona_boletos.DesBoleto" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -54,14 +53,16 @@
                 <span asp-validation-for="res_evento_zona_boletos.IVA" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Generar Boletos" class="btn btn-info" />
+                <a asp-page="Index" asp-route-edificio="@Model.IdEdificio"
+                                    asp-route-espacio="@Model.IdEspacio"
+                                    asp-route-evento="@Model.IdEvento"
+                                    asp-route-zona="@Model.IdZona"
+                                    asp-route-horario="@Model.IdHorario"
+                   class="btn btn-warning">Regresar a la Lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

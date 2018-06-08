@@ -8,7 +8,7 @@
 <h2>Catálago de Zonas</h2>
 
 <p>
-    <a asp-page="Create" asp-route-espacio="@Model.IdEspacio" asp-route-edificio="@Model.IdEdificio" class="btn btn-info">Crear</a> | 
+    <a asp-page="Create" asp-route-espacio="@Model.IdEspacio" asp-route-edificio="@Model.IdEdificio" class="btn btn-info">Crear</a>
     <a asp-page="../Espacios/Index" asp-route-id="@Model.IdEdificio" class="btn btn-warning">Regresar a la Lista del Espacios</a>
 </p>
 <br />
@@ -85,9 +85,10 @@
                 @Html.DisplayFor(modelItem => item.AsientosPorFila)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.IdZona" asp-route-espacio="@Model.IdEspacio" asp-route-edificio="@Model.IdEdificio" class="glyphicon glyphicon-pencil"></a> |
-                <a asp-page="./Details" asp-route-id="@item.IdZona" asp-route-espacio="@Model.IdEspacio" asp-route-edificio="@Model.IdEdificio" class="glyphicon glyphicon-list-alt"></a> |
+                <a asp-page="./Edit" asp-route-id="@item.IdZona" asp-route-espacio="@Model.IdEspacio" asp-route-edificio="@Model.IdEdificio" class="glyphicon glyphicon-pencil"></a>
+                <a asp-page="./Details" asp-route-id="@item.IdZona" asp-route-espacio="@Model.IdEspacio" asp-route-edificio="@Model.IdEdificio" class="glyphicon glyphicon-list-alt"></a>
                 <a asp-page="./Delete" asp-route-id="@item.IdZona" asp-route-espacio="@Model.IdEspacio" asp-route-edificio="@Model.IdEdificio" class="glyphicon glyphicon-trash"></a>
+                <a asp-page="../ZonaServicios/Index" asp-route-edificio="@item.IdEdificio" asp-route-espacio="@item.IdEspacio" asp-route-zona="@item.IdZona" class="glyphicon glyphicon-star"></a>
             </td>
         </tr>
 }

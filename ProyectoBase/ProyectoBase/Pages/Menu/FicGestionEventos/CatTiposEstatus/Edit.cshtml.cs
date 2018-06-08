@@ -71,8 +71,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus
         private bool cat_tipos_estatusExists(int id)
         {
             return _context.cat_tipos_estatus.Any(e => e.IdTipoEstatus == id);
-<<<<<<< HEAD
-=======
         }
 
         public List<SelectListItem> Activo = new List<SelectListItem>();
@@ -89,7 +87,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatTiposEstatus
                 Text = "Inactivo",
                 Value = "N"
             });
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
         }
     }
 }

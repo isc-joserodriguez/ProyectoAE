@@ -37,12 +37,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             {
                 return NotFound();
             }
-<<<<<<< HEAD
-
-            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDet == id);
-=======
             res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDes == id);
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
 
             if (res_evento_horarios == null)
             {
@@ -58,7 +53,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             {
                 return Page();
             }
-
+            res_evento_horarios.Dia = getDia(res_evento_horarios.FechaHoraIni.DayOfWeek);
             _context.Attach(res_evento_horarios).State = EntityState.Modified;
 
             try
@@ -67,11 +62,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
             }
             catch (DbUpdateConcurrencyException)
             {
-<<<<<<< HEAD
-                if (!res_evento_horariosExists(res_evento_horarios.IdHorarioDet))
-=======
                 if (!res_evento_horariosExists(res_evento_horarios.IdHorarioDes))
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
                 {
                     return NotFound();
                 }
@@ -86,9 +77,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
 
         private bool res_evento_horariosExists(int id)
         {
-<<<<<<< HEAD
-            return _context.res_evento_horarios.Any(e => e.IdHorarioDet == id);
-=======
             return _context.res_evento_horarios.Any(e => e.IdHorarioDes == id);
         }
 
@@ -105,6 +93,35 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
                         Value = d.IdEspacio.ToString()
                     });
             }
+        }
+
+        public String getDia(DayOfWeek i)
+        {
+            if (i == DayOfWeek.Sunday)
+            {
+                return "Domingo";
+            }
+            else if (i == DayOfWeek.Monday)
+            {
+                return "Lunes";
+            }
+            else if (i == DayOfWeek.Thursday)
+            {
+                return "Jueves";
+            }
+            else if (i == DayOfWeek.Wednesday)
+            {
+                return "Miercoles";
+            }
+            else if (i == DayOfWeek.Tuesday)
+            {
+                return "Martes";
+            }
+            else if (i == DayOfWeek.Friday)
+            {
+                return "Viernes";
+            }
+            else return "Sábado";
         }
 
         public List<SelectListItem> Dias = new List<SelectListItem>();
@@ -151,7 +168,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
                 }
             }
             return "Desconocido";
->>>>>>> 8330238ef23d9b7223746b2d84516bb679016cde
         }
     }
 }

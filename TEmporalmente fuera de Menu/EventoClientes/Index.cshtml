@@ -1,5 +1,5 @@
 ﻿@page
-@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoClientes.IndexModel
+@model ProyectoBase.Pages.FicGestionEventos.EventoClientes.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -39,9 +39,9 @@
                     @Html.DisplayFor(modelItem => item.FechaRegistro)
                 </td>
                 <td>
-                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdReservaCliente"></a> |
-                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdReservaCliente"></a> |
-                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdReservaCliente"></a>
+                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.Id"></a> |
+                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.Id"></a>
                 </td>
             </tr>
         }

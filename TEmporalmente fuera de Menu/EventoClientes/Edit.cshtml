@@ -1,11 +1,11 @@
 ﻿@page
-@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoClientes.EditModel
+@model ProyectoBase.Pages.FicGestionEventos.EventoClientes.EditModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h2>Editar Evento [@Html.DisplayFor(model => model.res_evento_clientes.IdReservaCliente)]</h2>
+<h2>Editar Evento [@Html.DisplayFor(model => model.res_evento_clientes.Id)]</h2>
 
 <h4>Catálogo Evento Clientes</h4>
 <hr />
@@ -18,7 +18,7 @@
                 <input asp-for="res_evento_clientes.IdEvento" class="form-control" />
                 <span asp-validation-for="res_evento_clientes.IdEvento" class="text-danger"></span>
             </div>
-            <input type="hidden" asp-for="res_evento_clientes.IdReservaCliente" />
+            <input type="hidden" asp-for="res_evento_clientes.Id" />
             <div class="form-group">
                 <label asp-for="res_evento_clientes.IdClienteReserva" class="control-label">Id Cliente Reservación</label>
                 <input asp-for="res_evento_clientes.IdClienteReserva" class="form-control" />

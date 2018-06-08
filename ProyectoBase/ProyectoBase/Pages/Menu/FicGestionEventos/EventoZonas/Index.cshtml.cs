@@ -37,7 +37,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonas
                                                                 select s;
 
             res_evento_zonas = await _context.res_evento_zonas.ToListAsync();
-            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDes == horario);
+            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDet == horario);
 
             if (res_evento_horarios == null)
             {

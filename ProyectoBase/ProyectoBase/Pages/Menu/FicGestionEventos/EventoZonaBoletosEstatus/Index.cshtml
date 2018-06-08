@@ -8,61 +8,60 @@
 <h2>Boletos Estatus</h2>
 
 <p>
-    <a asp-page="Create" class="btn btn-info">Nuevo</a>
+    <a asp-page="Create"
+       asp-route-id="@Model.IdBoleto"
+       asp-route-edificio="@Model.IdEdificio"
+       asp-route-espacio="@Model.IdEspacio"
+       asp-route-evento="@Model.IdEvento"
+       asp-route-zona="@Model.IdZona"
+       asp-route-horario="@Model.IdHorario"
+       class="btn btn-info">Nuevo</a>
+    <a asp-page="../EventoZonaBoletos/Index"
+       asp-route-edificio="@Model.IdEdificio"
+       asp-route-espacio="@Model.IdEspacio"
+       asp-route-evento="@Model.IdEvento"
+       asp-route-zona="@Model.IdZona"
+       asp-route-horario="@Model.IdHorario"
+       class="btn btn-warning">Regresar a la Lista</a>
+
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus[0].IdBoleto)
+                    Fecha
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus[0].FechaEstatus)
+                    Estatus
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus[0].IdTipoEstatus)
+                    Actual
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus[0].IdEstatus)
+                    Observaciones
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus[0].Actual)
+                    Usuario
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus[0].Observacion)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus[0].UsuarioReg)
-                </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.res_evento_zona_boleto_estatus) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdBoleto)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.FechaEstatus)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdTipoEstatus)
+                @Model.getEstatus(item.IdEstatus.ToString())
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEstatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Actual)
+                @Model.getEstatus(item.Actual.ToString())
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Observacion)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UsuarioReg)
-            </td>
-            <td>
-                <a asp-page="./Details" asp-route-id="@item.IdEstatusDet">Details</a> |
             </td>
         </tr>
 }

@@ -45,7 +45,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico
                 return NotFound();
             }
 
-            cat_prod_serv_especifico = await _context.cat_prod_serv_especifico.FindAsync(id);
+            cat_prod_serv_especifico = await _context.cat_prod_serv_especifico.SingleOrDefaultAsync(m => m.IdProdServEsp == id);
 
             if (cat_prod_serv_especifico != null)
             {

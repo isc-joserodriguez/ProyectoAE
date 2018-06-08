@@ -21,9 +21,11 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
 
         [BindProperty]
         public eva_cat_espacios eva_cat_espacios { get; set; }
+        public int IdEdificio { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id, int edificio)
         {
+            IdEdificio = edificio;
             if (id == null)
             {
                 return NotFound();
@@ -45,7 +47,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Espacios
                 return NotFound();
             }
 
-            eva_cat_espacios = await _context.eva_cat_espacios.FindAsync(id);
+            eva_cat_espacios = await _context.eva_cat_espacios.SingleOrDefaultAsync(m => m.IdEspacio == id);
 
             if (eva_cat_espacios != null)
             {

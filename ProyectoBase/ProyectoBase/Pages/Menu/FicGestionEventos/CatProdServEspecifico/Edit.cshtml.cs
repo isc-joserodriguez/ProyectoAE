@@ -27,9 +27,10 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatProdServEspecifico
         public async Task<IActionResult> OnGetAsync(int id)
         {
 
-            IdProdServ = id;
+            
 
             cat_prod_serv_especifico = await _context.cat_prod_serv_especifico.SingleOrDefaultAsync(m => m.IdProdServEsp == id);
+            IdProdServ = cat_prod_serv_especifico.IdProdServ;
 
             if (cat_prod_serv_especifico == null)
             {

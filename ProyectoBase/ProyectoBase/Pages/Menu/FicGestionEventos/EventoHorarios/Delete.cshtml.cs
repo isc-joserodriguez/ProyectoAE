@@ -30,7 +30,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
                 return NotFound();
             }
             IdEvento = evento;
-            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDes == id);
+            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDet == id);
 
             if (res_evento_horarios == null)
             {
@@ -46,7 +46,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoHorarios
                 return NotFound();
             }
 
-            res_evento_horarios = await _context.res_evento_horarios.FindAsync(id);
+            res_evento_horarios = await _context.res_evento_horarios.SingleOrDefaultAsync(m => m.IdHorarioDet == id);
 
             if (res_evento_horarios != null)
             {

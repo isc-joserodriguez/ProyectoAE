@@ -44,7 +44,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Zonas
                 return NotFound();
             }
 
-            res_cat_zonas = await _context.res_cat_zonas.FindAsync(id);
+            res_cat_zonas = await _context.res_cat_zonas.SingleOrDefaultAsync(m => m.IdZona == id);
 
             if (res_cat_zonas != null)
             {

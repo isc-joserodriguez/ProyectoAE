@@ -5,58 +5,62 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Añadir</h2>
 
-<h4>res_evento_zona_boleto_estatus</h4>
+<h4>Estatus del Boleto</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="res_evento_zona_boleto_estatus.IdBoleto" class="control-label"></label>
-                <input asp-for="res_evento_zona_boleto_estatus.IdBoleto" class="form-control" />
+                <input asp-for="res_evento_zona_boleto_estatus.IdBoleto" type="hidden" value="@Model.IdBoleto" class="form-control" />
                 <span asp-validation-for="res_evento_zona_boleto_estatus.IdBoleto" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zona_boleto_estatus.FechaEstatus" class="control-label"></label>
-                <input asp-for="res_evento_zona_boleto_estatus.FechaEstatus" class="form-control" />
-                <span asp-validation-for="res_evento_zona_boleto_estatus.FechaEstatus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="res_evento_zona_boleto_estatus.IdTipoEstatus" class="control-label"></label>
-                <input asp-for="res_evento_zona_boleto_estatus.IdTipoEstatus" class="form-control" />
+                <input asp-for="res_evento_zona_boleto_estatus.IdTipoEstatus" value="6" type="hidden" class="form-control" />
                 <span asp-validation-for="res_evento_zona_boleto_estatus.IdTipoEstatus" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zona_boleto_estatus.IdEstatus" class="control-label"></label>
-                <input asp-for="res_evento_zona_boleto_estatus.IdEstatus" class="form-control" />
+                <label class="control-label">Estatus:</label>
+                @Html.DropDownListFor(model => model.res_evento_zona_boleto_estatus.IdEstatus, Model.Estatus, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="res_evento_zona_boleto_estatus.IdEstatus" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zona_boleto_estatus.Actual" class="control-label"></label>
-                <input asp-for="res_evento_zona_boleto_estatus.Actual" class="form-control" />
+                <label class="control-label">Actual:</label>
+                @Html.DropDownListFor(model => model.res_evento_zona_boleto_estatus.Actual, Model.Activo, "Selecciona", new { @class = "form-control" })
                 <span asp-validation-for="res_evento_zona_boleto_estatus.Actual" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zona_boleto_estatus.Observacion" class="control-label"></label>
-                <input asp-for="res_evento_zona_boleto_estatus.Observacion" class="form-control" />
+                <label class="control-label">Observaciones:</label>
+                <textarea asp-for="res_evento_zona_boleto_estatus.Observacion" class="form-control" ></textarea>
                 <span asp-validation-for="res_evento_zona_boleto_estatus.Observacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zona_boleto_estatus.UsuarioReg" class="control-label"></label>
-                <input asp-for="res_evento_zona_boleto_estatus.UsuarioReg" class="form-control" />
+                <label class="control-label">Usuario que Registra</label>
+                <input asp-for="res_evento_zona_boleto_estatus.UsuarioReg" disabled value="FIC" class="form-control" />
+                <input asp-for="res_evento_zona_boleto_estatus.UsuarioReg" type="hidden" value="FIC" class="form-control" />
                 <span asp-validation-for="res_evento_zona_boleto_estatus.UsuarioReg" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input asp-for="IdEdificio" type="hidden" value="@Model.IdEdificio" name="edificio_" />
+                <input asp-for="IdEspacio" type="hidden" value="@Model.IdEspacio" name="espacio_" />
+                <input asp-for="IdEvento" type="hidden" value="@Model.IdEvento" name="evento_" />
+                <input asp-for="IdZona" type="hidden" value="@Model.IdZona" name="zona_" />
+                <input asp-for="IdHorario" type="hidden" value="@Model.IdHorario" name="horario_" />
+                <input type="submit" value="Guardar" class="btn btn-info" />
+                int id,  int edificio, int espacio, int evento, int zona, int horario)
+                <a asp-page="Index"
+                   asp-route-id="@Model.IdBoleto"
+                   asp-route-edificio="@Model.IdEdificio"
+                   asp-route-espacio="@Model.IdEspacio"
+                   asp-route-evento="@Model.IdEvento"
+                   asp-route-zona="@Model.IdZona"
+                   asp-route-horario="@Model.IdHorario"
+                   class="btn btn-warning">Regresar a la Lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

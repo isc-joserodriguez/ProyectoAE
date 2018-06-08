@@ -42,7 +42,7 @@ namespace ProyectoBase.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<res_evento_horarios>().HasKey(c => new { c.IdEvento, c.IdHorarioDes });
+            modelBuilder.Entity<res_evento_horarios>().HasKey(c => new { c.IdEvento, c.IdHorarioDet });
             modelBuilder.Entity<res_evento_servicios>().HasKey(c => new { c.IdEvento, c.IdProdServ, c.IdProdServEsp });
             modelBuilder.Entity<res_evento_estatus>().HasKey(c => new { c.IdEvento, c.IdEstatusDet });
             modelBuilder.Entity<res_evento_clientes>().HasKey( c => new { c.IdEvento, c.IdReservaCliente});

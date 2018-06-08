@@ -14,7 +14,7 @@ namespace ProyectoBase.Models.FicGestionEventos
         public virtual res_eventos res_eventos { get; set; }
 
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required(ErrorMessage = "Este campo es requerido")]
-        public int IdHorarioDes { get; set; }
+        public int IdHorarioDet { get; set; }
 
         [ForeignKey("IdEdificio"), Required(ErrorMessage = "Este campo es requerido")]
         public int IdEdificio { get; set; }

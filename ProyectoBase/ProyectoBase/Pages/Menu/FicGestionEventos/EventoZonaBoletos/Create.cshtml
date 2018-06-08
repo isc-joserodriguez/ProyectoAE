@@ -11,6 +11,9 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="res_evento_zona_boletos.NumBoleto" value="1" type="hidden" class="form-control" />
+            <input asp-for="res_evento_zona_boletos.Ubicacion" value="gjhgjhg" type="hidden" class="form-control" />
+            <input asp-for="IdHorario" type="hidden" name="IdHorario_" class="form-control" />
             <div class="form-group">
                 <label class="control-label">Evento: @Model.getEvento(Model.IdEvento.ToString())</label>
                 <input asp-for="res_evento_zona_boletos.IdEvento" value="@Model.IdEvento" type="hidden" class="form-control" />
@@ -32,13 +35,8 @@
                 <span asp-validation-for="res_evento_zona_boletos.IdZona" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_zona_boletos.NumBoleto" class="control-label"></label>
-                <input asp-for="res_evento_zona_boletos.NumBoleto" class="form-control" />
-                <span asp-validation-for="res_evento_zona_boletos.NumBoleto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="res_evento_zona_boletos.DesBoleto" class="control-label"></label>
-                <input asp-for="res_evento_zona_boletos.DesBoleto" class="form-control" />
+                <textarea asp-for="res_evento_zona_boletos.DesBoleto" class="form-control"></textarea>
                 <span asp-validation-for="res_evento_zona_boletos.DesBoleto" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -52,12 +50,16 @@
                 <span asp-validation-for="res_evento_zona_boletos.IVA" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label class="control-label">Cantidad: </label>
+                <input asp-for="cantidad" value="50" type="number" name="id" class="form-control" />
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Generar Boletos" class="btn btn-info" />
                 <a asp-page="Index" asp-route-edificio="@Model.IdEdificio"
-                                    asp-route-espacio="@Model.IdEspacio"
-                                    asp-route-evento="@Model.IdEvento"
-                                    asp-route-zona="@Model.IdZona"
-                                    asp-route-horario="@Model.IdHorario"
+                   asp-route-espacio="@Model.IdEspacio"
+                   asp-route-evento="@Model.IdEvento"
+                   asp-route-zona="@Model.IdZona"
+                   asp-route-horario="@Model.IdHorario"
                    class="btn btn-warning">Regresar a la Lista</a>
             </div>
         </form>

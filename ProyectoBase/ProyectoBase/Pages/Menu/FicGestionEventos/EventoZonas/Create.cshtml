@@ -42,7 +42,7 @@
                 <span asp-validation-for="res_evento_zonas.UsuarioReg" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input asp-for="IdHorario" value="@Model.IdHorario" type="hidden" />
+                <input asp-for="IdHorario" value="@Model.IdHorario" name="horario" type="hidden" />
                 <input type="submit" value="Añadir" class="btn btn-info" />
                 <a asp-page="Index"
                    asp-route-edificio="@Model.IdEdificio"

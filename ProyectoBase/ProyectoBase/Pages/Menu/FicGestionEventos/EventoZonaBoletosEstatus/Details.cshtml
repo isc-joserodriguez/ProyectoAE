@@ -1,0 +1,61 @@
+﻿@page
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletosEstatus.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>res_evento_zona_boleto_estatus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus.IdBoleto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boleto_estatus.IdBoleto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus.FechaEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boleto_estatus.FechaEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus.IdTipoEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boleto_estatus.IdTipoEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus.IdEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boleto_estatus.IdEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus.Actual)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boleto_estatus.Actual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus.Observacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boleto_estatus.Observacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.res_evento_zona_boleto_estatus.UsuarioReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boleto_estatus.UsuarioReg)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.res_evento_zona_boleto_estatus.IdEstatusDet">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

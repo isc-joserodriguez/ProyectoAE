@@ -37,21 +37,33 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletos
         public int IdHorario { get; set; }
         public int IdZona { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public int cantidad { get; set; }
+
+        public async Task<IActionResult> OnPostAsync(int id, int IdHorario_)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.res_evento_zona_boletos.Add(res_evento_zona_boletos);
-            await _context.SaveChangesAsync();
+            int d =_context.res_evento_zona_boletos.Count();
+
+            int cantidad_ = id;
+            res_evento_zona_boletos.IdBoleto = d + res_evento_zona_boletos.IdBoleto;
+            for (int i = 1; i <= cantidad_; i++) {
+                res_evento_zona_boletos.NumBoleto = "BOLETO_" + (i+d);
+                res_evento_zona_boletos.Ubicacion = "Asiento No. " + (i+d);
+                res_evento_zona_boletos.IdBoleto = res_evento_zona_boletos.IdBoleto + 1;
+                _context.res_evento_zona_boletos.Add(res_evento_zona_boletos);
+                await _context.SaveChangesAsync();
+            }
+            
 
             return RedirectToPage("./Index", new {edificio = res_evento_zona_boletos.IdEdificio,
                 espacio = res_evento_zona_boletos.IdEspacio,
                 evento = res_evento_zona_boletos.IdEvento,
                 zona = res_evento_zona_boletos.IdZona,
-                horario = IdHorario
+                horario = IdHorario_
             });
         }
 

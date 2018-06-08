@@ -36,7 +36,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonas
         public int IdEvento { get; set; }
         public int IdHorario { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int horario)
         {
             if (!ModelState.IsValid)
             {
@@ -52,7 +52,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonas
                 edificio = res_evento_zonas.IdEdificio,
                 espacio = res_evento_zonas.IdEspacio,
                 evento = res_evento_zonas.IdEvento,
-                horario = IdHorario
+                horario = horario
             });
         }
 

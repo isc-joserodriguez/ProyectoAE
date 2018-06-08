@@ -22,7 +22,7 @@
                 <label class="control-label">Edificio: @Model.Edificio(Model.IdEdificio.ToString())</label>
                 <input asp-for="res_evento_horarios.IdEdificio" value="@Model.IdEdificio" type="hidden" class="form-control" />
             </div>
-            <input type="hidden" asp-for="res_evento_horarios.IdHorarioDes" />
+            <input type="hidden" asp-for="res_evento_horarios.IdHorarioDet" />
             <div class="form-group">
                 <label class="control-label">Espacio:</label>
                 @Html.DropDownListFor(model => model.res_evento_horarios.IdEspacio, Model.Espacio, "Selecciona", new { @class = "form-control" })

@@ -77,13 +77,25 @@
                 @Model.getProductoServicioEsp(item.IdProdServEsp.ToString())
             </td>
             <td>
-                <a asp-page="./Delete"
-                   asp-route-edificio="@item.IdEdificio"
-                   asp-route-espacio="@item.IdEspacio"
-                   asp-route-zona="@item.IdZona"
-                   asp-route-prodserv="@item.IdProdServ"
-                   asp-route-prodservesp="@item.IdProdServEsp"
-                   class="glyphicon glyphicon-trash"></a>
+                <div class="nav-item dropdown">
+                    <a class="btn btn-info" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Opciones
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a asp-page="./Delete"
+                                   asp-route-edificio="@item.IdEdificio"
+                                   asp-route-espacio="@item.IdEspacio"
+                                   asp-route-zona="@item.IdZona"
+                                   asp-route-prodserv="@item.IdProdServ"
+                                   asp-route-prodservesp="@item.IdProdServEsp"
+                                   class="glyphicon glyphicon-trash"> Eliminar </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+               
             </td>
         </tr>
 }

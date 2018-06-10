@@ -77,13 +77,24 @@
                 @Html.DisplayFor(modelItem => item.Ubicacion)
             </td>
             <td>
-                <a asp-page="../ResEventoClienteBoletos/Create" class="glyphicon glyphicon-warning-sign"
-                   asp-route-cliente="@Model.IdClienteReserva"
-                   asp-route-evento="@Model.IdEvento"
-                   asp-route-boleto="@item.IdBoleto"
-                   asp-route-edificio="@Model.IdEdificio"
-                   asp-route-espacio="@Model.IdEspacio"
-                   />
+                <div class="nav-item dropdown">
+                    <a class="btn btn-info" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Opciones
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a asp-page="../ResEventoClienteBoletos/Create" class="glyphicon glyphicon-warning-sign"
+                                   asp-route-cliente="@Model.IdClienteReserva"
+                                   asp-route-evento="@Model.IdEvento"
+                                   asp-route-boleto="@item.IdBoleto"
+                                   asp-route-edificio="@Model.IdEdificio"
+                                   asp-route-espacio="@Model.IdEspacio"> Estatus</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+               
             </td>
         </tr>
     }

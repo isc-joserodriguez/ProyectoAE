@@ -13124,7 +13124,9 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LAPTOP\\.nuget\\packages\\": {}
+    "C:\\Users\\Jonathan Ibarra\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -13132,15 +13134,20 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\LAPTOP\\Desktop\\ProyectoAE\\ProyectoBase\\ProyectoBase\\ProyectoBase.csproj",
+      "projectUniqueName": "C:\\Users\\Jonathan Ibarra\\source\\repos\\ProyectoAE\\final4\\ProyectoAE\\ProyectoBase\\ProyectoBase\\ProyectoBase.csproj",
       "projectName": "ProyectoBase",
-      "projectPath": "C:\\Users\\LAPTOP\\Desktop\\ProyectoAE\\ProyectoBase\\ProyectoBase\\ProyectoBase.csproj",
-      "packagesPath": "C:\\Users\\LAPTOP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LAPTOP\\Desktop\\ProyectoAE\\ProyectoBase\\ProyectoBase\\obj\\",
+      "projectPath": "C:\\Users\\Jonathan Ibarra\\source\\repos\\ProyectoAE\\final4\\ProyectoAE\\ProyectoBase\\ProyectoBase\\ProyectoBase.csproj",
+      "packagesPath": "C:\\Users\\Jonathan Ibarra\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jonathan Ibarra\\source\\repos\\ProyectoAE\\final4\\ProyectoAE\\ProyectoBase\\ProyectoBase\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\LAPTOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Jonathan Ibarra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"

@@ -76,12 +76,24 @@
                 @Html.DisplayFor(modelItem => item.URL)
             </td>
             <td>
-                <a asp-page="../EventoHorarios/Index" class="glyphicon glyphicon-time" asp-route-id="@item.IdEvento"></a>
-                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEvento"></a>
-                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdEvento"></a>
-                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEvento"></a>
-                <a asp-page="../EventoEstatus/Index" class="glyphicon glyphicon-alert" asp-route-id="@item.IdEvento"></a>
-                <a asp-page="../EventoServicios/Index" class="glyphicon glyphicon-king" asp-route-id="@item.IdEvento"></a>
+                <div class="nav-item dropdown">
+                    <a class="btn btn-info" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Opciones
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a asp-page="../EventoHorarios/Index" class="glyphicon glyphicon-time" asp-route-id="@item.IdEvento"> Horarios </a>
+                                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEvento"> Editar </a>
+                                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdEvento"> Detalles </a>
+                                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEvento"> Eliminar </a>
+                                <a asp-page="../EventoEstatus/Index" class="glyphicon glyphicon-alert" asp-route-id="@item.IdEvento"> Estatus </a>
+                                <a asp-page="../EventoServicios/Index" class="glyphicon glyphicon-king" asp-route-id="@item.IdEvento"> Servicios </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+               
 
             </td>
         </tr>

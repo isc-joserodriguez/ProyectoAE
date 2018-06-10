@@ -1,0 +1,50 @@
+﻿@page
+@model ProyectoBase.Pages.Menu.FicGestionEventos.ResEventoClienteBoletos.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Reservar</h2>
+
+<h4>Reservar Boleto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="res_evento_cliente_boletos.IdReservaCliente" value="@Model.IdCliente" type="hidden" class="form-control" />
+            <input asp-for="res_evento_cliente_boletos.IdEvento" value="@Model.IdEvento" type="hidden" class="form-control" />
+            <input asp-for="res_evento_cliente_boletos.IdBoleto" value="@Model.IdBoleto" type="hidden" class="form-control" />
+            <input asp-for="res_evento_cliente_boletos.ConfirmaAsistencia" value="N" type="hidden" class="form-control" />
+            <div class="form-group">
+                <label class="control-label">¿Quien Reserva?:</label>
+                @Html.DropDownListFor(model => model.res_evento_cliente_boletos.IdPersona, Model.Personas, "Selecciona", new { @class = "form-control" })
+                <span asp-validation-for="res_evento_cliente_boletos.IdPersona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">¿Para quien Reserva?</label>
+                <input asp-for="res_evento_cliente_boletos.Nombre" class="form-control" />
+                <span asp-validation-for="res_evento_cliente_boletos.Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input value="@Model.IdCliente" type="hidden" asp-for="@Model.IdCliente" name="id_" />
+                <input value="@Model.IdEdificio" type="hidden" asp-for="@Model.IdEdificio" name="edificio_" />
+                <input value="@Model.IdEspacio" type="hidden" asp-for="@Model.IdEspacio" name="espacio_" />
+                <input value="@Model.IdEvento" type="hidden" asp-for="@Model.IdEvento" name="evento_" />
+                <input type="submit" value="Reservar" class="btn btn-info" />
+                <a asp-page="../EventoZonaBoletosVenta/Index"
+                   asp-route-id="@Model.IdCliente"
+                   asp-route-edificio="@Model.IdEdificio"
+                   asp-route-espacio="@Model.IdEspacio"
+                   asp-route-evento="@Model.IdEvento"
+                   class="btn btn-warning">Regresar a la Lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

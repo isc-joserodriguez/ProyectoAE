@@ -1,0 +1,40 @@
+﻿@page
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoClientes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Registrar</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="res_evento_clientes.IdEvento" value="@Model.IdEvento" type="hidden" class="form-control" />
+                <span asp-validation-for="res_evento_clientes.IdEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="res_evento_clientes.IdClienteReserva" value="1" type="hidden" class="form-control" />
+                <span asp-validation-for="res_evento_clientes.IdClienteReserva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input value="@Model.IdEdificio" name="edificio_" type="hidden" />
+                <input value="@Model.IdEspacio" name="espacio_" type="hidden" />
+                <input value="@Model.IdEvento" name="evento_" type="hidden" />
+                <input type="submit" value="Crear" class="btn btn-info" /> |
+                <a asp-page="Index"
+                   asp-route-edificio="@Model.IdEdificio"
+                   asp-route-espacio="@Model.IdEspacio"
+                   asp-route-evento="@Model.IdEvento"
+                   class="btn btn-warning">Regresar a lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

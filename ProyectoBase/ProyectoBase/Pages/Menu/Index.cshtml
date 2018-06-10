@@ -7,4 +7,61 @@
 <center>
     <h1> Equipo Sin Nombre </h1>
     <h2><b> Gestión de Eventos </b></h2>
+    <div class="row">
+        @foreach (var item in Model.res_evento_horarios)
+        {
+        <div class="col-sm-4" style="padding: 15px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png" />
+            <dl class="dl-horizontal">
+                <dt>
+                    <label class="control-label">Evento:</label>
+                </dt>
+                <dd>
+                    @Model.Evento(item.IdEvento.ToString())
+                </dd>
+                <dt>
+                    <label class="control-label">Edificio:</label>
+                </dt>
+                <dd>
+                    @Model.Edificio(item.IdEdificio.ToString())
+                </dd>
+                <dt>
+                    <label class="control-label">Espacio:</label>
+                </dt>
+                <dd>
+                    @Model.Espacio(item.IdEspacio.ToString())
+                </dd>
+                <dt>
+                    <label class="control-label">Día:</label>
+                </dt>
+                <dd>
+                    @item.Dia
+                </dd>
+                <dt>
+                    <label class="control-label">Fecha de Inicio</label>
+                </dt>
+                <dd>
+                    @item.FechaHoraIni
+                </dd>
+                <dt>
+                    <label class="control-label">Fecha de Culminación:</label>
+                </dt>
+                <dd>
+                    @item.FechaHoraFin
+                </dd>
+                <dt>
+                    <label class="control-label">Fecha de Registro:</label>
+                </dt>
+                <dd>
+                    @item.FechaReg
+                </dd>
+            </dl>
+            <a asp-page="./FicGestionEventos/EventoClientes/Index" 
+               asp-route-edificio="@item.IdEdificio"
+               asp-route-espacio="@item.IdEspacio"
+               asp-route-evento="@item.IdEvento"
+               class="btn btn-block btn-info">Compra tus Boletos</a>
+        </div>
+        }
+    </div>
 </center>

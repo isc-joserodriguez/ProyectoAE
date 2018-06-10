@@ -1,0 +1,51 @@
+﻿@page
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoClientes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Simulación Logín sin Login</h2>
+
+<p>
+    <a asp-page="Create"
+       asp-route-edificio="@Model.IdEdificio"
+       asp-route-espacio="@Model.IdEspacio"
+       asp-route-evento="@Model.IdEvento"
+       class="btn btn-info">Crear</a>
+    <a asp-page="../../Index"
+       class="btn btn-success">Página Principal</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Cliente
+            </th>
+            <th>
+                Fecha de Registro
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.res_evento_clientes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdReservaCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaRegistro)
+                </td>
+                <td>
+                    <a asp-page="../EventoZonaBoletosVenta/Index" class="btn btn-info"
+                       asp-route-id="@item.IdReservaCliente"
+                       asp-route-edificio="@Model.IdEdificio"
+                       asp-route-espacio="@Model.IdEspacio"
+                       asp-route-evento="@Model.IdEvento"> Autenticación </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

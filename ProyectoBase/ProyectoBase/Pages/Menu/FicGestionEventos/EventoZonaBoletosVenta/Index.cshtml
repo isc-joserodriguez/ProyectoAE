@@ -1,0 +1,89 @@
+﻿@page
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletosVenta.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Boletos a la Venta</h2>
+
+<dl class="dl-horizontal">
+    
+    <dt>
+        <label class="control-label">Evento:</label>
+    </dt>
+    <dd>
+        @Model.getEvento(Model.IdEvento.ToString())
+    </dd>
+    <dt>
+        <label class="control-label">Edificio:</label>
+    </dt>
+    <dd>
+        @Model.getEdificio(Model.IdEdificio.ToString())
+    </dd>
+    <dt>
+        <label class="control-label">Espacio:</label>
+    </dt>
+    <dd>
+        @Model.getEspacio(Model.IdEspacio.ToString())
+    </dd>
+</dl>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                # de Boleto
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                IVA
+            </th>
+            <td>
+                Zona
+            </td>
+            <td>
+                Ubicación
+            </td>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.res_evento_zona_boletos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumBoleto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesBoleto)
+            </td>
+            <td>
+                $ @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                % @Html.DisplayFor(modelItem => item.IVA)
+            </td>
+            <td>
+                @Model.getZona(item.IdZona.ToString())
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ubicacion)
+            </td>
+            <td>
+                <a asp-page="../ResEventoClienteBoletos/Create" class="glyphicon glyphicon-warning-sign"
+                   asp-route-cliente="@Model.IdClienteReserva"
+                   asp-route-evento="@Model.IdEvento"
+                   asp-route-boleto="@item.IdBoleto"
+                   asp-route-edificio="@Model.IdEdificio"
+                   asp-route-espacio="@Model.IdEspacio"
+                   />
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

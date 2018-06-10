@@ -5,25 +5,19 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Boletos Reservados</h2>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.res_evento_cliente_boletos[0].IdReservaCliente)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.res_evento_cliente_boletos[0].IdEvento)
+                Evento
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.res_evento_cliente_boletos[0].IdBoleto)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.res_evento_cliente_boletos[0].IdPersona)
+                Reservo
             </th>
             <th>
                 Confirmado?
@@ -35,19 +29,17 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.res_evento_cliente_boletos) {
+        @foreach (var item in Model.res_evento_cliente_boletos)
+        {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdReservaCliente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEvento)
+                @Model.getEvento(item.IdEvento.ToString())
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdBoleto)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdPersona)
+                @Model.getPersonaReg(item.IdPersona.ToString())
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ConfirmaAsistencia)
@@ -56,9 +48,18 @@
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
             <td>
-                
+                <a asp-page="Edit"
+                   asp-route-reserva="@item.IdReservaCliente"
+                   asp-route-evento="@item.IdEvento"
+                   asp-route-boleto="@item.IdBoleto"
+                   class="glyphicon glyphicon-check"></a>
+                <a asp-page="Delete"
+                   asp-route-reserva="@item.IdReservaCliente"
+                   asp-route-evento="@item.IdEvento"
+                   asp-route-boleto="@item.IdBoleto"
+                   class="glyphicon glyphicon-remove"></a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

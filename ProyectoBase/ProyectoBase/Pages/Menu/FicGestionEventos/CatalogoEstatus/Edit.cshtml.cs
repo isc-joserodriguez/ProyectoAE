@@ -96,6 +96,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoEstatus
             var Tipos = _context.cat_tipos_estatus;
             foreach (cat_tipos_estatus d in Tipos)
             {
+                if (d.Activo.Equals("S"))
                 TipoEstatus.Add(new SelectListItem
                 {
                     Text = d.DesTipoEstatus,

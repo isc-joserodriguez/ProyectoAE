@@ -5,44 +5,39 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Confirmar</h2>
 
-<h4>res_evento_cliente_boletos</h4>
+<h4>Reservación</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="res_evento_cliente_boletos.Id" />
+            <input asp-for="res_evento_cliente_boletos.IdReservaCliente" type="hidden" class="form-control" />
+            <input asp-for="res_evento_cliente_boletos.IdPersona" type="hidden" class="form-control" />
+            <input asp-for="res_evento_cliente_boletos.IdEvento" type="hidden" class="form-control" />
+            <input asp-for="res_evento_cliente_boletos.Nombre" type="hidden" class="form-control" />
+            <input asp-for="res_evento_cliente_boletos.IdBoleto" type="hidden" class="form-control" />
             <div class="form-group">
-                <label asp-for="res_evento_cliente_boletos.IdReservaCliente" class="control-label"></label>
-                <input asp-for="res_evento_cliente_boletos.IdReservaCliente" class="form-control" />
-                <span asp-validation-for="res_evento_cliente_boletos.IdReservaCliente" class="text-danger"></span>
+                Evento:
+                @Model.getEvento(Model.IdEvento.ToString())
+            </div>
+
+            <div class="form-group">
+                A Nombre de:
+                @Html.DisplayFor(model => Model.res_evento_cliente_boletos.Nombre)
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_cliente_boletos.IdEvento" class="control-label"></label>
-                <input asp-for="res_evento_cliente_boletos.IdEvento" class="form-control" />
-                <span asp-validation-for="res_evento_cliente_boletos.IdEvento" class="text-danger"></span>
+                Confirmado:
+                @Html.DropDownListFor(model => model.res_evento_cliente_boletos.ConfirmaAsistencia, Model.ConfirmarAsistencia, "Selecciona", new { @class = "form-control" })
+                <span asp-validation-for="res_evento_cliente_boletos.ConfirmaAsistencia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="res_evento_cliente_boletos.IdBoleto" class="control-label"></label>
-                <input asp-for="res_evento_cliente_boletos.IdBoleto" class="form-control" />
-                <span asp-validation-for="res_evento_cliente_boletos.IdBoleto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="res_evento_cliente_boletos.IdPersona" class="control-label"></label>
-                <input asp-for="res_evento_cliente_boletos.IdPersona" class="form-control" />
-                <span asp-validation-for="res_evento_cliente_boletos.IdPersona" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Confirmar Asistencia" class="btn btn-info" />
+                <a asp-page="./Index" class="btn btn-warning">Regresar a la Lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

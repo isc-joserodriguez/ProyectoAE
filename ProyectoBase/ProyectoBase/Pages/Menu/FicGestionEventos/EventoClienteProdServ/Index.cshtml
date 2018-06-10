@@ -1,0 +1,67 @@
+﻿@page
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoClienteProdServ.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Venta de Productos/Servicios</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-info">Agregar nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Evento
+            </th>
+            <th>
+                Cliente
+            </th>
+            <th>
+                Producto / Servicio
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].IVA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.res_evento_cliente_prod_serv[0].Importe)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.res_evento_cliente_prod_serv)
+        {
+            <tr>
+                <td>
+                    @Model.Evento(item.IdEvento.ToString())
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdReservaCliente)
+                </td>
+                <td>
+                    @Model.getProductoServicio(item.IdProdServEsp.ToString())
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IVA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Importe)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -109,5 +109,18 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletosVenta
             return "Desconocido";
         }
 
+        public Boolean Existe(string ID)
+        {
+            var Tipos = _context.res_evento_cliente_boletos;
+            foreach (res_evento_cliente_boletos d in Tipos)
+            {
+                if (ID == d.IdBoleto.ToString())
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
     }
 }

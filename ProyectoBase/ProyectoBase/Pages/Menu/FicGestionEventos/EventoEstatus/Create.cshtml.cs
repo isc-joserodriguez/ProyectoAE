@@ -76,12 +76,12 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoEstatus
             Estatus.Add(new SelectListItem
             {
                 Text = "Activo",
-                Value = "1"
+                Value = "6"
             });
             Estatus.Add(new SelectListItem
             {
                 Text = "Inactivo",
-                Value = "2"
+                Value = "7"
             });
         }
 

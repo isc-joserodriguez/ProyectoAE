@@ -21,15 +21,20 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ResEventoClienteBoletos
 
         [BindProperty]
         public res_evento_cliente_boletos res_evento_cliente_boletos { get; set; }
+        public int IdReserva { get; set; }
+        public int IdEvento { get; set; }
+        public int IdBoleto { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int reserva, int evento, int boleto)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            IdReserva = reserva;
+            IdEvento = evento;
+            IdBoleto = boleto;
 
-            res_evento_cliente_boletos = await _context.res_evento_cliente_boletos.SingleOrDefaultAsync(m => m.IdBoleto == id);
+            res_evento_cliente_boletos = await _context.res_evento_cliente_boletos.SingleOrDefaultAsync(m =>
+            m.IdBoleto == boleto &&
+            m.IdEvento == evento &&
+            m.IdReservaCliente == reserva);
 
             if (res_evento_cliente_boletos == null)
             {
@@ -38,14 +43,13 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ResEventoClienteBoletos
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(int reserva, int evento, int boleto)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            res_evento_cliente_boletos = await _context.res_evento_cliente_boletos.FindAsync(id);
+            res_evento_cliente_boletos = await _context.res_evento_cliente_boletos.SingleOrDefaultAsync(m =>
+            m.IdBoleto == boleto &&
+            m.IdEvento == evento &&
+            m.IdReservaCliente == reserva);
 
             if (res_evento_cliente_boletos != null)
             {
@@ -54,6 +58,32 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ResEventoClienteBoletos
             }
 
             return RedirectToPage("./Index");
+        }
+
+        public String getEvento(string ID)
+        {
+            var Tipos = _context.res_eventos;
+            foreach (res_eventos d in Tipos)
+            {
+                if (ID == d.IdEvento.ToString())
+                {
+                    return d.NombreEvento;
+                }
+            }
+            return "Desconocido";
+        }
+
+        public String getPersonaReg(string ID)
+        {
+            var Tipos = _context.rh_cat_personas;
+            foreach (rh_cat_personas d in Tipos)
+            {
+                if (ID == d.IdPersona.ToString())
+                {
+                    return d.Nombre;
+                }
+            }
+            return "Desconocido";
         }
     }
 }

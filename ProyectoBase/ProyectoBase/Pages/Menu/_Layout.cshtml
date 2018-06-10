@@ -28,10 +28,19 @@
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a asp-page="/FicGestionEventos/Eventos/Index">Eventos</a>
-                            <a asp-page="/FicGestionEventos/Edificios/Index">Edificios</a>
-                            <a asp-page="/FicGestionEventos/CatProductosServicios/Index">Productos o Servicios</a>
-                            <a asp-page="/FicGestionEventos/RhCatPersonas/Index">Personas</a>
+                            <a role="presentation" class="dropdown-header">Gestión</a>
+                            <a class="btn-info" asp-page="/FicGestionEventos/Eventos/Index">Eventos</a>
+                            <a class="btn-info" asp-page="/FicGestionEventos/Edificios/Index">Edificios</a>
+                            <a class="btn-info" asp-page="/FicGestionEventos/CatProductosServicios/Index">Productos o Servicios</a>
+                            <a class="btn-info" asp-page="/FicGestionEventos/RhCatPersonas/Index">Personas</a>
+                            <a class="btn-info" asp-page="/FicGestionEventos/ResEventoClienteBoletos/Index">Reservaciones</a>
+                            <a class="btn-info" asp-page="/FicGestionEventos/EventoClienteProdServ/Index">Venta P/S</a>
+
+                            <a role="presentation" class="dropdown-header">Generales</a>
+                            <a class="btn-info" asp-page="/FicGestionEventos/CatalogoEstatus/Index">Catalogo Estatus</a>
+                            <a class="btn-info" asp-page="/FicGestionEventos/CatTiposEstatus/Index">Catalogo Tipos Estatus</a>
+                            <a class="btn-info" asp-page="/FicGestionEventos/CatalogoGenerales/Index">Catalogo Generales</a>
+                            <a class="btn-info" asp-page="/FicGestionEventos/CatTiposGenerales/Index">Catalogo Tipos Generales</a>
                         </li>
                     </ul>
                 </div>

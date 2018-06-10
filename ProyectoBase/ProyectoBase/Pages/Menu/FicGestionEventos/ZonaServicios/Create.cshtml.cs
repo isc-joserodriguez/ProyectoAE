@@ -98,6 +98,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
             {
                 if (existe(IdEdificio, IdEspacio, IdZona, d.IdProdServ, d.IdProdServEsp))
                 {
+                    if(esProducto(d.IdProdServ.ToString()))
                     ProdServEsp.Add(new SelectListItem
                     {
                         Text = getProductoServicio(d.IdProdServ.ToString()) + " - " + d.ClaveProdServEsp,
@@ -105,6 +106,20 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
                     });
                 }
             }
+        }
+        
+        public Boolean esProducto(string ID)
+        {
+            var Tipos = _context.cat_productos_servicios;
+            foreach (cat_productos_servicios d in Tipos)
+            {
+                if (ID == d.IdProdServ.ToString())
+                {
+
+                    return d.ProductoServicio.Equals("S");
+                }
+            }
+            return false;
         }
 
         public String getProductoServicio(string ID)

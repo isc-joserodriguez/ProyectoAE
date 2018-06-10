@@ -54,7 +54,9 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.res_evento_zona_boletos) {
+@foreach (var item in Model.res_evento_zona_boletos)
+{
+    @if (Model.Existe(item.IdBoleto.ToString())) { 
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NumBoleto)
@@ -84,6 +86,7 @@
                    />
             </td>
         </tr>
+    }
 }
     </tbody>
 </table>

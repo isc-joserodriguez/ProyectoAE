@@ -103,11 +103,12 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
             foreach (cat_prod_serv_especifico d in Tipos) {
                 if(res_evento_servicios != null)
                     if ( res_evento_servicios.IdProdServ == d.IdProdServ)
-                    TiposProdServEsp.Add(new SelectListItem
-                    {
-                        Text = d.ClaveProdServEsp,
-                        Value = d.IdProdServEsp.ToString()
-                    });
+                        if (esProducto(d.IdProdServ.ToString()))
+                            TiposProdServEsp.Add(new SelectListItem
+                            {
+                                Text = d.ClaveProdServEsp,
+                                Value = d.IdProdServEsp.ToString()
+                            });
             }
         }
 
@@ -135,6 +136,21 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
             {
                 if (d.IdEvento == evento && d.Requerido.Equals(requerido) && d.IdProdServ == prodserv && d.IdProdServEsp == prodservesp) {
                     return true;
+                }
+            }
+            return false;
+        }
+
+        
+        public Boolean esProducto(string ID)
+        {
+            var Tipos = _context.cat_productos_servicios;
+            foreach (cat_productos_servicios d in Tipos)
+            {
+                if (ID == d.IdProdServ.ToString())
+                {
+
+                    return d.ProductoServicio.Equals("S");
                 }
             }
             return false;

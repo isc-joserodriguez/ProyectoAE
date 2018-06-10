@@ -156,17 +156,17 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.Eventos
             Generales.Add(new SelectListItem
             {
                 Text = "Conferencia",
-                Value = "1"
+                Value = "63"
             });
             Generales.Add(new SelectListItem
             {
                 Text = "Seminario",
-                Value = "2"
+                Value = "64"
             });
             Generales.Add(new SelectListItem
             {
                 Text = "Curso",
-                Value = "3"
+                Value = "65"
             });
         }
 

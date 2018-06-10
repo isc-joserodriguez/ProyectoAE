@@ -48,7 +48,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.CatalogoGenerales
             var Tipos = _context.cat_tipos_generales;
             foreach (cat_tipos_generales d in Tipos)
             {
-                //if(d.Activo.Equals("A"))
+                if(d.Activo.Equals("S"))
                 TiposGenerales.Add(new SelectListItem
                 {
                     Text = d.DesTipo,

@@ -54,8 +54,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonaBoletosEstatus
 
         public String getEstatus(String id)
         {
-            if (id == "1") return "Activo";
-            if (id == "2") return "InActivo";
+            if (id == "6") return "Activo";
+            if (id == "7") return "InActivo";
             return "Desconocido";
         }
 

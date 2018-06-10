@@ -8,11 +8,14 @@
 <h2>Catálago Tipos Estatus</h2>
 
 <p>
-    <a asp-page="Create">Agregar nuevo</a>
+    <a asp-page="Create" class="btn btn-info">Agregar nuevo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                <label class="control-label">ID</label>
+            </th>
             <th>
                 <label class="control-label">Descripción</label>
             </th>
@@ -25,19 +28,22 @@
     <tbody>
         @foreach (var item in Model.cat_tipos_estatus)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DesTipoEstatus)
-                </td>
-                <td>
-                    @Model.Activo(item.Activo)
-                </td>
-                <td>
-                    <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdTipoEstatus"></a>
-                    <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdTipoEstatus"></a>
-                    <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdTipoEstatus"></a>
-                </td>
-            </tr>
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.IdTipoEstatus)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesTipoEstatus)
+            </td>
+            <td>
+                @Model.Activo(item.Activo)
+            </td>
+            <td>
+                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdTipoEstatus"></a>
+                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdTipoEstatus"></a>
+                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdTipoEstatus"></a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

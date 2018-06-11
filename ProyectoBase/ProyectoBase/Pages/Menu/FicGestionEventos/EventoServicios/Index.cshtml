@@ -8,7 +8,11 @@
 <h2>Servicios</h2>
 
 <p>
+<<<<<<< HEAD
+    <a asp-page="Create" asp-route-id="@Model.IdEvento" class="btn btn-info">Asignar Servicio</a> |
+=======
     <a asp-page="Create" asp-route-id="@Model.IdEvento" class="btn btn-info">Asignar Servicio</a>
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
     <a asp-page="../Eventos/index" asp-route-id="@Model.IdEvento" class="btn btn-warning">Regresar a la Lista de Eventos</a>
 </p>
 
@@ -109,11 +113,16 @@
                 @Model.getProductoServicoEsp(item.IdProdServEsp.ToString(), item.IdProdServ.ToString())
             </td>
             <td>
+<<<<<<< HEAD
+                <a asp-page="./Edit"  class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEventoServ" asp-route-evento="@Model.IdEvento"></a> 
+                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEventoServ" asp-route-evento="@Model.IdEvento"></a>
+=======
                 <a asp-page="./Delete" class="glyphicon glyphicon-trash"
                    asp-route-evento="@Model.IdEvento"
                    asp-route-requerido="@item.Requerido"
                    asp-route-prodserv="@item.IdProdServ"
                    asp-route-prodservesp="@item.IdProdServEsp"></a>
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
             </td>
         </tr>
 }

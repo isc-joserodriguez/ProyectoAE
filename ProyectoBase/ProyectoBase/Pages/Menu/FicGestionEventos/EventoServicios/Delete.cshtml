@@ -16,28 +16,45 @@
             Evento:
         </dt>
         <dd>
+<<<<<<< HEAD
+            @Html.DisplayFor(model => model.res_evento_servicios.IdEvento)
+=======
             @Model.Evento(Model.res_evento_servicios.IdEvento.ToString())
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
         </dd>
         <dt>
             Requerido:
         </dt>
         <dd>
+<<<<<<< HEAD
+            @Html.DisplayFor(model => model.res_evento_servicios.Requerido)
+=======
             @Model.getRequerido(Model.res_evento_servicios.Requerido)
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
         </dd>
         <dt>
             Producto/Servicio:
         </dt>
         <dd>
+<<<<<<< HEAD
+            @Html.DisplayFor(model => model.res_evento_servicios.IdProdServEsp)
+=======
             @Model.getProductoServicoEsp(Model.res_evento_servicios.IdProdServEsp.ToString(),Model.res_evento_servicios.IdProdServ.ToString())
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
         </dd>
     </dl>
     
     <form method="post">
+<<<<<<< HEAD
+        <input type="hidden" asp-for="res_evento_servicios.IdEventoServ" />
+        <input type="submit" value="Eiminar" class="btn btn-danger" /> |
+=======
         <input type="hidden" asp-for="res_evento_servicios.IdEvento" />
         <input type="hidden" asp-for="res_evento_servicios.Requerido" />
         <input type="hidden" asp-for="res_evento_servicios.IdProdServ" />
         <input type="hidden" asp-for="res_evento_servicios.IdProdServEsp" />
         <input type="submit" value="Eiminar" class="btn btn-danger" />
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
         <a asp-page="./Index" asp-route-id="@Model.IdEvento" class="btn btn-warning">Regresar a la Lista</a>
     </form>
 </div>

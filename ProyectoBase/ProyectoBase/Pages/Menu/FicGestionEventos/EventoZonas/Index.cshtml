@@ -5,77 +5,31 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Zonas para Eventos</h2>
+<h2>Index</h2>
 
 <p>
-    <a asp-page="Create" 
-       asp-route-edificio="@Model.IdEdificio"
-       asp-route-espacio="@Model.IdEspacio"
-       asp-route-evento="@Model.IdEvento"
-       asp-route-horario="@Model.IdHorario"
-       class="btn btn-info">Agregar</a>
-    <a asp-page="../EventoHorarios/Index" asp-route-id="@Model.IdEvento" class="btn btn-warning">Regresar a la Lista de Horarios</a>
+    <a asp-page="Create">Create New</a>
 </p>
-
-<dl class="dl-horizontal">
-    <dt>
-        <label class="control-label">Evento:</label>
-    </dt>
-    <dd>
-        @Model.Evento(Model.res_evento_horarios.IdEdificio.ToString())
-    </dd>
-    <dt>
-        <label class="control-label">Edificio:</label>
-    </dt>
-    <dd>
-        @Model.Edificio(Model.res_evento_horarios.IdEdificio.ToString())
-    </dd>
-    <dt>
-        <label class="control-label">Espacio:</label>
-    </dt>
-    <dd>
-        @Model.Espacio(Model.res_evento_horarios.IdEspacio.ToString())
-    </dd>
-    <dt>
-        <label class="control-label">Día:</label>
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.res_evento_horarios.Dia)
-    </dd>
-    <dt>
-        <label class="control-label">Fecha de Inicio</label>
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.res_evento_horarios.FechaHoraIni)
-    </dd>
-    <dt>
-        <label class="control-label">FEcha de Culminación:</label>
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.res_evento_horarios.FechaHoraFin)
-    </dd>
-    <dt>
-        <label class="control-label">Fecha de Registro:</label>
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.res_evento_horarios.FechaReg)
-    </dd>
-    <dt>
-        <label class="control-label">Usuario que Registro</label>
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.res_evento_horarios.UsuarioReg)
-    </dd>
-</dl>
-
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    Zona
+                    @Html.DisplayNameFor(model => model.res_evento_zonas[0].IdEdificio)
                 </th>
                 <th>
-                    Fecha de Registro
+                    @Html.DisplayNameFor(model => model.res_evento_zonas[0].IdEspacio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zonas[0].IdEvento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zonas[0].IdZona)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zonas[0].FechaReg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_evento_zonas[0].UsuarioReg)
                 </th>
             <th></th>
         </tr>
@@ -84,26 +38,27 @@
 @foreach (var item in Model.res_evento_zonas) {
         <tr>
             <td>
-                @Model.Zona(item.IdZona.ToString())
+                @Html.DisplayFor(modelItem => item.IdEdificio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEspacio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdZona)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FechaReg)
             </td>
             <td>
-                <a asp-page="./Delete"
-                   asp-route-edificio="@item.IdEdificio"
-                   asp-route-espacio="@item.IdEspacio"
-                   asp-route-evento="@item.IdEvento"
-                   asp-route-zona="@item.IdZona"
-                   asp-route-horario="@Model.IdHorario"
-                   class="glyphicon glyphicon-trash"></a>
-                <a asp-page="../EventoZonaBoletos/Index"
-                   asp-route-edificio="@item.IdEdificio"
-                   asp-route-espacio="@item.IdEspacio"
-                   asp-route-evento="@item.IdEvento"
-                   asp-route-zona="@item.IdZona"
-                   asp-route-horario="@Model.IdHorario"
-                   class="glyphicon glyphicon-book"></a>
+                @Html.DisplayFor(modelItem => item.UsuarioReg)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

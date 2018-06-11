@@ -26,9 +26,12 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
         public async Task<IActionResult> OnGetAsync(int id)
         {
             IdEvento = id;
+<<<<<<< HEAD
+=======
             IQueryable<res_evento_servicios> Res_Evento_Servicios = from s in _context.res_evento_servicios
                                                                     select s;
 
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
             res_evento_servicios = await _context.res_evento_servicios.ToListAsync();
             res_eventos = await _context.res_eventos.SingleOrDefaultAsync(m => m.IdEvento == id);
 
@@ -36,10 +39,13 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
             {
                 return NotFound();
             }
+<<<<<<< HEAD
+=======
 
             res_evento_servicios = await Res_Evento_Servicios.Where(m => m.IdEvento == IdEvento)
                 .AsNoTracking()
                 .ToListAsync();
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
             return Page();
         }
 

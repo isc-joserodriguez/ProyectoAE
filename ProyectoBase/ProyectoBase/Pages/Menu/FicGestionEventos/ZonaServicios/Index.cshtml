@@ -8,12 +8,16 @@
 <h2>Servicios por Zona</h2>
 
 <p>
+<<<<<<< HEAD
+    <a asp-page="Create">Create New</a>
+=======
     <a asp-page="Create"
         asp-route-edificio="@Model.IdEdificio"
         asp-route-espacio="@Model.IdEspacio"
         asp-route-zona="@Model.IdZona"
        class="btn btn-info">Añadir</a>
     <a asp-page="../Zonas/Index" asp-route-espacio="@Model.IdEspacio" asp-route-edificio="@Model.IdEdificio" class="btn btn-warning">Regresar a la Lista</a>
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
 </p>
 
 <dl class="dl-horizontal">
@@ -59,10 +63,26 @@
     <thead>
         <tr>
                 <th>
+<<<<<<< HEAD
+                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdEdificio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdEspacio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdZona)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdProdServ)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.res_zonas_servicios[0].IdProdServEsp)
+=======
                     Producto/Servicio   
                 </th>
                 <th>
                     Especifico
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
                 </th>
             <th></th>
         </tr>
@@ -71,6 +91,26 @@
 @foreach (var item in Model.res_zonas_servicios) {
         <tr>
             <td>
+<<<<<<< HEAD
+                @Html.DisplayFor(modelItem => item.IdEdificio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEspacio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdZona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProdServ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProdServEsp)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdZonaServicio">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdZonaServicio">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdZonaServicio">Delete</a>
+=======
                 @Model.getProductoServicio(item.IdProdServ.ToString())
             </td>
             <td>
@@ -84,6 +124,7 @@
                    asp-route-prodserv="@item.IdProdServ"
                    asp-route-prodservesp="@item.IdProdServEsp"
                    class="glyphicon glyphicon-trash"></a>
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
             </td>
         </tr>
 }

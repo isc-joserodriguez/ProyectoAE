@@ -10,16 +10,15 @@ using ProyectoBase.Models.FicGestionEventos;
 
 namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonas
 {
-    public class DeleteModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly ProyectoBase.Models.ApplicationDbContext _context;
 
-        public DeleteModel(ProyectoBase.Models.ApplicationDbContext context)
+        public DetailsModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
         }
 
-        [BindProperty]
         public res_evento_zonas res_evento_zonas { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -36,24 +35,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonas
                 return NotFound();
             }
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            res_evento_zonas = await _context.res_evento_zonas.FindAsync(id);
-
-            if (res_evento_zonas != null)
-            {
-                _context.res_evento_zonas.Remove(res_evento_zonas);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
         }
     }
 }

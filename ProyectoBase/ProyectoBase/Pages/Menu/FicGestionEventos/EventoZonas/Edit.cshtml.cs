@@ -4,17 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoBase.Models;
 using ProyectoBase.Models.FicGestionEventos;
 
 namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonas
 {
-    public class DeleteModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly ProyectoBase.Models.ApplicationDbContext _context;
 
-        public DeleteModel(ProyectoBase.Models.ApplicationDbContext context)
+        public EditModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
         }
@@ -38,22 +39,37 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoZonas
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync()
         {
-            if (id == null)
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Page();
             }
 
-            res_evento_zonas = await _context.res_evento_zonas.FindAsync(id);
+            _context.Attach(res_evento_zonas).State = EntityState.Modified;
 
-            if (res_evento_zonas != null)
+            try
             {
-                _context.res_evento_zonas.Remove(res_evento_zonas);
                 await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!res_evento_zonasExists(res_evento_zonas.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
             }
 
             return RedirectToPage("./Index");
+        }
+
+        private bool res_evento_zonasExists(int id)
+        {
+            return _context.res_evento_zonas.Any(e => e.Id == id);
         }
     }
 }

@@ -22,6 +22,16 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
         [BindProperty]
         public res_zonas_servicios res_zonas_servicios { get; set; }
 
+<<<<<<< HEAD
+        public async Task<IActionResult> OnGetAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            res_zonas_servicios = await _context.res_zonas_servicios.SingleOrDefaultAsync(m => m.IdZonaServicio == id);
+=======
         public async Task<IActionResult> OnGetAsync(
             int edificio,
             int espacio,
@@ -37,6 +47,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
                 m.IdZona == zona &&
                 m.IdProdServ == prodserv &&
                 m.IdProdServEsp == prodservesp);
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
 
             if (res_zonas_servicios == null)
             {
@@ -45,6 +56,16 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
             return Page();
         }
 
+<<<<<<< HEAD
+        public async Task<IActionResult> OnPostAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            res_zonas_servicios = await _context.res_zonas_servicios.FindAsync(id);
+=======
         public async Task<IActionResult> OnPostAsync(
             int edificio,
             int espacio,
@@ -59,6 +80,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
                 m.IdZona == zona &&
                 m.IdProdServ == prodserv &&
                 m.IdProdServEsp == prodservesp);
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
 
             if (res_zonas_servicios != null)
             {
@@ -68,6 +90,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
 
             return RedirectToPage("./Index", new { edificio = res_zonas_servicios.IdEdificio, espacio = res_zonas_servicios.IdEspacio, zona = res_zonas_servicios.IdZona });
         }
+<<<<<<< HEAD
+=======
 
         public String getEdificio(string ID)
         {
@@ -133,5 +157,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
             }
             return "Desconocido";
         }
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
     }
 }

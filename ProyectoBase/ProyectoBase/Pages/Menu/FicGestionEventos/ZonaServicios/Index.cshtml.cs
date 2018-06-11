@@ -51,6 +51,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
             res_zonas_servicios = await ZonasServicios.Where(m => m.IdEspacio == espacio && m.IdEdificio == edificio && m.IdZona == zona).AsNoTracking().ToListAsync();
             return Page();
         }
+<<<<<<< HEAD
+=======
 
         
 
@@ -105,5 +107,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.ZonaServicios
             }
             return "Desconocido";
         }
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
     }
 }

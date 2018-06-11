@@ -35,7 +35,10 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
         [BindProperty]
         public res_evento_servicios res_evento_servicios { get; set; }
         public int IdEvento { get; set; }
+<<<<<<< HEAD
+=======
         public Boolean seRepiteRegistro { get; set; } = false ;
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -48,6 +51,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
                 return Page();
             }
 
+<<<<<<< HEAD
+=======
             if (seRepite(
                 res_evento_servicios.IdEvento,
                 res_evento_servicios.Requerido,
@@ -57,6 +62,7 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
                     return Page();
             }
 
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
             if (res_evento_servicios.Requerido != "S" && res_evento_servicios.Requerido != "N") res_evento_servicios.Requerido = "S";
 
             _context.res_evento_servicios.Add(res_evento_servicios);
@@ -127,6 +133,8 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
             }
             return false;
         }
+<<<<<<< HEAD
+=======
 
         public Boolean seRepite(int evento, string requerido, int prodserv, int prodservesp)
         {
@@ -139,5 +147,6 @@ namespace ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios
             }
             return false;
         }
+>>>>>>> 8e959b05e541a34fbeed99bf11184ad25419e79e
     }
 }

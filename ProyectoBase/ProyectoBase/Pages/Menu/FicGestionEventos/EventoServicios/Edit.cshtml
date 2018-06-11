@@ -1,18 +1,19 @@
 ﻿@page
-@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios.CreateModel
+@model ProyectoBase.Pages.Menu.FicGestionEventos.EventoServicios.EditModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
-<h2>Asignar Producto</h2>
+<h2>Editar</h2>
 
-<h4>Producto/Servicio</h4>
+<h4>Eventos Servicios</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="res_evento_servicios.IdEventoServ" />
             <input asp-for="res_evento_servicios.IdEvento" value="@Model.IdEvento" type="hidden" class="form-control" />
             <div class="form-group">
                 <label asp-for="res_evento_servicios.Requerido" class="control-label">Requerido:</label>

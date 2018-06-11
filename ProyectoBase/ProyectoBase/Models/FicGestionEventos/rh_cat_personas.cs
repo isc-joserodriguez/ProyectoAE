@@ -35,5 +35,8 @@ namespace ProyectoBase.Models.FicGestionEventos
         public string Alias { get; set; }
         [Required(ErrorMessage = "Este campo es requerido")]
         public DateTime FechaNac { get; set; }
+
+        public List<res_evento_cliente_boletos> EventoClienteBoletos { get; set; }
+        public List<res_eventos> Eventos { get; set; }
     }
 }

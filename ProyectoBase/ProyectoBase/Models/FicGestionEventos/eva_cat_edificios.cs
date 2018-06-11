@@ -20,5 +20,13 @@ namespace ProyectoBase.Models.FicGestionEventos
         public string DesEdificio { get; set; }
         
         public int Prioridad { get; set; }
+
+        public List<eva_cat_espacios> Espacios { get; set; }
+        public List<res_cat_zonas> Zonas { get; set; }
+        public List<res_evento_horarios> EventoHorarios { get; set; }
+        public List<res_evento_zona_boletos> EventoZonaBoletos { get; set; }
+        public List<res_zonas_servicios> ZonasServicios { get; set; }
+        public List<res_evento_zonas> EventoZonas { get; set; }
+        public List<res_eventos> Eventos { get; set; }
     }
 }

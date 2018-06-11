@@ -17,5 +17,8 @@ namespace ProyectoBase.Models.FicGestionEventos
         [MaxLength(1, ErrorMessage = "Este campo no puede contener más de 1 caracter"), Required(ErrorMessage = "Este campo es requerido")]
         public string Activo { get; set; }
 
+        public List<cat_generales> Generales {get;set;}
+        public List<cat_productos_servicios> ProductosServicios { get; set; }
+        public List<res_eventos> Eventos { get; set; }
     }
 }

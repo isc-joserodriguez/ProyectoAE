@@ -16,5 +16,9 @@ namespace ProyectoBase.Models.FicGestionEventos
         public string DesTipoEstatus { get; set; }
         [MaxLength(1, ErrorMessage = "Este campo no puede contener más de 1 caracter"), Required(ErrorMessage = "Este campo es requerido")]
         public string Activo { get; set; }
+
+        public List<cat_estatus> Estatus { get; set; }
+        public List<res_evento_estatus> EventoEstatus { get; set; }
+        public List<res_evento_zona_boleto_estatus> EventoZonaBoletoEstatus{ get; set; }
     }
 }

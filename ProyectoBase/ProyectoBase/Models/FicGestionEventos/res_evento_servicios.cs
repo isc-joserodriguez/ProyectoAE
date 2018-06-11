@@ -10,23 +10,22 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class res_evento_servicios
     {
-        [ForeignKey("IdEvento"), Key, Required(ErrorMessage = "Este campo es requerido")]
+        [Key, Required(ErrorMessage = "Este campo es requerido")]
         public int IdEvento { get; set; }
-        public virtual res_eventos res_eventos { get; set; }
-
+        
         [MaxLength(1, ErrorMessage = "Este campo no puede contener más de 1 caracter"), Required(ErrorMessage = "Este campo es requerido")]
         public string Requerido { get; set; }
 
-        [ForeignKey("IdProdServ"), Key, Required(ErrorMessage = "Este campo es requerido")]
+        [Key, Required(ErrorMessage = "Este campo es requerido")]
         public int IdProdServ { get; set; }
-        public virtual cat_productos_servicios cat_productos_servicios { get; set; }
-
-        [ForeignKey("IdProdServEsp"), Key, Required(ErrorMessage = "Este campo es requerido")]
+        
+        [Key, Required(ErrorMessage = "Este campo es requerido")]
         public int IdProdServEsp { get; set; }
-        public virtual cat_prod_serv_especifico cat_prod_serv_especifico { get; set; }
-
         
 
+        public res_eventos Eventos { get; set; }
+        public cat_productos_servicios ProductosSErvicios { get; set; }
+        public cat_prod_serv_especifico ProdServEspecifico { get; set; }
     }
 
     

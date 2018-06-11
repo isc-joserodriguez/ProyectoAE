@@ -9,10 +9,9 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class cat_generales
     {
-        [ForeignKey("IdTipoGeneral"), Required(ErrorMessage = "Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int IdTipoGeneral { get; set; }
-        public virtual cat_tipos_generales cat_tipos_generales { get; set; }
-
+        
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required(ErrorMessage = "Este campo es requerido")]
         public int IdGeneral { get; set; }
 
@@ -22,5 +21,9 @@ namespace ProyectoBase.Models.FicGestionEventos
         public string DesGeneral { get; set; }
         [Required(ErrorMessage = "Este campo es requerido"), MaxLength(1, ErrorMessage = "Este campo no puede contener más de 1 caracter")]
         public string Activo { get; set; }
+
+        public cat_tipos_generales TiposGenerales { get; set; }
+        public List<cat_productos_servicios> ProductosServicios { get; set; }
+        public List<res_eventos> Eventos { get; set; }
     }
 }

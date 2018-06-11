@@ -9,9 +9,8 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class cat_estatus
     {
-        [ForeignKey("IdTipoEstatus"), Required(ErrorMessage = "Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int IdTipoEstatus { get; set; }
-        public virtual cat_tipos_estatus cat_tipos_estatus { get; set; }
         
         [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity), Required(ErrorMessage = "Este campo es requerido")]
         public int IdEstatus { get; set; }
@@ -22,5 +21,9 @@ namespace ProyectoBase.Models.FicGestionEventos
         public string DesEstatus { get; set; }
         [Required(ErrorMessage = "Este campo es requerido"), MaxLength(1, ErrorMessage = "Este campo no puede contener más de 1 caracteres")]
         public string Activo { get; set; }
+
+        public cat_tipos_estatus TiposEstatus { get; set; }
+        public List<res_evento_estatus> EventoEstatus { get; set; }
+        public List<res_evento_zona_boleto_estatus> EventoZonaBoletoEstatus { get; set; }
     }
 }

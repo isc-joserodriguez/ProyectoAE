@@ -20,15 +20,17 @@ namespace ProyectoBase.Models.FicGestionEventos
         [MaxLength(1, ErrorMessage = "Este campo no puede contener más de 1 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string ProductoServicio { get; set; }
 
-        [ForeignKey("IdTipoGenProdServ"), Required(ErrorMessage = "Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int IdTipoGenProdServ { get; set; }
-        public virtual cat_tipos_generales cat_tipos_generales { get; set; }
-
-        [ForeignKey("IdGenProdServ"), Required(ErrorMessage = "Este campo es requerido")]
+        
+        [ Required(ErrorMessage = "Este campo es requerido")]
         public int IdGenProdServ { get; set; }
-        public virtual cat_generales cat_generales { get; set; }
-
-
-
+        
+        public List<cat_prod_serv_especifico> ProductoServicioEspecifico { get; set; }
+        public cat_tipos_generales TiposGenerales { get; set; }
+        public cat_generales Generales { get; set; }
+        public List<res_evento_cliente_prod_serv> EventoClienteProdServ { get; set; }
+        public List<res_evento_servicios> EventoServicios { get; set; }
+        public List<res_zonas_servicios> ZonasServicios { get; set; }
     }
 }

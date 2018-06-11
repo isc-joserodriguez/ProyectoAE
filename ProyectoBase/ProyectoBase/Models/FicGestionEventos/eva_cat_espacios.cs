@@ -10,10 +10,9 @@ namespace ProyectoBase.Models.FicGestionEventos
 {
     public class eva_cat_espacios
     {
-        [ForeignKey("IdEdificio"), Required(ErrorMessage = "Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int IdEdificio { get; set; }
-        public virtual eva_cat_edificios eva_cat_edificios { get; set; }
-
+        
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Required(ErrorMessage = "Este campo es requerido")]
         public int IdEspacio { get; set; }
 
@@ -27,5 +26,11 @@ namespace ProyectoBase.Models.FicGestionEventos
         public int Capacidad { get; set; }
         public int Prioridad { get; set; }
 
+        public eva_cat_edificios Edificios { get; set; }
+        public List<res_cat_zonas> Zonas { get; set; }
+        public List<res_evento_horarios> EventoHorarios { get; set; }
+        public List<res_evento_zona_boletos> EventoZonaBoletos { get; set; }
+        public List<res_zonas_servicios> ZonasServicios { get; set; }
+        public List<res_evento_zonas> EventoZonas { get; set; }
     }
 }

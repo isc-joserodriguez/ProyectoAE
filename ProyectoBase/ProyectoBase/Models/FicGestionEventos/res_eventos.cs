@@ -13,18 +13,15 @@ namespace ProyectoBase.Models.FicGestionEventos
         public int IdEvento { get; set; }
 
 
-        [ForeignKey("IdTipoGenEvento"), Required(ErrorMessage = "Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int IdTipoGenEvento { get; set; }
-        public virtual cat_tipos_generales cat_tipos_generales { get; set; }
-
-        [ForeignKey("IdGenEvento"), Required(ErrorMessage = "Este campo es requerido")]
+        
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int IdGenEvento { get; set; }
-        public virtual cat_generales cat_generales { get; set; }
-
-        [ForeignKey("IdPersonaReg"), Required(ErrorMessage = "Este campo es requerido")]
+        
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int IdPersonaReg { get; set; }
-        public virtual rh_cat_personas rh_cat_personas { get; set; }
-
+        
         [MaxLength(1000, ErrorMessage = "Este campo no puede contener más de 1000 caracteres"), Required(ErrorMessage = "Este campo es requerido")]
         public string NombreEvento { get; set; }
         [MaxLength(1000, ErrorMessage = "Este campo no puede contener más de 1000 caracteres")]
@@ -38,13 +35,26 @@ namespace ProyectoBase.Models.FicGestionEventos
         [Required(ErrorMessage = "Este campo es requerido")]
         public DateTime FechaFin { get; set; }
 
-        [ForeignKey("IdEdificio"), Required(ErrorMessage = "Este campo es requerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int IdEdificio { get; set; }
-        public virtual eva_cat_edificios eva_cat_edificios { get; set; }
+        
         [Required(ErrorMessage = "Este campo es requerido")]
         public DateTime FechaReg { get; set; }
         [Required(ErrorMessage = "Este campo es requerido")]
         public int UsuarioReg { get; set; }
 
+        public List<res_evento_cliente_boletos> EventoClientesBoletos { get; set; }
+        public List<res_evento_cliente_prod_serv> EventoClienteProdServ { get; set; }
+        public List<res_evento_clientes> EventoClientes { get; set; }
+        public List<res_evento_estatus> EventoEstatus { get; set; }
+        public List<res_evento_horarios> EventoHorarios { get; set; }
+        public List<res_evento_servicios> EventoServicios { get; set; }
+        public List<res_evento_zona_boletos> EventoZonaBoletos { get; set; }
+        public List<res_evento_zonas> EventoZonas { get; set; }
+
+        public cat_tipos_generales TiposGenerales { get; set; }
+        public cat_generales Generales { get; set; }
+        public rh_cat_personas Personas { get; set; }
+        public eva_cat_edificios Edificios { get; set; }
     }
 }

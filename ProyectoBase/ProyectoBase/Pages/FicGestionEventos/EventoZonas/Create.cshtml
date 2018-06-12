@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="res_evento_zonas.UsuarioReg" class="control-label"></label>
-                <input asp-for="res_evento_zonas.UsuarioReg" class="form-control" />
+                <input value="FICIBARRA" disabled class="form-control" />
                 <span asp-validation-for="res_evento_zonas.UsuarioReg" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -51,6 +51,7 @@
                    asp-route-horario="@Model.IdHorario"
                    class="btn btn-warning">Regresar a la Lista</a>
             </div>
+            <input asp-for="res_evento_zonas.UsuarioReg" value="FICIBARRA" type="hidden" class="form-control" />
         </form>
     </div>
 </div>

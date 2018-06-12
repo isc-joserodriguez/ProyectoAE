@@ -31,6 +31,10 @@ namespace ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletos
 
         [BindProperty]
         public res_evento_zona_boletos res_evento_zona_boletos { get; set; }
+
+        [BindProperty]
+        public res_evento_zona_boleto_estatus res_evento_zona_boleto_estatus { get; set; }
+
         public int IdEdificio { get; set; }
         public int IdEspacio { get; set; }
         public int IdEvento { get; set; }
@@ -52,10 +56,24 @@ namespace ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletos
             res_evento_zona_boletos.IdBoleto = d + res_evento_zona_boletos.IdBoleto;
             for (int i = 1; i <= cantidad_; i++) {
                 res_evento_zona_boletos.NumBoleto = "BOLETO_" + (i+d);
-                res_evento_zona_boletos.Ubicacion = "Asiento No. " + (i+d);
+                res_evento_zona_boletos.Ubicacion = "Asiento No. " + (i);
                 res_evento_zona_boletos.IdBoleto = res_evento_zona_boletos.IdBoleto + 1;
                 _context.res_evento_zona_boletos.Add(res_evento_zona_boletos);
+                //await _context.SaveChangesAsync();
+
+                res_evento_zona_boleto_estatus.IdBoleto = res_evento_zona_boletos.IdBoleto;
+                res_evento_zona_boleto_estatus.FechaEstatus = DateTime.Now;
+                res_evento_zona_boleto_estatus.Actual = "S";
+                res_evento_zona_boleto_estatus.Observacion = "Estatus Disponible - Automatico";
+                res_evento_zona_boleto_estatus.UsuarioReg = "FICIBARRA";
+                res_evento_zona_boleto_estatus.IdEstatus = 6;
+                res_evento_zona_boleto_estatus.IdTipoEstatus = 6;
+
+                
+
+                _context.res_evento_zona_boleto_estatus.Add(res_evento_zona_boleto_estatus);
                 await _context.SaveChangesAsync();
+
             }
             
 

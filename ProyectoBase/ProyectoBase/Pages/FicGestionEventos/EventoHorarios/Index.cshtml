@@ -143,10 +143,11 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <ul class="nav navbar-nav">
                             <li>
+                                <a asp-page="../EventoZonas/Index" asp-route-edificio="@item.IdEdificio" asp-route-espacio="@item.IdEspacio" asp-route-evento="@item.IdEvento" asp-route-horario="@item.IdHorarioDet" class="glyphicon glyphicon-bookmark"> Zonas</a>
                                 <a asp-page="./Edit" asp-route-id="@item.IdHorarioDet" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="glyphicon glyphicon-pencil"> Editar</a>
                                 <a asp-page="./Details" asp-route-id="@item.IdHorarioDet" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="glyphicon glyphicon-list-alt"> Detalles</a>
                                 <a asp-page="./Delete" asp-route-id="@item.IdHorarioDet" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="glyphicon glyphicon-trash"> Eliminar</a>
-                                <a asp-page="../EventoZonas/Index" asp-route-edificio="@item.IdEdificio" asp-route-espacio="@item.IdEspacio" asp-route-evento="@item.IdEvento" asp-route-horario="@item.IdHorarioDet" class="glyphicon glyphicon-bookmark"> Zonas</a>
+
                             </li>
                         </ul>
                     </div>

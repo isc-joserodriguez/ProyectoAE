@@ -77,6 +77,9 @@
                 <th>
                     Fecha de Registro
                 </th>
+            <th>
+                Mapa
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -90,6 +93,10 @@
                 @Html.DisplayFor(modelItem => item.FechaReg)
             </td>
             <td>
+                <img onclick="javascript:this.width=300;this.height=200" ondblclick="javascript:this.width=40;this.height=30" src="~/images/@Html.DisplayFor(modelItem => item.RutaImagen)" width="40" height="30" />
+                
+            </td>
+            <td>
                 <div class="nav-item dropdown">
                     <a class="btn btn-info" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Opciones
@@ -97,13 +104,6 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a asp-page="./Delete"
-                                   asp-route-edificio="@item.IdEdificio"
-                                   asp-route-espacio="@item.IdEspacio"
-                                   asp-route-evento="@item.IdEvento"
-                                   asp-route-zona="@item.IdZona"
-                                   asp-route-horario="@Model.IdHorario"
-                                   class="glyphicon glyphicon-trash"> Eliminar</a>
                                 <a asp-page="../EventoZonaBoletos/Index"
                                    asp-route-edificio="@item.IdEdificio"
                                    asp-route-espacio="@item.IdEspacio"
@@ -111,6 +111,14 @@
                                    asp-route-zona="@item.IdZona"
                                    asp-route-horario="@Model.IdHorario"
                                    class="glyphicon glyphicon-book"> Boletos</a>
+                                <a asp-page="./Delete"
+                                   asp-route-edificio="@item.IdEdificio"
+                                   asp-route-espacio="@item.IdEspacio"
+                                   asp-route-evento="@item.IdEvento"
+                                   asp-route-zona="@item.IdZona"
+                                   asp-route-horario="@Model.IdHorario"
+                                   class="glyphicon glyphicon-trash"> Eliminar</a>
+
                             </li>
                         </ul>
                     </div>

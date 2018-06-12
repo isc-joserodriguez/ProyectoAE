@@ -17,6 +17,7 @@ namespace ProyectoBase.Pages.FicGestionEventos.Eventos
         public CreateModel(ProyectoBase.Models.ApplicationDbContext context)
         {
             _context = context;
+            rh_cat_personas = _context.rh_cat_personas.ToList();
             getGenerales();
             getPersonas();
             getEdificios();
@@ -34,12 +35,14 @@ namespace ProyectoBase.Pages.FicGestionEventos.Eventos
         public List<SelectListItem> Generales = new List<SelectListItem>();
         public List<SelectListItem> Personas = new List<SelectListItem>();
         public List<SelectListItem> Edificios = new List<SelectListItem>();
+        public List<rh_cat_personas> rh_cat_personas { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(string persona)
         {
 
             res_eventos.FechaReg = DateTime.Now;
-            if (!ModelState.IsValid)
+            res_eventos.IdPersonaReg = buscar(persona);
+            if (!ModelState.IsValid || res_eventos.IdPersonaReg==-1)
             {
                 return Page();
             }
@@ -82,6 +85,18 @@ namespace ProyectoBase.Pages.FicGestionEventos.Eventos
                     Value = d.IdPersona.ToString()
                 });
             }
+        }
+
+        public int buscar(string persona)
+        {
+            var Tipos = _context.rh_cat_personas;
+            foreach (rh_cat_personas d in Tipos)
+            {
+                if (persona.Equals(d.Nombre)) {
+                    return d.IdPersona;
+                }
+            }
+            return -1;
         }
 
         public void getEdificios()

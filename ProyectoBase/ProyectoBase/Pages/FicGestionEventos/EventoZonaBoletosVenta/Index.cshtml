@@ -7,6 +7,22 @@
 
 <h2>Boletos a la Venta</h2>
 
+<form asp-page="./Index" method="get">
+
+    <input name="id" value="@Model.IdClienteReserva" type="hidden"/>
+    <input name="edificio" value="@Model.IdEdificio" type="hidden"/>
+    <input name="espacio" value="@Model.IdEspacio" type="hidden"/>
+    <input name="evento" value="@Model.IdEvento" type="hidden"/>
+
+    <p>
+        <input name="busqueda" value="@Model.CurrentFilter" placeholder="Buscar por Zona" class="form-control" />
+        <input type="submit" value="Buscar" class="btn btn-info btn-block" />
+    </p>
+    <p>
+        <a asp-page="./Index" class="btn btn-warning">Limpiar</a>
+    </p>
+</form>
+
 <dl class="dl-horizontal">
     
     <dt>

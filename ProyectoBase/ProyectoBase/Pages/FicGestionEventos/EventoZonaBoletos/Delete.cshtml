@@ -1,0 +1,57 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletos.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar Boleto</h2>
+
+<h3>¿Quieres eliminar este Boleto?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Número de Boleto:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boletos.NumBoleto)
+        </dd>
+        <dt>
+            Descripción del Boleto:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boletos.DesBoleto)
+        </dd>
+        <dt>
+            Ubicación:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boletos.Ubicacion)
+        </dd>
+        <dt>
+            Precio:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boletos.Precio)
+        </dd>
+        <dt>
+            IVA:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_zona_boletos.IVA)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="res_evento_zona_boletos.IdBoleto" />
+        <input asp-for="IdHorario" type="hidden" name="IdHorario_" class="form-control" />
+        <input type="submit" value="Eliminar" class="btn btn-info" />
+        <a asp-page="Index" asp-route-edificio="@Model.IdEdificio"
+           asp-route-espacio="@Model.IdEspacio"
+           asp-route-evento="@Model.IdEvento"
+           asp-route-zona="@Model.IdZona"
+           asp-route-horario="@Model.IdHorario"
+           class="btn btn-warning">Regresar a la Lista</a>
+    </form>
+</div>

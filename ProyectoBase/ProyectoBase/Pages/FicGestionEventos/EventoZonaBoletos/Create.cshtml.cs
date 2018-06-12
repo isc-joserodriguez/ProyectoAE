@@ -52,7 +52,7 @@ namespace ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletos
             res_evento_zona_boletos.IdBoleto = d + res_evento_zona_boletos.IdBoleto;
             for (int i = 1; i <= cantidad_; i++) {
                 res_evento_zona_boletos.NumBoleto = "BOLETO_" + (i+d);
-                res_evento_zona_boletos.Ubicacion = "Asiento No. " + (i+d);
+                res_evento_zona_boletos.Ubicacion = "Asiento No. " + (i);
                 res_evento_zona_boletos.IdBoleto = res_evento_zona_boletos.IdBoleto + 1;
                 _context.res_evento_zona_boletos.Add(res_evento_zona_boletos);
                 await _context.SaveChangesAsync();

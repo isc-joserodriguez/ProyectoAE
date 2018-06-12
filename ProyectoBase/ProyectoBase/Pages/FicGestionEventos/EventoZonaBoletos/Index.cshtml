@@ -95,12 +95,18 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <ul class="nav navbar-nav">
                                 <li>
+                                    <a asp-page="../EventoZonaBoletos/Delete" asp-route-id="@item.IdBoleto"
+                                       asp-route-edificio="@Model.IdEdificio"
+                                       asp-route-espacio="@Model.IdEspacio"
+                                       asp-route-evento="@Model.IdEvento"
+                                       asp-route-zona="@Model.IdZona"
+                                       asp-route-horario="@Model.IdHorario">Eliminar</a>
                                     <a asp-page="../EventoZonaBoletosEstatus/Index" asp-route-id="@item.IdBoleto"
                                        asp-route-edificio="@Model.IdEdificio"
                                        asp-route-espacio="@Model.IdEspacio"
                                        asp-route-evento="@Model.IdEvento"
                                        asp-route-zona="@Model.IdZona"
-                                       asp-route-horario="@Model.IdHorario"> Estatus</a>
+                                       asp-route-horario="@Model.IdHorario">Estatus</a>
                                 </li>
                             </ul>
                         </div>

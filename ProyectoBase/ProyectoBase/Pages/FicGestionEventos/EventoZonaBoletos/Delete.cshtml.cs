@@ -21,15 +21,21 @@ namespace ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletos
 
         [BindProperty]
         public res_evento_zona_boletos res_evento_zona_boletos { get; set; }
+        public int IdEdificio { get; set; }
+        public int IdEspacio { get; set; }
+        public int IdEvento { get; set; }
+        public int IdZona { get; set; }
+        public int IdHorario { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int id,int edificio, int espacio, int evento, int zona, int horario)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            IdEdificio = edificio;
+            IdEspacio = espacio;
+            IdEvento = evento;
+            IdZona = zona;
+            IdHorario = horario;
 
-            res_evento_zona_boletos = await _context.res_evento_zona_boletos.SingleOrDefaultAsync(m => m.Id == id);
+            res_evento_zona_boletos = await _context.res_evento_zona_boletos.SingleOrDefaultAsync(m => m.IdBoleto == id);
 
             if (res_evento_zona_boletos == null)
             {
@@ -38,12 +44,8 @@ namespace ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletos
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(int id, int IdHorario_)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
             res_evento_zona_boletos = await _context.res_evento_zona_boletos.FindAsync(id);
 
@@ -53,7 +55,13 @@ namespace ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletos
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new {edificio = res_evento_zona_boletos.IdEdificio,
+                espacio = res_evento_zona_boletos.IdEspacio,
+                evento = res_evento_zona_boletos.IdEvento,
+                zona = res_evento_zona_boletos.IdZona,
+                horario = IdHorario_
+            });
         }
     }
 }
+

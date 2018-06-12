@@ -11,6 +11,16 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input asp-for="res_evento_zona_boleto_estatus.IdBoleto" value="-11" type="hidden" class="form-control" />
+            <input asp-for="res_evento_zona_boleto_estatus.FechaEstatus" value="01/01/1991" type="hidden" class="form-control" />
+            <input asp-for="res_evento_zona_boleto_estatus.Actual" value="S" type="hidden" class="form-control" />
+            <input asp-for="res_evento_zona_boleto_estatus.Observacion" value="S" type="hidden" class="form-control" />
+            <input asp-for="res_evento_zona_boleto_estatus.UsuarioReg" value="FICIBARRA" type="hidden" class="form-control" />
+            <input asp-for="res_evento_zona_boleto_estatus.IdEstatus" value="888" type="hidden" class="form-control" />
+            <input asp-for="res_evento_zona_boleto_estatus.IdTipoEstatus" value="888" type="hidden" class="form-control" />
+
+
             <input asp-for="res_evento_zona_boletos.NumBoleto" value="1" type="hidden" class="form-control" />
             <input asp-for="res_evento_zona_boletos.Ubicacion" value="gjhgjhg" type="hidden" class="form-control" />
             <input asp-for="IdHorario" type="hidden" name="IdHorario_" class="form-control" />

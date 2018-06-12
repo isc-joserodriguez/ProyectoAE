@@ -26,11 +26,11 @@ namespace ProyectoBase
         public void ConfigureServices(IServiceCollection services)
         {
             
-            //services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(aeConfiguration.GetConnectionString("AEBase")));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(aeConfiguration.GetConnectionString("AEBase")));
             
             
-            services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseInMemoryDatabase("DbApp"));
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //options.UseInMemoryDatabase("DbApp"));
             
             services.AddMvc()
              .AddRazorPagesOptions(options =>

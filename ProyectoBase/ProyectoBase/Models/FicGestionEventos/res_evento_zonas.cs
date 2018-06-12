@@ -17,7 +17,7 @@ namespace ProyectoBase.Models.FicGestionEventos
         public int IdEspacio { get; set; }
         public virtual eva_cat_espacios eva_cat_espacios { get; set; }
 
-        [ForeignKey("IdEvento"), Key, Required(ErrorMessage = "Este campo es requerido")]
+        [ForeignKey("IdEvento"), Key, Required(ErrorMessage = "Este campo es requerido")]   
         public int IdEvento { get; set; }
         public virtual res_eventos res_eventos { get; set; }
 

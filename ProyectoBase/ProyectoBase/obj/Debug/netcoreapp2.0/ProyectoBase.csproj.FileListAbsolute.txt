@@ -63,7 +63,6 @@ C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\o
 C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfo.cs
 C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.dll
 C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.pdb
-C:\Users\shepe\OneDrive\Documentos\GitHub\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csprojResolveAssemblyReference.cache
 C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\final4\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.deps.json
 C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\final4\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.json
 C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\final4\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.dev.json

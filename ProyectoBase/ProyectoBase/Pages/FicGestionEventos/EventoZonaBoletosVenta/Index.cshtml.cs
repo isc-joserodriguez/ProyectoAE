@@ -109,6 +109,19 @@ namespace ProyectoBase.Pages.FicGestionEventos.EventoZonaBoletosVenta
             return "Desconocido";
         }
 
+        public String getImage(string ID, string Espacio, string Evento, string Edificio)
+        {
+            var Tipos = _context.res_evento_zonas;
+            foreach (res_evento_zonas d in Tipos)
+            {
+                if (ID == d.IdZona.ToString() && Espacio == d.IdEspacio.ToString() && Evento == d.IdEvento.ToString() && Edificio == d.IdEdificio.ToString())
+                {
+                    return d.RutaImagen;
+                }
+            }
+            return "Desconocido";
+        }
+
         public Boolean Existe(string ID)
         {
             var Tipos = _context.res_evento_cliente_boletos;

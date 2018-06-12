@@ -5,10 +5,16 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Boletos a la Venta</h2>
+
+
+<h2>
+    Boletos a la Venta 
+</h2>
+
+
 
 <dl class="dl-horizontal">
-    
+
     <dt>
         <label class="control-label">Evento:</label>
     </dt>
@@ -44,19 +50,23 @@
             <th>
                 IVA
             </th>
-            <td>
+            <th>
                 Zona
-            </td>
-            <td>
+            </th>
+            <th>
                 Ubicación
-            </td>
-            <th></th>
+            </th>
+            <th>
+                Mapa
+            </th>
+           
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.res_evento_zona_boletos)
-{
-    @if (Model.Existe(item.IdBoleto.ToString())) { 
+        @foreach (var item in Model.res_evento_zona_boletos)
+    {
+        @if (Model.Existe(item.IdBoleto.ToString()))
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NumBoleto)
@@ -77,6 +87,12 @@
                 @Html.DisplayFor(modelItem => item.Ubicacion)
             </td>
             <td>
+                <img onclick="javascript:this.width=300;this.height=200" ondblclick="javascript:this.width=40;this.height=30" src="~/images/@Model.getImage(item.IdZona.ToString(),item.IdEspacio.ToString(),item.IdEvento.ToString(),item.IdEdificio.ToString())" width="40" height="30"/>
+            </td>
+
+
+
+            <td>
                 <div class="nav-item dropdown">
                     <a class="btn btn-info" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Opciones
@@ -84,20 +100,21 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a asp-page="../ResEventoClienteBoletos/Create" class="glyphicon glyphicon-warning-sign"
+                                <a asp-page="../ResEventoClienteBoletos/Create" 
                                    asp-route-cliente="@Model.IdClienteReserva"
                                    asp-route-evento="@Model.IdEvento"
                                    asp-route-boleto="@item.IdBoleto"
                                    asp-route-edificio="@Model.IdEdificio"
-                                   asp-route-espacio="@Model.IdEspacio"> Estatus</a>
+                                   asp-route-espacio="@Model.IdEspacio">Reservar</a>
+                              
                             </li>
                         </ul>
                     </div>
                 </div>
-               
+
             </td>
         </tr>
-    }
+}
 }
     </tbody>
 </table>

@@ -75,3 +75,14 @@ C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\final4\ProyectoAE\ProyectoBase\
 C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\final4\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfo.cs
 C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\final4\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.dll
 C:\Users\Jonathan Ibarra\source\repos\ProyectoAE\final4\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.deps.json
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.json
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.runtimeconfig.dev.json
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoBase\ProyectoBase\bin\Debug\netcoreapp2.0\ProyectoBase.pdb
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csprojResolveAssemblyReference.cache
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.csproj.CoreCompileInputs.cache
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfoInputs.cache
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.AssemblyInfo.cs
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.dll
+C:\Users\carlo\Documents\empresarial\Proyecto\ProyectoAE\ProyectoBase\ProyectoBase\obj\Debug\netcoreapp2.0\ProyectoBase.pdb

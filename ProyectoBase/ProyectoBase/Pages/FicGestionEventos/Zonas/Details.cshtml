@@ -1,0 +1,54 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.Zonas.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles de la Zona</h2>
+<h4>Catálago de Zonas</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Edificio:
+        </dt>
+        <dd>
+            @Model.getEdificio(Model.IdEdificio.ToString())
+        </dd>
+        <dt>
+            Espacio:
+        </dt>
+        <dd>
+            @Model.getEspacio(Model.IdEspacio.ToString())
+        </dd>
+        <dt>
+            Descripción:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_cat_zonas.DesZona)
+        </dd>
+        <dt>
+            Capacidad:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_cat_zonas.CapacidadPer)
+        </dd>
+        <dt>
+            Filas de Asientos:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_cat_zonas.Filas)
+        </dd>
+        <dt>
+            Asientos por Fila:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_cat_zonas.AsientosPorFila)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.res_cat_zonas.IdZona" asp-route-espacio="@Model.res_cat_zonas.IdEspacio" asp-route-edificio="@Model.res_cat_zonas.IdEdificio" class="btn btn-info">Editar</a> |
+    <a asp-page="./Index" asp-route-espacio="@Model.res_cat_zonas.IdEspacio" asp-route-edificio="@Model.res_cat_zonas.IdEdificio" class="btn btn-warning">Regresar a la Lista de Zonas</a>
+</div>

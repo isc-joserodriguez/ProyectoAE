@@ -1,0 +1,77 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.ResEventoClienteBoletos.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Boletos Reservados</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Evento
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.res_evento_cliente_boletos[0].IdBoleto)
+            </th>
+            <th>
+                Reservo
+            </th>
+            <th>
+                Confirmado?
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.res_evento_cliente_boletos)
+        {
+        <tr>
+            <td>
+                @Model.getEvento(item.IdEvento.ToString())
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdBoleto)
+            </td>
+            <td>
+                @Model.getPersonaReg(item.IdPersona.ToString())
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConfirmaAsistencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                <div class="nav-item dropdown">
+                    <a class="btn btn-info" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Opciones
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a asp-page="Edit"
+                                   asp-route-reserva="@item.IdReservaCliente"
+                                   asp-route-evento="@item.IdEvento"
+                                   asp-route-boleto="@item.IdBoleto"
+                                   class="glyphicon glyphicon-check"> Confirmar</a>
+                                <a asp-page="Delete"
+                                   asp-route-reserva="@item.IdReservaCliente"
+                                   asp-route-evento="@item.IdEvento"
+                                   asp-route-boleto="@item.IdBoleto"
+                                   class="glyphicon glyphicon-remove"> Cancelar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,35 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.ResEventoClienteBoletos.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Cancelar Reservación</h2>
+
+<h3>¿Seguro deseas Cancelar tu Reservación?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Evento:
+        </dt>
+        <dd>
+            @Model.getEvento(Model.IdEvento.ToString())
+        </dd>
+        <dt>
+            Boleto:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_cliente_boletos.IdBoleto)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="IdReserva" value="@Model.IdReserva" name="reserva" />
+        <input type="hidden" asp-for="IdEvento" value="@Model.IdEvento" name="evento" />
+        <input type="hidden" asp-for="IdBoleto" value="@Model.IdBoleto" name="boleto" />
+        <input type="submit" value="Cancelar" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-warning">Regresar a la Lista</a>
+    </form>
+</div>

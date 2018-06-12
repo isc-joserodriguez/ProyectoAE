@@ -1,0 +1,50 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.CatProductoServicios.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar</h2>
+
+<h4>Catálogo de Productos/Servicios</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="cat_productos_servicios.IdProdServ " />
+            <input asp-for="cat_productos_servicios.IdTipoGenProdServ" type="hidden" value="18" class="form-control" />
+            <input asp-for="cat_productos_servicios.IdGenProdServ" type="hidden" value="76" class="form-control" />
+            <div class="form-group">
+                <label asp-for="cat_productos_servicios.ClaveProdServ" class="control-label"></label>
+                <input asp-for="cat_productos_servicios.ClaveProdServ" class="form-control" />
+                <span asp-validation-for="cat_productos_servicios.ClaveProdServ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cat_productos_servicios.CodigoBarras" class="control-label"></label>
+                <input asp-for="cat_productos_servicios.CodigoBarras" class="form-control" />
+                <span asp-validation-for="cat_productos_servicios.CodigoBarras" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cat_productos_servicios.DesProdServ" class="control-label"></label>
+                <input asp-for="cat_productos_servicios.DesProdServ" class="form-control" />
+                <span asp-validation-for="cat_productos_servicios.DesProdServ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cat_productos_servicios.ProductoServicio" class="control-label">Producto o Servicio:</label>
+                @Html.DropDownListFor(model => model.cat_productos_servicios.ProductoServicio, Model.ProductoServicio, "Selecciona", new { @class = "form-control" })
+                <span asp-validation-for="cat_productos_servicios.ProductoServicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-info" /> |
+                <a asp-page="./Index" class="btn btn-warning">Regresar a lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

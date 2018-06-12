@@ -1,0 +1,50 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.EventoEstatus.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Agregar Evento</h2>
+
+<h4>Catálogo Evento Estatus</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="res_evento_estatus.IdEvento" value="@Model.IdEvento" type="hidden" class="form-control" />
+            <input asp-for="res_evento_estatus.IdTipoEstatus" value="6" type="hidden" class="form-control" />
+            <div class="form-group">
+                <label asp-for="res_evento_estatus.IdEstatus" class="control-label">Id Estatus:</label>
+                @Html.DropDownListFor(model => model.res_evento_estatus.IdEstatus, Model.Estatus, "Selecciona", new { @class = "form-control" })
+                <span asp-validation-for="res_evento_estatus.IdEstatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_estatus.Actual" class="control-label">Actual:</label>
+                @Html.DropDownListFor(model => model.res_evento_estatus.Actual, Model.Activo, "Selecciona", new { @class = "form-control" })
+                <span asp-validation-for="res_evento_estatus.Actual" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_estatus.Observacion" class="control-label">Observaciones:</label>
+                <textarea asp-for="res_evento_estatus.Observacion" class="form-control" ></textarea>
+                <span asp-validation-for="res_evento_estatus.Observacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_estatus.UsuarioReg" class="control-label">Usuario que registra:</label>
+                <input asp-for="res_evento_estatus.UsuarioReg" class="form-control" />
+                <span asp-validation-for="res_evento_estatus.UsuarioReg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="hidden" value="@Model.IdEvento" name="even" />
+                <input type="submit" value="Guardar" class="btn btn-info" /> |
+                <a asp-page="Index" asp-route-id="@Model.IdEvento" class="btn btn-warning">Regresar a lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

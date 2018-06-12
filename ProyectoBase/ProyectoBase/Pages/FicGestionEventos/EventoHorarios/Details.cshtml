@@ -1,0 +1,73 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.EventoHorarios.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Horarios de Eventos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label class="control-label">Evento:</label>
+        </dt>
+        <dd>
+            @Model.Evento(Model.res_evento_horarios.IdEdificio.ToString())
+        </dd>
+        <dt>
+            <label class="control-label">Edificio:</label>
+        </dt>
+        <dd>
+            @Model.Edificio(Model.res_evento_horarios.IdEdificio.ToString())
+        </dd>
+        <dt>
+            <label class="control-label">Espacio:</label>
+        </dt>
+        <dd>
+            @Model.Espacio(Model.res_evento_horarios.IdEspacio.ToString())
+        </dd>
+        <dt>
+            <label class="control-label">Día:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_horarios.Dia)
+        </dd>
+        <dt>
+            <label class="control-label">Fecha de Inicio</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_horarios.FechaHoraIni)
+        </dd>
+        <dt>
+            <label class="control-label">FEcha de Culminación:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_horarios.FechaHoraFin)
+        </dd>
+        <dt>
+            <label class="control-label">Disponible:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_horarios.Disponible)
+        </dd>
+        <dt>
+            <label class="control-label">Fecha de Registro:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_horarios.FechaReg)
+        </dd>
+        <dt>
+            <label class="control-label">Usuario que Registro</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_evento_horarios.UsuarioReg)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.res_evento_horarios.IdHorarioDet" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_evento_horarios.IdEdificio" class="btn btn-info">Editar</a> |
+    <a asp-page="../EventoHorarios/Index" asp-route-id="@Model.IdEvento" class="btn btn-warning">Regresar a la Lista</a>
+</div>

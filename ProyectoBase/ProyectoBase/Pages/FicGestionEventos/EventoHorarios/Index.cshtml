@@ -1,0 +1,159 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.EventoHorarios.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Horarios de Eventos</h2>
+
+<p>
+    <a asp-page="Create" asp-route-id="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="btn btn-info">Nuevo Horario</a>
+    <a asp-page="../Eventos/index" class="btn btn-warning">Regresar a la Lista de Eventos</a>
+</p>
+<br />
+
+<dl class="dl-horizontal">
+    <dt>
+        <label class="control-label">Evento:</label>
+    </dt>
+    <dd>
+        @Model.TipoGenEvento(Model.res_eventos.IdTipoGenEvento.ToString())
+    </dd>
+    <dt>
+        <label class="control-label">Orador:</label>
+    </dt>
+    <dd>
+        @Model.PersonaReg(Model.res_eventos.IdPersonaReg.ToString())
+    </dd>
+    <dt>
+        <label class="control-label">Nombre del Evento:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.NombreEvento)
+    </dd>
+    <dt>
+        <label class="control-label">Observaciones:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.Observacion)
+    </dd>
+    <dt>
+        <label class="control-label">Explicación:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.Explicacion)
+    </dd>
+    <dt>
+        <label class="control-label">URL de Página Web:</label>
+    </dt>
+    <dd>
+        <a href=@Html.DisplayFor(model => model.res_eventos.URL)>@Html.DisplayFor(model => model.res_eventos.URL)</a>
+    </dd>
+    <dt>
+        <label class="control-label">Fecha de Inicio:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.FechaIn)
+    </dd>
+    <dt>
+        <label class="control-label">Fecha de Culminación:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.FechaFin)
+    </dd>
+    <dt>
+        <label class="control-label">Edificio:</label>
+    </dt>
+    <dd>
+        @Model.Edificio(Model.res_eventos.IdEdificio.ToString())
+    </dd>
+    <dt>
+        <label class="control-label">Fecha de Registro:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.FechaReg)
+    </dd>
+    <dt>
+        <label class="control-label">Usuario que Registro:</label>
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.res_eventos.UsuarioReg)
+    </dd>
+</dl>
+
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <label class="control-label">Edificio</label>
+            </th>
+            <th>
+                <label class="control-label">Espacio</label>
+            </th>
+            <th>
+                <label class="control-label">Dia</label>
+            </th>
+            <th>
+                <label class="control-label">Inicio</label>
+            </th>
+            <th>
+                <label class="control-label">Culminación</label>
+            </th>
+            <th>
+                <label class="control-label">Fecha Registro</label>
+            </th>
+            <th>
+                <label class="control-label">Usuario que Registró</label>
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.res_evento_horarios) {
+        <tr>
+            <td>
+                @Model.Edificio(item.IdEdificio.ToString())
+            </td>
+            <td>
+                @Model.Espacio(item.IdEspacio.ToString())
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHoraIni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHoraFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaReg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioReg)
+            </td>
+            <td>
+                <div class="nav-item dropdown">
+                    <a class="btn btn-info" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Opciones
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a asp-page="./Edit" asp-route-id="@item.IdHorarioDet" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="glyphicon glyphicon-pencil"> Editar</a>
+                                <a asp-page="./Details" asp-route-id="@item.IdHorarioDet" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="glyphicon glyphicon-list-alt"> Detalles</a>
+                                <a asp-page="./Delete" asp-route-id="@item.IdHorarioDet" asp-route-evento="@Model.IdEvento" asp-route-edificio="@Model.res_eventos.IdEdificio" class="glyphicon glyphicon-trash"> Eliminar</a>
+                                <a asp-page="../EventoZonas/Index" asp-route-edificio="@item.IdEdificio" asp-route-espacio="@item.IdEspacio" asp-route-evento="@item.IdEvento" asp-route-horario="@item.IdHorarioDet" class="glyphicon glyphicon-bookmark"> Zonas</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,33 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.CatTiposGenerales.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar</h2>
+<h3>¿Estas seguro de que deseas eliminar este Elemento?</h3>
+<div>
+    <h4>Catálago Tipos de Evento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label class="control-label">Descripción:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_tipos_generales.DesTipo)
+        </dd>
+        <dt>
+            <label class="control-label">Activo:</label>
+        </dt>
+        <dd>
+            @Model.Activo(Model.cat_tipos_generales.Activo)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="cat_tipos_generales.IdTipoGeneral" />
+        <input type="submit" value="Eliminar" class="btn btn-info" />
+        <a asp-page="./Index" class="btn btn-warning">Regresar a lista</a>
+    </form>
+</div>

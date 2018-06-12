@@ -1,0 +1,73 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.CatalogoEstatus.IndexModel
+
+@{
+    ViewData["Title"] = "Catalago Estatus";
+}
+
+<h2>Catálago Estatus</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-info">Agregar nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <label class="control-label">Id</label>
+            </th>
+            <th>
+                <label class="control-label">Tipo Estatus</label>
+            </th>
+            <th>
+                <label class="control-label">Clave</label>
+            </th>
+            <th>
+                <label class="control-label">Descripción</label>
+            </th>
+            <th>
+                <label class="control-label">Activo</label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.cat_estatus)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEstatus)
+            </td>
+            <td>
+                @Model.TipoEstatus(item.IdTipoEstatus.ToString())
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clave)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesEstatus)
+            </td>
+            <td>
+                @Model.Activo(item.Activo)
+            </td>
+            <td>
+                <div class="nav-item dropdown">
+                    <a class="btn btn-info" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Opciones
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a asp-page="./Edit" class="glyphicon glyphicon-pencil" asp-route-id="@item.IdEstatus"> Editar</a>
+                                <a asp-page="./Details" class="glyphicon glyphicon-list-alt" asp-route-id="@item.IdEstatus"> Detalles</a>
+                                <a asp-page="./Delete" class="glyphicon glyphicon-trash" asp-route-id="@item.IdEstatus"> Eliminar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

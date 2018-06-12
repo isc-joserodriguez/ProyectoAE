@@ -1,0 +1,57 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.Espacios.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar</h2>
+<h3>¿Estas seguro de que deseas eliminar?</h3>
+<h4>Catálogo de Espacios</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label class="control-label">Edificio:</label>
+        </dt>
+        <dd>
+            @Model.Edificio(Model.eva_cat_espacios.IdEdificio.ToString())
+        </dd>
+        <dt>
+            <label class="control-label">Clave:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.Clave)
+        </dd>
+        <dt>
+            <label class="control-label">Alias:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.Alias)
+        </dd>
+        <dt>
+            <label class="control-label">Descripción:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.DesEspacio)
+        </dd>
+        <dt>
+            <label class="control-label">Capacidad:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.Capacidad)
+        </dd>
+        <dt>
+            <label class="control-label">Prioridad:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.Prioridad)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="eva_cat_espacios.IdEspacio" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index" asp-route-id="@Model.IdEdificio" class="btn btn-warning">Regresar a lista</a>
+    </form>
+</div>

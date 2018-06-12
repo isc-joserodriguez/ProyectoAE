@@ -1,0 +1,55 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.Espacios.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles Espacio</h2>
+
+<div>
+    <h4>Catálogo Espacios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label class="control-label">Edificio:</label>
+        </dt>
+        <dd>
+            @Model.Edificio(Model.eva_cat_espacios.IdEdificio.ToString())
+        </dd>
+        <dt>
+            <label class="control-label">Clave:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.Clave)
+        </dd>
+        <dt>
+            <label class="control-label">Alias:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.Alias)
+        </dd>
+        <dt>
+            <label class="control-label">Descripción:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.DesEspacio)
+        </dd>
+        <dt>
+            <label class="control-label">Capacidad:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.Capacidad)
+        </dd>
+        <dt>
+            <label class="control-label">Prioridad:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_cat_espacios.Prioridad)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.eva_cat_espacios.IdEspacio" asp-route-edificio="@Model.eva_cat_espacios.IdEdificio" class="btn btn-info">Editar</a> |
+    <a asp-page="./Index" asp-route-id="@Model.eva_cat_espacios.IdEdificio" class="btn btn-warning">Regresar a lista</a>
+</div>

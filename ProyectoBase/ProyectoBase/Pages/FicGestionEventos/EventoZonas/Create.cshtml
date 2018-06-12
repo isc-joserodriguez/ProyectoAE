@@ -1,0 +1,60 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.EventoZonas.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Añadir</h2>
+
+<h4>Zona de Evento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input asp-for="res_evento_zonas.IdEdificio" value="@Model.IdEdificio" type="hidden" class="form-control" />
+            <input asp-for="res_evento_zonas.IdEspacio" value="@Model.IdEspacio" type="hidden" class="form-control" />
+            <input asp-for="res_evento_zonas.IdEvento" value="@Model.IdEvento" type="hidden" class="form-control" />
+            <div class="form-group">
+                <label class="control-label">Edificio: @Model.Edificio(Model.IdEdificio.ToString())</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Espacio: @Model.Espacio(Model.IdEspacio.ToString())</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Evento: @Model.Evento(Model.IdEvento.ToString())</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Zona:</label>
+                @Html.DropDownListFor(model => model.res_evento_zonas.IdZona, Model.Zonas, "Selecciona", new { @class = "form-control" })
+                <span asp-validation-for="res_evento_zonas.IdZona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Foto:<br />
+                <input type="file" asp-for="res_evento_zonas.RutaImagen" class="form-control" />
+                <span asp-validation-for="res_evento_zonas.RutaImagen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_zonas.UsuarioReg" class="control-label"></label>
+                <input asp-for="res_evento_zonas.UsuarioReg" class="form-control" />
+                <span asp-validation-for="res_evento_zonas.UsuarioReg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="IdHorario" value="@Model.IdHorario" name="horario" type="hidden" />
+                <input type="submit" value="Añadir" class="btn btn-info" />
+                <a asp-page="Index"
+                   asp-route-edificio="@Model.IdEdificio"
+                   asp-route-espacio="@Model.IdEspacio"
+                   asp-route-evento="@Model.IdEvento"
+                   asp-route-horario="@Model.IdHorario"
+                   class="btn btn-warning">Regresar a la Lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

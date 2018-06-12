@@ -1,0 +1,58 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.Zonas.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Quieres Eliminar Esta Zona?</h3>
+<h4>Catálago de Zonas</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Edificio:
+        </dt>
+        <dd>
+            @Model.getEdificio(Model.res_cat_zonas.IdEdificio.ToString())
+        </dd>
+        <dt>
+            Espacio:
+        </dt>
+        <dd>
+            @Model.getEspacio(Model.res_cat_zonas.IdEspacio.ToString())
+        </dd>
+        <dt>
+            Descripción:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_cat_zonas.DesZona)
+        </dd>
+        <dt>
+            Capacidad:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_cat_zonas.CapacidadPer)
+        </dd>
+        <dt>
+            Filas de Asientos:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_cat_zonas.Filas)
+        </dd>
+        <dt>
+            Asientos Por Fila:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_cat_zonas.AsientosPorFila)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="res_cat_zonas.IdZona"/>
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index" asp-route-espacio="@Model.res_cat_zonas.IdEspacio" asp-route-edificio="@Model.res_cat_zonas.IdEdificio" class="btn btn-warning">Regresar a la Lista de Zonas</a>
+    </form>
+</div>

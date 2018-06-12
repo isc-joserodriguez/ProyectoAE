@@ -1,0 +1,43 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.CatProductoServicios.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Catálago de Productos/Servicios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Clave:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_productos_servicios.ClaveProdServ)
+        </dd>
+        <dt>
+            Código de Barras:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_productos_servicios.CodigoBarras)
+        </dd>
+        <dt>
+            Descripción:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cat_productos_servicios.DesProdServ)
+        </dd>
+        <dt>
+            Producto o Servicio:
+        </dt>
+        <dd>
+            @Model.getProductoServicio(Model.cat_productos_servicios.ProductoServicio)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.cat_productos_servicios.IdProdServ " class="btn btn-info">Editar</a> |
+    <a asp-page="./Index" class="btn btn-warning">Regresar a lista</a>
+</div>

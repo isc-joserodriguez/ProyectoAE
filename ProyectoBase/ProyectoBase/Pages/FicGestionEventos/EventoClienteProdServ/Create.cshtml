@@ -1,0 +1,58 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.EventoClienteProdServ.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Nueva Venta</h2>
+
+<h4>Producto Servicios</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Cliente</label>
+                @Html.DropDownListFor(model => model.res_evento_cliente_prod_serv.IdReservaCliente, Model.Clientes, "Selecciona", new { @class = "form-control" })
+                <span asp-validation-for="res_evento_cliente_prod_serv.IdReservaCliente" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Producto/Servicio:</label>
+                @Html.DropDownListFor(model => model.res_evento_cliente_prod_serv.IdProdServEsp, Model.ProdServEsp, "Selecciona", new { @class = "form-control" })
+                <span asp-validation-for="res_evento_cliente_prod_serv.IdProdServEsp" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="res_evento_cliente_prod_serv.Cantidad" class="control-label"></label>
+                <input asp-for="res_evento_cliente_prod_serv.Cantidad" type="number" class="form-control" />
+                <span asp-validation-for="res_evento_cliente_prod_serv.Cantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_cliente_prod_serv.Precio" class="control-label"></label>
+                <input asp-for="res_evento_cliente_prod_serv.Precio" type="number" class="form-control" />
+                <span asp-validation-for="res_evento_cliente_prod_serv.Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="res_evento_cliente_prod_serv.IVA" class="control-label"></label>
+                <input asp-for="res_evento_cliente_prod_serv.IVA" type="number" class="form-control" />
+                <span asp-validation-for="res_evento_cliente_prod_serv.IVA" class="text-danger"></span>
+            </div>
+            <input asp-for="res_evento_cliente_prod_serv.IdUnidadMedida" value="0" type="hidden" class="form-control" />
+            <input asp-for="res_evento_cliente_prod_serv.Importe" value="0" type="hidden" class="form-control" />
+            <input asp-for="res_evento_cliente_prod_serv.IdProdServ" value="0" type="hidden" class="form-control" />
+            <input asp-for="res_evento_cliente_prod_serv.IdEvento" value="0" type="hidden" class="form-control" />
+            <div class="form-group">
+                <input type="submit" value="Vender" class="btn btn-info" />
+                <a asp-page="Index" class="btn btn-warning">Regresar a lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

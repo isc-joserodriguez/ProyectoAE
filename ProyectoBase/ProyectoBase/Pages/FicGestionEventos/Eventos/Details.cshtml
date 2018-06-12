@@ -1,0 +1,91 @@
+﻿@page
+@model ProyectoBase.Pages.FicGestionEventos.Eventos.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Eventos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label class="control-label">Tipo de Evento:</label>
+        </dt>
+        <dd>
+            @Model.GenEvento(Model.res_eventos.IdGenEvento.ToString())
+        </dd>
+        <dt>
+            <label class="control-label">Evento:</label>
+        </dt>
+        <dd>
+            @Model.TipoGenEvento(Model.res_eventos.IdTipoGenEvento.ToString())
+        </dd>
+        <dt>
+            <label class="control-label">Orador:</label>
+        </dt>
+        <dd>
+            @Model.PersonaReg(Model.res_eventos.IdPersonaReg.ToString())
+        </dd>
+        <dt>
+            <label class="control-label">Nombre del Evento:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_eventos.NombreEvento)
+        </dd>
+        <dt>
+            <label class="control-label">Observaciones:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_eventos.Observacion)
+        </dd>
+        <dt>
+            <label class="control-label">Explicación:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_eventos.Explicacion)
+        </dd>
+        <dt>
+            <label class="control-label">URL de Página Web:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_eventos.URL)
+        </dd>
+        <dt>
+            <label class="control-label">Fecha de Inicio:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_eventos.FechaIn)
+        </dd>
+        <dt>
+            <label class="control-label">Fecha de Culminación:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_eventos.FechaFin)
+        </dd>
+        <dt>
+            <label class="control-label">Edificio:</label>
+        </dt>
+        <dd>
+            @Model.Edificio(Model.res_eventos.IdEdificio.ToString())
+        </dd>
+        <dt>
+            <label class="control-label">Fecha de Registro:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_eventos.FechaReg)
+        </dd>
+        <dt>
+            <label class="control-label">Usuario que Registro:</label>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.res_eventos.UsuarioReg)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.res_eventos.IdEvento" class="btn btn-info">Editar</a> |
+    <a asp-page="./Index" class="btn btn-warning">Regresar a la Lista</a>
+</div>
